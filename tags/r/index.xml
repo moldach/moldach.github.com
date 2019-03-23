@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Matthew J. Oldach</title>
+    <link>/tags/r/</link>
+    <description>Recent content in R on Matthew J. Oldach</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 31 Jan 2019 00:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web Scraping Google Sheets with RSelenium</title>
+      <link>/project/rselenium/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/project/rselenium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>10 Tips for Choosing the Optimal Number of Clusters</title>
+      <link>/project/optimal-clustering/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/project/optimal-clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to Highlight 3D Brain Regions</title>
+      <link>/project/3d-brain/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/3d-brain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to Choose the Best Open Source Software</title>
+      <link>/project/software-solutions/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/software-solutions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reversing the order of axis in a ggplot2 scatterplot</title>
+      <link>/project/reverse-axis/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/reverse-axis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Gold Standard for Data Science Project Management</title>
+      <link>/project/project-management/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/project-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analyzing 12 years of the Free Ride World Tour</title>
+      <link>/project/free-ride-world-tour/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/free-ride-world-tour/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
