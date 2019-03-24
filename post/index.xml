@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Matthew J. Oldach</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Matthew J. Oldach</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
+      <link>/post/ninjutsu/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ninjutsu/</guid>
+      <description>A graduate student in our laboratory recently asked me if it was possible to include more than two images, side-by-side, in Xaringan.
+Of course anything is possible, however, most blog posts only touch on the most basic things you can do. With custom CSS you can do whatever you want. I wanted to create an image-grid of a bunch of GIFs so I used the ninjutsu theme to accomplish it.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Drake in R</title>
+      <link>/post/drake/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/drake/</guid>
+      <description>Recently I got interested in using the xaringan package for creating HTML based R Markdown documents because I could use the widgetframe package to embed htmlwidgets as responsive iframes (I had created some spinning 3D visulizations with pseudo-coloring I wanted to present interactively).
+xaringan, it&amp;rsquo;s a R pacakges for creating slideshows with remark.js through R Markdown.
+Around the same time I learnt about Drake (or &amp;ldquo;Data Frames in R for Make&amp;rdquo;) which is an amazing a time-saving reproducible build system for data scientist specifically tailored to R.</description>
+    </item>
+    
+  </channel>
+</rss>
