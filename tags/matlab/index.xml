@@ -21,5 +21,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Transcriptome Assembly and Annotation</title>
+      <link>/project/assembly/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vapoRwave ggplot2 themes &amp; palettes</title>
+      <link>/project/vaporwave/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/vaporwave/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

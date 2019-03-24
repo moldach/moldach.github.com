@@ -31,6 +31,24 @@
     </item>
     
     <item>
+      <title>Transcriptome Assembly and Annotation</title>
+      <link>/project/assembly/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vapoRwave ggplot2 themes &amp; palettes</title>
+      <link>/project/vaporwave/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/project/vaporwave/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
       <link>/project/reverse-axis/</link>
       <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
@@ -45,6 +63,15 @@
       <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
       
       <guid>/project/free-ride-world-tour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gene set enrichment in R</title>
+      <link>/project/gsea/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/project/gsea/</guid>
       <description></description>
     </item>
     
