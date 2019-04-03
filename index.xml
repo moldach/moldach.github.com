@@ -11,6 +11,94 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Step aside Cron, this is a job for .Rprofile &amp; logfiles!</title>
+      <link>/post/rprofile/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rprofile/</guid>
+      <description>
+
+&lt;p&gt;Just as &lt;a href=&#34;https://github.com/r-lib/testthat&#34; target=&#34;_blank&#34;&gt;test automation&lt;/a&gt; is a critical part of &lt;a href=&#34;http://users.atw.hu/sustainsoftdev/ch05lev1sec2.html&#34; target=&#34;_blank&#34;&gt;rutheless testing&lt;/a&gt;, your goal for any project should be to identify taks that can be automated (and do it!).&lt;/p&gt;
+
+&lt;p&gt;There are a number of packages that allow you to schedule R scripts at specific times; two that come to mind are &lt;a href=&#34;https://cran.r-project.org/package=taskscheduleR&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;taskscheduleR&lt;/code&gt;&lt;/a&gt; (for Windows) and &lt;a href=&#34;https://cran.r-project.org/package=cronR&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;cronR&lt;/code&gt;&lt;/a&gt; (for Unix/Linux). We have &lt;code&gt;cronR&lt;/code&gt; setup on RStudio server at work, and it has a nice &lt;em&gt;RStudio addin&lt;/em&gt; which allows us to schedule tasks around any complex schedule. You can use these kind of tools &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34;&gt;to automate data collections&lt;/a&gt;, &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34;&gt;automate markdown reports to e-mail&lt;/a&gt;, &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34;&gt;or even the weather&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, when you want a function (or script) to launch every time you start &lt;code&gt;R&lt;/code&gt; you can place these inside &lt;code&gt;.Rprofile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But what about if you want a function to start only the first time a user logs in? This could be something simple (like a reminder) to fill in a progress report, or in this case a bit of &lt;em&gt;Monday Morning (de)Motivation&lt;/em&gt;. This is a job for logfiles!&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s be straight here, I love Mondays (because &lt;a href=&#34;https://rweekly.org/&#34; target=&#34;_blank&#34;&gt;rweekly&lt;/a&gt; is released!), but most people don&amp;rsquo;t! Therefore, I made a &lt;code&gt;.csv&lt;/code&gt; file of &lt;code&gt;178&lt;/code&gt; quotes about Monday and a folder of 83 &lt;code&gt;.png&lt;/code&gt; images of cartoon characters sleeping. I used the &lt;code&gt;.First()&lt;/code&gt; function in &lt;code&gt;.Rprofile&lt;/code&gt; to create a logfile (if one doesn&amp;rsquo;t already exist) and randomly pair an image with a quote the first time a user logs in on Monday morning (using the &lt;code&gt;advicegiveR&lt;/code&gt; package).
+Here&amp;rsquo;s some examples of images a user might see first thing Monday morning:&lt;/p&gt;
+
+&lt;h3 id=&#34;the-good&#34;&gt;The Good&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;fig1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-bad&#34;&gt;The Bad&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;fig2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;the-ugly&#34;&gt;The Ugly&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Any other time of that day (or any other day of the week) it will simply call a sage piece of collected advice from the &lt;code&gt;R-help&lt;/code&gt; forum via the &lt;code&gt;fortunes&lt;/code&gt; package. An example:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;R will always be arcane to those who do not make a serious effort to learn it. It is &lt;strong&gt;not&lt;/strong&gt; meant to be
+intuitive and easy for casual users to just plunge into. It is far too complex and powerful for that. But
+the rewards are great for serious data analysts who put in the effort.
+   &amp;ndash; Berton Gunter
+      R-help (August 2007)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Without further ado, here&amp;rsquo;s the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;.First &amp;lt;- function(){
+        today &amp;lt;- as.Date(Sys.Date())
+        LastLog &amp;lt;- &amp;quot;&amp;quot;
+        if(file.exists(here::here(&amp;quot;iHateMondays/LogFile.txt&amp;quot;))) {
+                LogFile &amp;lt;- file(here::here(&amp;quot;iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;r&amp;quot;))
+                LastLog &amp;lt;- readLines(LogFile, 1L)
+                close(LogFile)
+        }
+        LogFile &amp;lt;- file(here::here(&amp;quot;iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;w&amp;quot;))
+        writeLines(as.character(today), LogFile)
+        close(LogFile)
+        
+        if(LastLog == as.character(today)) {
+                # Already logged on today, just exit
+                return()
+        }
+        
+        ## If you get here, Need to run the first login code
+        DOW &amp;lt;- weekdays(today)
+        if (DOW == &amp;quot;Monday&amp;quot;) {
+                # I Hate Mondays!
+                suppressWarnings(library(advicegiveR, warn.conflicts = FALSE))
+                suppressWarnings(library(readr, warn.conflicts = FALSE))
+                quotes &amp;lt;- read_csv(here::here(&amp;quot;iHateMondays/quotes.csv&amp;quot;, col_names = FALSE))
+                x1 &amp;lt;- sample(1:nrow(quotes), 1)
+                advice &amp;lt;- as.character(quotes[x1,])
+                y &amp;lt;- list.files(here::here(&amp;quot;iHateMondays/images&amp;quot;))
+                # select one randomly
+                y1 &amp;lt;- sample(1:length(y), 1)
+                image &amp;lt;- magick::image_read(here::here(&amp;quot;iHateMondays/images&amp;quot;, y[y1]))
+                # print image
+                advicegiveR::print_advice(image = image, advice = advice, textcolor = &amp;quot;yellow&amp;quot;, size = 40)
+        } else {
+                # Fortune
+                suppressWarnings(library(fortunes, warn.conflicts = FALSE))
+                rnum &amp;lt;- sample(1:386, 1)
+                print(fortune(rnum))
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Those wishing to make their own pithy memes may want to conside the &lt;a href=&#34;https://github.com/leeper/meme&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;meme&lt;/code&gt; R package&lt;/a&gt; (since it provides a black border around text, making it easier to read over any background) but I hope you can find some more useful use-cases!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
       <link>/post/ninjutsu/</link>
       <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
@@ -152,15 +240,6 @@
       <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
       
       <guid>/project/free-ride-world-tour/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gene set enrichment in R</title>
-      <link>/project/gsea/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 -0500</pubDate>
-      
-      <guid>/project/gsea/</guid>
       <description></description>
     </item>
     

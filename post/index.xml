@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Step aside Cron, this is a job for .Rprofile &amp; logfiles!</title>
+      <link>/post/rprofile/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rprofile/</guid>
+      <description>Just as test automation is a critical part of rutheless testing, your goal for any project should be to identify taks that can be automated (and do it!).
+There are a number of packages that allow you to schedule R scripts at specific times; two that come to mind are taskscheduleR (for Windows) and cronR (for Unix/Linux). We have cronR setup on RStudio server at work, and it has a nice RStudio addin which allows us to schedule tasks around any complex schedule.</description>
+    </item>
+    
+    <item>
       <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
       <link>/post/ninjutsu/</link>
       <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
