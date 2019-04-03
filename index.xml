@@ -11,11 +11,11 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
-      <link>/post/rprofile/</link>
-      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      <title>test</title>
+      <link>/post/copyofninjutsu/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/rprofile/</guid>
+      <guid>/post/copyofninjutsu/</guid>
       <description>&lt;p&gt;A graduate student in our laboratory recently asked me if it was possible to include more than two images, side-by-side, in &lt;code&gt;Xaringan&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Of course anything is possible, however, most blog posts only touch on the most basic things you can do. With custom &lt;code&gt;CSS&lt;/code&gt; you can do whatever you want. I wanted to create an image-grid of a bunch of GIFs so I used the &lt;code&gt;ninjutsu&lt;/code&gt; theme to accomplish it.&lt;/p&gt;
