@@ -51,17 +51,17 @@ the rewards are great for serious data analysts who put in the effort.
       R-help (August 2007)&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Without further ado, here&amp;rsquo;s the code:&lt;/p&gt;
+&lt;p&gt;You need to create a folder in your home directory that contains a &lt;code&gt;quotes.csv&lt;/code&gt;, a &lt;code&gt;LogFile.txt&lt;/code&gt; and &lt;code&gt;images&lt;/code&gt; folder.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;.First &amp;lt;- function(){
         today &amp;lt;- as.Date(Sys.Date())
         LastLog &amp;lt;- &amp;quot;&amp;quot;
-        if(file.exists(here::here(&amp;quot;iHateMondays/LogFile.txt&amp;quot;))) {
-                LogFile &amp;lt;- file(here::here(&amp;quot;iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;r&amp;quot;))
+        if(file.exists(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;)) {
+                LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;r&amp;quot;)
                 LastLog &amp;lt;- readLines(LogFile, 1L)
                 close(LogFile)
         }
-        LogFile &amp;lt;- file(here::here(&amp;quot;iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;w&amp;quot;))
+        LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;w&amp;quot;)
         writeLines(as.character(today), LogFile)
         close(LogFile)
         
@@ -76,13 +76,13 @@ the rewards are great for serious data analysts who put in the effort.
                 # I Hate Mondays!
                 suppressWarnings(library(advicegiveR, warn.conflicts = FALSE))
                 suppressWarnings(library(readr, warn.conflicts = FALSE))
-                quotes &amp;lt;- read_csv(here::here(&amp;quot;iHateMondays/quotes.csv&amp;quot;, col_names = FALSE))
+                quotes &amp;lt;- read_csv(&amp;quot;~/iHateMondays/quotes.csv&amp;quot;, col_names = FALSE)
                 x1 &amp;lt;- sample(1:nrow(quotes), 1)
                 advice &amp;lt;- as.character(quotes[x1,])
-                y &amp;lt;- list.files(here::here(&amp;quot;iHateMondays/images&amp;quot;))
+                y &amp;lt;- list.files(&amp;quot;~/iHateMondays/images&amp;quot;)
                 # select one randomly
                 y1 &amp;lt;- sample(1:length(y), 1)
-                image &amp;lt;- magick::image_read(here::here(&amp;quot;iHateMondays/images&amp;quot;, y[y1]))
+                image &amp;lt;- magick::image_read(paste0(&amp;quot;~/iHateMondays/images&amp;quot;, y[y1]))
                 # print image
                 advicegiveR::print_advice(image = image, advice = advice, textcolor = &amp;quot;yellow&amp;quot;, size = 40)
         } else {
@@ -94,7 +94,76 @@ the rewards are great for serious data analysts who put in the effort.
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Those wishing to make their own pithy memes may want to conside the &lt;a href=&#34;https://github.com/leeper/meme&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;meme&lt;/code&gt; R package&lt;/a&gt; (since it provides a black border around text, making it easier to read over any background) but I hope you can find some more useful use-cases!&lt;/p&gt;
+&lt;p&gt;Now Ideally, you should use a contrasting border around the inner text color to make it readable on any background.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;fig4.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/leeper/meme&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;meme&lt;/code&gt; R package&lt;/a&gt; package uses a black border around text and positions text like a typical meme (top &amp;amp; bottom).&lt;/p&gt;
+
+&lt;p&gt;By including a simple helper function to split the quote into equal lengthed top/bottom sections, the code would look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;suppressWarnings(library(tidyverse))
+word_split &amp;lt;- function(x, side=&amp;quot;left&amp;quot;, sep=&amp;quot; &amp;quot;) {
+  words &amp;lt;- strsplit(as.character(x), sep)
+  nwords &amp;lt;- lengths(words)
+  if(side==&amp;quot;left&amp;quot;) {
+    start &amp;lt;- 1
+    end &amp;lt;- ceiling(nwords/2)
+  } else if (side==&amp;quot;right&amp;quot;) {
+    start &amp;lt;- ceiling((nwords+2)/2)
+    end &amp;lt;- nwords
+  }
+  cw &amp;lt;- function(words, start, stop) paste(words[start:stop], collapse=sep)
+  pmap_chr(list(words, start, end), cw)
+}
+left_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;left&amp;quot;)
+right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&amp;quot;)
+
+.First &amp;lt;- function(){
+        today &amp;lt;- as.Date(Sys.Date())
+        LastLog &amp;lt;- &amp;quot;&amp;quot;
+        if(file.exists(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;)) {
+                LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;r&amp;quot;)
+                LastLog &amp;lt;- readLines(LogFile, 1L)
+                close(LogFile)
+        }
+        LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;w&amp;quot;)
+        writeLines(as.character(today), LogFile)
+        close(LogFile)
+
+        if(LastLog == as.character(today)) {
+                # Already logged on today, just exit
+                return()
+        }
+
+        ## If you get here, Need to run the first login code
+        DOW &amp;lt;- weekdays(today)
+        if (DOW == &amp;quot;Monday&amp;quot;) {
+                # I Hate Mondays!
+                suppressWarnings(library(readr, warn.conflicts = FALSE))
+                suppressWarnings(library(meme, warn.conflicts = FALSE))
+                quotes &amp;lt;- read_csv(&amp;quot;~/iHateMondays/quotes.csv&amp;quot;, col_names = FALSE)
+                x1 &amp;lt;- sample(1:nrow(quotes), 1)
+                advice &amp;lt;- as.character(quotes[x1,])
+                top_words &amp;lt;- left_words(advice)
+                bottom_words &amp;lt;- right_words(advice)
+                y &amp;lt;- list.files(&amp;quot;~/iHateMondays/images&amp;quot;)
+                # select one randomly
+                y1 &amp;lt;- sample(1:length(y), 1)
+                image &amp;lt;- magick::image_read(paste0(&amp;quot;~/iHateMondays/images/&amp;quot;, y[y1]))
+                # print image
+                meme(paste0(&amp;quot;~/iHateMondays/images/&amp;quot;, y[y1]), size = &amp;quot;1.5&amp;quot;, upper = top_words, lower = bottom_words, color = &amp;quot;yellow&amp;quot;, font = &amp;quot;Times&amp;quot;)
+
+        } else {
+                # Fortune
+                suppressWarnings(library(fortunes, warn.conflicts = FALSE))
+                rnum &amp;lt;- sample(1:386, 1)
+                print(fortune(rnum))
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;fig5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
