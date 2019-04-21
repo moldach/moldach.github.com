@@ -542,7 +542,16 @@ the rewards are great for serious data analysts who put in the effort.
 
 <p>By including a simple helper function to split the quote into equal lengthed top/bottom sections, the code would look like this:</p>
 
-<pre><code>suppressWarnings(library(tidyverse))
+<style>
+pre.bluecars {
+    background-color: #aabbff !important;
+}
+pre.redcars {
+    background-color: #ffbbbb !important;
+}
+</style>
+
+<pre><code class="language-bluecars">suppressWarnings(library(tidyverse))
 word_split &lt;- function(x, side=&quot;left&quot;, sep=&quot; &quot;) {
   words &lt;- strsplit(as.character(x), sep)
   nwords &lt;- lengths(words)

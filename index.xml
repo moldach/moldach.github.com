@@ -11,6 +11,104 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>TensorFlow CNN for Fast Style Transfer</title>
+      <link>/post/faststyletransfer/</link>
+      <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/faststyletransfer/</guid>
+      <description>
+
+&lt;p&gt;Volcom was founded in 1991, it was the first company to combine skateboarding, surfing and snowboarding under one brand from it&amp;rsquo;s incepetion. I always loved how their aesthethics captured the energy and artistry of board-riding in its purest form.&lt;/p&gt;
+
+&lt;p&gt;If you have no idea what I&amp;rsquo;m talking about here&amp;rsquo;s some samples from print advertisments and a clip from 2003&amp;rsquo;s &lt;a href=&#34;https://www.youtube.com/watch?v=VGBQw46BbWA&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Big Youth Happening&lt;/strong&gt;&lt;/a&gt; which I would say was the ultimate inspiration for this post.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;volcom.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;bigYouth.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Non-photorealistic rendering (&lt;a href=&#34;https://books.google.ca/books?id=YjXlTPFYGEYC&amp;amp;redir_esc=y&#34; target=&#34;_blank&#34;&gt;NPR&lt;/a&gt;) is a combination of computer graphics and computer vision that produces renderings in various artistic, expressive or stylized ways such as painting and drawing. NPR can be done using a number of machine learning methods, most commonly &lt;a href=&#34;https://vimeo.com/302584040&#34; target=&#34;_blank&#34;&gt;General Adverserial Networks&lt;/a&gt; or &lt;a href=&#34;https://www.youtube.com/watch?v=UFffxcCQMPQ&#34; target=&#34;_blank&#34;&gt;Convolution Neural Networks&lt;/a&gt;(CNN).&lt;/p&gt;
+
+&lt;p&gt;I wanted to use &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; on a video of my friends and I backcountry snowboarding in Alberta.&lt;/p&gt;
+
+&lt;p&gt;Fast-style-transfer is a TensorFlow CNN model based on a combination of &lt;a href=&#34;https://arxiv.org/abs/1508.06576&#34; target=&#34;_blank&#34;&gt;Gatys&amp;rsquo; A Neural Algorithm of Artistic Style&lt;/a&gt;, Johnson&amp;rsquo;s &lt;a href=&#34;http://cs.stanford.edu/people/jcjohns/eccv16/&#34; target=&#34;_blank&#34;&gt;Perceptual Losses for Real-Time Style Transfer and Super-Resolution&lt;/a&gt;, and Ulyanov&amp;rsquo;s &lt;a href=&#34;https://arxiv.org/abs/1607.08022&#34; target=&#34;_blank&#34;&gt;Instance Normalization&lt;/a&gt;. I&amp;rsquo;ll skip the details here because it&amp;rsquo;s been been far better described in the publications above (or in layman&amp;rsquo;s terms &lt;a href=&#34;https://towardsdatascience.com/a-journey-into-convolutional-neural-network-visualization-1abc71605209&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;), suffice it to say it allows you to compose images/videos in the style of another image. Besides being fun it&amp;rsquo;s a nice visual way of showing the capabilities and internal representations of neural networks.&lt;/p&gt;
+
+&lt;p&gt;The repo provides 6 trained models; however, these were all based around famous paintings and what&amp;rsquo;s the fun in doing what others have alread done? I wanted to see what kind of effect would be produced by training style transfer networks around interesting shapes and patterns!&lt;/p&gt;
+
+&lt;p&gt;I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34; target=&#34;_blank&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I then constructed a script to  SLURM batch job array to train 50 models simultaneously (&lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;) on a HPC. After training the networks I selected the 20 best looking ones to apply to the video (the editing was actually the biggest pain of this whole process).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;collage.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.technologyreview.com/s/612913/a-philosopher-argues-that-an-ai-can-never-be-an-artist/&#34; target=&#34;_blank&#34;&gt;Sean Dorrance Kelly&lt;/a&gt; might argue I&amp;rsquo;m using the machines &amp;ldquo;creativity&amp;rdquo; as a subsititute for my own but it was a fun opportunity for me to play around with tensorflow and python.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;mountains.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;](&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; target=&#34;_blank&#34;&gt;https://youtu.be/TuN4456PK-c&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;technical-notes&#34;&gt;Technical Notes:&lt;/h3&gt;
+
+&lt;p&gt;When training the models I noticed that the checkpoint files were being corrupted. I found a &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer/issues/78#issuecomment-302307215&#34; target=&#34;_blank&#34;&gt;closed issue on the repo: #78&lt;/a&gt; stating that Tensorflow&amp;rsquo;s Saver class was updated so you&amp;rsquo;ll need to change line 136 in &lt;code&gt;/src/optimize.py&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The script for training all of the networks on an HPC with a SLURM job scheduler is below, and can be run with &lt;code&gt;bash fastTrainer.bash &amp;lt;image_path&amp;gt; &amp;lt;out_path&amp;gt; &amp;lt;test_path&amp;gt;&lt;/code&gt;. Simply clone &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; and create three folders inside. Create a sub-directory where you&amp;rsquo;ll put all the &lt;strong&gt;style images&lt;/strong&gt; you want to train, another sub-directory for the &lt;strong&gt;output&lt;/strong&gt; (&lt;code&gt;.ckpt&lt;/code&gt; files used to style your &lt;code&gt;.mp4&lt;/code&gt; videos), and a &lt;strong&gt;test&lt;/strong&gt; sub-directory for the model. As a default I used the &lt;code&gt;chicago&lt;/code&gt; for training and I&amp;rsquo;m not entirely sure if that makes a difference. I didn&amp;rsquo;t spend much&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;!/bin/bash
+#$ -pwd
+
+# bash fastTrainer.bash /images/ /outpath/ /testpath/
+##
+## An embarrassingly parallel script to train many style transfer networks on a HPC
+## Access to SLURM job scheduler and fast-style-transfer is required to run this program.
+## The three mandatory pathways must be specified in the indicated order.
+
+IMG=$(readlink -f &amp;quot;${1%/}&amp;quot;)     # path_to_train_images
+OUT_DIR=$(readlink -f &amp;quot;${2%/}&amp;quot;)  # path_to_checkpoints
+TEST=$(readlink -f &amp;quot;${3%/}&amp;quot;)  # path_to_tests
+
+mkdir -p ${OUT_DIR}/jobs
+
+JID=0   # job ID for SLURM job name
+
+for f in ${IMG}/*; do
+
+        let JID=(JID+1)
+
+  cat &amp;gt; ${OUT_DIR}/jobs/style_${JID}.bash &amp;lt;&amp;lt; EOT # write job information for each job
+#!/bin/bash
+#SBATCH --gres=gpu:1        # request GPU
+#SBATCH --cpus-per-task=16   # maximum CPU cores per GPU request
+#SBATCH --time=08:00:00     # request 8 hours of walltime
+#SBATCH --job-name=&amp;quot;fst_${JID}&amp;quot;
+#SBATCH --output=${OUT_DIR}/jobs/%N-%j.out  # %N for node name, %j for jobID
+
+### JOB SCRIPT BELLOW ###
+
+# Load Modules
+module load python/2.7.14
+module load scipy-stack
+source tensorflow/bin/activate
+
+mkdir ${OUT_DIR}/${JID}
+mkdir ${TEST}/${JID}
+
+python style.py --style $f \
+  --checkpoint-dir ${OUT_DIR}/${JID} \
+  --test examples/content/chicago.jpg \
+  --test-dir ${OUT_DIR}/${JID} \
+  --content-weight 1.5e1 \
+  --checkpoint-iterations 1000 \
+  --batch-size 20
+
+EOT
+  chmod 754 $(readlink -f &amp;quot;${OUT_DIR}&amp;quot;)/jobs/style_${JID}.bash
+  sbatch $(readlink -f &amp;quot;${OUT_DIR}&amp;quot;)/jobs/style_${JID}.bash
+done
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Step aside Cron, this is a job for .Rprofile &amp; logfiles!</title>
       <link>/post/rprofile/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
@@ -102,7 +200,16 @@ the rewards are great for serious data analysts who put in the effort.
 
 &lt;p&gt;By including a simple helper function to split the quote into equal lengthed top/bottom sections, the code would look like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;suppressWarnings(library(tidyverse))
+&lt;style&gt;
+pre.bluecars {
+    background-color: #aabbff !important;
+}
+pre.redcars {
+    background-color: #ffbbbb !important;
+}
+&lt;/style&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bluecars&#34;&gt;suppressWarnings(library(tidyverse))
 word_split &amp;lt;- function(x, side=&amp;quot;left&amp;quot;, sep=&amp;quot; &amp;quot;) {
   words &amp;lt;- strsplit(as.character(x), sep)
   nwords &amp;lt;- lengths(words)
@@ -300,15 +407,6 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
       <pubDate>Wed, 06 Jun 2018 00:00:00 -0400</pubDate>
       
       <guid>/project/knowledge-is-beautiful/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Analyzing 12 years of the Free Ride World Tour</title>
-      <link>/project/free-ride-world-tour/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
-      
-      <guid>/project/free-ride-world-tour/</guid>
       <description></description>
     </item>
     
