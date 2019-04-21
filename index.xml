@@ -36,7 +36,7 @@
 
 &lt;p&gt;I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34; target=&#34;_blank&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;I then constructed a script to  SLURM batch job array to train 50 models simultaneously (&lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;) on a HPC. After training the networks I selected the 20 best looking ones to apply to the video (the editing was actually the biggest pain of this whole process).&lt;/p&gt;
+&lt;p&gt;I then constructed a script to train 50 models simultaneously on a HPC (using a &lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;). After training the networks I selected the 20 best looking ones to apply to the video (the editing was actually the biggest pain of this whole process).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;collage.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -44,7 +44,7 @@
 
 &lt;p&gt;&lt;img src=&#34;mountains.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;(&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;](&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; target=&#34;_blank&#34;&gt;https://youtu.be/TuN4456PK-c&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;technical-notes&#34;&gt;Technical Notes:&lt;/h3&gt;
 
