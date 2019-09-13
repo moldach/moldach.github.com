@@ -12,6 +12,101 @@
     
     <item>
       <title>TensorFlow CNN for Fast Style Transfer</title>
+      <link>/post/tensorflow-cnn-for-fast-style-transfer/</link>
+      <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow-cnn-for-fast-style-transfer/</guid>
+      <description>
+
+
+&lt;p&gt;Volcom was founded in 1991, it was the first company to combine skateboarding, surfing and snowboarding under one brand from it’s incepetion. I always loved how their aesthethics captured the energy and artistry of board-riding in its purest form.&lt;/p&gt;
+&lt;p&gt;If you have no idea what I’m talking about here’s some samples from print advertisments and a clip from 2003’s &lt;a href=&#34;https://www.youtube.com/watch?v=VGBQw46BbWA&#34;&gt;&lt;strong&gt;Big Youth Happening&lt;/strong&gt;&lt;/a&gt; which I would say was the ultimate inspiration for this post.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;volcom.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;bigYouth.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Non-photorealistic rendering (&lt;a href=&#34;https://books.google.ca/books?id=YjXlTPFYGEYC&amp;amp;redir_esc=y&#34;&gt;NPR&lt;/a&gt;) is a combination of computer graphics and computer vision that produces renderings in various artistic, expressive or stylized ways. A new art form that couldn’t have existed without computers. Researchers have proposed many algorithms and &lt;em&gt;styles&lt;/em&gt; such as painting, pen-and-ink drawing, tile mosaics, stippling, streamline visualization, and tensor field visualization. Although the details vary, the goal is to make an image look like some other image. Two main approaches to designing these algorithms exist. &lt;em&gt;Greedy algorithms&lt;/em&gt; greedily place strokes to match the target goas. &lt;em&gt;Optimization algorithms&lt;/em&gt; iteratively place and then adjust stroke positions to minimize the objective function. NPR can be done using a number of machine learning methods, most commonly &lt;a href=&#34;https://vimeo.com/302584040&#34;&gt;General Adverserial Networks&lt;/a&gt; or &lt;a href=&#34;https://www.youtube.com/watch?v=UFffxcCQMPQ&#34;&gt;Convolution Neural Networks&lt;/a&gt;(CNN).
+such as painting and drawing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;example.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I wanted to use &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt;, an &lt;em&gt;optimization technique&lt;/em&gt;, on a video of my friends and I backcountry skiing and snowboarding in The Rocky Mountains of Alberta.&lt;/p&gt;
+&lt;p&gt;Fast-style-transfer is a TensorFlow CNN model based on a combination of &lt;a href=&#34;https://arxiv.org/abs/1508.06576&#34;&gt;Gatys’ A Neural Algorithm of Artistic Style&lt;/a&gt;, Johnson’s &lt;a href=&#34;http://cs.stanford.edu/people/jcjohns/eccv16/&#34;&gt;Perceptual Losses for Real-Time Style Transfer and Super-Resolution&lt;/a&gt;, and Ulyanov’s &lt;a href=&#34;https://arxiv.org/abs/1607.08022&#34;&gt;Instance Normalization&lt;/a&gt;. I’ll skip the details here because it’s been been far better described in the publications above (or in layman’s terms &lt;a href=&#34;https://towardsdatascience.com/a-journey-into-convolutional-neural-network-visualization-1abc71605209&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&#34;&gt;here&lt;/a&gt;), suffice it to say it allows you to compose images/videos in the style of another image. Besides being fun it’s a nice visual way of showing the capabilities and internal representations of neural networks.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fast-style-transfer&lt;/code&gt; repo comes with 6 trained models on famous paintings, allowing you to quikcly style your images (or videos) like them. But what’s the fun in doing what others have alread done?&lt;/p&gt;
+&lt;p&gt;I wanted to see what kind of effect would be produced by training style transfer networks around interesting shapes and patterns! I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;collage.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I then constructed a script to train 50 models simultaneously on a HPC (using a &lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;; a top-of-the-line $10,000 GPU - &lt;em&gt;spared no expense&lt;/em&gt;). After &lt;em&gt;many many&lt;/em&gt; hours of training, across hundreds of cores, I selected the 20 best (&lt;em&gt;i.e.&lt;/em&gt; most aesthetically pleasing) models to apply to the video.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mountains.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;(&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;](&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; class=&#34;uri&#34;&gt;https://youtu.be/TuN4456PK-c&lt;/a&gt;).&lt;/p&gt;
+&lt;div id=&#34;technical-notes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Technical Notes:&lt;/h3&gt;
+&lt;p&gt;When training the models I noticed that the checkpoint files were being corrupted. I found a &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer/issues/78#issuecomment-302307215&#34;&gt;closed issue on the repo: #78&lt;/a&gt; stating that Tensorflow’s Saver class was updated so you’ll need to change line 136 in &lt;code&gt;/src/optimize.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The script for training all of the networks on an HPC with a SLURM job scheduler is below, and can be run with &lt;code&gt;bash fastTrainer.bash &amp;lt;image_path&amp;gt; &amp;lt;out_path&amp;gt; &amp;lt;test_path&amp;gt;&lt;/code&gt;. Simply clone &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; and create three folders inside. Create a sub-directory where you’ll put all the &lt;strong&gt;style images&lt;/strong&gt; you want to train, another sub-directory for the &lt;strong&gt;output&lt;/strong&gt; (&lt;code&gt;.ckpt&lt;/code&gt; files used to style your &lt;code&gt;.mp4&lt;/code&gt; videos), and a &lt;strong&gt;test&lt;/strong&gt; sub-directory for the model. As a default I used the &lt;code&gt;chicago&lt;/code&gt; for training and I’m not entirely sure if that makes a difference.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;!/bin/bash
+#$ -pwd
+
+# bash fastTrainer.bash /images/ /outpath/ /testpath/
+##
+## An embarrassingly parallel script to train many style transfer networks on a HPC
+## Access to SLURM job scheduler and fast-style-transfer is required to run this program.
+## The three mandatory pathways must be specified in the indicated order.
+
+IMG=$(readlink -f &amp;quot;${1%/}&amp;quot;)     # path_to_train_images
+OUT_DIR=$(readlink -f &amp;quot;${2%/}&amp;quot;)  # path_to_checkpoints
+TEST=$(readlink -f &amp;quot;${3%/}&amp;quot;)  # path_to_tests
+
+mkdir -p ${OUT_DIR}/jobs
+
+JID=0   # job ID for SLURM job name
+
+for f in ${IMG}/*; do
+
+        let JID=(JID+1)
+
+  cat &amp;gt; ${OUT_DIR}/jobs/style_${JID}.bash &amp;lt;&amp;lt; EOT # write job information for each job
+#!/bin/bash
+#SBATCH --gres=gpu:1        # request GPU
+#SBATCH --cpus-per-task=2   # maximum CPU cores per GPU request
+#SBATCH --time=00:01:00     # request 8 hours of walltime
+#SBATCH --job-name=&amp;quot;fst_${JID}&amp;quot;
+#SBATCH --output=${OUT_DIR}/jobs/%N-%j.out  # %N for node name, %j for jobID
+
+### JOB SCRIPT BELLOW ###
+
+# Load Modules
+module load python/2.7.14
+module load scipy-stack
+source tensorflow/bin/activate
+
+mkdir ${OUT_DIR}/${JID}
+mkdir ${TEST}/${JID}
+
+python style.py --style $f \
+  --checkpoint-dir ${OUT_DIR}/${JID} \
+  --test examples/content/chicago.jpg \
+  --test-dir ${OUT_DIR}/${JID} \
+  --content-weight 1.5e1 \
+  --checkpoint-iterations 1000 \
+  --batch-size 20
+
+EOT
+  chmod 754 $(readlink -f &amp;quot;${OUT_DIR}&amp;quot;)/jobs/style_${JID}.bash
+  sbatch $(readlink -f &amp;quot;${OUT_DIR}&amp;quot;)/jobs/style_${JID}.bash
+done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-i-learned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I learned&lt;/h2&gt;
+&lt;p&gt;Now &lt;a href=&#34;https://www.technologyreview.com/s/612913/a-philosopher-argues-that-an-ai-can-never-be-an-artist/&#34;&gt;Sean Dorrance Kelly&lt;/a&gt; might argue I’m using the machines “creativity” as a subsititute for my own but I would disagree since there was a fair amount of creativity in selecting images to train models on and the editing itself. That being said an &lt;a href=&#34;https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx&#34;&gt;AI generated work of art recently sold for $432,500 at Christie’s&lt;/a&gt; (the first auction house to offer a piece of art created by an algorithm).&lt;/p&gt;
+&lt;p&gt;Besides the opportunity to exercise my right-brain, it was a good chance to gain some experience with tensorflow and python. This project was also illuminating because it made the hidden layers of networks more comprehensible by literally allowing me to &lt;em&gt;see&lt;/em&gt; how neural networks are performing!&lt;/p&gt;
+&lt;p&gt;I think the field of &lt;strong&gt;Feature visualization&lt;/strong&gt; is exciting because it allows to peer behind the curtain and see how networks learn to classify images accurately. Take for example the &lt;a href=&#34;https://distill.pub/2019/activation-atlas/?utm_campaign=Data_Elixir&amp;amp;utm_medium=email&amp;amp;utm_source=Data_Elixir_224&#34;&gt;Activation atlas&lt;/a&gt; which reveals visual abstractions within a model. It gives a global view of a dataset by showing feature visualization of averaged activation values from a neural network.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;atlas.png&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As an analogy, while the 26 letters in the alphabet provide a basis for English, seeing how letters are commonly combined to make words gives far more insight into the concepts that can be expressed than the letters alone. Similarly, activation atlases give us a bigger picture view by showing common combinations of neurons.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In a perfect world the artist/user should have control over the decisions made by the algorithm. For example, to specify spatially varying styles to use, so that different rendering styles are used in different parts of the image, or to specify positions of individuial strokes. However, training these models is still too slow to be useful in an interactive application.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow CNN for Fast Style Transfer</title>
       <link>/post/faststyletransfer/</link>
       <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -26,31 +121,32 @@
 
 &lt;p&gt;&lt;img src=&#34;bigYouth.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Non-photorealistic rendering (&lt;a href=&#34;https://books.google.ca/books?id=YjXlTPFYGEYC&amp;amp;redir_esc=y&#34; target=&#34;_blank&#34;&gt;NPR&lt;/a&gt;) is a combination of computer graphics and computer vision that produces renderings in various artistic, expressive or stylized ways such as painting and drawing. NPR can be done using a number of machine learning methods, most commonly &lt;a href=&#34;https://vimeo.com/302584040&#34; target=&#34;_blank&#34;&gt;General Adverserial Networks&lt;/a&gt; or &lt;a href=&#34;https://www.youtube.com/watch?v=UFffxcCQMPQ&#34; target=&#34;_blank&#34;&gt;Convolution Neural Networks&lt;/a&gt;(CNN).&lt;/p&gt;
+&lt;p&gt;Non-photorealistic rendering (&lt;a href=&#34;https://books.google.ca/books?id=YjXlTPFYGEYC&amp;amp;redir_esc=y&#34; target=&#34;_blank&#34;&gt;NPR&lt;/a&gt;) is a combination of computer graphics and computer vision that produces renderings in various artistic, expressive or stylized ways. A new art form that couldn&amp;rsquo;t have existed without computers. Researchers have proposed many algorithms and &lt;em&gt;styles&lt;/em&gt; such as painting, pen-and-ink drawing, tile mosaics, stippling, streamline visualization, and tensor field visualization. Although the details vary, the goal is to make an image look like some other image. Two main approaches to designing these algorithms exist. &lt;em&gt;Greedy algorithms&lt;/em&gt; greedily place strokes to match the target goas. &lt;em&gt;Optimization algorithms&lt;/em&gt; iteratively place and then adjust stroke positions to minimize the objective function. NPR can be done using a number of machine learning methods, most commonly &lt;a href=&#34;https://vimeo.com/302584040&#34; target=&#34;_blank&#34;&gt;General Adverserial Networks&lt;/a&gt; or &lt;a href=&#34;https://www.youtube.com/watch?v=UFffxcCQMPQ&#34; target=&#34;_blank&#34;&gt;Convolution Neural Networks&lt;/a&gt;(CNN).
+such as painting and drawing.&lt;/p&gt;
 
-&lt;p&gt;I wanted to use &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; on a video of my friends and I backcountry snowboarding in Alberta.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;example.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I wanted to use &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt;, an &lt;em&gt;optimization technique&lt;/em&gt;, on a video of my friends and I backcountry skiing and snowboarding in The Rocky Mountains of Alberta.&lt;/p&gt;
 
 &lt;p&gt;Fast-style-transfer is a TensorFlow CNN model based on a combination of &lt;a href=&#34;https://arxiv.org/abs/1508.06576&#34; target=&#34;_blank&#34;&gt;Gatys&amp;rsquo; A Neural Algorithm of Artistic Style&lt;/a&gt;, Johnson&amp;rsquo;s &lt;a href=&#34;http://cs.stanford.edu/people/jcjohns/eccv16/&#34; target=&#34;_blank&#34;&gt;Perceptual Losses for Real-Time Style Transfer and Super-Resolution&lt;/a&gt;, and Ulyanov&amp;rsquo;s &lt;a href=&#34;https://arxiv.org/abs/1607.08022&#34; target=&#34;_blank&#34;&gt;Instance Normalization&lt;/a&gt;. I&amp;rsquo;ll skip the details here because it&amp;rsquo;s been been far better described in the publications above (or in layman&amp;rsquo;s terms &lt;a href=&#34;https://towardsdatascience.com/a-journey-into-convolutional-neural-network-visualization-1abc71605209&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;), suffice it to say it allows you to compose images/videos in the style of another image. Besides being fun it&amp;rsquo;s a nice visual way of showing the capabilities and internal representations of neural networks.&lt;/p&gt;
 
-&lt;p&gt;The repo provides 6 trained models; however, these were all based around famous paintings and what&amp;rsquo;s the fun in doing what others have alread done? I wanted to see what kind of effect would be produced by training style transfer networks around interesting shapes and patterns!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fast-style-transfer&lt;/code&gt; repo comes with 6 trained models on famous paintings, allowing you to quikcly style your images (or videos) like them. But what&amp;rsquo;s the fun in doing what others have alread done?&lt;/p&gt;
 
-&lt;p&gt;I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34; target=&#34;_blank&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I then constructed a script to train 50 models simultaneously on a HPC (using a &lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;). After training the networks I selected the 20 best looking ones to apply to the video (the editing was actually the biggest pain of this whole process).&lt;/p&gt;
+&lt;p&gt;I wanted to see what kind of effect would be produced by training style transfer networks around interesting shapes and patterns! I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34; target=&#34;_blank&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;collage.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.technologyreview.com/s/612913/a-philosopher-argues-that-an-ai-can-never-be-an-artist/&#34; target=&#34;_blank&#34;&gt;Sean Dorrance Kelly&lt;/a&gt; might argue I&amp;rsquo;m using the machines &amp;ldquo;creativity&amp;rdquo; as a subsititute for my own but it was a fun opportunity for me to play around with tensorflow and python.&lt;/p&gt;
+&lt;p&gt;I then constructed a script to train 50 models simultaneously on a HPC (using a &lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;; a top-of-the-line $10,000 GPU - &lt;em&gt;spared no expense&lt;/em&gt;). After &lt;em&gt;many many&lt;/em&gt; hours of training, across hundreds of cores, I selected the 20 best (&lt;em&gt;i.e.&lt;/em&gt; most aesthetically pleasing) models to apply to the video.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;mountains.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;](&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; target=&#34;_blank&#34;&gt;https://youtu.be/TuN4456PK-c&lt;/a&gt;).&lt;/p&gt;
 
 &lt;h3 id=&#34;technical-notes&#34;&gt;Technical Notes:&lt;/h3&gt;
 
 &lt;p&gt;When training the models I noticed that the checkpoint files were being corrupted. I found a &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer/issues/78#issuecomment-302307215&#34; target=&#34;_blank&#34;&gt;closed issue on the repo: #78&lt;/a&gt; stating that Tensorflow&amp;rsquo;s Saver class was updated so you&amp;rsquo;ll need to change line 136 in &lt;code&gt;/src/optimize.py&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;The script for training all of the networks on an HPC with a SLURM job scheduler is below, and can be run with &lt;code&gt;bash fastTrainer.bash &amp;lt;image_path&amp;gt; &amp;lt;out_path&amp;gt; &amp;lt;test_path&amp;gt;&lt;/code&gt;. Simply clone &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; and create three folders inside. Create a sub-directory where you&amp;rsquo;ll put all the &lt;strong&gt;style images&lt;/strong&gt; you want to train, another sub-directory for the &lt;strong&gt;output&lt;/strong&gt; (&lt;code&gt;.ckpt&lt;/code&gt; files used to style your &lt;code&gt;.mp4&lt;/code&gt; videos), and a &lt;strong&gt;test&lt;/strong&gt; sub-directory for the model. As a default I used the &lt;code&gt;chicago&lt;/code&gt; for training and I&amp;rsquo;m not entirely sure if that makes a difference. I didn&amp;rsquo;t spend much&lt;/p&gt;
+&lt;p&gt;The script for training all of the networks on an HPC with a SLURM job scheduler is below, and can be run with &lt;code&gt;bash fastTrainer.bash &amp;lt;image_path&amp;gt; &amp;lt;out_path&amp;gt; &amp;lt;test_path&amp;gt;&lt;/code&gt;. Simply clone &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; and create three folders inside. Create a sub-directory where you&amp;rsquo;ll put all the &lt;strong&gt;style images&lt;/strong&gt; you want to train, another sub-directory for the &lt;strong&gt;output&lt;/strong&gt; (&lt;code&gt;.ckpt&lt;/code&gt; files used to style your &lt;code&gt;.mp4&lt;/code&gt; videos), and a &lt;strong&gt;test&lt;/strong&gt; sub-directory for the model. As a default I used the &lt;code&gt;chicago&lt;/code&gt; for training and I&amp;rsquo;m not entirely sure if that makes a difference.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;!/bin/bash
 #$ -pwd
@@ -76,8 +172,8 @@ for f in ${IMG}/*; do
   cat &amp;gt; ${OUT_DIR}/jobs/style_${JID}.bash &amp;lt;&amp;lt; EOT # write job information for each job
 #!/bin/bash
 #SBATCH --gres=gpu:1        # request GPU
-#SBATCH --cpus-per-task=16   # maximum CPU cores per GPU request
-#SBATCH --time=08:00:00     # request 8 hours of walltime
+#SBATCH --cpus-per-task=2   # maximum CPU cores per GPU request
+#SBATCH --time=00:01:00     # request 8 hours of walltime
 #SBATCH --job-name=&amp;quot;fst_${JID}&amp;quot;
 #SBATCH --output=${OUT_DIR}/jobs/%N-%j.out  # %N for node name, %j for jobID
 
@@ -105,6 +201,22 @@ EOT
 done
 
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;what-i-learned&#34;&gt;What I learned&lt;/h2&gt;
+
+&lt;p&gt;Now &lt;a href=&#34;https://www.technologyreview.com/s/612913/a-philosopher-argues-that-an-ai-can-never-be-an-artist/&#34; target=&#34;_blank&#34;&gt;Sean Dorrance Kelly&lt;/a&gt; might argue I&amp;rsquo;m using the machines &amp;ldquo;creativity&amp;rdquo; as a subsititute for my own but I would disagree since there was a fair amount of creativity in selecting images to train models on and the editing itself. That being said an &lt;a href=&#34;https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx&#34; target=&#34;_blank&#34;&gt;AI generated work of art recently sold for $432,500 at Christie&amp;rsquo;s&lt;/a&gt; (the first auction house to offer a piece of art created by an algorithm).&lt;/p&gt;
+
+&lt;p&gt;Besides the opportunity to exercise my right-brain, it was a good chance to gain some experience with tensorflow and python. This project was also illuminating because it made the hidden layers of networks more comprehensible by literally allowing me to &lt;em&gt;see&lt;/em&gt; how neural networks are performing!&lt;/p&gt;
+
+&lt;p&gt;I think the field of &lt;strong&gt;Feature visualization&lt;/strong&gt; is exciting because it allows to peer behind the curtain and see how networks learn to classify images accurately. Take for example the &lt;a href=&#34;https://distill.pub/2019/activation-atlas/?utm_campaign=Data_Elixir&amp;amp;utm_medium=email&amp;amp;utm_source=Data_Elixir_224&#34; target=&#34;_blank&#34;&gt;Activation atlas&lt;/a&gt; which reveals visual abstractions within a model. It gives a global view of a dataset by showing feature visualization of averaged activation values from a neural network.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;atlas.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;As an analogy, while the 26 letters in the alphabet provide a basis for English, seeing how letters are commonly combined to make words gives far more insight into the concepts that can be expressed than the letters alone. Similarly, activation atlases give us a bigger picture view by showing common combinations of neurons.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In a perfect world the artist/user should have control over the decisions made by the algorithm. For example, to specify spatially varying styles to use, so that different rendering styles are used in different parts of the image, or to specify positions of individuial strokes. However, training these models is still too slow to be useful in an interactive application.&lt;/p&gt;
 </description>
     </item>
     
@@ -399,15 +511,6 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Recreating data visualizations from the book Knowledge is Beautiful</title>
-      <link>/project/knowledge-is-beautiful/</link>
-      <pubDate>Wed, 06 Jun 2018 00:00:00 -0400</pubDate>
-      
-      <guid>/project/knowledge-is-beautiful/</guid>
-      <description></description>
     </item>
     
   </channel>
