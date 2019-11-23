@@ -7,22 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 00:00:00 -0500</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Thoughts on building Shiny applications, Software Release Cycles and Rayshader</title>
-      <link>/project/hinuhinu/hinuhinu/</link>
-      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/hinuhinu/hinuhinu/</guid>
-      <description>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}Inspiration for the Shiny ApplicationBuilding the applicationFuture Directions/Things Learned/General MusingsBrief thought on the future of Rayshader
-CLICK HERE TO GO TO THE SHINY APPLICATION!!!
-
-Inspiration for the Shiny ApplicationYou can read as much theory as you want but the best way to learn something is to pull-up your sleeves and get your hands dirty by implementing a project.</description>
-    </item>
     
     <item>
       <title>Web Scraping Google Sheets with RSelenium</title>
