@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>some category on Matthew J. Oldach</title>
+    <link>/categories/some-category/</link>
+    <description>Recent content in some category on Matthew J. Oldach</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    
+	<atom:link href="/categories/some-category/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>some title</title>
+      <link>/project/shinyapp/some-slug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/shinyapp/some-slug/</guid>
+      <description>0.1 Inspiration for the Shiny Application0.2 Building the applicationCLICK HERE TO GO TO THE SHINY APPLICATION!!!
+0.1 Inspiration for the Shiny ApplicationYou can read as much theory as you want but the best way to learn something is to pull-up your sleeves and get your hands dirty by implementing a project.
+I’ve been wanting to develop a Shiny application for sometime but the opportunity has never arisen.</description>
+    </item>
+    
+  </channel>
+</rss>

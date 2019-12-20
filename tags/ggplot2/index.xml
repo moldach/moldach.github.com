@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Oct 2018 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Shiny Dev, Software Release Cycles, Rayshader</title>
-      <link>/project/shiny-dev-software-release-cycles-rayshader/</link>
-      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/shiny-dev-software-release-cycles-rayshader/</guid>
-      <description>CLICK HERE TO GO TO THE SHINY APPLICATION!!!
-Inspiration for the Shiny ApplicationYou can read as much theory as you want but the best way to learn something is to pull-up your sleeves and get your hands dirty by implementing a project.
-I’ve been wanting to develop a Shiny application for sometime but the opportunity never arose. In my current role as a R developer, I provide client-side implementations via Java with the help of the RServe 📦 - so Shiny isn’t needed.</description>
-    </item>
     
     <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
