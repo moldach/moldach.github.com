@@ -14,10 +14,10 @@
     
     <item>
       <title>Shiny Dev and Software Release Cycles and Rayshader, Oh My!</title>
-      <link>/project/shinyapp/</link>
+      <link>/project/rayshader/</link>
       <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/project/shinyapp/</guid>
+      <guid>/project/rayshader/</guid>
       <description>CLICK HERE TO GO TO THE SHINY APPLICATION!!!
 Inspiration for the Shiny ApplicationYou can read as much theory as you want but the best way to learn something is to pull-up your sleeves and get your hands dirty by implementing a project.
 I’ve been wanting to develop a Shiny application for sometime but the opportunity has never arisen. In my current role as a R developer, I provide client-side implementations via Java with the help of the RServe 📦 - so Shiny isn’t needed.</description>
