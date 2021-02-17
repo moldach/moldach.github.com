@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Matthew J. Oldach</title>
+    <title>Homes on Matthew J. Oldach, M.Sc.</title>
     <link>/home/</link>
-    <description>Recent content in Homes on Matthew J. Oldach</description>
+    <description>Recent content in Homes on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0600</lastBuildDate>
     
 	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>/home/hero_carousel/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 -0600</pubDate>
       
       <guid>/home/hero_carousel/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title></title>
       <link>/home/hero/</link>
-      <pubDate>Sun, 15 Oct 2017 00:00:00 -0400</pubDate>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 -0600</pubDate>
       
       <guid>/home/hero/</guid>
       <description></description>
@@ -33,17 +33,17 @@
     <item>
       <title></title>
       <link>/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 -0700</pubDate>
       
       <guid>/home/about/</guid>
-      <description>Biography I&amp;rsquo;m a Bioinformatician and Data Scientist who is passionate about Statistics and Genomics research. I use Machine Learning, Data Science and Visual Analytics to reveal critical insights. Curently I&amp;rsquo;m a R developer at McGill in the Xia laboratory where we develop easy-to-use bioformatics tools for various &amp;lsquo;omics data analysis, interpretation and integration.
-On the side, I offer consulting services and am currently carring out some Marketing Consulting for InceptionPhotoBooth; helping their company with Sale Optimisation Analysis, Expenditure Optimisation Analysis, Product Pricing Analysis, Automated Reporting and Digital Marketing ROI Calculations.</description>
+      <description>Biography I&amp;rsquo;m a Data Scientist who is passionate about Statistics and Genomics research. I use Machine Learning, Data Science and Visual Analytics to reveal critical insights.
+Currently, I&amp;rsquo;m a Bioinformatician in Dr. Maja Tarailo-Graovac&amp;rsquo;s laboratory, at the University of Calgary, within the Department/Faculty of Biochemistry &amp;amp; Molecular Biology, Cumming School of Medicine. In this capacity, I explore human and model organism (C. elegans) using whole-genome sequencing to unravel the genomics of rare human diseases.</description>
     </item>
     
     <item>
       <title>Skills</title>
       <link>/home/skills/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 -0600</pubDate>
       
       <guid>/home/skills/</guid>
       <description></description>
@@ -61,7 +61,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Selected Publications</title>
       <link>/home/publications_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/publications_selected/</guid>
       <description></description>
@@ -70,7 +70,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Recent Publications</title>
       <link>/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/publications/</guid>
       <description></description>
@@ -79,7 +79,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Selected Talks</title>
       <link>/home/talks_selected/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/talks_selected/</guid>
       <description></description>
@@ -88,7 +88,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/talks/</guid>
       <description></description>
@@ -97,7 +97,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Projects</title>
       <link>/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/projects/</guid>
       <description></description>
@@ -106,7 +106,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Recent Posts</title>
       <link>/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/posts/</guid>
       <description></description>
@@ -115,7 +115,7 @@ On the side, I offer consulting services and am currently carring out some Marke
     <item>
       <title>Teaching</title>
       <link>/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/teaching/</guid>
       <description>This is an example of using the custom widget to create your own homepage section.
@@ -126,7 +126,7 @@ I am a teaching instructor for the following courses at University X:
     <item>
       <title>Tags</title>
       <link>/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 -0600</pubDate>
       
       <guid>/home/tags/</guid>
       <description></description>
@@ -135,7 +135,7 @@ I am a teaching instructor for the following courses at University X:
     <item>
       <title>Search</title>
       <link>/home/search/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 -0600</pubDate>
       
       <guid>/home/search/</guid>
       <description></description>
@@ -144,7 +144,7 @@ I am a teaching instructor for the following courses at University X:
     <item>
       <title>Contact</title>
       <link>/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
       
       <guid>/home/contact/</guid>
       <description></description>

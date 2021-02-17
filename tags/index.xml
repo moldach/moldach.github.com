@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Matthew J. Oldach</title>
+    <title>Tags on Matthew J. Oldach, M.Sc.</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Matthew J. Oldach</description>
+    <description>Recent content in Tags on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 07 May 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 07 May 2018 00:00:00 -0600</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>API</title>
       <link>/tags/api/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 07 May 2018 00:00:00 -0600</pubDate>
       
       <guid>/tags/api/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Demo</title>
       <link>/tags/demo/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 -0500</pubDate>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 -0700</pubDate>
       
       <guid>/tags/demo/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Linux</title>
       <link>/tags/linux/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/tags/linux/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>MATLAB</title>
       <link>/tags/matlab/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/tags/matlab/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Selenium</title>
       <link>/tags/selenium/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/tags/selenium/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Web Scraping</title>
       <link>/tags/web-scraping/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/tags/web-scraping/</guid>
       <description></description>
@@ -78,7 +78,7 @@
     <item>
       <title>Web scraping</title>
       <link>/tags/web-scraping/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 07 May 2018 00:00:00 -0600</pubDate>
       
       <guid>/tags/web-scraping/</guid>
       <description></description>
@@ -87,7 +87,7 @@
     <item>
       <title>clustering</title>
       <link>/tags/clustering/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/tags/clustering/</guid>
       <description></description>
@@ -96,7 +96,7 @@
     <item>
       <title>dataviz</title>
       <link>/tags/dataviz/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/tags/dataviz/</guid>
       <description></description>
@@ -105,7 +105,7 @@
     <item>
       <title>ggplot2</title>
       <link>/tags/ggplot2/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/tags/ggplot2/</guid>
       <description></description>
@@ -114,7 +114,7 @@
     <item>
       <title>unsupervised learning</title>
       <link>/tags/unsupervised-learning/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/tags/unsupervised-learning/</guid>
       <description></description>

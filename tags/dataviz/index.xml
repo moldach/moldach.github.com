@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>dataviz on Matthew J. Oldach</title>
+    <title>dataviz on Matthew J. Oldach, M.Sc.</title>
     <link>/tags/dataviz/</link>
-    <description>Recent content in dataviz on Matthew J. Oldach</description>
+    <description>Recent content in dataviz on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 30 Jan 2019 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jan 2019 00:00:00 -0700</lastBuildDate>
     
 	<atom:link href="/tags/dataviz/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>10 Tips for Choosing the Optimal Number of Clusters</title>
       <link>/project/optimal-clustering/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/project/optimal-clustering/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>How to Highlight 3D Brain Regions</title>
       <link>/project/3d-brain/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/3d-brain/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>Transcriptome Assembly and Annotation</title>
       <link>/project/assembly/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/assembly/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>vapoRwave ggplot2 themes &amp; palettes</title>
       <link>/project/vaporwave/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/vaporwave/</guid>
       <description></description>
@@ -51,7 +51,7 @@
     <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
       <link>/project/reverse-axis/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/reverse-axis/</guid>
       <description></description>
@@ -60,7 +60,7 @@
     <item>
       <title>Analyzing 12 years of the Free Ride World Tour</title>
       <link>/project/free-ride-world-tour/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
+      <pubDate>Mon, 07 May 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/free-ride-world-tour/</guid>
       <description></description>
@@ -69,7 +69,7 @@
     <item>
       <title>Gene set enrichment in R</title>
       <link>/project/gsea/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 -0500</pubDate>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 -0700</pubDate>
       
       <guid>/project/gsea/</guid>
       <description></description>

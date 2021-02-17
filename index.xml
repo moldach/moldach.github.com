@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matthew J. Oldach on Matthew J. Oldach</title>
+    <title>Matthew J. Oldach, M.Sc. on Matthew J. Oldach, M.Sc.</title>
     <link>/</link>
-    <description>Recent content in Matthew J. Oldach on Matthew J. Oldach</description>
+    <description>Recent content in Matthew J. Oldach, M.Sc. on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0600</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -425,7 +425,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>Web Scraping Google Sheets with RSelenium</title>
       <link>/project/rselenium/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/project/rselenium/</guid>
       <description></description>
@@ -434,7 +434,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>10 Tips for Choosing the Optimal Number of Clusters</title>
       <link>/project/optimal-clustering/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
       
       <guid>/project/optimal-clustering/</guid>
       <description></description>
@@ -443,7 +443,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>The Gamification of Fitbit: How An API Provided The Next Level of tRaining</title>
       <link>/project/fitbit-project/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 -0500</pubDate>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 -0700</pubDate>
       
       <guid>/project/fitbit-project/</guid>
       <description></description>
@@ -452,7 +452,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>How to Highlight 3D Brain Regions</title>
       <link>/project/3d-brain/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/3d-brain/</guid>
       <description></description>
@@ -461,7 +461,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>Transcriptome Assembly and Annotation</title>
       <link>/project/assembly/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/assembly/</guid>
       <description></description>
@@ -470,7 +470,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>vapoRwave ggplot2 themes &amp; palettes</title>
       <link>/project/vaporwave/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/vaporwave/</guid>
       <description></description>
@@ -479,7 +479,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>How to Choose the Best Open Source Software</title>
       <link>/project/software-solutions/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/software-solutions/</guid>
       <description></description>
@@ -488,7 +488,7 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
       <link>/project/reverse-axis/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/reverse-axis/</guid>
       <description></description>
@@ -497,20 +497,19 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
     <item>
       <title>The Gold Standard for Data Science Project Management</title>
       <link>/project/project-management/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/project-management/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      <title>Recreating data visualizations from the book Knowledge is Beautiful</title>
+      <link>/project/knowledge-is-beautiful/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 -0600</pubDate>
       
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
+      <guid>/project/knowledge-is-beautiful/</guid>
+      <description></description>
     </item>
     
   </channel>

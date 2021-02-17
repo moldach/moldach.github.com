@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Demo on Matthew J. Oldach</title>
+    <title>Demo on Matthew J. Oldach, M.Sc.</title>
     <link>/tags/demo/</link>
-    <description>Recent content in Demo on Matthew J. Oldach</description>
+    <description>Recent content in Demo on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 -0700</lastBuildDate>
     
 	<atom:link href="/tags/demo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>The Gamification of Fitbit: How An API Provided The Next Level of tRaining</title>
       <link>/project/fitbit-project/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 -0500</pubDate>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 -0700</pubDate>
       
       <guid>/project/fitbit-project/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Recreating data visualizations from the book Knowledge is Beautiful</title>
       <link>/project/knowledge-is-beautiful/</link>
-      <pubDate>Wed, 06 Jun 2018 00:00:00 -0400</pubDate>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/knowledge-is-beautiful/</guid>
       <description></description>

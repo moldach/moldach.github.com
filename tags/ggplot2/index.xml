@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ggplot2 on Matthew J. Oldach</title>
+    <title>ggplot2 on Matthew J. Oldach, M.Sc.</title>
     <link>/tags/ggplot2/</link>
-    <description>Recent content in ggplot2 on Matthew J. Oldach</description>
+    <description>Recent content in ggplot2 on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 06 Oct 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 06 Oct 2018 00:00:00 -0600</lastBuildDate>
     
 	<atom:link href="/tags/ggplot2/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
       <link>/project/reverse-axis/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/reverse-axis/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Gene set enrichment in R</title>
       <link>/project/gsea/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 -0500</pubDate>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 -0700</pubDate>
       
       <guid>/project/gsea/</guid>
       <description></description>

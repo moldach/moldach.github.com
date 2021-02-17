@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Matthew J. Oldach</title>
+    <title>Linux on Matthew J. Oldach, M.Sc.</title>
     <link>/tags/linux/</link>
-    <description>Recent content in Linux on Matthew J. Oldach</description>
+    <description>Recent content in Linux on Matthew J. Oldach, M.Sc.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 06 Oct 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 06 Oct 2018 00:00:00 -0600</lastBuildDate>
     
 	<atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>How to Choose the Best Open Source Software</title>
       <link>/project/software-solutions/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/software-solutions/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>The Gold Standard for Data Science Project Management</title>
       <link>/project/project-management/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/project-management/</guid>
       <description></description>
