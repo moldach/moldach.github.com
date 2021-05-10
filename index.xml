@@ -11,12 +11,25 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Shiny-filteRs</title>
+      <link>/project/shiny-filters/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/project/shiny-filters/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;includeHTML(&amp;quot;index.html&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>UMAP Supervised Embeddings (Python-&gt;R)</title>
       <link>/project/supervised-umap/</link>
       <pubDate>Tue, 09 Mar 2021 00:00:00 -0700</pubDate>
       
       <guid>/project/supervised-umap/</guid>
-      <description></description>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;includeHTML(&amp;quot;index.html&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
@@ -500,15 +513,6 @@ right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&a
       <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/reverse-axis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The Gold Standard for Data Science Project Management</title>
-      <link>/project/project-management/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/project-management/</guid>
       <description></description>
     </item>
     
