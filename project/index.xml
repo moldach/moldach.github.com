@@ -128,7 +128,11 @@ Inspiration for the Shiny ApplicationYou can read as much theory as you want b
       <pubDate>Mon, 07 May 2018 00:00:00 -0600</pubDate>
       
       <guid>/project/free-ride-world-tour/</guid>
-      <description></description>
+      <description>&amp;lt;!DOCTYPE html&amp;gt;
+
+
+index.utf8
+       code{white-space: pre-wrap;} span.smallcaps{font-variant: small-caps;} span.underline{text-decoration: underline;} div.column{display: inline-block; vertical-align: top; width: 50%;} div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;} ul.task-list{list-style: none;}  code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
     <item>
