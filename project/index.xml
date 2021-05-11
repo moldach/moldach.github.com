@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 10 May 2021 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 -0700</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Shiny-filteRs</title>
-      <link>/project/shiny-filters/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 -0600</pubDate>
-      
-      <guid>/project/shiny-filters/</guid>
-      <description>includeHTML(&amp;quot;index.html&amp;quot;)  </description>
-    </item>
     
     <item>
       <title>UMAP Supervised Embeddings (Python-&gt;R)</title>
@@ -147,6 +138,15 @@ Inspiration for the Shiny ApplicationYou can read as much theory as you want b
       
       <guid>/project/gsea/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/project/shiny-filters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/project/shiny-filters/</guid>
+      <description>Shiny-filteRsh1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}pre:not([class]) { background-color: white }code{white-space: pre-wrap;}span.smallcaps{font-variant: small-caps;}span.underline{text-decoration: underline;}div.column{display: inline-block; vertical-align: top; width: 50%;}div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}ul.task-list{list-style: none;}code{white-space: pre;}if (window.hljs) {hljs.configure({languages: []});hljs.</description>
     </item>
     
   </channel>
