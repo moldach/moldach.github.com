@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web scraping | Academic</title>
+    <link>https://example.com/tag/web-scraping/</link>
+      <atom:link href="https://example.com/tag/web-scraping/index.xml" rel="self" type="application/rss+xml" />
+    <description>Web scraping</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 31 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Web scraping</title>
+      <link>https://example.com/tag/web-scraping/</link>
+    </image>
+    
+    <item>
+      <title>Web Scraping Google Sheets with RSelenium</title>
+      <link>https://example.com/project/rselenium/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/rselenium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analyzing 12 years of the Free Ride World Tour</title>
+      <link>https://example.com/project/free-ride-world-tour/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/free-ride-world-tour/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

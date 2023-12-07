@@ -1,0 +1,229 @@
+---
+title: "My Career Path In Bioinformatics and Computational Biology"
+author: "Matthew J. Oldach, M.Sc."
+date: "2019-09-27"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+    css: xaringan-themer.css
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.retina = 3, warning = F, message = F)
+library(ggplot2)
+```
+
+class: middle, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+
+
+## Making HTTP requests to the Fitbit API
+
+<img src="intro.png"/ height=420>
+
+https://moldach.github.io/fitbit-project/
+
+---
+class: center, middle
+
+## 3D Brain ROIs BrainNet/Mango
+
+<img src="hippocampus.png"/ height=400>
+
+https://bit.ly/2EzijI4
+
+---
+class: center, middle
+## 3D Brain ROIs in R
+
+```{r, eval=FALSE, echo = FALSE, results = TRUE, error = F, message=F}
+if (!requireNamespace("widgetframe")) {
+  install.packages("widgetframe")
+} else {
+  library(widgetframe)
+}
+if (!requireNamespace("rgl")) {
+  install.packages("rgl")
+} else {
+  library(rgl)
+}
+if (!requireNamespace("misc3d")) {
+  install.packages("misc3d")
+} else {
+  library(misc3d)
+}
+if (!requireNamespace("neurobase")) {
+  install.packages("neurobase")
+} else {
+  library(neurobase)
+}
+if (!requireNamespace("aal")) {
+  devtools::install_github("muschellij2/aal")
+} else {
+  library(aal)
+}
+if (!requireNamespace("MNITemplate")) {
+  devtools::install_github("jfortin1/MNITemplate")
+} else {
+  library(MNITemplate)
+}
+
+img = aal_image()
+template = readMNI(res = "2mm")
+cut <- 4500
+dtemp <- dim(template)
+
+# All of the sections you can label
+labs = aal_get_labels()
+
+# Pick the region of the brain you would like to highlight - in this case the hippocamus_L
+hippocampus = labs$index[grep("Hippocampus_L", labs$name)]
+
+mask = remake_img(vec = img %in% hippocampus, img = img)
+
+### this would be the ``activation'' or surface you want to render
+contour3d(template, x=1:dtemp[1], y=1:dtemp[2], z=1:dtemp[3], level = cut, alpha = 0.1, draw = TRUE)
+contour3d(mask, level = c(0.5), alpha = c(0.5), add = TRUE, color=c("red") )
+### add text
+text3d(x=dtemp[1]/2, y=dtemp[2]/2, z = dtemp[3]*0.98, text="Top")
+text3d(x=-0.98, y=dtemp[2]/2, z = dtemp[3]/2, text="Right")
+l <- rglwidget()
+frameWidget(l)
+# htmlwidgets::saveWidget(frameableWidget(l), "3D-Brain.html")
+# htmltools::includeHTML("3D-Brain.html")
+```
+
+---
+class: center, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+## Reproducibilty and high-performance computing
+
+<img src ="drake1.png">
+
+```{r, eval = FALSE}
+make(plan, jobs = 16, parallelism = "clustering")
+```
+
+
+---
+class: center, middle
+
+## Improving Performance
+- GNU Parallel
+- `PLINK1.9` versus `PLINK2.0`
+- C++ (`Rcpp`) > `R` for-loops
+- Apache Spark
+---
+class: center, middle
+
+![](images/GNU.png)
+
+---
+
+class: center, middle
+
+## GNU parallel on large batches of files
+
+### BLAT
+![](images/blat_example.png)
+### SAMTOOLS
+
+![](images/samtools.png)
+
+---
+class: center, middle
+
+## GNU parallel on serial tasks and pipelines
+
+<img src="images/benchmark_GNU-parallel_UKBiobank.png" width=600 height=480>
+
+---
+class: center, middle
+
+<img src="images/bzip-GNU-parallel.png" width=580 height=360>
+
+<img src="images/bzip_example.PNG" width=280 height=60>
+
+---
+class: center, middle
+
+## Submitting via job scheduler
+![](images/parallel_script_batch.PNG)
+
+![](images/parallel_script.PNG)
+
+
+---
+class: center, middle
+
+## R for-loops
+![](images/forLoop.PNG)
+---
+class: center, middle
+
+### Transpile to faster language, like C++ (Rcpp)
+.pull-left[
+![](images/c++.PNG)
+]
+
+.pull-right[
+![](images/c++2.PNG)
+]
+---
+class: center, middle, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+
+```{r dev = 'svg', dev.args = list(bg = "transparent"), echo=FALSE}
+invthm <- theme_bw() + 
+  theme(
+    panel.background = element_rect(fill = "transparent", colour = NA), 
+    plot.background = element_rect(fill = "transparent", colour = NA),
+    legend.background = element_rect(fill = "transparent", colour = NA),
+    legend.key = element_rect(fill = "transparent", colour = NA),
+    text = element_text(colour = "white"),
+    axis.text = element_text(colour = "white")
+  )
+```
+
+```{r, echo=F, message=F, error=F,warning=F}
+library(magrittr)
+library(tibble)
+library(dplyr)
+library(ggplot2)
+
+df <- tibble(size_in_gb = c(rep(0.171,2), rep(1.7,2), rep(15,2), rep(23,2), rep(32,2)), method = rep(c("for loop", "Rcpp"), 5), time_each_minutes = c(3.84, 0.32, 48.63, 2.89, 377, 23.96, 661.35, 40, 1007, 60))
+# Times were divided by repitions and 60 seconds to get time in minutes
+
+plot01 <- ggplot(data=df, aes(x=size_in_gb, y=time_each_minutes, group=method)) +
+  geom_line(aes(color=method)) +
+  geom_point(aes(color=method)) +
+  labs(x="Size of .gen file (Gb)", y = "Time (in minutes)") +
+  scale_color_manual(values=c("#999999", "#E69F00"))
+```
+
+```{r, dev = 'svg', dev.args = list(bg = "transparent")}
+plot01 + invthm
+```
+
+---
+class: center, middle
+## PLINK1.9 versus PLINK2.0
+
+<img src="images/plink-comparison.png" width=540 height=550>
+
+---
+class: center, middle, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+
+## Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan) which is powered by [**reactjs**](https://en.wikipedia.org/wiki/React_(JavaScript_library).
+
+Twitter: [**@MattOldach**](https://twitter.com/MattOldach)
+
+Website: [**moldach.github.io**](https://moldach.github.io/)

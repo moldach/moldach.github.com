@@ -1,0 +1,50 @@
+---
+title: "My Career Path In Bioinformatics and Computational Biology"
+author: "Matthew J. Oldach, M.Sc."
+date: "2019-09-27"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+    css: ["default", "custom.css"]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+---
+class: middle, center, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+
+<!-- include an image here, if you have a GitHub account use your profile pic! -->
+
+```{r photo2, echo = FALSE}
+knitr::include_graphics("figures/intro.PNG")
+```
+---
+class: middle, center, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+
+## Computer Vision
+
+<!-- include an image here, if you have a GitHub account use your profile pic! -->
+
+```{r photo, echo = FALSE}
+knitr::include_graphics("figures/sponge.mp4")
+```
+
+---
+class: middle, inverse
+background-image: url("http://www.pptbackgrounds.org/uploads/dark-blue-background-backgrounds-wallpapers.jpg")
+
+.left[
+![]()
+]
+
+.pull-right[
+![](figures/glass-sponge-01.tif)
+]

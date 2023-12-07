@@ -1,36 +1,185 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matthew J. Oldach, M.Sc. on Matthew J. Oldach, M.Sc.</title>
-    <link>/</link>
-    <description>Recent content in Matthew J. Oldach, M.Sc. on Matthew J. Oldach, M.Sc.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0600</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <title>Silicon Valley Chronicles | Academic</title>
+    <link>https://example.com/</link>
+      <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <description>Silicon Valley Chronicles</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 06 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Silicon Valley Chronicles</title>
+      <link>https://example.com/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>https://example.com/home/hero_carousel/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/hero_carousel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://example.com/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/hero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://example.com/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/about/</guid>
+      <description>&lt;h1 id=&#34;biography&#34;&gt;Biography&lt;/h1&gt;
+&lt;p&gt;I&amp;rsquo;m a Bioinformatician and Data Scientist who is passionate about Statistics and Genomics research. I use Machine Learning, Data Science and Visual Analytics to reveal critical insights. Curently I&amp;rsquo;m a &lt;code&gt;R&lt;/code&gt; developer at &lt;a href=&#34;https://www.mcgill.ca/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;McGill&lt;/a&gt; in the &lt;a href=&#34;http://www.xialab.ca/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Xia laboratory&lt;/a&gt; where we develop easy-to-use bioformatics tools for various &amp;lsquo;omics data analysis, interpretation and integration.&lt;/p&gt;
+&lt;p&gt;On the side, I offer consulting services and am currently carring out some Marketing Consulting for &lt;a href=&#34;https://www.inceptionphotobooth.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;InceptionPhotoBooth&lt;/a&gt;; helping their company with Sale Optimisation Analysis, Expenditure Optimisation Analysis, Product Pricing Analysis, Automated Reporting and Digital Marketing ROI Calculations.&lt;/p&gt;
+&lt;p&gt;Previously I was a biostatistican for the &lt;a href=&#34;https://douglas.research.mcgill.ca/michael-meaney&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Meaney laboratory&lt;/a&gt; at the &lt;a href=&#34;http://www.douglas.qc.ca/?locale=en&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Douglas Mental Health University Institute&lt;/a&gt;, &lt;a href=&#34;https://www.mcgill.ca/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;McGill&lt;/a&gt; and the primary data scientist in the Kubicek lab at the &lt;a href=&#34;https://cemm.at/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Research Center for Molecular Medicine of the Austrian Academy of Sciences&lt;/a&gt; working on oncology and diabetes and consulted for the Department of Fisheries and Oceans (Canada). I received a Masters in Biological Sciences from the &lt;a href=&#34;https://www.ucalgary.ca/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;University of Calgary&lt;/a&gt;, as a coral biologist using genomics to study reproductive patterns in coral reefs.&lt;/p&gt;
+&lt;p&gt;I love thinking creatively and using the statistical programming language R to find actionable insights. In addition to analyzing and visualizing data in R, I find it particularly satisfying to automate manual tasks such as reporting. My interests include statistics, data analysis, and programming in R. My work primarly involves:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Biomedical Informatics and Data Science&lt;/li&gt;
+&lt;li&gt;Statistical Modelling&lt;/li&gt;
+&lt;li&gt;Data Visualization&lt;/li&gt;
+&lt;li&gt;Computer Vision&lt;/li&gt;
+&lt;li&gt;Big Data&lt;/li&gt;
+&lt;li&gt;Open Science&lt;/li&gt;
+&lt;li&gt;Outreach&lt;/li&gt;
+&lt;li&gt;Reproducible Research&lt;/li&gt;
+&lt;li&gt;Cloud and Distributed Computing&lt;/li&gt;
+&lt;li&gt;Software Development&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Supplemental to my goals as a researcher, I am a consummate educator. I have worked as a tutor, served as a mentor for middle school students on money management, and acted (badly) for an educational film. I try to support &lt;a href=&#34;https://github.com/moldach&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;open-source projects&lt;/a&gt; and open data where possible; - I am the author of the &lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;vapoRwave&lt;/a&gt; package. This entire website was constructed in Rmarkdown using &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blogdown&lt;/a&gt; and &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Do you need collaboration to achieve a measurable, data-driven improvement in your business? Feel free to connect with me on &lt;a href=&#34;https://www.linkedin.com/in/matthewoldach/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Skills</title>
+      <link>https://example.com/home/skills/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>https://example.com/home/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://example.com/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://example.com/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selected Talks</title>
+      <link>https://example.com/home/talks_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/talks_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://example.com/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://example.com/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>https://example.com/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://example.com/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/teaching/</guid>
+      <description>&lt;p&gt;This is an example of using the &lt;em&gt;custom&lt;/em&gt; widget to create your own homepage section.&lt;/p&gt;
+&lt;p&gt;I am a teaching instructor for the following courses at University X:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CS101: An intro to computer science&lt;/li&gt;
+&lt;li&gt;CS102: An intro to computer science&lt;/li&gt;
+&lt;li&gt;CS103: An intro to computer science&lt;/li&gt;
+&lt;li&gt;CS104: An intro to computer science&lt;/li&gt;
+&lt;li&gt;CS105: An intro to computer science&lt;/li&gt;
+&lt;li&gt;CS106: An intro to computer science&lt;/li&gt;
+&lt;li&gt;CS107: An intro to computer science&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tags</title>
+      <link>https://example.com/home/tags/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://example.com/home/search/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://example.com/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://example.com/home/contact/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>UMAP Supervised Embeddings (Python-&gt;R)</title>
-      <link>/project/supervised-umap/</link>
-      <pubDate>Tue, 09 Mar 2021 00:00:00 -0700</pubDate>
-      
-      <guid>/project/supervised-umap/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;includeHTML(&amp;quot;index.html&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+      <link>https://example.com/project/supervised-umap/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/supervised-umap/</guid>
+      <description>&lt;iframe src=&#34;https://example.com/slides/supervised-umap/index.html&#34; width=&#34;100%&#34; height=&#34;600&#34;&gt;&lt;/iframe&gt;
 </description>
     </item>
     
     <item>
       <title>Shiny Dev and Software Release Cycles and Rayshader, Oh My!</title>
-      <link>/project/taster/</link>
+      <link>https://example.com/project/hinuhinu/</link>
       <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/taster/</guid>
+      <guid>https://example.com/project/hinuhinu/</guid>
       <description>
 
 
-&lt;p&gt;&lt;img src=&#34;./img/walkthrough.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/walkthrough.gif&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://matthew-j-oldach.shinyapps.io/hinuhinu&#34;&gt;CLICK HERE TO GO TO THE SHINY APPLICATION!!!&lt;/a&gt;&lt;/p&gt;
 &lt;div id=&#34;inspiration-for-the-shiny-application&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Inspiration for the Shiny Application&lt;/h2&gt;
@@ -39,14 +188,14 @@
 &lt;/blockquote&gt;
 &lt;p&gt;I’ve been wanting to develop a &lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;Shiny application&lt;/a&gt; for sometime but the opportunity has never arisen. In my current role as a &lt;strong&gt;R&lt;/strong&gt; developer, I provide client-side implementations via &lt;strong&gt;Java&lt;/strong&gt; with the help of the &lt;code&gt;RServe&lt;/code&gt; 📦 - so Shiny isn’t needed. Well, if the opportunity doesn’t present itself on the job it’s time for a side-project!&lt;/p&gt;
 &lt;p&gt;I wasn’t exactly sure what kind of project I should do until I saw a blog post by &lt;a href=&#34;https://timogrossenbacher.ch/&#34;&gt;Timo Grossenbacher&lt;/a&gt; on &lt;a href=&#34;https://timogrossenbacher.ch/2019/04/bivariate-maps-with-ggplot2-and-sf/&#34;&gt;bivariate maps with &lt;code&gt;ggplot2&lt;/code&gt; and &lt;code&gt;sf&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/swiss.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/swiss.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The map shows income (in-)equality in Switzerland at the municipality level by visualizing two variables at the same time. What instantly attracted me was the beautiful relief of the mountainous Swiss landscape. It’s not something I’ve seen much from &lt;code&gt;ggplot2&lt;/code&gt; maps - something usually reserved for GIS programs. I thought creating an application for geography would be a fun and engaging use of a Shiny application. My current role as a developer for a web-application that enables complex meta-analysis and visualization caters to biologists rather than specilazied bioinformaticians- &lt;a href=&#34;https://www.networkanalyst.ca/&#34;&gt;NetworkAnalyst.ca&lt;/a&gt;. I thought it might be cool to do a similar thing for people who aren’t GIS specialist (or even familiar with &lt;code&gt;R&lt;/code&gt;) and enable them to quickly create maps and save them (either as &lt;code&gt;PNGs&lt;/code&gt; or &lt;code&gt;PDFs&lt;/code&gt;)?&lt;/p&gt;
 &lt;p&gt;One of the intial challenges was finding a good dataset. I had wanted to do a project on my home province of Alberta but eventually settled on Hawaii instead for a couple reasons. One is that I could find &lt;a href=&#34;https://geo.nyu.edu&#34;&gt;relief’s for the State of Hawaii&lt;/a&gt; in two levels of detail: &lt;strong&gt;100m&lt;/strong&gt; and &lt;strong&gt;200m&lt;/strong&gt;. The second was the State of Hawaii &lt;a href=&#34;https://planning.hawaii.gov/gis/download-gis-data/&#34;&gt;also provides a &lt;strong&gt;large&lt;/strong&gt; number of shapefiles&lt;/a&gt; which I could lay overtop of the relief. The amount of open data available to Hawaii attractive, and the fact that they are islands presented certain opportunities… and challenges, as well.&lt;/p&gt;
 &lt;p&gt;I wanted to provide users with a range maps. I wanted maps at different scales and with different contexts such as focusing on the marine environment or the terrestrial enviornment. I wanted maps covering the whole state of Hawaii, others showing individual islands (or groups of islands), and others giving the user a view of the city level. It was here that I got inspiration from &lt;a href=&#34;erdavis.com&#34;&gt;Erin Davis’s&lt;/a&gt; beautiful street maps in &lt;a href=&#34;https://erdavis.com/2019/09/20/the-beautiful-hidden-logic-of-cities-worldwide/&#34;&gt;“The Beatiful Hidden Logic of Cities - Worldwide”&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/paris.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/paris.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Erin’s legend looked great! Unfortunately she didn’t have a programatic way to generate these labels, she did them in Adobe Photoshop (&lt;em&gt;personal correspondence&lt;/em&gt;). I tried to write some code to generate labels programattically using &lt;code&gt;key_glyph = &#34;point&#34;&lt;/code&gt; to set &lt;code&gt;sf&lt;/code&gt; object glyphs as points and then use the &lt;code&gt;override.aes&lt;/code&gt; trick to get circles (&lt;a href=&#34;https://stackoverflow.com/questions/58172102/dynamically-align-plots-custom-ggplot2-legend-for-spatial-maps-in-r&#34;&gt;like in this SO post&lt;/a&gt; post) but I didn’t like the look. To be honest lables are something that could still use work in the &lt;code&gt;ggplot2&lt;/code&gt; world IMO 🤷&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://twitter.com/jakekaupp&#34;&gt;Jake Kaupp&lt;/a&gt; did a &lt;code&gt;#TidyTuesday&lt;/code&gt; submission for &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-01&#34;&gt;Week #40: Pizza Party!&lt;/a&gt; showing all of the pizza spots in the five-boroughs and came up with a nice way of &lt;a href=&#34;https://github.com/jkaupp/tidytuesdays/blob/master/2019/week40/R/analysis.R&#34;&gt;constructing a color legend with &lt;code&gt;ggplotGrob()&lt;/code&gt;&lt;/a&gt; as well as a neat use of &lt;a href=&#34;https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html&#34;&gt;&lt;code&gt;colorspace::darken()&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/pizza.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/pizza.jpg&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;For Shiny &lt;strong&gt;UI&lt;/strong&gt; inspiration I looked towards some of the &lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;winners of the 1st ever Shiny Contest&lt;/a&gt; (something I hope RStudio brings back next year!). I can’t express how much I learn from reading other peoples code and for this particular application I was heavily inspired by the &lt;a href=&#34;https://community.rstudio.com/u/committedtotape/&#34;&gt;David Smale&lt;/a&gt;’s, winner of &lt;strong&gt;“Best Design”&lt;/strong&gt;, &lt;a href=&#34;https://committedtotape.shinyapps.io/sixtyninelovesongs/&#34;&gt;69 Love Songs: A Lyrical Analysis&lt;/a&gt;. What was really cool was it was hosted on the RStudio cloud so I could go in and change things and see how it affected which for me was one of the coolest ways to grok Shiny.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;building-the-application&#34; class=&#34;section level2&#34;&gt;
@@ -66,10 +215,10 @@
 &lt;blockquote&gt;
 &lt;p&gt;I came up with some very plain &lt;em&gt;“desert”&lt;/em&gt;-y looking maps of Hawaii:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;./img/new-feature.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/new-feature.gif&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Although I had wanted to allow the user to interact with the 3D maps, I ran into issues where the application attempted to use more memory then was avialable under the free-tier plan of &lt;a href=&#34;https://www.shinyapps.io/&#34;&gt;Shinyapps.io&lt;/a&gt;. The &lt;a href=&#34;https://docs.rstudio.com/shinyapps.io/applications.html#debugging-your-application&#34;&gt;RStudio documentation on debugging your application&lt;/a&gt;’s section on &lt;strong&gt;Memory&lt;/strong&gt; wa useful for figuring this out as it suggests looking in the &lt;a href=&#34;https://docs.rstudio.com/shinyapps.io/applications.html#logging&#34;&gt;application’s logs&lt;/a&gt; for &lt;code&gt;2019-11-18T15:12:16.088451+00:00 shinyapps[system]: Out of memory!&lt;/code&gt;. I settled on providing the “fly-by” videos innstead.&lt;/p&gt;
 &lt;p&gt;After attending Tyler’s class I wanted to update my application again by including a satellite overlay; I spent some time figuring out the best way to do this, modifying the easing function and &lt;code&gt;rayshader::render_movie()&lt;/code&gt; parameters to make longer videos, testing it out, and then using &lt;code&gt;rsconnect::deployApp()&lt;/code&gt; to re-deploy my application.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/hawaii_vids.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/hawaii_vids.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I decided to merge all four videos together using &lt;a href=&#34;http://www.videosoftdev.com/&#34;&gt;VSCD Video Editor&lt;/a&gt; and overlaid some a musical track. Although Tyler promised Rayshader would have VR/AR capabilities in the near-future, I simply couldn’t wait so I also made another version of the video with a steroscopic 3D effect for viewing with red and cyan anaglyph 3D glasses:&lt;/p&gt;
 &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/faCiHnL76Fw&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
 &lt;/iframe&gt;
@@ -86,14 +235,14 @@
 &lt;p&gt;“Better a diamond with a flaw than a pebble without” - Confucius&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;It’s &lt;a href=&#34;https://guides.github.com/features/issues/&#34;&gt;important to keep track of tasks, enhancements, and bugs for your project&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/issues.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/issues.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;Those scrupulous enough to peer into my repo will have found that I do not always follow my own advice…&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Now theoretically let’s say I was building this application for a client and they just &lt;strong&gt;had to have!&lt;/strong&gt; interactive 3D visualizations produced with Rayshader (something I’m not sure if Shiny is ideal for anyways) you could pay for a &lt;a href=&#34;https://www.shinyapps.io/&#34;&gt;higher tier in Shinyapps.io&lt;/a&gt; to get a performance boost (&lt;em&gt;i.e.&lt;/em&gt; more RAM 🐏).&lt;/p&gt;
 &lt;p&gt;Another thing that I may have wanted to do if my application was more complex is to provide the user with a tour using the {&lt;a href=&#34;https://github.com/JohnCoene/cicerone&#34;&gt;&lt;code&gt;cicerone&lt;/code&gt;&lt;/a&gt;} 📦 like what one sees on the &lt;a href=&#34;https://marionilab.cruk.cam.ac.uk/iSEE_allen&#34;&gt;excellent tour of the iSEE Shiny interface&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;After &lt;strong&gt;75 commits&lt;/strong&gt; I’m pretty tired, so I didn’t include any code snippets here (BTW you can find all the code on Github). &lt;strong&gt;Full-disclosure&lt;/strong&gt;: the 75 commtis (and code) are currently split between two-repositories and I feel a bit of shame for that…&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/shame.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/shame.gif&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;But there is a reason for this. I had intially started off the [mahalo] repository because I wanted to create package like the {&lt;a href=&#34;&#34;&gt;&lt;code&gt;bcmaps&lt;/code&gt;&lt;/a&gt;} 📦 but for Hawaii (I may still if there is enough interest from the community, but at the moment this is on-hold).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/bcmaps.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/bcmaps.PNG&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Along with this, I also wanted to create a Showcase/Companion for the package with Shiny that would give users a run-through.&lt;/p&gt;
 &lt;p&gt;I wasn’t sure what the “best practices” for this are: do you keep the app with the package or do you have a seperate repo? I reached out to John Coene (&lt;span class=&#34;citation&#34;&gt;[@jdatap]&lt;/span&gt;(&lt;a href=&#34;https://twitter.com/jdatap&#34; class=&#34;uri&#34;&gt;https://twitter.com/jdatap&lt;/a&gt;)), because he’s an all-around nice guy (and also Swiss), and he suggested keeping them seperate if the application is large (adivce I followed) and to also use {&lt;a href=&#34;https://github.com/ThinkR-open/golem&#34;&gt;&lt;code&gt;golem&lt;/code&gt;&lt;/a&gt;} (advice which I did not follow - I still think it’s a great idea and I’ll consider for my next app though!).&lt;/p&gt;
 &lt;p&gt;I still need to spend some time figuring out how to supply datasets as I ran into issues with my project. I knew that I wouldn’t be able to just drop all of the shapefiles into my git repo because Github is meant for code and not data. I also knew that you could &lt;a href=&#34;https://www.r-bloggers.com/accelerating-ggplot2-use-a-canvas-to-speed-up-rendering-plots/&#34;&gt;acclerate &lt;code&gt;ggplot2&lt;/code&gt; by using a canvas to speed up rendering plots&lt;/a&gt; so I thought to myself “If I’m just developing a map package I can generate”basemaps&#34; as &lt;code&gt;.Rds&lt;/code&gt; objects and then use those in my &lt;a href=&#34;&#34;&gt;hinuhin repository&lt;/a&gt; to overlay other shapefiles on-top of&#34;. Even though I avoided including most of the GIS information by producing these basemaps I had to set up a free account with &lt;a href=&#34;https://git-lfs.github.com/&#34;&gt;Git Large File Storage&lt;/a&gt; to include the shapefiles I overlaid in this project and that took up &lt;strong&gt;80%&lt;/strong&gt; of my quota.&lt;/p&gt;
@@ -104,11 +253,11 @@
 &lt;h3&gt;Brief thought on the future of Rayshader&lt;/h3&gt;
 &lt;p&gt;There are a number of companies today trying to map out city streets to create high-quality 3D maps for self-driving cars and projection projects (see: &lt;a href=&#34;https://www.fastcompany.com/90128298/the-race-to-map-the-world-in-3d&#34;&gt;The Race to Map the World in 3D&lt;/a&gt;):&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;./img/street.gif&#34; alt=&#34;Image: Carmera&#34; /&gt;
+&lt;img src=&#34;https://example.com/img/street.gif&#34; alt=&#34;Image: Carmera&#34; /&gt;
 &lt;p class=&#34;caption&#34;&gt;Image: Carmera&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Getting access to this kind of data would be awesome because it would mean you could overlay high-quality images over LIDAR like this one produced by Tyler of Philadelphia:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/phillyshadow3d-1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/phillyshadow3d-1.png&#34; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;If you missed it at the top you can &lt;a href=&#34;https://matthew-j-oldach.shinyapps.io/hinuhinu&#34;&gt;CLICK HERE TO GO TO MY SHINY APPLICATION DEPLOYMENT!!!&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -118,211 +267,442 @@
     </item>
     
     <item>
+      <title>Shiny-filteRs: Mobile app bridging languages, blending art, geolocation, and privacy</title>
+      <link>https://example.com/project/shiny-filters/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/shiny-filters/</guid>
+      <description>&lt;iframe src=&#34;https://example.com/slides/shiny-filters/index.html&#34; width=&#34;100%&#34; height=&#34;600&#34;&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
       <title>TensorFlow CNN for Fast Style Transfer</title>
-      <link>/post/faststyletransfer/</link>
+      <link>https://example.com/post/faststyletransfer/</link>
       <pubDate>Sun, 21 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/faststyletransfer/</guid>
-      <description>
+      <guid>https://example.com/post/faststyletransfer/</guid>
+      <description>&lt;p&gt;Volcom was founded in 1991, it was the first company to combine skateboarding, surfing and snowboarding under one brand from it&amp;rsquo;s incepetion. I always loved how their aesthethics captured the energy and artistry of board-riding in its purest form.&lt;/p&gt;
+&lt;p&gt;If you have no idea what I&amp;rsquo;m talking about here&amp;rsquo;s some samples from print advertisments and a clip from 2003&amp;rsquo;s &lt;a href=&#34;https://www.youtube.com/watch?v=VGBQw46BbWA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Big Youth Happening&lt;/strong&gt;&lt;/a&gt; which I would say was the ultimate inspiration for this post.&lt;/p&gt;
+&lt;p&gt;
 
-&lt;p&gt;Volcom was founded in 1991, it was the first company to combine skateboarding, surfing and snowboarding under one brand from it&amp;rsquo;s incepetion. I always loved how their aesthethics captured the energy and artistry of board-riding in its purest form.&lt;/p&gt;
 
-&lt;p&gt;If you have no idea what I&amp;rsquo;m talking about here&amp;rsquo;s some samples from print advertisments and a clip from 2003&amp;rsquo;s &lt;a href=&#34;https://www.youtube.com/watch?v=VGBQw46BbWA&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Big Youth Happening&lt;/strong&gt;&lt;/a&gt; which I would say was the ultimate inspiration for this post.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;volcom.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;bigYouth.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Non-photorealistic rendering (&lt;a href=&#34;https://books.google.ca/books?id=YjXlTPFYGEYC&amp;amp;redir_esc=y&#34; target=&#34;_blank&#34;&gt;NPR&lt;/a&gt;) is a combination of computer graphics and computer vision that produces renderings in various artistic, expressive or stylized ways. A new art form that couldn&amp;rsquo;t have existed without computers. Researchers have proposed many algorithms and &lt;em&gt;styles&lt;/em&gt; such as painting, pen-and-ink drawing, tile mosaics, stippling, streamline visualization, and tensor field visualization. Although the details vary, the goal is to make an image look like some other image. Two main approaches to designing these algorithms exist. &lt;em&gt;Greedy algorithms&lt;/em&gt; greedily place strokes to match the target goas. &lt;em&gt;Optimization algorithms&lt;/em&gt; iteratively place and then adjust stroke positions to minimize the objective function. NPR can be done using a number of machine learning methods, most commonly &lt;a href=&#34;https://vimeo.com/302584040&#34; target=&#34;_blank&#34;&gt;General Adverserial Networks&lt;/a&gt; or &lt;a href=&#34;https://www.youtube.com/watch?v=UFffxcCQMPQ&#34; target=&#34;_blank&#34;&gt;Convolution Neural Networks&lt;/a&gt;(CNN) such as painting and drawing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;example.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I wanted to use &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt;, an &lt;em&gt;optimization technique&lt;/em&gt;, on a video of my friends and I backcountry skiing and snowboarding in The Rocky Mountains of Alberta.&lt;/p&gt;
 
-&lt;p&gt;Fast-style-transfer is a TensorFlow CNN model based on a combination of &lt;a href=&#34;https://arxiv.org/abs/1508.06576&#34; target=&#34;_blank&#34;&gt;Gatys&amp;rsquo; A Neural Algorithm of Artistic Style&lt;/a&gt;, Johnson&amp;rsquo;s &lt;a href=&#34;http://cs.stanford.edu/people/jcjohns/eccv16/&#34; target=&#34;_blank&#34;&gt;Perceptual Losses for Real-Time Style Transfer and Super-Resolution&lt;/a&gt;, and Ulyanov&amp;rsquo;s &lt;a href=&#34;https://arxiv.org/abs/1607.08022&#34; target=&#34;_blank&#34;&gt;Instance Normalization&lt;/a&gt;. I&amp;rsquo;ll skip the details here because it&amp;rsquo;s been been far better described in the publications above (or in layman&amp;rsquo;s terms &lt;a href=&#34;https://towardsdatascience.com/a-journey-into-convolutional-neural-network-visualization-1abc71605209&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;), suffice it to say it allows you to compose images/videos in the style of another image. Besides being fun it&amp;rsquo;s a nice visual way of showing the capabilities and internal representations of neural networks.&lt;/p&gt;
 
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/faststyletransfer/volcom_huc406feca3dabf7149ea9dc5169e14965_1515696_6e4277669f51e061b91c4747193eeee5.webp 400w,
+               /post/faststyletransfer/volcom_huc406feca3dabf7149ea9dc5169e14965_1515696_4ed14925491a66c3a0ad890bb6729c2c.webp 760w,
+               /post/faststyletransfer/volcom_huc406feca3dabf7149ea9dc5169e14965_1515696_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/faststyletransfer/volcom_huc406feca3dabf7149ea9dc5169e14965_1515696_6e4277669f51e061b91c4747193eeee5.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;253&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34;
+           src=&#34;https://example.com/post/faststyletransfer/bigYouth.gif&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Non-photorealistic rendering (&lt;a href=&#34;https://books.google.ca/books?id=YjXlTPFYGEYC&amp;amp;redir_esc=y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NPR&lt;/a&gt;) is a combination of computer graphics and computer vision that produces renderings in various artistic, expressive or stylized ways. A new art form that couldn&amp;rsquo;t have existed without computers. Researchers have proposed many algorithms and &lt;em&gt;styles&lt;/em&gt; such as painting, pen-and-ink drawing, tile mosaics, stippling, streamline visualization, and tensor field visualization. Although the details vary, the goal is to make an image look like some other image. Two main approaches to designing these algorithms exist. &lt;em&gt;Greedy algorithms&lt;/em&gt; greedily place strokes to match the target goas. &lt;em&gt;Optimization algorithms&lt;/em&gt; iteratively place and then adjust stroke positions to minimize the objective function. NPR can be done using a number of machine learning methods, most commonly &lt;a href=&#34;https://vimeo.com/302584040&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;General Adverserial Networks&lt;/a&gt; or &lt;a href=&#34;https://www.youtube.com/watch?v=UFffxcCQMPQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Convolution Neural Networks&lt;/a&gt;(CNN) such as painting and drawing.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/faststyletransfer/example_hua721ea6717291d1fc23ecedebcf1af99_1097681_f9257feb6ffad45f895b7d7ee59fb531.webp 400w,
+               /post/faststyletransfer/example_hua721ea6717291d1fc23ecedebcf1af99_1097681_c6ad496f8d4c3b0be4412d2156833373.webp 760w,
+               /post/faststyletransfer/example_hua721ea6717291d1fc23ecedebcf1af99_1097681_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/faststyletransfer/example_hua721ea6717291d1fc23ecedebcf1af99_1097681_f9257feb6ffad45f895b7d7ee59fb531.webp&#34;
+               width=&#34;748&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;I wanted to use &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt;, an &lt;em&gt;optimization technique&lt;/em&gt;, on a video of my friends and I backcountry skiing and snowboarding in The Rocky Mountains of Alberta.&lt;/p&gt;
+&lt;p&gt;Fast-style-transfer is a TensorFlow CNN model based on a combination of &lt;a href=&#34;https://arxiv.org/abs/1508.06576&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gatys&amp;rsquo; A Neural Algorithm of Artistic Style&lt;/a&gt;, Johnson&amp;rsquo;s &lt;a href=&#34;http://cs.stanford.edu/people/jcjohns/eccv16/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Perceptual Losses for Real-Time Style Transfer and Super-Resolution&lt;/a&gt;, and Ulyanov&amp;rsquo;s &lt;a href=&#34;https://arxiv.org/abs/1607.08022&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Instance Normalization&lt;/a&gt;. I&amp;rsquo;ll skip the details here because it&amp;rsquo;s been been far better described in the publications above (or in layman&amp;rsquo;s terms &lt;a href=&#34;https://towardsdatascience.com/a-journey-into-convolutional-neural-network-visualization-1abc71605209&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;https://medium.com/tensorflow/neural-style-transfer-creating-art-with-deep-learning-using-tf-keras-and-eager-execution-7d541ac31398&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, and &lt;a href=&#34;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;), suffice it to say it allows you to compose images/videos in the style of another image. Besides being fun it&amp;rsquo;s a nice visual way of showing the capabilities and internal representations of neural networks.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;fast-style-transfer&lt;/code&gt; repo comes with 6 trained models on famous paintings, allowing you to quikcly style your images (or videos) like them. But what&amp;rsquo;s the fun in doing what others have alread done?&lt;/p&gt;
+&lt;p&gt;I wanted to see what kind of effect would be produced by training style transfer networks around interesting shapes and patterns! I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
 
-&lt;p&gt;I wanted to see what kind of effect would be produced by training style transfer networks around interesting shapes and patterns! I selected a number patterns I thought would be interesting, for example animal patterns, fractals, fibonnaci sequences, a few vaporwave images (&lt;a href=&#34;https://github.com/moldach/vapoRwave&#34; target=&#34;_blank&#34;&gt;of course&lt;/a&gt;), and a bunch of images taken under a &lt;a href=&#34;https://en.wikipedia.org/wiki/Scanning_electron_microscope&#34; target=&#34;_blank&#34;&gt;SEM microscope&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;collage.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I then constructed a script to train 50 models simultaneously on a HPC (using a &lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;; a top-of-the-line $10,000 GPU - &lt;em&gt;spared no expense&lt;/em&gt;). After &lt;em&gt;many many&lt;/em&gt; hours of training, across hundreds of cores, I selected the 20 best (&lt;em&gt;i.e.&lt;/em&gt; most aesthetically pleasing) models to apply to the video.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;mountains.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;(&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;](&lt;a href=&#34;https://youtu.be/TuN4456PK-c&#34; target=&#34;_blank&#34;&gt;https://youtu.be/TuN4456PK-c&lt;/a&gt;).&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/faststyletransfer/collage_hu571b88c0b4b1510f09fe04bf98e8e804_9263891_36d95f5b2e8c28f7262a281bd669e9e3.webp 400w,
+               /post/faststyletransfer/collage_hu571b88c0b4b1510f09fe04bf98e8e804_9263891_e1be426b1b323890fa0302435535a8a7.webp 760w,
+               /post/faststyletransfer/collage_hu571b88c0b4b1510f09fe04bf98e8e804_9263891_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/faststyletransfer/collage_hu571b88c0b4b1510f09fe04bf98e8e804_9263891_36d95f5b2e8c28f7262a281bd669e9e3.webp&#34;
+               width=&#34;609&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;I then constructed a script to train 50 models simultaneously on a HPC (using a &lt;a href=&#34;https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GPU NVIDIA V100 Volta&lt;/a&gt;; a top-of-the-line $10,000 GPU - &lt;em&gt;spared no expense&lt;/em&gt;). After &lt;em&gt;many many&lt;/em&gt; hours of training, across hundreds of cores, I selected the 20 best (&lt;em&gt;i.e.&lt;/em&gt; most aesthetically pleasing) models to apply to the video.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34;
+           src=&#34;https://example.com/post/faststyletransfer/mountains.gif&#34;
+           loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;(&lt;strong&gt;The entire high-quality video can be found here&lt;/strong&gt;](&lt;a href=&#34;https://youtu.be/TuN4456PK-c%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://youtu.be/TuN4456PK-c)&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;technical-notes&#34;&gt;Technical Notes:&lt;/h3&gt;
-
-&lt;p&gt;When training the models I noticed that the checkpoint files were being corrupted. I found a &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer/issues/78#issuecomment-302307215&#34; target=&#34;_blank&#34;&gt;closed issue on the repo: #78&lt;/a&gt; stating that Tensorflow&amp;rsquo;s Saver class was updated so you&amp;rsquo;ll need to change line 136 in &lt;code&gt;/src/optimize.py&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The script for training all of the networks on an HPC with a SLURM job scheduler is below, and can be run with &lt;code&gt;bash fastTrainer.bash &amp;lt;image_path&amp;gt; &amp;lt;out_path&amp;gt; &amp;lt;test_path&amp;gt;&lt;/code&gt;. Simply clone &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; and create three folders inside. Create a sub-directory where you&amp;rsquo;ll put all the &lt;strong&gt;style images&lt;/strong&gt; you want to train, another sub-directory for the &lt;strong&gt;output&lt;/strong&gt; (&lt;code&gt;.ckpt&lt;/code&gt; files used to style your &lt;code&gt;.mp4&lt;/code&gt; videos), and a &lt;strong&gt;test&lt;/strong&gt; sub-directory for the model. As a default I used the &lt;code&gt;chicago&lt;/code&gt; for training and I&amp;rsquo;m not entirely sure if that makes a difference.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;!/bin/bash
-#$ -pwd
-
-# bash fastTrainer.bash /images/ /outpath/ /testpath/
-##
-## An embarrassingly parallel script to train many style transfer networks on a HPC
-## Access to SLURM job scheduler and fast-style-transfer is required to run this program.
-## The three mandatory pathways must be specified in the indicated order.
-
-IMG=$(readlink -f &amp;quot;${1%/}&amp;quot;)     # path_to_train_images
-OUT_DIR=$(readlink -f &amp;quot;${2%/}&amp;quot;)  # path_to_checkpoints
-TEST=$(readlink -f &amp;quot;${3%/}&amp;quot;)  # path_to_tests
-
-mkdir -p ${OUT_DIR}/jobs
-
-JID=0   # job ID for SLURM job name
-
-for f in ${IMG}/*; do
-
-        let JID=(JID+1)
-
-  cat &amp;gt; ${OUT_DIR}/jobs/style_${JID}.bash &amp;lt;&amp;lt; EOT # write job information for each job
-#!/bin/bash
-#SBATCH --gres=gpu:1        # request GPU
-#SBATCH --cpus-per-task=2   # maximum CPU cores per GPU request
-#SBATCH --time=00:01:00     # request 8 hours of walltime
-#SBATCH --job-name=&amp;quot;fst_${JID}&amp;quot;
-#SBATCH --output=${OUT_DIR}/jobs/%N-%j.out  # %N for node name, %j for jobID
-
-### JOB SCRIPT BELLOW ###
-
-# Load Modules
-module load python/2.7.14
-module load scipy-stack
-source tensorflow/bin/activate
-
-mkdir ${OUT_DIR}/${JID}
-mkdir ${TEST}/${JID}
-
-python style.py --style $f \
-  --checkpoint-dir ${OUT_DIR}/${JID} \
-  --test examples/content/chicago.jpg \
-  --test-dir ${OUT_DIR}/${JID} \
-  --content-weight 1.5e1 \
-  --checkpoint-iterations 1000 \
-  --batch-size 20
-
-EOT
-  chmod 754 $(readlink -f &amp;quot;${OUT_DIR}&amp;quot;)/jobs/style_${JID}.bash
-  sbatch $(readlink -f &amp;quot;${OUT_DIR}&amp;quot;)/jobs/style_${JID}.bash
-done
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;what-i-learned&#34;&gt;What I learned&lt;/h2&gt;
-
-&lt;p&gt;Now &lt;a href=&#34;https://www.technologyreview.com/s/612913/a-philosopher-argues-that-an-ai-can-never-be-an-artist/&#34; target=&#34;_blank&#34;&gt;Sean Dorrance Kelly&lt;/a&gt; might argue I&amp;rsquo;m using the machines &amp;ldquo;creativity&amp;rdquo; as a subsititute for my own but I would disagree since there was a fair amount of creativity in selecting images to train models on and the editing itself. That being said an &lt;a href=&#34;https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx&#34; target=&#34;_blank&#34;&gt;AI generated work of art recently sold for $432,500 at Christie&amp;rsquo;s&lt;/a&gt; (the first auction house to offer a piece of art created by an algorithm).&lt;/p&gt;
-
+&lt;p&gt;When training the models I noticed that the checkpoint files were being corrupted. I found a &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer/issues/78#issuecomment-302307215&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;closed issue on the repo: #78&lt;/a&gt; stating that Tensorflow&amp;rsquo;s Saver class was updated so you&amp;rsquo;ll need to change line 136 in &lt;code&gt;/src/optimize.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The script for training all of the networks on an HPC with a SLURM job scheduler is below, and can be run with &lt;code&gt;bash fastTrainer.bash &amp;lt;image_path&amp;gt; &amp;lt;out_path&amp;gt; &amp;lt;test_path&amp;gt;&lt;/code&gt;. Simply clone &lt;a href=&#34;https://github.com/lengstrom/fast-style-transfer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lengstrom/fast-style-transfer&lt;/a&gt; and create three folders inside. Create a sub-directory where you&amp;rsquo;ll put all the &lt;strong&gt;style images&lt;/strong&gt; you want to train, another sub-directory for the &lt;strong&gt;output&lt;/strong&gt; (&lt;code&gt;.ckpt&lt;/code&gt; files used to style your &lt;code&gt;.mp4&lt;/code&gt; videos), and a &lt;strong&gt;test&lt;/strong&gt; sub-directory for the model. As a default I used the &lt;code&gt;chicago&lt;/code&gt; for training and I&amp;rsquo;m not entirely sure if that makes a difference.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#$ -pwd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# bash fastTrainer.bash /images/ /outpath/ /testpath/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;##&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## An embarrassingly parallel script to train many style transfer networks on a HPC&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## Access to SLURM job scheduler and fast-style-transfer is required to run this program.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## The three mandatory pathways must be specified in the indicated order.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;IMG&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%/&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;# path_to_train_images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;OUT_DIR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%/&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# path_to_checkpoints&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;TEST&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;%/&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# path_to_tests&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;OUT_DIR&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/jobs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;JID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# job ID for SLURM job name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; f in &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;IMG&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/*&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;JID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=(&lt;/span&gt;JID+1&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  cat &amp;gt; &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;OUT_DIR&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/jobs/style_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;JID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.bash &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOT # write job information for each job
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;#SBATCH --gres=gpu:1        # request GPU
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;#SBATCH --cpus-per-task=2   # maximum CPU cores per GPU request
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;#SBATCH --time=00:01:00     # request 8 hours of walltime
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;#SBATCH --job-name=&amp;#34;fst_${JID}&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;#SBATCH --output=${OUT_DIR}/jobs/%N-%j.out  # %N for node name, %j for jobID
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;### JOB SCRIPT BELLOW ###
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;# Load Modules
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;module load python/2.7.14
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;module load scipy-stack
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;source tensorflow/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;mkdir ${OUT_DIR}/${JID}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;mkdir ${TEST}/${JID}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;python style.py --style $f \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  --checkpoint-dir ${OUT_DIR}/${JID} \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  --test examples/content/chicago.jpg \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  --test-dir ${OUT_DIR}/${JID} \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  --content-weight 1.5e1 \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  --checkpoint-iterations 1000 \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  --batch-size 20
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  chmod &lt;span class=&#34;m&#34;&gt;754&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;OUT_DIR&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;/jobs/style_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;JID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.bash
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  sbatch &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;OUT_DIR&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;/jobs/style_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;JID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.bash
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;what-i-learned&#34;&gt;What I learned&lt;/h2&gt;
+&lt;p&gt;Now &lt;a href=&#34;https://www.technologyreview.com/s/612913/a-philosopher-argues-that-an-ai-can-never-be-an-artist/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sean Dorrance Kelly&lt;/a&gt; might argue I&amp;rsquo;m using the machines &amp;ldquo;creativity&amp;rdquo; as a subsititute for my own but I would disagree since there was a fair amount of creativity in selecting images to train models on and the editing itself. That being said an &lt;a href=&#34;https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AI generated work of art recently sold for $432,500 at Christie&amp;rsquo;s&lt;/a&gt; (the first auction house to offer a piece of art created by an algorithm).&lt;/p&gt;
 &lt;p&gt;Besides the opportunity to exercise my right-brain, it was a good chance to gain some experience with tensorflow and python. This project was also illuminating because it made the hidden layers of networks more comprehensible by literally allowing me to &lt;em&gt;see&lt;/em&gt; how neural networks are performing!&lt;/p&gt;
+&lt;p&gt;I think the field of &lt;strong&gt;Feature visualization&lt;/strong&gt; is exciting because it allows to peer behind the curtain and see how networks learn to classify images accurately. Take for example the &lt;a href=&#34;https://distill.pub/2019/activation-atlas/?utm_campaign=Data_Elixir&amp;amp;utm_medium=email&amp;amp;utm_source=Data_Elixir_224&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Activation atlas&lt;/a&gt; which reveals visual abstractions within a model. It gives a global view of a dataset by showing feature visualization of averaged activation values from a neural network.&lt;/p&gt;
+&lt;p&gt;
 
-&lt;p&gt;I think the field of &lt;strong&gt;Feature visualization&lt;/strong&gt; is exciting because it allows to peer behind the curtain and see how networks learn to classify images accurately. Take for example the &lt;a href=&#34;https://distill.pub/2019/activation-atlas/?utm_campaign=Data_Elixir&amp;amp;utm_medium=email&amp;amp;utm_source=Data_Elixir_224&#34; target=&#34;_blank&#34;&gt;Activation atlas&lt;/a&gt; which reveals visual abstractions within a model. It gives a global view of a dataset by showing feature visualization of averaged activation values from a neural network.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;atlas.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/faststyletransfer/atlas_hu441115eb4fc19f5f40e916fee9f80cb9_1868296_bb6c2b7c8e30a5775ac2f97426e5e33b.webp 400w,
+               /post/faststyletransfer/atlas_hu441115eb4fc19f5f40e916fee9f80cb9_1868296_d9460e2414fa8ebb1ad30845bb28b1d8.webp 760w,
+               /post/faststyletransfer/atlas_hu441115eb4fc19f5f40e916fee9f80cb9_1868296_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/faststyletransfer/atlas_hu441115eb4fc19f5f40e916fee9f80cb9_1868296_bb6c2b7c8e30a5775ac2f97426e5e33b.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;536&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;As an analogy, while the 26 letters in the alphabet provide a basis for English, seeing how letters are commonly combined to make words gives far more insight into the concepts that can be expressed than the letters alone. Similarly, activation atlases give us a bigger picture view by showing common combinations of neurons.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;In a perfect world the artist/user should have control over the decisions made by the algorithm. For example, to specify spatially varying styles to use, so that different rendering styles are used in different parts of the image, or to specify positions of individuial strokes. However, training these models is still too slow to be useful in an interactive application.&lt;/p&gt;
 </description>
     </item>
     
     <item>
+      <title>An example preprint / working paper</title>
+      <link>https://example.com/publication/preprint/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/publication/preprint/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Add the publication&amp;rsquo;s &lt;strong&gt;full text&lt;/strong&gt; or &lt;strong&gt;supplementary notes&lt;/strong&gt; here. You can use rich formatting such as including &lt;a href=&#34;https://docs.hugoblox.com/content/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Step aside Cron, this is a job for .Rprofile &amp; logfiles!</title>
-      <link>/post/rprofile/</link>
+      <link>https://example.com/post/rprofile/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rprofile/</guid>
-      <description>
-
-&lt;p&gt;Just as &lt;a href=&#34;https://github.com/r-lib/testthat&#34; target=&#34;_blank&#34;&gt;test automation&lt;/a&gt; is a critical part of &lt;a href=&#34;http://users.atw.hu/sustainsoftdev/ch05lev1sec2.html&#34; target=&#34;_blank&#34;&gt;rutheless testing&lt;/a&gt;, your goal for any project should be to identify taks that can be automated (and do it!).&lt;/p&gt;
-
-&lt;p&gt;There are a number of packages that allow you to schedule R scripts at specific times; two that come to mind are &lt;a href=&#34;https://cran.r-project.org/package=taskscheduleR&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;taskscheduleR&lt;/code&gt;&lt;/a&gt; (for Windows) and &lt;a href=&#34;https://cran.r-project.org/package=cronR&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;cronR&lt;/code&gt;&lt;/a&gt; (for Unix/Linux). We have &lt;code&gt;cronR&lt;/code&gt; setup on RStudio server at work, and it has a nice &lt;em&gt;RStudio addin&lt;/em&gt; which allows us to schedule tasks around any complex schedule. You can use these kind of tools &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34;&gt;to automate data collections&lt;/a&gt;, &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34;&gt;automate markdown reports to e-mail&lt;/a&gt;, &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34;&gt;or even the weather&lt;/a&gt;.&lt;/p&gt;
-
+      <guid>https://example.com/post/rprofile/</guid>
+      <description>&lt;p&gt;Just as &lt;a href=&#34;https://github.com/r-lib/testthat&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;test automation&lt;/a&gt; is a critical part of &lt;a href=&#34;http://users.atw.hu/sustainsoftdev/ch05lev1sec2.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rutheless testing&lt;/a&gt;, your goal for any project should be to identify taks that can be automated (and do it!).&lt;/p&gt;
+&lt;p&gt;There are a number of packages that allow you to schedule R scripts at specific times; two that come to mind are &lt;a href=&#34;https://cran.r-project.org/package=taskscheduleR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;taskscheduleR&lt;/code&gt;&lt;/a&gt; (for Windows) and &lt;a href=&#34;https://cran.r-project.org/package=cronR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;cronR&lt;/code&gt;&lt;/a&gt; (for Unix/Linux). We have &lt;code&gt;cronR&lt;/code&gt; setup on RStudio server at work, and it has a nice &lt;em&gt;RStudio addin&lt;/em&gt; which allows us to schedule tasks around any complex schedule. You can use these kind of tools &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;to automate data collections&lt;/a&gt;, &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;automate markdown reports to e-mail&lt;/a&gt;, &lt;a href=&#34;http://www.r-datacollection.com/blog/Welcome-to-the-ADCR-Blog/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;or even the weather&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Alternatively, when you want a function (or script) to launch every time you start &lt;code&gt;R&lt;/code&gt; you can place these inside &lt;code&gt;.Rprofile&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;But what about if you want a function to start only the first time a user logs in? This could be something simple (like a reminder) to fill in a progress report, or in this case a bit of &lt;em&gt;Monday Morning (de)Motivation&lt;/em&gt;. This is a job for logfiles!&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s be straight here, I love Mondays (because &lt;a href=&#34;https://rweekly.org/&#34; target=&#34;_blank&#34;&gt;rweekly&lt;/a&gt; is released!), but most people don&amp;rsquo;t! Therefore, I made a &lt;code&gt;.csv&lt;/code&gt; file of &lt;code&gt;178&lt;/code&gt; quotes about Monday and a folder of 83 &lt;code&gt;.png&lt;/code&gt; images of cartoon characters sleeping. I used the &lt;code&gt;.First()&lt;/code&gt; function in &lt;code&gt;.Rprofile&lt;/code&gt; to create a logfile (if one doesn&amp;rsquo;t already exist) and randomly pair an image with a quote the first time a user logs in on Monday morning (using the &lt;code&gt;advicegiveR&lt;/code&gt; package).
+&lt;p&gt;Let&amp;rsquo;s be straight here, I love Mondays (because &lt;a href=&#34;https://rweekly.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rweekly&lt;/a&gt; is released!), but most people don&amp;rsquo;t! Therefore, I made a &lt;code&gt;.csv&lt;/code&gt; file of &lt;code&gt;178&lt;/code&gt; quotes about Monday and a folder of 83 &lt;code&gt;.png&lt;/code&gt; images of cartoon characters sleeping. I used the &lt;code&gt;.First()&lt;/code&gt; function in &lt;code&gt;.Rprofile&lt;/code&gt; to create a logfile (if one doesn&amp;rsquo;t already exist) and randomly pair an image with a quote the first time a user logs in on Monday morning (using the &lt;code&gt;advicegiveR&lt;/code&gt; package).
 Here&amp;rsquo;s some examples of images a user might see first thing Monday morning:&lt;/p&gt;
-
 &lt;h3 id=&#34;the-good&#34;&gt;The Good&lt;/h3&gt;
+&lt;p&gt;
 
-&lt;p&gt;&lt;img src=&#34;fig1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/rprofile/fig1_hu5a1589c8bcd3d7f5f30c6091766e3247_1373430_385320775d847f880569227d6153ff94.webp 400w,
+               /post/rprofile/fig1_hu5a1589c8bcd3d7f5f30c6091766e3247_1373430_e4f67de1d8b35759a483803867e4364b.webp 760w,
+               /post/rprofile/fig1_hu5a1589c8bcd3d7f5f30c6091766e3247_1373430_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/rprofile/fig1_hu5a1589c8bcd3d7f5f30c6091766e3247_1373430_385320775d847f880569227d6153ff94.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;205&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;the-bad&#34;&gt;The Bad&lt;/h3&gt;
+&lt;p&gt;
 
-&lt;p&gt;&lt;img src=&#34;fig2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/rprofile/fig2_hu01f61ae31562a786a18e1b7d86b7653d_855474_81788cd0aa56d2f32dedf725c51bdcae.webp 400w,
+               /post/rprofile/fig2_hu01f61ae31562a786a18e1b7d86b7653d_855474_fab15c903e797efc542bcca65be5a046.webp 760w,
+               /post/rprofile/fig2_hu01f61ae31562a786a18e1b7d86b7653d_855474_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/rprofile/fig2_hu01f61ae31562a786a18e1b7d86b7653d_855474_81788cd0aa56d2f32dedf725c51bdcae.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;206&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;the-ugly&#34;&gt;The Ugly&lt;/h3&gt;
+&lt;p&gt;
 
-&lt;p&gt;&lt;img src=&#34;fig3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/rprofile/fig3_hua8c193949325defd6149d4a918e90300_984012_6517342bb321630fa1ef94196114f57f.webp 400w,
+               /post/rprofile/fig3_hua8c193949325defd6149d4a918e90300_984012_507356b1ce9a6f9154844aeee1aec173.webp 760w,
+               /post/rprofile/fig3_hua8c193949325defd6149d4a918e90300_984012_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/rprofile/fig3_hua8c193949325defd6149d4a918e90300_984012_6517342bb321630fa1ef94196114f57f.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;189&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;Any other time of that day (or any other day of the week) it will simply call a sage piece of collected advice from the &lt;code&gt;R-help&lt;/code&gt; forum via the &lt;code&gt;fortunes&lt;/code&gt; package. An example:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;R will always be arcane to those who do not make a serious effort to learn it. It is &lt;strong&gt;not&lt;/strong&gt; meant to be
 intuitive and easy for casual users to just plunge into. It is far too complex and powerful for that. But
 the rewards are great for serious data analysts who put in the effort.
-   &amp;ndash; Berton Gunter
-      R-help (August 2007)&lt;/p&gt;
+&amp;ndash; Berton Gunter
+R-help (August 2007)&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;You need to create a folder in your home directory that contains a &lt;code&gt;quotes.csv&lt;/code&gt;, a &lt;code&gt;LogFile.txt&lt;/code&gt; and &lt;code&gt;images&lt;/code&gt; folder.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;.First&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;today&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Sys.Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;LastLog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;file.exists&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/LogFile.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/LogFile.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;LastLog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;readLines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/LogFile.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;w&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;writeLines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;today&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LastLog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;today&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# Already logged on today, just exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;kr&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;## If you get here, Need to run the first login code&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;DOW&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;weekdays&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;today&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DOW&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Monday&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# I Hate Mondays!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;advicegiveR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;warn.conflicts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;readr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;warn.conflicts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;quotes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;read_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/quotes.csv&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;col_names&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sample&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;nrow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;quotes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;advice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;quotes[x1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;list.files&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/images&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# select one randomly&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;y1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sample&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;image&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;image_read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;paste0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/images&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y[y1]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# print image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;advicegiveR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;print_advice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;image&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;advice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;advice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;textcolor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;yellow&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# Fortune&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fortunes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;warn.conflicts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;rnum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sample&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;386&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fortune&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now Ideally, you should use a contrasting border around the inner text color to make it readable on any background.&lt;/p&gt;
+&lt;p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;.First &amp;lt;- function(){
-        today &amp;lt;- as.Date(Sys.Date())
-        LastLog &amp;lt;- &amp;quot;&amp;quot;
-        if(file.exists(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;)) {
-                LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;r&amp;quot;)
-                LastLog &amp;lt;- readLines(LogFile, 1L)
-                close(LogFile)
-        }
-        LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;w&amp;quot;)
-        writeLines(as.character(today), LogFile)
-        close(LogFile)
-        
-        if(LastLog == as.character(today)) {
-                # Already logged on today, just exit
-                return()
-        }
-        
-        ## If you get here, Need to run the first login code
-        DOW &amp;lt;- weekdays(today)
-        if (DOW == &amp;quot;Monday&amp;quot;) {
-                # I Hate Mondays!
-                suppressWarnings(library(advicegiveR, warn.conflicts = FALSE))
-                suppressWarnings(library(readr, warn.conflicts = FALSE))
-                quotes &amp;lt;- read_csv(&amp;quot;~/iHateMondays/quotes.csv&amp;quot;, col_names = FALSE)
-                x1 &amp;lt;- sample(1:nrow(quotes), 1)
-                advice &amp;lt;- as.character(quotes[x1,])
-                y &amp;lt;- list.files(&amp;quot;~/iHateMondays/images&amp;quot;)
-                # select one randomly
-                y1 &amp;lt;- sample(1:length(y), 1)
-                image &amp;lt;- magick::image_read(paste0(&amp;quot;~/iHateMondays/images&amp;quot;, y[y1]))
-                # print image
-                advicegiveR::print_advice(image = image, advice = advice, textcolor = &amp;quot;yellow&amp;quot;, size = 40)
-        } else {
-                # Fortune
-                suppressWarnings(library(fortunes, warn.conflicts = FALSE))
-                rnum &amp;lt;- sample(1:386, 1)
-                print(fortune(rnum))
-        }
-}
-&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Now Ideally, you should use a contrasting border around the inner text color to make it readable on any background.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;fig4.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The &lt;a href=&#34;https://github.com/leeper/meme&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;meme&lt;/code&gt; R package&lt;/a&gt; package uses a black border around text and positions text like a typical meme (top &amp;amp; bottom).&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/rprofile/fig4_hueaced9decf2d3781e68a921bc4e70968_10349_c6533c3ec83c8d9565518849337153e6.webp 400w,
+               /post/rprofile/fig4_hueaced9decf2d3781e68a921bc4e70968_10349_0835daeda2f828684f07fc9e514860fc.webp 760w,
+               /post/rprofile/fig4_hueaced9decf2d3781e68a921bc4e70968_10349_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
+               src=&#34;https://example.com/post/rprofile/fig4_hueaced9decf2d3781e68a921bc4e70968_10349_c6533c3ec83c8d9565518849337153e6.webp&#34;
+               width=&#34;240&#34;
+               height=&#34;150&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/leeper/meme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;meme&lt;/code&gt; R package&lt;/a&gt; package uses a black border around text and positions text like a typical meme (top &amp;amp; bottom).&lt;/p&gt;
 &lt;p&gt;By including a simple helper function to split the quote into equal lengthed top/bottom sections, the code would look like this:&lt;/p&gt;
-
 &lt;style&gt;
 pre.bluecars {
     background-color: #aabbff !important;
@@ -331,187 +711,315 @@ pre.redcars {
     background-color: #ffbbbb !important;
 }
 &lt;/style&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tidyverse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;word_split&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;left&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sep&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;words&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;strsplit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;nwords&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;lengths&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;left&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;start&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ceiling&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nwords&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;right&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;start&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ceiling&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nwords&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;+2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nwords&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;cw&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;paste&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;words[start&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stop]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;collapse&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nf&#34;&gt;pmap_chr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;left_words&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;word_split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;left&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;right_words&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;word_split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;side&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;right&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;.First&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;today&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Sys.Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;LastLog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;file.exists&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/LogFile.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/LogFile.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;LastLog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;readLines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/LogFile.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;w&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;writeLines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;today&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LogFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LastLog&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;today&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# Already logged on today, just exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;kr&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;## If you get here, Need to run the first login code&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;DOW&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;weekdays&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;today&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;kr&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DOW&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Monday&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# I Hate Mondays!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;readr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;warn.conflicts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;meme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;warn.conflicts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;quotes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;read_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/quotes.csv&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;col_names&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sample&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;nrow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;quotes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;advice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;quotes[x1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;top_words&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;left_words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;advice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;bottom_words&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;right_words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;advice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;list.files&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/images&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# select one randomly&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;y1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sample&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;image&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;image_read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;paste0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/images/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y[y1]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# print image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;meme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;paste0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;~/iHateMondays/images/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y[y1]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;1.5&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;upper&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;top_words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lower&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;bottom_words&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;color&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;yellow&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;font&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Times&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kr&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;c1&#34;&gt;# Fortune&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;suppressWarnings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fortunes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;warn.conflicts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;rnum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sample&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;386&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;nf&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fortune&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rnum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bluecars&#34;&gt;suppressWarnings(library(tidyverse))
-word_split &amp;lt;- function(x, side=&amp;quot;left&amp;quot;, sep=&amp;quot; &amp;quot;) {
-  words &amp;lt;- strsplit(as.character(x), sep)
-  nwords &amp;lt;- lengths(words)
-  if(side==&amp;quot;left&amp;quot;) {
-    start &amp;lt;- 1
-    end &amp;lt;- ceiling(nwords/2)
-  } else if (side==&amp;quot;right&amp;quot;) {
-    start &amp;lt;- ceiling((nwords+2)/2)
-    end &amp;lt;- nwords
-  }
-  cw &amp;lt;- function(words, start, stop) paste(words[start:stop], collapse=sep)
-  pmap_chr(list(words, start, end), cw)
-}
-left_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;left&amp;quot;)
-right_words &amp;lt;- function(..., side) word_split(..., side=&amp;quot;right&amp;quot;)
 
-.First &amp;lt;- function(){
-        today &amp;lt;- as.Date(Sys.Date())
-        LastLog &amp;lt;- &amp;quot;&amp;quot;
-        if(file.exists(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;)) {
-                LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;r&amp;quot;)
-                LastLog &amp;lt;- readLines(LogFile, 1L)
-                close(LogFile)
-        }
-        LogFile &amp;lt;- file(&amp;quot;~/iHateMondays/LogFile.txt&amp;quot;, open=&amp;quot;w&amp;quot;)
-        writeLines(as.character(today), LogFile)
-        close(LogFile)
 
-        if(LastLog == as.character(today)) {
-                # Already logged on today, just exit
-                return()
-        }
 
-        ## If you get here, Need to run the first login code
-        DOW &amp;lt;- weekdays(today)
-        if (DOW == &amp;quot;Monday&amp;quot;) {
-                # I Hate Mondays!
-                suppressWarnings(library(readr, warn.conflicts = FALSE))
-                suppressWarnings(library(meme, warn.conflicts = FALSE))
-                quotes &amp;lt;- read_csv(&amp;quot;~/iHateMondays/quotes.csv&amp;quot;, col_names = FALSE)
-                x1 &amp;lt;- sample(1:nrow(quotes), 1)
-                advice &amp;lt;- as.character(quotes[x1,])
-                top_words &amp;lt;- left_words(advice)
-                bottom_words &amp;lt;- right_words(advice)
-                y &amp;lt;- list.files(&amp;quot;~/iHateMondays/images&amp;quot;)
-                # select one randomly
-                y1 &amp;lt;- sample(1:length(y), 1)
-                image &amp;lt;- magick::image_read(paste0(&amp;quot;~/iHateMondays/images/&amp;quot;, y[y1]))
-                # print image
-                meme(paste0(&amp;quot;~/iHateMondays/images/&amp;quot;, y[y1]), size = &amp;quot;1.5&amp;quot;, upper = top_words, lower = bottom_words, color = &amp;quot;yellow&amp;quot;, font = &amp;quot;Times&amp;quot;)
 
-        } else {
-                # Fortune
-                suppressWarnings(library(fortunes, warn.conflicts = FALSE))
-                rnum &amp;lt;- sample(1:386, 1)
-                print(fortune(rnum))
-        }
-}
-&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;fig5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
-      <link>/post/ninjutsu/</link>
-      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/ninjutsu/</guid>
-      <description>&lt;p&gt;A graduate student in our laboratory recently asked me if it was possible to include more than two images, side-by-side, in &lt;code&gt;Xaringan&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Of course anything is possible, however, most blog posts only touch on the most basic things you can do. With custom &lt;code&gt;CSS&lt;/code&gt; you can do whatever you want. I wanted to create an image-grid of a bunch of GIFs so I used the &lt;code&gt;ninjutsu&lt;/code&gt; theme to accomplish it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/4EFfHjHbgUnhzeZtg0/giphy.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://moldach.github.io/xaringan-presentation_ninjutsu/&#34; target=&#34;_blank&#34;&gt;Link to the slide-show&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Drake in R</title>
-      <link>/post/drake/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/drake/</guid>
-      <description>&lt;p&gt;Recently I got interested in using the &lt;code&gt;xaringan&lt;/code&gt; package for creating HTML based R Markdown documents because I could use the &lt;code&gt;widgetframe&lt;/code&gt; package to embed &lt;code&gt;htmlwidgets&lt;/code&gt; as responsive iframes (I had created some spinning 3D visulizations with pseudo-coloring I wanted to present interactively).&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;xaringan&lt;/code&gt;, it&amp;rsquo;s a &lt;code&gt;R&lt;/code&gt; pacakges for creating slideshows with &lt;a href=&#34;http://remarkjs.com/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;remark.js&lt;/code&gt;&lt;/a&gt; through R Markdown.&lt;/p&gt;
 
-&lt;p&gt;Around the same time I learnt about &lt;a href=&#34;https://github.com/ropensci/drake&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Drake&lt;/code&gt;&lt;/a&gt; (or &amp;ldquo;Data Frames in R for Make&amp;rdquo;) which is an amazing a time-saving reproducible build system for data scientist specifically tailored to &lt;code&gt;R&lt;/code&gt;. The pacakge makes use of the &lt;code&gt;futures&lt;/code&gt; package allowing the use of parallel computing on high-performance computing systems.&lt;/p&gt;
 
-&lt;p&gt;I recently gave a talk at the Douglas Mental Health University Institute talking about the advantages of Drake (and a few other interesting projects).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/3fhu1Pm9kYB5RgDtn7/giphy.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The slides can be found &lt;a href=&#34;https://moldach.github.io/xaringan-presentation_drake/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/rprofile/fig5_hu489300b083107adf7f4cbfd451d75d66_3113622_6b6c9114722b580a37361ee4922e3f20.webp 400w,
+               /post/rprofile/fig5_hu489300b083107adf7f4cbfd451d75d66_3113622_637161eb1cc062d36935478488d49d52.webp 760w,
+               /post/rprofile/fig5_hu489300b083107adf7f4cbfd451d75d66_3113622_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://example.com/post/rprofile/fig5_hu489300b083107adf7f4cbfd451d75d66_3113622_6b6c9114722b580a37361ee4922e3f20.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;536&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Web Scraping Google Sheets with RSelenium</title>
-      <link>/project/rselenium/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 -0700</pubDate>
-      
-      <guid>/project/rselenium/</guid>
+      <link>https://example.com/project/rselenium/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/rselenium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>10 Tips for Choosing the Optimal Number of Clusters</title>
-      <link>/project/optimal-clustering/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
-      
-      <guid>/project/optimal-clustering/</guid>
+      <link>https://example.com/project/optimal-clustering/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/optimal-clustering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Gamification of Fitbit: How An API Provided The Next Level of tRaining</title>
-      <link>/project/fitbit-project/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 -0700</pubDate>
-      
-      <guid>/project/fitbit-project/</guid>
+      <link>https://example.com/project/fitbit-project/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/fitbit-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How to Highlight 3D Brain Regions</title>
-      <link>/project/3d-brain/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/3d-brain/</guid>
+      <link>https://example.com/project/3d-brain/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/3d-brain/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Transcriptome Assembly and Annotation</title>
-      <link>/project/assembly/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/assembly/</guid>
+      <link>https://example.com/project/assembly/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/assembly/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vapoRwave ggplot2 themes &amp; palettes</title>
-      <link>/project/vaporwave/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/vaporwave/</guid>
+      <link>https://example.com/project/vaporwave/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/vaporwave/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How to Choose the Best Open Source Software</title>
-      <link>/project/software-solutions/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/software-solutions/</guid>
+      <link>https://example.com/project/software-solutions/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/software-solutions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
-      <link>/project/reverse-axis/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/reverse-axis/</guid>
+      <link>https://example.com/project/reverse-axis/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/reverse-axis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Gold Standard for Data Science Project Management</title>
-      <link>/project/project-management/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/project-management/</guid>
+      <link>https://example.com/project/project-management/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/project-management/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Recreating data visualizations from the book Knowledge is Beautiful</title>
+      <link>https://example.com/project/knowledge-is-beautiful/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/knowledge-is-beautiful/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analyzing 12 years of the Free Ride World Tour</title>
+      <link>https://example.com/project/free-ride-world-tour/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/free-ride-world-tour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gene set enrichment in R</title>
+      <link>https://example.com/project/gsea/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/gsea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An example journal article</title>
+      <link>https://example.com/publication/journal-article/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://example.com/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Add the publication&amp;rsquo;s &lt;strong&gt;full text&lt;/strong&gt; or &lt;strong&gt;supplementary notes&lt;/strong&gt; here. You can use rich formatting such as including &lt;a href=&#34;https://docs.hugoblox.com/content/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An example conference paper</title>
+      <link>https://example.com/publication/conference-paper/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>https://example.com/publication/conference-paper/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Add the publication&amp;rsquo;s &lt;strong&gt;full text&lt;/strong&gt; or &lt;strong&gt;supplementary notes&lt;/strong&gt; here. You can use rich formatting such as including &lt;a href=&#34;https://docs.hugoblox.com/content/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Drake</title>
+      <link>https://example.com/event/drake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/event/drake/</guid>
+      <description>&lt;p&gt;Recently I got interested in using the &lt;code&gt;xaringan&lt;/code&gt; package for creating HTML based R Markdown documents because I could use the &lt;code&gt;widgetframe&lt;/code&gt; package to embed &lt;code&gt;htmlwidgets&lt;/code&gt; as responsive iframes (I had created some spinning 3D visulizations with pseudo-coloring I wanted to present interactively).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;xaringan&lt;/code&gt;, it&amp;rsquo;s a &lt;code&gt;R&lt;/code&gt; pacakges for creating slideshows with &lt;a href=&#34;http://remarkjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;remark.js&lt;/code&gt;&lt;/a&gt; through R Markdown.&lt;/p&gt;
+&lt;p&gt;Around the same time I learnt about &lt;a href=&#34;https://github.com/ropensci/drake&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;Drake&lt;/code&gt;&lt;/a&gt; (or &amp;ldquo;Data Frames in R for Make&amp;rdquo;) which is an amazing a time-saving reproducible build system for data scientist specifically tailored to &lt;code&gt;R&lt;/code&gt;. The pacakge makes use of the &lt;code&gt;futures&lt;/code&gt; package allowing the use of parallel computing on high-performance computing systems.&lt;/p&gt;
+&lt;p&gt;I recently gave a talk at the Douglas Mental Health University Institute talking about the advantages of Drake (and a few other interesting projects).&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://media.giphy.com/media/3fhu1Pm9kYB5RgDtn7/giphy.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&#39;&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
+      <link>https://example.com/event/ninjutsu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/event/ninjutsu/</guid>
+      <description>&lt;p&gt;Recently, a curious graduate student in our lab posed a question: &amp;ldquo;Can we go beyond the usual two-image limit in &lt;code&gt;Xaringan&lt;/code&gt; presentations?&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;While many resources cover the basics, the true potential lies in the realm of custom &lt;code&gt;CSS&lt;/code&gt;, enabling limitless possibilities. In my exploration, I aimed to push these boundaries by crafting a dynamic image grid featuring an array of GIFs, all made achievable through the innovative &lt;code&gt;ninjutsu&lt;/code&gt; theme.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://media.giphy.com/media/4EFfHjHbgUnhzeZtg0/giphy.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MTLViz 2019 Speech</title>
+      <link>https://example.com/event/mtlviz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/event/mtlviz/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

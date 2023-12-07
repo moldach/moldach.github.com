@@ -1,152 +1,224 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Matthew J. Oldach, M.Sc.</title>
-    <link>/project/</link>
-    <description>Recent content in Projects on Matthew J. Oldach, M.Sc.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 -0700</lastBuildDate>
-    
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Projects | Academic</title>
+    <link>https://example.com/project/</link>
+      <atom:link href="https://example.com/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 11 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Projects</title>
+      <link>https://example.com/project/</link>
+    </image>
     
     <item>
       <title>UMAP Supervised Embeddings (Python-&gt;R)</title>
-      <link>/project/supervised-umap/</link>
-      <pubDate>Tue, 09 Mar 2021 00:00:00 -0700</pubDate>
-      
-      <guid>/project/supervised-umap/</guid>
-      <description>includeHTML(&amp;quot;index.html&amp;quot;)  </description>
+      <link>https://example.com/project/supervised-umap/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/supervised-umap/</guid>
+      <description>&lt;iframe src=&#34;https://example.com/slides/supervised-umap/index.html&#34; width=&#34;100%&#34; height=&#34;600&#34;&gt;&lt;/iframe&gt;
+</description>
     </item>
     
     <item>
       <title>Shiny Dev and Software Release Cycles and Rayshader, Oh My!</title>
-      <link>/project/taster/</link>
+      <link>https://example.com/project/hinuhinu/</link>
       <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/project/taster/</guid>
-      <description>CLICK HERE TO GO TO THE SHINY APPLICATION!!!
-Inspiration for the Shiny ApplicationYou can read as much theory as you want but the best way to learn something is to pull-up your sleeves and get your hands dirty by implementing a project.
-I’ve been wanting to develop a Shiny application for sometime but the opportunity has never arisen. In my current role as a R developer, I provide client-side implementations via Java with the help of the RServe 📦 - so Shiny isn’t needed.</description>
+      <guid>https://example.com/project/hinuhinu/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/walkthrough.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://matthew-j-oldach.shinyapps.io/hinuhinu&#34;&gt;CLICK HERE TO GO TO THE SHINY APPLICATION!!!&lt;/a&gt;&lt;/p&gt;
+&lt;div id=&#34;inspiration-for-the-shiny-application&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Inspiration for the Shiny Application&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can read as much theory as you want but the best way to learn something is to pull-up your sleeves and get your hands dirty by implementing a project.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I’ve been wanting to develop a &lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;Shiny application&lt;/a&gt; for sometime but the opportunity has never arisen. In my current role as a &lt;strong&gt;R&lt;/strong&gt; developer, I provide client-side implementations via &lt;strong&gt;Java&lt;/strong&gt; with the help of the &lt;code&gt;RServe&lt;/code&gt; 📦 - so Shiny isn’t needed. Well, if the opportunity doesn’t present itself on the job it’s time for a side-project!&lt;/p&gt;
+&lt;p&gt;I wasn’t exactly sure what kind of project I should do until I saw a blog post by &lt;a href=&#34;https://timogrossenbacher.ch/&#34;&gt;Timo Grossenbacher&lt;/a&gt; on &lt;a href=&#34;https://timogrossenbacher.ch/2019/04/bivariate-maps-with-ggplot2-and-sf/&#34;&gt;bivariate maps with &lt;code&gt;ggplot2&lt;/code&gt; and &lt;code&gt;sf&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/swiss.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The map shows income (in-)equality in Switzerland at the municipality level by visualizing two variables at the same time. What instantly attracted me was the beautiful relief of the mountainous Swiss landscape. It’s not something I’ve seen much from &lt;code&gt;ggplot2&lt;/code&gt; maps - something usually reserved for GIS programs. I thought creating an application for geography would be a fun and engaging use of a Shiny application. My current role as a developer for a web-application that enables complex meta-analysis and visualization caters to biologists rather than specilazied bioinformaticians- &lt;a href=&#34;https://www.networkanalyst.ca/&#34;&gt;NetworkAnalyst.ca&lt;/a&gt;. I thought it might be cool to do a similar thing for people who aren’t GIS specialist (or even familiar with &lt;code&gt;R&lt;/code&gt;) and enable them to quickly create maps and save them (either as &lt;code&gt;PNGs&lt;/code&gt; or &lt;code&gt;PDFs&lt;/code&gt;)?&lt;/p&gt;
+&lt;p&gt;One of the intial challenges was finding a good dataset. I had wanted to do a project on my home province of Alberta but eventually settled on Hawaii instead for a couple reasons. One is that I could find &lt;a href=&#34;https://geo.nyu.edu&#34;&gt;relief’s for the State of Hawaii&lt;/a&gt; in two levels of detail: &lt;strong&gt;100m&lt;/strong&gt; and &lt;strong&gt;200m&lt;/strong&gt;. The second was the State of Hawaii &lt;a href=&#34;https://planning.hawaii.gov/gis/download-gis-data/&#34;&gt;also provides a &lt;strong&gt;large&lt;/strong&gt; number of shapefiles&lt;/a&gt; which I could lay overtop of the relief. The amount of open data available to Hawaii attractive, and the fact that they are islands presented certain opportunities… and challenges, as well.&lt;/p&gt;
+&lt;p&gt;I wanted to provide users with a range maps. I wanted maps at different scales and with different contexts such as focusing on the marine environment or the terrestrial enviornment. I wanted maps covering the whole state of Hawaii, others showing individual islands (or groups of islands), and others giving the user a view of the city level. It was here that I got inspiration from &lt;a href=&#34;erdavis.com&#34;&gt;Erin Davis’s&lt;/a&gt; beautiful street maps in &lt;a href=&#34;https://erdavis.com/2019/09/20/the-beautiful-hidden-logic-of-cities-worldwide/&#34;&gt;“The Beatiful Hidden Logic of Cities - Worldwide”&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/paris.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Erin’s legend looked great! Unfortunately she didn’t have a programatic way to generate these labels, she did them in Adobe Photoshop (&lt;em&gt;personal correspondence&lt;/em&gt;). I tried to write some code to generate labels programattically using &lt;code&gt;key_glyph = &#34;point&#34;&lt;/code&gt; to set &lt;code&gt;sf&lt;/code&gt; object glyphs as points and then use the &lt;code&gt;override.aes&lt;/code&gt; trick to get circles (&lt;a href=&#34;https://stackoverflow.com/questions/58172102/dynamically-align-plots-custom-ggplot2-legend-for-spatial-maps-in-r&#34;&gt;like in this SO post&lt;/a&gt; post) but I didn’t like the look. To be honest lables are something that could still use work in the &lt;code&gt;ggplot2&lt;/code&gt; world IMO 🤷&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jakekaupp&#34;&gt;Jake Kaupp&lt;/a&gt; did a &lt;code&gt;#TidyTuesday&lt;/code&gt; submission for &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-10-01&#34;&gt;Week #40: Pizza Party!&lt;/a&gt; showing all of the pizza spots in the five-boroughs and came up with a nice way of &lt;a href=&#34;https://github.com/jkaupp/tidytuesdays/blob/master/2019/week40/R/analysis.R&#34;&gt;constructing a color legend with &lt;code&gt;ggplotGrob()&lt;/code&gt;&lt;/a&gt; as well as a neat use of &lt;a href=&#34;https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html&#34;&gt;&lt;code&gt;colorspace::darken()&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/pizza.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;For Shiny &lt;strong&gt;UI&lt;/strong&gt; inspiration I looked towards some of the &lt;a href=&#34;https://blog.rstudio.com/2019/04/05/first-shiny-contest-winners/&#34;&gt;winners of the 1st ever Shiny Contest&lt;/a&gt; (something I hope RStudio brings back next year!). I can’t express how much I learn from reading other peoples code and for this particular application I was heavily inspired by the &lt;a href=&#34;https://community.rstudio.com/u/committedtotape/&#34;&gt;David Smale&lt;/a&gt;’s, winner of &lt;strong&gt;“Best Design”&lt;/strong&gt;, &lt;a href=&#34;https://committedtotape.shinyapps.io/sixtyninelovesongs/&#34;&gt;69 Love Songs: A Lyrical Analysis&lt;/a&gt;. What was really cool was it was hosted on the RStudio cloud so I could go in and change things and see how it affected which for me was one of the coolest ways to grok Shiny.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;building-the-application&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Building the application&lt;/h2&gt;
+&lt;p&gt;Getting back to elevation reliefs for a second. Before I learned that you could &lt;em&gt;easily&lt;/em&gt; get &lt;strong&gt;Digital Elevation Model&lt;/strong&gt; (DEM) data from &lt;code&gt;mapzen&lt;/code&gt; via the {&lt;a href=&#34;https://github.com/neilcharles/geoviz&#34;&gt;`geoviz’&lt;/a&gt;} 📦, I used &lt;a href=&#34;https://www.qgis.org/en/site/&#34;&gt;QGIS&lt;/a&gt; to subset the reliefs. Here’s a screencast of the process:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/MAm1gqCGxc4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;For the &lt;strong&gt;shapefiles&lt;/strong&gt;, sometimes it was simple to subset the &lt;code&gt;geom_sf()&lt;/code&gt; object via a column with island information (Hawaii, Maui, Oahu, Kauai) using &lt;code&gt;dplyr::filter()&lt;/code&gt;. However, when there was no information I also used &lt;a href=&#34;https://www.qgis.org/en/site/&#34;&gt;QGIS&lt;/a&gt; to subset the &lt;strong&gt;shapefiles&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: I’m positive there is a way to do this via a bounding-box in &lt;code&gt;R&lt;/code&gt; I just never learned how… please send me a message and I’ll update this if you know a way! Here’s a video of how I did it with QGIS:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/E805wtztzGA&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;This project was a great learning experience not only for learning &lt;strong&gt;Shiny &amp;amp; Spatial Mapping&lt;/strong&gt;, but also learning a bit more about the development cycle of a “&lt;em&gt;production&lt;/em&gt;” applcation is like. It’s kind of like the ol’ aphorism &lt;strong&gt;“Perfect is the eney of good”&lt;/strong&gt; - you want to get your appltion out to the public ASAP. I released the app as soon as I had tested for bugs and thought the &lt;strong&gt;UI&lt;/strong&gt; was &lt;em&gt;good-enough&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;After its release, I wanted to add a new feature - &lt;a href=&#34;https://www.rayshader.com/&#34;&gt;Rayshader&lt;/a&gt;!, Rayshader is one of the &lt;em&gt;hot-new&lt;/em&gt; tools in &lt;a href=&#34;https://nowosad.github.io/whyr_19/#1&#34;&gt;The Landscape of Spatial Data Analysis in R&lt;/a&gt;. Historically geographic information had always been presented in the form of two-dimensional maps, all the way from cave walls, parchment to computer screens. Because spatial information is inherently 3D, it makes sense that the tools available today are allowing 3D depictions of geographical data to &lt;a href=&#34;http://storymaps.esri.com/stories/2017/peaks-and-valleys/index.html?adumkts=branding&amp;amp;aduc=print&amp;amp;adum=interactive_pdf&amp;amp;aduSF=url&amp;amp;utm_Source=other&amp;amp;aduca=m17the_arcgis_book_interactive_pdf&amp;amp;aduco=peaks_and_valleys&amp;amp;adut=storymap-87&amp;amp;aducp=smartcommunities&#34;&gt;escape the realm of mere novelty&lt;/a&gt;. With Rayshader you can control things like the lighting, camera tilt, and angle of view which provides an engaging experience for the audience.&lt;/p&gt;
+&lt;p&gt;I was signed up for &lt;a href=&#34;https://www.tylermw.com/&#34;&gt;Tyler Morgan-Wall’s (the developer of Rayshader)&lt;/a&gt; &lt;strong&gt;Penn State MUSA Masterclass: 3D Mapping and Visualization with R and Rayshader&lt;/strong&gt; the next month (the awesome &lt;a href=&#34;https://upenn.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ae6642b2-c2be-4ad0-846c-aafb00e00129&#34;&gt;talk is here&lt;/a&gt; and the &lt;a href=&#34;https://github.com/PennMUSA/MasterClass2019_3DMappingAndViz&#34;&gt;Git repo is here&lt;/a&gt;) and wanted to spend a bit of time to demo the package before taking the class.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I came up with some very plain &lt;em&gt;“desert”&lt;/em&gt;-y looking maps of Hawaii:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/new-feature.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Although I had wanted to allow the user to interact with the 3D maps, I ran into issues where the application attempted to use more memory then was avialable under the free-tier plan of &lt;a href=&#34;https://www.shinyapps.io/&#34;&gt;Shinyapps.io&lt;/a&gt;. The &lt;a href=&#34;https://docs.rstudio.com/shinyapps.io/applications.html#debugging-your-application&#34;&gt;RStudio documentation on debugging your application&lt;/a&gt;’s section on &lt;strong&gt;Memory&lt;/strong&gt; wa useful for figuring this out as it suggests looking in the &lt;a href=&#34;https://docs.rstudio.com/shinyapps.io/applications.html#logging&#34;&gt;application’s logs&lt;/a&gt; for &lt;code&gt;2019-11-18T15:12:16.088451+00:00 shinyapps[system]: Out of memory!&lt;/code&gt;. I settled on providing the “fly-by” videos innstead.&lt;/p&gt;
+&lt;p&gt;After attending Tyler’s class I wanted to update my application again by including a satellite overlay; I spent some time figuring out the best way to do this, modifying the easing function and &lt;code&gt;rayshader::render_movie()&lt;/code&gt; parameters to make longer videos, testing it out, and then using &lt;code&gt;rsconnect::deployApp()&lt;/code&gt; to re-deploy my application.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/hawaii_vids.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I decided to merge all four videos together using &lt;a href=&#34;http://www.videosoftdev.com/&#34;&gt;VSCD Video Editor&lt;/a&gt; and overlaid some a musical track. Although Tyler promised Rayshader would have VR/AR capabilities in the near-future, I simply couldn’t wait so I also made another version of the video with a steroscopic 3D effect for viewing with red and cyan anaglyph 3D glasses:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/faCiHnL76Fw&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;div id=&#34;future-directionsthings-learnedgeneral-musings&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Future Directions/Things Learned/General Musings&lt;/h3&gt;
+&lt;p&gt;I’m not planning on developing this specific application any further as I’m quite happy with the final outcome. This project was mainly to learn:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shiny&lt;/li&gt;
+&lt;li&gt;Spatial Mapping&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_release_life_cycle&#34;&gt;Software release life cycles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From talking with my father he told me that software he worked on with IBM would be released with ~2000 known bugs.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Better a diamond with a flaw than a pebble without” - Confucius&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It’s &lt;a href=&#34;https://guides.github.com/features/issues/&#34;&gt;important to keep track of tasks, enhancements, and bugs for your project&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/issues.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;Those scrupulous enough to peer into my repo will have found that I do not always follow my own advice…&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now theoretically let’s say I was building this application for a client and they just &lt;strong&gt;had to have!&lt;/strong&gt; interactive 3D visualizations produced with Rayshader (something I’m not sure if Shiny is ideal for anyways) you could pay for a &lt;a href=&#34;https://www.shinyapps.io/&#34;&gt;higher tier in Shinyapps.io&lt;/a&gt; to get a performance boost (&lt;em&gt;i.e.&lt;/em&gt; more RAM 🐏).&lt;/p&gt;
+&lt;p&gt;Another thing that I may have wanted to do if my application was more complex is to provide the user with a tour using the {&lt;a href=&#34;https://github.com/JohnCoene/cicerone&#34;&gt;&lt;code&gt;cicerone&lt;/code&gt;&lt;/a&gt;} 📦 like what one sees on the &lt;a href=&#34;https://marionilab.cruk.cam.ac.uk/iSEE_allen&#34;&gt;excellent tour of the iSEE Shiny interface&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After &lt;strong&gt;75 commits&lt;/strong&gt; I’m pretty tired, so I didn’t include any code snippets here (BTW you can find all the code on Github). &lt;strong&gt;Full-disclosure&lt;/strong&gt;: the 75 commtis (and code) are currently split between two-repositories and I feel a bit of shame for that…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/shame.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;But there is a reason for this. I had intially started off the [mahalo] repository because I wanted to create package like the {&lt;a href=&#34;&#34;&gt;&lt;code&gt;bcmaps&lt;/code&gt;&lt;/a&gt;} 📦 but for Hawaii (I may still if there is enough interest from the community, but at the moment this is on-hold).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/bcmaps.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Along with this, I also wanted to create a Showcase/Companion for the package with Shiny that would give users a run-through.&lt;/p&gt;
+&lt;p&gt;I wasn’t sure what the “best practices” for this are: do you keep the app with the package or do you have a seperate repo? I reached out to John Coene (&lt;span class=&#34;citation&#34;&gt;[@jdatap]&lt;/span&gt;(&lt;a href=&#34;https://twitter.com/jdatap&#34; class=&#34;uri&#34;&gt;https://twitter.com/jdatap&lt;/a&gt;)), because he’s an all-around nice guy (and also Swiss), and he suggested keeping them seperate if the application is large (adivce I followed) and to also use {&lt;a href=&#34;https://github.com/ThinkR-open/golem&#34;&gt;&lt;code&gt;golem&lt;/code&gt;&lt;/a&gt;} (advice which I did not follow - I still think it’s a great idea and I’ll consider for my next app though!).&lt;/p&gt;
+&lt;p&gt;I still need to spend some time figuring out how to supply datasets as I ran into issues with my project. I knew that I wouldn’t be able to just drop all of the shapefiles into my git repo because Github is meant for code and not data. I also knew that you could &lt;a href=&#34;https://www.r-bloggers.com/accelerating-ggplot2-use-a-canvas-to-speed-up-rendering-plots/&#34;&gt;acclerate &lt;code&gt;ggplot2&lt;/code&gt; by using a canvas to speed up rendering plots&lt;/a&gt; so I thought to myself “If I’m just developing a map package I can generate”basemaps&#34; as &lt;code&gt;.Rds&lt;/code&gt; objects and then use those in my &lt;a href=&#34;&#34;&gt;hinuhin repository&lt;/a&gt; to overlay other shapefiles on-top of&#34;. Even though I avoided including most of the GIS information by producing these basemaps I had to set up a free account with &lt;a href=&#34;https://git-lfs.github.com/&#34;&gt;Git Large File Storage&lt;/a&gt; to include the shapefiles I overlaid in this project and that took up &lt;strong&gt;80%&lt;/strong&gt; of my quota.&lt;/p&gt;
+&lt;p&gt;One way I had heard of dealing with this was either by hosting on a server: either, an internal server (means the Shiny application can only be used within an organization and not the general public) or hosting the data on the cloud (&lt;em&gt;e.g.&lt;/em&gt; Amazon S3). Still other packages have dealt with this issue by accessing web-hosted databases via HTTP requests to APIs - which is well and good if the data is already available from an online database (it was not)&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;bcmaps&lt;/code&gt; package handels data in a way proposed by G. Brooke Anderson &amp;amp; Dirk Eddelbuettel (&lt;span class=&#34;citation&#34;&gt;[@eddelbuettel]&lt;/span&gt;(&lt;a href=&#34;https://twitter.com/eddelbuettel&#34; class=&#34;uri&#34;&gt;https://twitter.com/eddelbuettel&lt;/a&gt;)), via a &lt;a href=&#34;https://journal.r-project.org/archive/2017/RJ-2017-026/index.html&#34;&gt;&lt;code&gt;drat&lt;/code&gt; repository&lt;/a&gt; which allows a recommended maximum size of 1GB - I may have to look into this option if the Twitterverse is interested in a package for maps of Hawaii.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;brief-thought-on-the-future-of-rayshader&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Brief thought on the future of Rayshader&lt;/h3&gt;
+&lt;p&gt;There are a number of companies today trying to map out city streets to create high-quality 3D maps for self-driving cars and projection projects (see: &lt;a href=&#34;https://www.fastcompany.com/90128298/the-race-to-map-the-world-in-3d&#34;&gt;The Race to Map the World in 3D&lt;/a&gt;):&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://example.com/img/street.gif&#34; alt=&#34;Image: Carmera&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Image: Carmera&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Getting access to this kind of data would be awesome because it would mean you could overlay high-quality images over LIDAR like this one produced by Tyler of Philadelphia:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/img/phillyshadow3d-1.png&#34; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you missed it at the top you can &lt;a href=&#34;https://matthew-j-oldach.shinyapps.io/hinuhinu&#34;&gt;CLICK HERE TO GO TO MY SHINY APPLICATION DEPLOYMENT!!!&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Shiny-filteRs: Mobile app bridging languages, blending art, geolocation, and privacy</title>
+      <link>https://example.com/project/shiny-filters/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/shiny-filters/</guid>
+      <description>&lt;iframe src=&#34;https://example.com/slides/shiny-filters/index.html&#34; width=&#34;100%&#34; height=&#34;600&#34;&gt;&lt;/iframe&gt;
+</description>
     </item>
     
     <item>
       <title>Web Scraping Google Sheets with RSelenium</title>
-      <link>/project/rselenium/</link>
-      <pubDate>Thu, 31 Jan 2019 00:00:00 -0700</pubDate>
-      
-      <guid>/project/rselenium/</guid>
+      <link>https://example.com/project/rselenium/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/rselenium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>10 Tips for Choosing the Optimal Number of Clusters</title>
-      <link>/project/optimal-clustering/</link>
-      <pubDate>Wed, 30 Jan 2019 00:00:00 -0700</pubDate>
-      
-      <guid>/project/optimal-clustering/</guid>
+      <link>https://example.com/project/optimal-clustering/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/optimal-clustering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Gamification of Fitbit: How An API Provided The Next Level of tRaining</title>
-      <link>/project/fitbit-project/</link>
-      <pubDate>Sat, 10 Nov 2018 00:00:00 -0700</pubDate>
-      
-      <guid>/project/fitbit-project/</guid>
+      <link>https://example.com/project/fitbit-project/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/fitbit-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How to Highlight 3D Brain Regions</title>
-      <link>/project/3d-brain/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/3d-brain/</guid>
+      <link>https://example.com/project/3d-brain/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/3d-brain/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Transcriptome Assembly and Annotation</title>
-      <link>/project/assembly/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/assembly/</guid>
+      <link>https://example.com/project/assembly/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/assembly/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vapoRwave ggplot2 themes &amp; palettes</title>
-      <link>/project/vaporwave/</link>
-      <pubDate>Wed, 31 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/vaporwave/</guid>
+      <link>https://example.com/project/vaporwave/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/vaporwave/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How to Choose the Best Open Source Software</title>
-      <link>/project/software-solutions/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/software-solutions/</guid>
+      <link>https://example.com/project/software-solutions/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/software-solutions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reversing the order of axis in a ggplot2 scatterplot</title>
-      <link>/project/reverse-axis/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/reverse-axis/</guid>
+      <link>https://example.com/project/reverse-axis/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/reverse-axis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Gold Standard for Data Science Project Management</title>
-      <link>/project/project-management/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/project-management/</guid>
+      <link>https://example.com/project/project-management/</link>
+      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/project-management/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recreating data visualizations from the book Knowledge is Beautiful</title>
-      <link>/project/knowledge-is-beautiful/</link>
-      <pubDate>Wed, 06 Jun 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/knowledge-is-beautiful/</guid>
+      <link>https://example.com/project/knowledge-is-beautiful/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/knowledge-is-beautiful/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Analyzing 12 years of the Free Ride World Tour</title>
-      <link>/project/free-ride-world-tour/</link>
-      <pubDate>Mon, 07 May 2018 00:00:00 -0600</pubDate>
-      
-      <guid>/project/free-ride-world-tour/</guid>
+      <link>https://example.com/project/free-ride-world-tour/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/free-ride-world-tour/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gene set enrichment in R</title>
-      <link>/project/gsea/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 -0700</pubDate>
-      
-      <guid>/project/gsea/</guid>
+      <link>https://example.com/project/gsea/</link>
+      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
+      <guid>https://example.com/project/gsea/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/project/shiny-filters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/project/shiny-filters/</guid>
-      <description>Shiny-filteRsh1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}pre:not([class]) { background-color: white }code{white-space: pre-wrap;}span.smallcaps{font-variant: small-caps;}span.underline{text-decoration: underline;}div.column{display: inline-block; vertical-align: top; width: 50%;}div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}ul.task-list{list-style: none;}code{white-space: pre;}if (window.hljs) {hljs.configure({languages: []});hljs.</description>
     </item>
     
   </channel>

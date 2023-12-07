@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Academic</title>
+    <link>https://example.com/event/</link>
+      <atom:link href="https://example.com/event/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language>
+    <image>
+      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://example.com/event/</link>
+    </image>
+    
+    <item>
+      <title>Getting Started with Drake</title>
+      <link>https://example.com/event/drake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/event/drake/</guid>
+      <description>&lt;p&gt;Recently I got interested in using the &lt;code&gt;xaringan&lt;/code&gt; package for creating HTML based R Markdown documents because I could use the &lt;code&gt;widgetframe&lt;/code&gt; package to embed &lt;code&gt;htmlwidgets&lt;/code&gt; as responsive iframes (I had created some spinning 3D visulizations with pseudo-coloring I wanted to present interactively).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;xaringan&lt;/code&gt;, it&amp;rsquo;s a &lt;code&gt;R&lt;/code&gt; pacakges for creating slideshows with &lt;a href=&#34;http://remarkjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;remark.js&lt;/code&gt;&lt;/a&gt; through R Markdown.&lt;/p&gt;
+&lt;p&gt;Around the same time I learnt about &lt;a href=&#34;https://github.com/ropensci/drake&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;Drake&lt;/code&gt;&lt;/a&gt; (or &amp;ldquo;Data Frames in R for Make&amp;rdquo;) which is an amazing a time-saving reproducible build system for data scientist specifically tailored to &lt;code&gt;R&lt;/code&gt;. The pacakge makes use of the &lt;code&gt;futures&lt;/code&gt; package allowing the use of parallel computing on high-performance computing systems.&lt;/p&gt;
+&lt;p&gt;I recently gave a talk at the Douglas Mental Health University Institute talking about the advantages of Drake (and a few other interesting projects).&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://media.giphy.com/media/3fhu1Pm9kYB5RgDtn7/giphy.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&#39;&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Image-grid with Ninjutsu CSS theme in Xaringan</title>
+      <link>https://example.com/event/ninjutsu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/event/ninjutsu/</guid>
+      <description>&lt;p&gt;Recently, a curious graduate student in our lab posed a question: &amp;ldquo;Can we go beyond the usual two-image limit in &lt;code&gt;Xaringan&lt;/code&gt; presentations?&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;While many resources cover the basics, the true potential lies in the realm of custom &lt;code&gt;CSS&lt;/code&gt;, enabling limitless possibilities. In my exploration, I aimed to push these boundaries by crafting a dynamic image grid featuring an array of GIFs, all made achievable through the innovative &lt;code&gt;ninjutsu&lt;/code&gt; theme.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://media.giphy.com/media/4EFfHjHbgUnhzeZtg0/giphy.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MTLViz 2019 Speech</title>
+      <link>https://example.com/event/mtlviz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.com/event/mtlviz/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

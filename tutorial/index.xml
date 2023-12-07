@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Overview on Matthew J. Oldach, M.Sc.</title>
-    <link>/tutorial/</link>
-    <description>Recent content in Overview on Matthew J. Oldach, M.Sc.</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 -0600</lastBuildDate>
-    
-	<atom:link href="/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Overview | Academic</title>
+    <link>https://example.com/tutorial/</link>
+      <atom:link href="https://example.com/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <description>Overview</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Overview</title>
+      <link>https://example.com/tutorial/</link>
+    </image>
     
   </channel>
 </rss>
