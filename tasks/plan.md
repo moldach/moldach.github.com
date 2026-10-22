@@ -23,7 +23,7 @@ SEO priority: **international remote clients**, confirmed by Matthew on 22 Octob
 
 ## Routes and content
 
-Routes: `/`, `/services/`, `/work/`, `/work/<slug>/`, `/writing/`, `/writing/<slug>/`, `/about/`, `/experience/`, `/contact/`, `/privacy/`. Preservation-only legacy material can live under `/archive/`; slide/download paths remain stable.
+Routes: `/`, `/services/`, `/services/ai-opportunity-assessment/`, `/services/ai-workflow-automation/`, `/services/ai-training-adoption/`, `/work/`, `/work/<slug>/`, `/writing/`, `/writing/<slug>/`, `/about/`, `/experience/`, `/contact/`, `/privacy/`. Preservation-only legacy material can live under `/archive/`; slide/download paths remain stable.
 
 Services: opportunity assessment, focused implementation, team adoption. No invented rates. Initial featured work: PuttPulse, Shiny-filteRs and Hinuhinu, with evidence reviewed before case-study claims. Writing features Supervised UMAP, Fitbit gamification and highlighting 3D brain regions; the latter two replace Drake/.Rprofile in the Writing spread. Drake/.Rprofile can still ground Services, and fast style transfer grounds Start. The fictional enquiry-processing demo is removed from scope. Do not recast historical visualization/filter projects as shipped AI-agent deployments.
 
@@ -34,7 +34,7 @@ Article metadata: title, description, stable slug, publication date, optional mo
 ## Stack and delivery
 
 - Astro + TypeScript + Markdown/MDX collections; React islands for graphics; compatible stable React Three Fiber/Three.js; GSAP timelines; scoped CSS and shared tokens; Pagefind, RSS, sitemap and social metadata.
-- Static Cloudflare Pages deployment, initially provider-assigned `pages.dev`, GitHub PR previews, `site/` build root and `dist` output. Pin compatible stable dependencies and commit lockfile when implementation begins.
+- Static Cloudflare Pages deployment on an owned domain selected by Matthew before public launch; this replaces the earlier pages.dev-first default. Require the production origin explicitly; previews remain non-indexable. GitHub PR previews use `site/` build root and `dist` output. Pin compatible stable dependencies and commit lockfile.
 - Formspree: name, email, optional company and workflow description; validation, progress, success/error states, spam protection and direct email fallback. Configure receiving address and service before launch; real delivery test needs owner approval.
 - Self-host fonts. Record original/licensed asset provenance. Spoken demos need captions. No payments, visitor accounts, live chatbot or paid analytics initially.
 - Bend remains model-level development verification; bind actual route validation to modeled destinations without weakening existing laws. Keep browser verification. REA is optional research tooling, not a runtime dependency.
