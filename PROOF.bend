@@ -19,4 +19,3 @@ def Laws.no_payments(page):
       {==}
     case BendModel.Writing{}:
       {==}
-

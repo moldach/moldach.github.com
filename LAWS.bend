@@ -13,4 +13,3 @@ law blog_preserved:
 law no_payments:
   for page: BendModel.Page
   {BendModel.takes_payment(page) == False{} : Bool}
-

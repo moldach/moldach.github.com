@@ -13,4 +13,3 @@ if [ "$actual" != "$expected" ]; then
   exit 1
 fi
 "$bend_bin" PROOF.bend --verdict
-

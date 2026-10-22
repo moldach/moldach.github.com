@@ -28,4 +28,3 @@ def takes_payment(page: Page) -> Bool:
       False{}
     case Writing{}:
       False{}
-
