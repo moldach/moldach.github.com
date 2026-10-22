@@ -18,11 +18,11 @@ Local verification passed: zero type-check errors/warnings/hints, 13 Node tests,
 
 ## Outstanding gates and work
 
-- **Domain:** Matthew wants a concise, memorable name and has not selected one. `oldach.ai` and `mattoldach.com` are candidates only. Public RDAP returned no record on 2026-10-22, which does not confirm registrar availability or price. No purchase or DNS change is authorized or performed. Production requires an explicit approved owned origin.
-- **Visuals:** chapter review remains pending before real WebGL modeling. The current book poster and HTML links do not fulfill the interactive book, mesh hotspots or Back-to-chapter restoration. The mandatory deformable portrait is still pending. No claim of completed animation is made.
+- **Domain:** Matthew prefers `mattoldach.ai`. Public RDAP returned no record on 2026-10-22; registrar availability/pricing and ownership remain unconfirmed. See `domain.md`. No purchase or DNS change has occurred. Production configuration remains unset until ownership is established.
+- **Visuals:** an on-demand six-chapter Three.js book prototype, scene tabs, pointer/keyboard controls, page turns, Writing raycast/HTML links and history restoration are now implemented alongside project videos and illustrated panels. Final scene art/chapter review and the mandatory deformable portrait remain pending. See `../visual-media.md`.
 - **Content:** recovered bodies need full editorial/attribution review; all original external links and embedded media need review. Complete case studies, current résumé, Pagefind and remaining migration destinations are pending.
 - **Contact:** direct email works as a normal mail link. Formspree setup, form states and owner-approved real delivery testing remain pending. No fabricated successful submission is shown.
-- **Media:** older animated/external embeds still require posters, playback controls, captions where relevant and reduced-motion/offscreen behavior before launch. Some legacy media relies on original external hosts.
+- **Media:** the homepage clips have posters, controls and visibility/reduced-motion handling; older article animated/external embeds still require posters, playback controls, captions where relevant and reduced-motion/offscreen behavior before launch. Some legacy media relies on original external hosts.
 - **Validation:** complete WCAG 2.2 AA manual/screen-reader review, Safari, real iPhone/Android, graphics/context-loss tests and deployed performance remain pending. Browser emulation is not device verification. Lighthouse laboratory results cannot establish field INP or search rankings.
 - **Hosting:** no Cloudflare connection, public preview, production deployment, old-host forwarding or DNS change has occurred. Final production approval is still required.
 - **Search:** Search Console owner verification, sitemap submission and representative URL inspection require the selected domain and account access. SEOcrawl authentication is unresolved and optional. No rankings, search traffic or lead attribution are claimed.
@@ -30,3 +30,7 @@ Local verification passed: zero type-check errors/warnings/hints, 13 Node tests,
 ## Post-launch measurement plan
 
 At approximately 4, 8 and 12 weeks after the approved launch, review indexing issues, non-branded queries relevant to each engagement, service-page clicks and attributable qualified enquiries. Establish real baselines rather than substituting the six-URL technical sample for search performance. Initially publish one substantial practical guide per month: workflow selection, agents versus ordinary automation, then handover. Choose later topics using actual search/client evidence. No scheduled jobs, paid accounts or outreach have been created.
+
+## Visual/media update
+
+The newer homepage verification supersedes the foundation-only figures above: 14 Node tests pass, type checking and preview/production fixture builds pass. The on-demand 3D book, imagery and video version measured local mobile LCP 2259 ms, CLS 0.00169 and TBT 0 ms (Lighthouse performance 99, automated accessibility 100). See `../../research/verification/visual-media/`. Actual graphics activation/frame rate, final art, full accessibility and real-device acceptance remain open.

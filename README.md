@@ -1,6 +1,6 @@
 # Matthew Oldach — website rebuild
 
-Source of record for the published site and its replacement. The existing GitHub Pages output remains at the repository root. The new Astro application lives under [`site/`](site/README.md), with crawlable consulting/service pages and recovered writing. It is a non-indexable review build; the WebGL book and mandatory interactive portrait remain pending.
+Source of record for the published site and its replacement. The existing GitHub Pages output remains at the repository root. The new Astro application lives under [`site/`](site/README.md), with crawlable consulting/service pages and recovered writing. It is a non-indexable review build; the on-demand WebGL book is a prototype and the mandatory interactive portrait remains pending.
 
 ## Current state
 
@@ -14,6 +14,7 @@ Source of record for the published site and its replacement. The existing GitHub
 
 - [Implementation plan](tasks/plan.md) and [delivery checklist](tasks/todo.md).
 - [Migration report](docs/migration/README.md) and [complete inventory](docs/migration/inventory.json).
+- [Visual/media prototype and limits](docs/visual-media.md).
 - [Design requirements](docs/design-requirements.md), including the required interactive portrait.
 - [Resource library](docs/research/resource-library.md) and [twenty website references](docs/research/twenty-consulting-website-examples.md).
 - [Design concept record](research/design/README.md).

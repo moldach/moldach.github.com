@@ -1,6 +1,6 @@
 # Existing media and individual motion treatments
 
-Inspected 22 October 2026 for the [revised six spreads](chapters/README.md). Concept images use Image Gen reinterpretations. Implementation must use original textures/media and preserve attribution. Motion below is proposed, not delivered animation.
+Inspected 22 October 2026 for the [revised six spreads](chapters/README.md). Concept images use Image Gen reinterpretations. Implementation must use original textures/media and preserve attribution. The table records the original proposed treatments, not a claim that all are delivered. The newer [visual/media implementation record](../../docs/visual-media.md) documents the six-scene geometric prototype, homepage clips and recovered articles; final art/model detail still requires review.
 
 | Work | Inspected source | Planned treatment | Evidence limits |
 |---|---|---|---|

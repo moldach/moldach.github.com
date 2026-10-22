@@ -69,7 +69,9 @@ export async function validateBuild(dist, config) {
         fail('invalid JSON-LD');
       }
     }
-    for (const element of $('a[href],img[src],link[href],script[src]')) {
+    for (const element of $(
+      'a[href],img[src],link[href],script[src],video[src],source[src]',
+    )) {
       const node = $(element);
       const value = node.attr('href') || node.attr('src');
       if (!value || !value.startsWith('/') || value.startsWith('//')) continue;
@@ -96,6 +98,17 @@ export async function validateBuild(dist, config) {
         } catch {}
       }
       if (!found) fail(`broken local destination ${value}`);
+    }
+    for (const video of $('video[poster]')) {
+      const poster = $(video).attr('poster');
+      if (poster?.startsWith('/')) {
+        try {
+          if (!(await stat(resolve(dist, `.${poster}`))).isFile())
+            fail(`missing video poster ${poster}`);
+        } catch {
+          fail(`missing video poster ${poster}`);
+        }
+      }
     }
     for (const image of $('img'))
       if (!$(image).attr('alt')?.trim())

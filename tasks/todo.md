@@ -30,7 +30,7 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 ## Interaction feasibility
 
 - [x] Establish Astro/TypeScript source in `site/` with pinned compatible dependencies; verify preview output and production configuration using a nondeployed test origin. Owned production domain remains pending.
-- [ ] Implement a two-chapter book with direct navigation, history and readable destination; verify click/keyboard/back behavior.
+- [x] Implement the interaction prototype: six geometric book scenes, chapter controls, direct reading links, saved history and verified click/keyboard/Back behavior. Final art review remains open.
 - [ ] Verify each Writing exhibit (UMAP, Fitbit, brain regions) opens its full article through mesh click/tap and equivalent HTML link; reduced motion skips zoom and browser Back restores Writing. Recover/verify the full article destinations before launch.
 - [ ] Implement required portrait mesh/grab/reset/close with supplied image. Verify bounded deformation and focus restoration.
 - [ ] Verify touch, keyboard-region controls, reduced motion and no-WebGL/context-loss fallback; capture browser evidence.
@@ -80,3 +80,13 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Implement unique metadata, shared production-origin configuration, sitemap/RSS/robots and factual structured data; default previews to noindex.
 - [x] Test strict date ordering, draft/future exclusion, unsafe domains, broken local links and preview sitemap regression.
 - [ ] Finish domain choice, graphics/article hotspots, contact service, complete legacy migration and all launch gates recorded in `docs/seo/implementation-status.md`.
+
+## Visual/media prototype — 2026-10-22
+
+- [x] Replace text-only homepage blocks with a project gallery, illustrated engagements, video section and original Writing exhibits.
+- [x] Build a procedural six-chapter Three.js book prototype with tabs, page turn, pointer/keyboard rotation, pause and graphics fallback.
+- [x] Provide Writing mesh destinations, equivalent HTML links and browser-Back chapter restoration.
+- [x] Add source-backed project MP4 excerpts, posters, controls and reduced-motion/offscreen behavior; retain provenance.
+- [x] Verify browser interactions, JavaScript-disabled content, missing/lost/restored WebGL, touch emulation and responsive widths. This is not physical-device verification.
+- [x] Record `mattoldach.ai` as Matthew's preferred domain; ownership/pricing/registration remain unconfirmed.
+- [ ] Review/refine final scene art, implement the required deformable portrait and complete all remaining launch gates.

@@ -69,3 +69,17 @@ test('missing local article destinations fail validation', async (t) => {
   );
   await assert.rejects(validateBuild(dist, config), /broken local destination/);
 });
+
+test('project video posters must exist in the static output', async (t) => {
+  const { dist, config } = await fixture(t);
+  const { readFile } = await import('node:fs/promises');
+  await writeFile(join(dist, 'clip.mp4'), 'fixture');
+  await writeFile(
+    join(dist, 'index.html'),
+    (await readFile(join(dist, 'index.html'), 'utf8')).replace(
+      '</main>',
+      '<video src="/clip.mp4" poster="/missing-poster.webp" aria-label="Project clip"></video></main>',
+    ),
+  );
+  await assert.rejects(validateBuild(dist, config), /missing video poster/);
+});

@@ -1,30 +1,155 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import book from '../../../research/design/chapters/round-2/01-start.png';
-import { chapters } from '../lib/registry';
+import style from '../../../post/faststyletransfer/featured.png';
+import filters from '../../../project/shiny-filters/featured.jpg';
+import umap from '../../../research/design/source-assets/supervised-umap/embedded-03.png';
+import fitbit from '../../../project/fitbit-project/featured.png';
+import brain from '../../../project/3d-brain/featured.png';
+import portrait from '../../../assets/reference/headshot.jpeg';
+import { chapters, writingEntries, writingHref } from '../lib/registry';
+const exhibits = (await writingEntries())
+  .filter((entry) => entry.data.featuredOrder !== undefined)
+  .sort((a, b) => a.data.featuredOrder! - b.data.featuredOrder!);
+const exhibitLinks = exhibits.map((entry) => ({
+  label:
+    entry.id === 'supervised-umap'
+      ? 'UMAP'
+      : entry.id === 'fitbit-gamification'
+        ? 'Fitbit'
+        : 'Brain regions',
+  href: writingHref(entry),
+}));
+const artwork = Object.fromEntries(
+  await Promise.all(
+    Object.entries({ style, filters, umap, fitbit, brain, portrait }).map(
+      async ([name, src]) => [
+        name,
+        (await getImage({ src, width: 512, format: 'webp' })).src,
+      ],
+    ),
+  ),
+);
 ---
 
-<figure class="book-poster">
-  <Image
-    src={book}
-    alt="A paper pop-up book with a terminal and film ribbon illustrating Matthew's style-transfer work"
-    width={1100}
-    widths={[480, 800, 1100]}
-    sizes="(max-width: 800px) 100vw, 65vw"
-    format="webp"
-    quality={80}
-    loading="eager"
-    fetchpriority="high"
-  />
-  <nav class="paper-tabs" aria-label="Book chapters">
-    {chapters.map((chapter) => (
-      <a
-        href={chapter.href}
-        aria-current={chapter.href === '/' ? 'page' : undefined}
+<figure
+  class="book-poster"
+  data-book
+  data-artwork={JSON.stringify(artwork)}
+  data-exhibit-links={JSON.stringify(exhibitLinks)}
+  data-chapters={JSON.stringify(chapters)}
+  data-chapter="Start"
+>
+  <div class="book-stage">
+    <Image
+      src={book}
+      class="book-artwork"
+      alt="A paper pop-up book with a terminal and film ribbon illustrating Matthew's style-transfer work"
+      width={1100}
+      widths={[480, 800, 1100]}
+      sizes="(max-width: 800px) 100vw, 65vw"
+      format="webp"
+      quality={80}
+      loading="eager"
+      fetchpriority="high"
+    />
+    <canvas
+      hidden
+      class="book-canvas"
+      tabindex="0"
+      role="img"
+      aria-label="Interactive three-dimensional pop-up book. Drag or use arrow keys to rotate; Escape resets the view."
+      aria-describedby="book-instructions"
+    ></canvas>
+    <div class="book-controls" hidden>
+      <div
+        class="chapter-tabs"
+        role="tablist"
+        aria-label="Turn the book to a chapter"
       >
-        {chapter.label}
-      </a>
-    ))}
-  </nav>
-  <figcaption>Explore a chapter. Read the work.</figcaption>
+        {chapters.map((chapter, i) => (
+          <button
+            role="tab"
+            data-chapter={i}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            aria-controls="book-chapter-panel"
+            id={`book-tab-${i}`}
+          >
+            {chapter.label}
+          </button>
+        ))}
+      </div>
+      <div
+        class="book-caption"
+        id="book-chapter-panel"
+        role="tabpanel"
+        aria-label="Selected book chapter"
+      >
+        <span class="eyebrow">A little paper. A lot of possibility.</span>
+        <a href="/" data-open-chapter>
+          Open Start ↗
+        </a>
+      </div>
+      <ul class="book-exhibit-links" data-exhibit-list hidden>
+        {exhibitLinks.map((exhibit) => (
+          <li>
+            <a href={exhibit.href}>{exhibit.label} ↗</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <nav class="paper-tabs" aria-label="Book chapters">
+      {chapters.map((chapter) => (
+        <a
+          href={chapter.href}
+          aria-current={chapter.href === '/' ? 'page' : undefined}
+        >
+          {chapter.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+  <figcaption>
+    <span id="book-instructions" data-book-status>
+      Explore a chapter. Read the work.
+    </span>
+    <button type="button" class="book-launch" data-launch-book hidden>
+      Explore in 3D ↗
+    </button>
+    <span class="book-view-toggle" hidden>
+      <button data-pause-book type="button" aria-pressed="false">
+        Pause motion
+      </button>
+      <button data-artwork-view type="button">
+        View concept artwork
+      </button>
+    </span>
+  </figcaption>
 </figure>
+<script>
+  const book = document.querySelector<HTMLElement>('[data-book]');
+  if (book) {
+    const launch = book.querySelector<HTMLButtonElement>('[data-launch-book]')!;
+    launch.hidden = false;
+    launch.addEventListener('click', async () => {
+      launch.disabled = true;
+      launch.textContent = 'Opening the workshop…';
+      book.dataset.webgl = 'loading';
+      history.replaceState({ ...history.state, bookActivated: true }, '');
+      try {
+        const { mountBook } = await import('./book/runtime');
+        await mountBook(book);
+        launch.hidden = true;
+      } catch {
+        book.dataset.webgl = 'unavailable';
+        book.querySelector<HTMLCanvasElement>('canvas')!.hidden = true;
+        book.querySelector<HTMLElement>('.book-controls')!.hidden = true;
+        book.classList.remove('is-3d');
+        launch.textContent = 'Artwork view · 3D unavailable';
+        history.replaceState({ ...history.state, bookActivated: false }, '');
+      }
+    });
+    if (history.state?.bookActivated) launch.click();
+  }
+</script>

@@ -34,4 +34,6 @@ A separate nondeployed test build can be generated with `SITE_BUILD_DIR=.verific
 
 ## Remaining experience work
 
-The book is currently the approved-direction concept poster with ordinary chapter links. Real WebGL page turns, mesh hotspots and Back restoration remain pending chapter review and implementation. The mandatory deformable portrait remains pending; the footer photograph currently links to About. The contact route provides the original direct email; a working Formspree form requires account configuration and an approved delivery test. Search, video controls, complete case studies, current résumé and the remaining legacy destinations are not yet complete.
+The book begins with the concept artwork and offers **Explore in 3D** to load a real procedural six-chapter pop-up-book prototype. Tabs, pointer/keyboard rotation, page turns, Writing mesh destinations, HTML equivalents and Back restoration are implemented. Project videos, illustrated service panels and Writing exhibits now make the homepage more visual. See `../docs/visual-media.md` for source provenance, behavior and limitations.
+
+Final scene art and chapter review remain pending. The mandatory deformable portrait is still required; the footer photograph currently links to About. Formspree configuration/delivery testing, Pagefind, complete case studies, a current résumé, full legacy migration and launch gates remain open.

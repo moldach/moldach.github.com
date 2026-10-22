@@ -9,4 +9,6 @@ site/test-results/
 .env
 .env.*
 !.env.example
-site/.playwright-cli/
+.playwright-cli/
+site/output/
+output/playwright/

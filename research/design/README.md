@@ -2,7 +2,7 @@
 
 The initial three Image Gen concept sheets each included desktop, mobile and portrait states. Matthew's feedback is that the mobile preview strip reads as a redundant right sidebar. The revised set presents each desktop direction full width, with one top navigation and no sidebars. Mobile and portrait-dialog states will be presented separately. These remain design targets, not implemented interactive previews.
 
-Matthew selected the first editorial-workshop direction, then requested individual images for all six chapters to iterate before modeling. The chapter concepts are now the review focus; a crawlable Astro content foundation now exists under `site/`, while WebGL modeling remains pending chapter review.
+Matthew selected the first editorial-workshop direction, then requested individual images for all six chapters to iterate before modeling. The chapter concepts are now the review focus; the Astro site now includes an on-demand procedural WebGL book prototype for review, following Matthew’s request for more visual assets. Final chapter art remains unapproved.
 
 Latest feedback restores the physical lower-edge paper chapter tabs and removes the invented Enquiry workflow. [Round 2 of all six chapters](chapters/README.md) is the current review set: terminal theatre, workflow drafting table, project exhibition, editorial print studio, strategy table and conversation room. Actual article/project imagery grounds the scenes; see the [source-media and motion map](asset-motion-map.md). Earlier images are retained as history and do not define current featured content.
 
@@ -42,7 +42,7 @@ The selected-v3 image corrects the initial ball-golf treatment but is superseded
 
 ## Current review
 
-[Six chapter concepts and planned WebGL interactions](chapters/README.md). Each spread is a complementary page in the selected direction, not another competing whole-site option. Review and iterate these before actual modeling. The latest putting-area image follows an internet-reference study, with exact prompts and source provenance recorded.
+[Six chapter concepts and planned WebGL interactions](chapters/README.md). Each spread is a complementary page in the selected direction, not another competing whole-site option. Review and iterate these alongside the live prototype before approving final model detail and motion art. The latest putting-area image follows an internet-reference study, with exact prompts and source provenance recorded.
 
 ## Selected desktop layout reference — older content
 

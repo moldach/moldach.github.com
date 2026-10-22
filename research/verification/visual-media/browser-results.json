@@ -1,0 +1,91 @@
+[
+  {
+    "chapter": "Services",
+    "selected": "true",
+    "destination": "/services/"
+  },
+  {
+    "chapter": "Work",
+    "selected": "true",
+    "destination": "/work/"
+  },
+  {
+    "chapter": "Writing",
+    "selected": "true",
+    "destination": "/writing/"
+  },
+  {
+    "chapter": "About",
+    "selected": "true",
+    "destination": "/about/"
+  },
+  {
+    "chapter": "Contact",
+    "selected": "true",
+    "destination": "/contact/"
+  },
+  {
+    "chapter": "Start",
+    "selected": "true",
+    "destination": "/"
+  },
+  {
+    "article": "/writing/fitbit-gamification/"
+  },
+  {
+    "backChapter": "Writing"
+  },
+  {
+    "keyboardChapter": "Work"
+  },
+  {
+    "videoPlaying": {
+      "playing": true,
+      "muted": true,
+      "time": 0.023455,
+      "ready": 4
+    }
+  },
+  {
+    "offscreenVideoPaused": true
+  },
+  {
+    "width": 320,
+    "document": 320
+  },
+  {
+    "width": 390,
+    "document": 390
+  },
+  {
+    "width": 768,
+    "document": 768
+  },
+  {
+    "width": 1024,
+    "document": 1024
+  },
+  {
+    "reducedMotion": {
+      "button": "Play motion",
+      "pressed": "true"
+    }
+  },
+  {
+    "reducedVideoPaused": true
+  },
+  {
+    "noJavaScript": {
+      "headline": "Practical AI.\nLess busywork.",
+      "projectLinks": 3,
+      "articleLinks": 3,
+      "bookLinks": 6
+    }
+  },
+  {
+    "webglUnavailable": {
+      "poster": true,
+      "links": 6
+    }
+  }
+]

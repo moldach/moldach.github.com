@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import { writingEntries, writingHref } from '../lib/registry';
+import umap from '../../../research/design/source-assets/supervised-umap/embedded-03.png';
+import fitbit from '../../../project/fitbit-project/featured.png';
+import brain from '../../../project/3d-brain/featured.png';
+const entries = (await writingEntries())
+  .filter((entry) => entry.data.featuredOrder !== undefined)
+  .sort((a, b) => a.data.featuredOrder! - b.data.featuredOrder!);
+const covers: Record<string, { src: typeof umap; alt: string }> = {
+  'supervised-umap': {
+    src: umap,
+    alt: 'Original supervised UMAP embedding plot with coloured clusters',
+  },
+  'fitbit-gamification': {
+    src: fitbit,
+    alt: 'Green pixel-art scene from the original Fitbit gamification project',
+  },
+  'highlighting-3d-brain-regions': {
+    src: brain,
+    alt: 'Original brain rendering with a small red highlighted region',
+  },
+};
+---
+
+<div class="feature-articles">
+  {entries.map((entry) => (
+    <a
+      class="article-exhibit"
+      href={writingHref(entry)}
+      data-article-id={entry.id}
+    >
+      <div class="exhibit-image">
+        <Image
+          src={covers[entry.id].src}
+          alt={covers[entry.id].alt}
+          width={560}
+          format="webp"
+          loading="lazy"
+        />
+        <span aria-hidden="true">↗</span>
+      </div>
+      <p class="eyebrow">{entry.data.topics.join(' · ')}</p>
+      <h3>{entry.data.title}</h3>
+      <p>
+        {entry.data.externalUrl
+          ? 'Read the original article ↗'
+          : 'Read the article →'}
+      </p>
+    </a>
+  ))}
+</div>
