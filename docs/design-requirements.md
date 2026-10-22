@@ -1,5 +1,28 @@
 # Website design requirements
 
+## Navigation and mockup presentation
+
+Updated from Matthew's feedback on 22 October 2026:
+
+- Desktop uses one horizontal navigation at the top. Do not add a left/right sidebar or a second full chapter-navigation list.
+- Book Previous/Next controls, current chapter/page indicator, and Explore remain local interaction controls.
+- Show desktop concepts across the full image width. Present mobile layouts separately, never as an attached right-hand strip that appears to be desktop UI.
+- Show portrait-dialog states separately from the primary desktop view; the footer headshot still opens the required interaction.
+
+## Selected art direction and chapter iteration
+
+- Matthew selected the first editorial-workshop concept. Retain that overall layout and paper art direction.
+- Produce a separate concept image for each of Start, Services, Work, Writing, About and Contact, and iterate the spreads before WebGL modeling.
+- The finished book must use real 3D geometry, folding pop-outs, page turns and selectable objects with camera movement. Static concept images or a flat image with a perspective transform do not fulfill this feature.
+- Keep concept/review evidence separate from verified browser interaction and physical-device performance evidence.
+
+## PuttPulse putting-area imagery
+
+- Show one basket on a small raised bed of wood-chip mulch, with a wider grassy circle defined by small plastic marking-whisker tufts in the ground.
+- No tee pad, rectangular slab/mat, driving-fairway composition, ball-golf green, flags or cones.
+- Use the same putting-area anatomy in the homepage thumbnail, Work spread and About miniature. Keep the factual caption “Disc golf practice product.”
+- Consult actual course photographs and marker references; Olympus informs the wooded professional-course feel. Do not claim the stylized scene depicts a specific real hole.
+
 ## Required interactive portrait
 
 The face interaction is a required website feature, confirmed by Matthew on 22 October 2026. It must be included in design concepts and implementation acceptance criteria.

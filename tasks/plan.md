@@ -10,6 +10,9 @@ Replace the academic-blog homepage with a memorable consulting portfolio for sma
 
 - Premium paper workshop: warm ivory, ink, cobalt and restrained coral; expressive editorial serif plus a precise sans; original paper imagery and sophisticated lighting.
 - Six-chapter interactive pop-up book: Start, Services, Work, Writing, About, Contact. Direct HTML navigation, previous/next, URL/history support, and readable destination pages remain accessible before graphics load.
+- Feedback update: use one horizontal top navigation on desktop, without sidebars or a repeated chapter-link row. Present desktop, mobile and portrait-dialog mockups separately, never a mobile strip attached to the desktop.
+- Selected direction: first editorial-workshop concept. Matthew requested individual concept images for all six book spreads and iteration before actual WebGL modeling. Use real 3D page/pop-out geometry and semantic mesh hotspots; concept posters alone cannot satisfy this requirement.
+- Correct PuttPulse scenery to a putting area: one basket on a small raised mulch bed, wider grass circle with small plastic whisker markers, and no tee pad/driving fairway. Apply consistently to the thumbnail, Work and About imagery.
 - Original opening sequence assembles documents, code and data into a useful workflow; no borrowed astronaut choreography or game assets. Video is integral to opening and project storytelling, with posters, pause controls and lazy/offscreen playback.
 - Mobile uses a simpler upright scene and normal vertical scrolling. Reduced motion skips cinematic transitions. No-WebGL/context-loss states retain complete content and navigation.
 - REQUIRED footer portrait: supplied headshot opens a dialog with photo-textured mesh deformation, grab/hand interaction, bounded stretch, spring return, Reset, Close, Escape, touch and keyboard region controls. Provide an interactive Canvas 2D fallback. The supplied 200×200 image is a likeness reference, not a full 3D head.
@@ -37,7 +40,7 @@ Article metadata: title, description, stable slug, publication date, optional mo
 ## Checkpoints and order
 
 1. Preserve original revision; inventory every HTML page, asset and linked download; reconcile research and update documentation.
-2. Finish reference review where accessible, disclose evidence gaps, generate exactly three independent visual mockups (desktop, mobile, portrait), and wait for Matthew's selection before UI implementation.
+2. Finish reference review where accessible and disclose evidence gaps. The first editorial-workshop direction is selected. Review and iterate the six individual chapter concept images before modeling the interactive book. Present mobile and portrait-dialog views separately.
 3. Prototype two book chapters and the actual-photo deformation, including keyboard, touch, reduced-motion and fallback behavior. Verify interaction feasibility before expanding scene assets.
 4. Deliver Home → services → evidence-backed case study → contact as one usable vertical slice in a local preview.
 5. Complete writing migration, work/experience, video and scenes, search/feed/metadata, and tested legacy destinations.

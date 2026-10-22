@@ -17,8 +17,13 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 
 - [x] Capture current recent-post defect and revisit Lusion through native Computer Use.
 - [ ] Complete the reel/project-motion review. Native navigation timed out; homepage motion is observed, reel playback is not claimed.
-- [x] Generate exactly three independent concept sheets with desktop, mobile and portrait states.
-- [ ] Matthew selects a visual target before UI implementation.
+- [x] Generate the initial three independent concept sheets with desktop, mobile and portrait states.
+- [x] Revise all three as full-width desktop views with one top navigation and no sidebar; present mobile/dialog states separately.
+- [x] Matthew selects a visual target before UI implementation: first editorial-workshop direction.
+- [x] Generate separate Start, Services, Work, Writing, About and Contact spread concepts before WebGL modeling.
+- [x] Research real putting/basket/marker references after the disc-golf correction; create a revised basket-on-mulch/whisker-circle illustration.
+- [x] Apply the putting-area correction to the homepage thumbnail, Work spread and About miniature.
+- [ ] Review and iterate the individual chapter concepts with Matthew before modeling.
 
 ## Interaction feasibility
 
