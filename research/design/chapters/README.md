@@ -42,6 +42,10 @@ A proofing roller and folding exhibits showcase **Supervised UMAP**, **The Gamif
 
 Animate the printer, paper folds and Fitbit display reveal. For brain-region selection/rotation, recover and verify the original mesh/atlas before offering anatomical interaction. Until then, use the faithful original brain image as a texture with a simple reveal; generated paper anatomy is art direction, not a validated model. Preserve the UMAP plot's 2D meaning. Selection leads to readable source-backed content with original titles and dates; the two legacy project summaries still require full article recovery.
 
+**Article navigation is required:** clicking/tapping the UMAP sheet, Fitbit exhibit or brain exhibit opens that specific article directly. Make each complete exhibit and its title a generous target; provide a matching real HTML anchor for keyboard, touch and no-WebGL use. Any brief camera transition must finish by navigating, rather than stopping at a visual zoom or intermediate project card. Reduced motion navigates immediately. Browser Back restores the Writing chapter. Brain rotation/region controls must not intercept the article link; offer a separate explicit interaction control if needed.
+
+The existing sources are [UMAP](https://moldach.github.io/post/supervised-umap/), [the Fitbit article linked from its legacy project](https://moldach.github.io/fitbit-project/) and [How to Highlight 3D Brain Regions](https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574). Recover full content and verify destinations before launch; do not substitute the short legacy project summaries for the articles. Internal reading routes can replace external links when the full articles are available. These controls remain implementation requirements, not working links embedded in the concept image.
+
 ## About — personal strategy table
 
 ![About: portrait, strategy board and experience folio](round-2/05-about.png)

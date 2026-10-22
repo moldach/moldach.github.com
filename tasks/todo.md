@@ -31,6 +31,7 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 
 - [ ] Establish Astro/TypeScript source in `site/` with pinned compatible dependencies. Verify production build.
 - [ ] Implement a two-chapter book with direct navigation, history and readable destination; verify click/keyboard/back behavior.
+- [ ] Verify each Writing exhibit (UMAP, Fitbit, brain regions) opens its full article through mesh click/tap and equivalent HTML link; reduced motion skips zoom and browser Back restores Writing. Recover/verify the full article destinations before launch.
 - [ ] Implement required portrait mesh/grab/reset/close with supplied image. Verify bounded deformation and focus restoration.
 - [ ] Verify touch, keyboard-region controls, reduced motion and no-WebGL/context-loss fallback; capture browser evidence.
 
