@@ -1,8 +1,11 @@
 # Paper-book fidelity and motion — 22 October 2026
 
+**Current visual status:** Matthew rejected both the shallow relief and the independent opening prototype as matches for the reference. Neither is visually accepted. A new editable Services asset is being developed in Blender under `research/models/services/`; it is not integrated into the site. The existing app preview remains unchanged during this asset review. See that folder's README for render/export limits.
+
+
 Matthew rejected the simplified procedural dioramas as a visual match for the selected book illustrations. The current renderer prioritizes those actual illustrations. This is a review build; final art and production approval remain separate checkpoints.
 
-## Current book implementation
+## Earlier relief implementation (retained on five chapters)
 
 The default WebGL view uses the six selected chapter illustrations from `research/design/chapters/round-2/`, including the revised Fitbit/brain Writing image `04-writing-v2.png`. Services, Work and About therefore retain the magnifier/workflow/checklist, complete three-project display, and portrait/compass/hands/game-board/CV compositions in Matthew's reference. The rejected low-detail procedural scene builders have been removed.
 

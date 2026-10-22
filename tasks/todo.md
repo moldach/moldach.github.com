@@ -103,3 +103,9 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Replace Start relief with a separate-object 3D prototype and capture desktop/mobile/inspection evidence.
 - [ ] Match Start to the approved paper-book reference before treating the visual target as achieved.
 - [ ] After that comparison, model the other five chapters; current reliefs are not finished pop-up scenes.
+
+
+### Services asset workbench
+- [x] Establish Blender asset authoring and offline rendering against the Services reference, rather than revising Start again.
+- [ ] Complete a visually accepted Services model; an offline render/export is not browser parity.
+- [ ] Bake/export final materials, verify Three.js parity, then integrate.
