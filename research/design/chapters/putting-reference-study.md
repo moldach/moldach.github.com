@@ -22,4 +22,3 @@ The browser connector blocked the Olympus image host; native Chrome successfully
 - Use a putting-area camera composition. No tee pad, launch area or long fairway corridor anywhere in the vignette.
 - Surrounding trees are background context. Preserve the selected premium-paper art direction without sacrificing recognizable basket/marker anatomy.
 - Apply the same corrected asset language to the homepage thumbnail, Work chapter and About miniature. Preserve the required footer face interaction.
-

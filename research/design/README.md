@@ -4,6 +4,8 @@ The initial three Image Gen concept sheets each included desktop, mobile and por
 
 Matthew selected the first editorial-workshop direction, then requested individual images for all six chapters to iterate before modeling. The chapter concepts are now the review focus; no application has been scaffolded.
 
+Latest feedback restores the physical lower-edge paper chapter tabs and removes the invented Enquiry workflow. [Round 2 of all six chapters](chapters/README.md) is the current review set: terminal theatre, workflow drafting table, project exhibition, editorial print studio, strategy table and conversation room. Actual article/project imagery grounds the scenes; see the [source-media and motion map](asset-motion-map.md). Earlier images are retained as history and do not define current featured content.
+
 ## Source grounding
 
 - Current site: https://moldach.github.io/ (native Chrome screenshot of stale recent-post section captured 2026-10-22).
@@ -26,7 +28,7 @@ Generated with the built-in Image Gen tool on 2026-10-22. Each received the actu
 2. [Second displayed concept](02-living-atlas.png) — [prompt](02-living-atlas-prompt.txt).
 3. [Third displayed concept](03-field-manual.png) — [prompt](03-field-manual-prompt.txt).
 
-The first direction is selected. Initial and desktop-v2 sheets remain as history; use the latest corrected selected design and chapter gallery for review. These are visual mockups, not browser-tested implementations.
+The first direction is selected. Initial and desktop-v2 sheets remain as history; use the round-2 chapter gallery for current scene/content review. These are visual mockups, not browser-tested implementations.
 
 ## Desktop-only revisions
 
@@ -42,6 +44,6 @@ The selected-v3 image corrects the initial ball-golf treatment but is superseded
 
 [Six chapter concepts and planned WebGL interactions](chapters/README.md). Each spread is a complementary page in the selected direction, not another competing whole-site option. Review and iterate these before actual modeling. The latest putting-area image follows an internet-reference study, with exact prompts and source provenance recorded.
 
-## Latest selected desktop concept
+## Selected desktop layout reference — older content
 
-[Editorial Workshop — selected layout with putting-area correction](01-editorial-workshop-selected-v4.png). This retains the selected first design and replaces the PuttPulse thumbnail with one basket, raised mulch bed and plastic marker circle; it remains a mockup. The latest six-spread gallery is [here](chapters/README.md). Exact revision prompts are stored alongside the images.
+[Editorial Workshop — layout with putting-area correction](01-editorial-workshop-selected-v4.png) records the selected overall layout. Its Enquiry workflow card and repeated mountain scene are superseded and must not be implemented. Use the [round-2 six-spread gallery](chapters/README.md) for current content, scenes and physical tabs. Exact prompts are stored beside every image.

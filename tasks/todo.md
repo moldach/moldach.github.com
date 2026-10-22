@@ -23,6 +23,8 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Generate separate Start, Services, Work, Writing, About and Contact spread concepts before WebGL modeling.
 - [x] Research real putting/basket/marker references after the disc-golf correction; create a revised basket-on-mulch/whisker-circle illustration.
 - [x] Apply the putting-area correction to the homepage thumbnail, Work spread and About miniature.
+- [x] Replace all six chapter drafts with distinct, source-grounded scenes and six physical lower-edge chapter tabs; remove the fictional enquiry demo from current review material.
+- [x] Record actual article/project media and a separate animation treatment for each; distinguish source footage from conceptual recreations. Treatments are proposed, not implemented motion.
 - [ ] Review and iterate the individual chapter concepts with Matthew before modeling.
 
 ## Interaction feasibility
@@ -36,7 +38,7 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 
 - [ ] Implement responsive home/services/case-study/contact journey using selected visual target and reviewed real copy.
 - [ ] Verify form validation, mock delivery/error and direct email fallback; configure Formspree before real delivery testing.
-- [ ] Write public PuttPulse and reviewed automation case studies; mark fictional enquiry demo clearly and prevent real sending.
+- [ ] Write public PuttPulse, Shiny-filteRs and Hinuhinu case studies from verified project evidence. The fictional enquiry demo is removed by Matthew's latest feedback.
 - [ ] Implement writing collections, date ordering, topics and Pagefind; test December 2023 vs 2019 regression and draft/date rules.
 - [ ] Complete About, Experience/CV and Privacy using current verified information.
 

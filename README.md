@@ -7,7 +7,7 @@ Source of record for the published site and its replacement. The existing GitHub
 - Working branch: `codex/website-redesign`; production branch: `master`.
 - Original published revision: `ee63d5baa4d564b9e04062ebd335fb0895aeb225`.
 - Preservation tag: `archive/pre-redesign-2026-10-22`.
-- Preservation and inventory are implemented. Matthew selected the first editorial-workshop direction; six individual chapter concepts are under review before WebGL modeling.
+- Preservation and inventory are implemented. Matthew selected the first editorial-workshop direction. The revised six concepts have physical paper tabs, distinct scenes and existing project/article references; they remain under review before WebGL modeling.
 - No production hosting, DNS, redirects, or contact-service settings have been changed.
 
 ## Project records
@@ -18,6 +18,7 @@ Source of record for the published site and its replacement. The existing GitHub
 - [Resource library](docs/research/resource-library.md) and [twenty website references](docs/research/twenty-consulting-website-examples.md).
 - [Design concept record](research/design/README.md).
 - [Six chapter concepts and interaction notes](research/design/chapters/README.md), including the reference-grounded putting-area correction.
+- [Existing source media and individual motion treatments](research/design/asset-motion-map.md).
 - [Bend verification and its limits](docs/bend.md).
 
 ## Verify the preservation work

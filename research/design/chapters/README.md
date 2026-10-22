@@ -1,62 +1,74 @@
-# Pop-up book chapter concepts
+# Six revised pop-up book chapters
 
-Created 2026-10-22 with built-in Image Gen. Matthew selected the first editorial-workshop direction and requested an image for each chapter to iterate before WebGL implementation. These are six complementary spreads, not competing whole-site options. Exact prompts are stored beside each image.
+Round 2, 22 October 2026. Created with built-in Image Gen after Matthew requested physical chapter tabs, existing work instead of an invented enquiry demo, and a distinct design for every chapter. These six images supersede the earlier chapter scenes for current review. The first editorial-workshop direction remains selected; individual chapter approval is pending.
 
-## Review status
+Every spread shows six lower-edge paper tabs: **Start, Services, Work, Writing, About, Contact**. The active tab is cobalt. These will be real page-turn controls alongside the site's top navigation, with equivalent keyboard-accessible HTML controls. No sidebar is proposed.
 
-The art direction is selected; individual chapter scenes are drafts. Work and About v2 now apply the requested putting-area correction; individual chapter review remains pending. A rendered image does not establish working geometry, page turns, camera interaction or mesh deformation. No replacement website UI has been scaffolded.
+## Start — terminal theatre
 
-## Start · 01
+![Start: terminal and style-transfer film](round-2/01-start.png)
 
-![Start chapter concept](01-start-v1.png)
+A folded computer and sculptural film ribbon draw on the existing **TensorFlow CNN for Fast Style Transfer** article and touring footage. The generated grayscale input frames are illustrative, not recovered before/after evidence. Use actual source captures and animated media when building. The terminal folds open, the ribbon advances and selecting a frame leads to the article. The homepage headline remains readable HTML.
 
-An inbox, code gateway and human-review station connect across the book. Candidate interactions: inbox opens Services, code gateway opens Work, personal hotspot opens About. The opening folds raise in sequence; the code gateway can receive the first camera push-in. Keep the selected homepage's separate top navigation and readable copy.
+[Exact prompt](round-2/01-start-prompt.txt).
 
-## Services · 02
+## Services — workflow drafting table
 
-![Services chapter concept](02-services-v1.png)
+![Services: workflow drafting board](round-2/02-services.png)
 
-Three substantial objects represent opportunity assessment, focused implementation and team adoption. Clicking a station reveals its service details in accessible HTML; the human-review gate remains part of the story. The illustrated conveyor is conceptual: its actual fold mechanism must be simplified and validated in the prototype. Final labels use exact reviewed text rather than generated raster lettering.
+A cobalt engineering folio and three connected models explain finding an opportunity, building a focused solution and helping a team adopt it. The vocabulary is grounded in the existing **Drake** and **.Rprofile** articles. This is a service metaphor, not a client case study or recovered graph. Unfold the board, reveal paths and lift the selected model; open service details in HTML.
 
-## Work · 03
+[Exact prompt](round-2/02-services-prompt.txt).
 
-![Work chapter concept with putting-area correction](03-work-v2.png)
+## Work — three different project exhibits
 
-PuttPulse, Shiny-filteRs and the labeled enquiry demonstration are separate selectable exhibits. Each opens its evidence-backed case study after a restrained camera move. PuttPulse now uses a putting-practice scene with the required basket, raised mulch bed and ground-marker circle. The [initial fairway version](03-work-v1.png) is superseded. The image is a conceptual project illustration, not a screenshot of shipped functionality.
+![Work: PuttPulse, Shiny-filteRs and Hinuhinu](round-2/03-work.png)
 
-## Writing · 04
+- **PuttPulse:** putting basket, raised wood-chip mulch, wider grass circle and plastic marking whiskers. No tee pad.
+- **Shiny-filteRs:** actual Voronoi portrait and magenta/cyan interface inform a phone and polygon sculpture. Use original image textures in implementation, not generated UI text.
+- **Hinuhinu:** existing Hawaiian moisture/solar/depth maps inform layered cartography. The concept rearranges maps; it is not a geographically surveyed model or application screenshot.
 
-![Writing chapter concept](04-writing-v1.png)
+Each project has a separate motion treatment: disc flight, articulated polygon panels and layered-map camera movement. Each opens its evidence-backed case study. The fictional **Enquiry workflow is removed** from featured work and launch scope.
 
-A paper library and reading desk provide selected article objects and a route to the complete archive. Selecting a folio brings it forward and opens readable HTML writing. Display actual recovered titles/dates in the implementation; generic notebook labels in the image are editorial placeholders, not claims of published articles.
+[Exact prompt](round-2/03-work-prompt.txt).
 
-## About · 05
+## Writing — editorial print studio
 
-![About chapter concept with putting-area correction](05-about-v2.png)
+![Writing: letterpress, UMAP plot and real article folios](round-2/04-writing.png)
 
-The supplied likeness and CV folio lead to About/Experience. Mountains, a workbench and strategy motifs add personal context. The disc-golf miniature now uses the same putting-area anatomy as Work. The [initial miniature](05-about-v1.png) is superseded. The mandatory face-deformation dialog remains triggered by the footer portrait; a framed photo in this spread does not replace that feature.
+A proofing roller and folding sheets showcase existing topics: **Supervised UMAP**, **Getting Started with Drake in R**, and **.Rprofile**. The UMAP reference was recovered losslessly from the embedded PNG in the existing slides. Animate the paper and printing mechanics; use the faithful original 2D plot unless actual data/code are recovered and validated. Selection leads to readable articles with original titles/dates.
 
-## Contact · 06
+[Exact prompt](round-2/04-writing-prompt.txt).
 
-![Contact chapter concept](06-contact-v1.png)
+## About — personal strategy table
 
-An envelope is the main hotspot for a short accessible contact form; direct email is the fallback. The scene can lean toward the envelope before presenting the HTML form. No form, text input or submission status should exist only as canvas pixels.
+![About: portrait, strategy board and experience folio](round-2/05-about.png)
 
-## Required disc-golf correction
+Matthew's supplied likeness, an Experience/CV folio and an unbranded strategy board replace another mountain-and-disc-golf scene. Small game-piece movements and an opening notebook provide motion. Use the original photo texture in implementation. No invented employer history is implied. The shared footer portrait still opens the **required draggable-face dialog**; this framed image does not replace it.
 
-Matthew's latest instruction supersedes all earlier fairway imagery: one putting basket raised on a small bed of wood-chip mulch, with small plastic ground markers defining the surrounding circle. No tee pad or driving-fairway composition. See [reference study](putting-reference-study.md) for internet sources and exact visual requirements.
+[Exact prompt](round-2/05-about-prompt.txt).
 
-![Reference-grounded putting-area illustration](putting-area-reference-v1.png)
+## Contact — conversation room
 
-This original stylized illustration guides the updated homepage thumbnail and Work/About scenes. Marker placement in this concept is illustrative; final 3D geometry must use consistent chosen scale rather than treating raster spacing as a measured course survey.
+![Contact: an inviting paper conversation room](round-2/06-contact.png)
 
-## WebGL construction and interaction contract
+Two chairs, a coral table and a cobalt arch create a quieter final chapter. Chairs unfold and speech panels rise; activating the invitation opens an accessible HTML enquiry form. Direct email remains available. This is a contact entry point, not an enquiry-processing product.
 
-- Build the book, leaves, pop-out layers and selectable objects as real geometry. Images are concept targets and optional loading/reduced-capability posters; camera motion over a flat chapter picture does not fulfill the brief.
-- Reuse one cover/spine/leaf rig. Give each chapter its own pop-out group, fold axes and hotspot bounds. Fold standing parts toward their parent leaf before turning it; reveal the next chapter after the page crosses the spine.
-- Prototype Start and Services first. Validate paper intersections, folds, click targets, camera framing and interrupted/reversed turns before expanding all six detailed scenes.
-- Raycast selectable mesh groups to semantic destinations. Match each hotspot with a real HTML link/button, visible focus and keyboard access. Zoom remains bounded with an obvious return path; ordinary navigation and browser history remain usable.
-- Use a simpler mobile camera/scene and normal scrolling. Reduced motion skips cinematic camera/page movement. Graphics failure retains readable HTML and contact access. Validate performance on real devices before finalizing mesh density and lighting.
+[Exact prompt](round-2/06-contact-prompt.txt).
 
-Chapter artwork and exact interaction behavior remain open for Matthew's iteration. These records do not mark the WebGL implementation complete.
+## Source media and WebGL construction
 
+The [asset and motion map](../asset-motion-map.md) records existing media, provenance limits and separate animation treatments. Videos and working WebGL scenes have **not** been created in this concept pass.
+
+- Build cover, leaves, tabs, pop-outs and selectable objects as actual geometry. Images are targets and possible loading posters; camera movement over a single flat spread does not fulfill the book requirement.
+- Reuse the book rig and light, not scenery. Each chapter has its own scene group, fold axes and semantic hotspots.
+- A tab folds current pop-outs toward their leaf, turns the required leaves and raises the destination scene. Keep tabs, URL/history, Previous/Next and direct navigation synchronized. Prototype interrupted/reversed turns first.
+- Rendered models establish art direction, not validated paper engineering. Simplify terminal, phone, roller, chairs and arch into articulated card surfaces; test intersections and collapse in the two-chapter prototype.
+- Raycast meshes to meaningful links/buttons with visible keyboard equivalents. Browser Back, direct routes, readable content and contact access remain available.
+- Mobile gets a simpler camera and normal scrolling. Reduced motion skips cinematic transitions; graphics failure preserves HTML. Browser/device performance and accessibility remain unverified.
+
+## Earlier concepts and putting reference
+
+Earlier chapter v1 images and Work/About v2 remain design history. Their invented enquiry exhibits and repeating mountains are superseded. The desktop selected-v4 image establishes layout history only; its old featured-project content must not be implemented.
+
+The [putting reference study](putting-reference-study.md) and [putting-area illustration](putting-area-reference-v1.png) retain the researched basket/mulch/whisker anatomy. Raster marker spacing is illustrative, not measured geometry.

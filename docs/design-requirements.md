@@ -4,7 +4,8 @@
 
 Updated from Matthew's feedback on 22 October 2026:
 
-- Desktop uses one horizontal navigation at the top. Do not add a left/right sidebar or a second full chapter-navigation list.
+- Desktop uses one horizontal navigation at the top. Do not add a left/right sidebar or a mobile preview strip.
+- Latest feedback restores six physical paper chapter tabs on the book's lower fore edge: Start, Services, Work, Writing, About, Contact. These select and turn to a chapter; they are local book controls in addition to the site navigation. Keep all tabs reachable and give the active tab a distinct state. This supersedes the earlier blanket restriction on a repeated chapter-link row.
 - Book Previous/Next controls, current chapter/page indicator, and Explore remain local interaction controls.
 - Show desktop concepts across the full image width. Present mobile layouts separately, never as an attached right-hand strip that appears to be desktop UI.
 - Show portrait-dialog states separately from the primary desktop view; the footer headshot still opens the required interaction.
@@ -13,6 +14,10 @@ Updated from Matthew's feedback on 22 October 2026:
 
 - Matthew selected the first editorial-workshop concept. Retain that overall layout and paper art direction.
 - Produce a separate concept image for each of Start, Services, Work, Writing, About and Contact, and iterate the spreads before WebGL modeling.
+- Each chapter needs its own composition, silhouette and subject. Share paper, cover, typography and light; do not repeat mountains, trees, code brackets or generic scenery across chapters.
+- Remove the fictional Enquiry workflow from featured work and launch scope. Use existing articles and project evidence: PuttPulse, Shiny-filteRs, Hinuhinu, Supervised UMAP, Drake, .Rprofile and fast style transfer. Service illustrations are metaphors, not completed client projects.
+- Use actual recovered imagery as textures and media sources in implementation. Generated concept reinterpretations are not product screenshots or proof of scientific results. Record asset origins and attribution before reuse.
+- Plan each project's animation separately: real source video/GIF where available, textured articulated objects or bounded Three.js geometry otherwise. Do not represent a camera pan over an entire flat spread as the completed pop-up book.
 - The finished book must use real 3D geometry, folding pop-outs, page turns and selectable objects with camera movement. Static concept images or a flat image with a perspective transform do not fulfill this feature.
 - Keep concept/review evidence separate from verified browser interaction and physical-device performance evidence.
 
@@ -20,7 +25,7 @@ Updated from Matthew's feedback on 22 October 2026:
 
 - Show one basket on a small raised bed of wood-chip mulch, with a wider grassy circle defined by small plastic marking-whisker tufts in the ground.
 - No tee pad, rectangular slab/mat, driving-fairway composition, ball-golf green, flags or cones.
-- Use the same putting-area anatomy in the homepage thumbnail, Work spread and About miniature. Keep the factual caption “Disc golf practice product.”
+- Use the same putting-area anatomy wherever PuttPulse appears. The revised About scene uses strategy/board-game objects rather than another disc-golf miniature. Keep the factual caption “Disc golf practice product.” when describing PuttPulse.
 - Consult actual course photographs and marker references; Olympus informs the wooded professional-course feel. Do not claim the stylized scene depicts a specific real hole.
 
 ## Required interactive portrait
