@@ -52,6 +52,18 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [ ] Complete accessibility/manual keyboard/screen-reader checks and measure performance targets.
 - [ ] Verify desktop Chrome/Safari and actual iPhone/Android; distinguish emulation from physical-device evidence.
 
+## Search visibility — international remote clients
+
+- [x] Install the requested Claude SEO suite once for the GitHub/catalog links: all 26 skills, Codex path adaptation and managed runtime/browser verified.
+- [x] Register the official SEOcrawl MCP endpoint; document unsuccessful OAuth registration and CIMD support checks separately from working access.
+- [ ] Complete supported SEOcrawl account/client authorization if the service is to be used; no data access is currently verified.
+- [x] Record the international-client strategy, qualitative five-provider sample and six live public URL checks. No ranking, traffic or conversion baseline claimed.
+- [ ] Implement complete pre-rendered HTML text and crawlable links behind all book chapters and article hotspots; verify with JavaScript/WebGL disabled.
+- [ ] Validate production canonical origin, unique useful titles/descriptions/headings, sitemap, robots, structured data and real HTTP status/404 behavior. Reject placeholder/preview hosts in indexable production output.
+- [ ] Repair the legacy placeholder canonical/sitemap configuration as part of the approved cutover; preserve destination-specific forwarding and article/download paths.
+- [ ] Verify graphics/media performance budgets, original project evidence and remote-service copy; prevent template/draft/future pages entering indexable listings.
+- [ ] Obtain owner-verified Search Console access for the chosen production origin; submit/inspect representative URLs, record real baselines and review after launch. Keep any optional visitor analytics a separate privacy decision.
+
 ## Production — required approval checkpoint
 
 - [ ] Connect Cloudflare Pages and configure GitHub previews; verify new-host production candidate and canonical URL.

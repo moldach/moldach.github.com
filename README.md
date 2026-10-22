@@ -20,6 +20,7 @@ Source of record for the published site and its replacement. The existing GitHub
 - [Six chapter concepts and interaction notes](research/design/chapters/README.md), including the reference-grounded putting-area correction.
 - [Existing source media and individual motion treatments](research/design/asset-motion-map.md).
 - [Bend verification and its limits](docs/bend.md).
+- [International consulting SEO strategy](docs/seo/strategy.md), [live-site sample](docs/seo/current-site-sample-2026-10-22.json) and [installed SEO tooling / MCP connection status](docs/seo/tooling.md).
 
 ## Verify the preservation work
 

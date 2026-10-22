@@ -6,6 +6,8 @@ Approved brief: 2026-10-22. Tasks are tracked in [todo.md](todo.md). This docume
 
 Replace the academic-blog homepage with a memorable consulting portfolio for small businesses seeking practical AI and agent workflows. Preserve a substantial writing archive and provide a clear experience/CV path for full-time hiring teams. Show what Matthew actually contributed, distinguish real work from demonstrations, and avoid unsupported client or ROI claims.
 
+SEO priority: **international remote clients**, confirmed by Matthew on 22 October 2026. Follow the [SEO strategy and acceptance gates](../docs/seo/strategy.md); use clear English service content and verified delivery evidence, not manufactured city pages. The 26-skill SEO suite and managed runtime are installed; [SEOcrawl authentication remains incomplete](../docs/seo/tooling.md). Installing tools or changing hosting does not guarantee a ranking.
+
 ## Experience and design
 
 - Premium paper workshop: warm ivory, ink, cobalt and restrained coral; expressive editorial serif plus a precise sans; original paper imagery and sophisticated lighting.

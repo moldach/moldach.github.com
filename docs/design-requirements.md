@@ -30,6 +30,13 @@ Updated from Matthew's feedback on 22 October 2026:
 - Use the same putting-area anatomy wherever PuttPulse appears. The revised About scene uses strategy/board-game objects rather than another disc-golf miniature. Keep the factual caption “Disc golf practice product.” when describing PuttPulse.
 - Consult actual course photographs and marker references; Olympus informs the wooded professional-course feel. Do not claim the stylized scene depicts a specific real hole.
 
+## Search discoverability
+
+- Primary consulting market: international remote clients. Include a clear plain-language offer and remote process in HTML; do not manufacture geographic offices or local landing pages.
+- The book is a progressive enhancement. Main content, chapter destinations and article links must be present in pre-rendered HTML and discoverable without a page turn, movie or WebGL interaction.
+- Use production-origin canonicals, meaningful metadata, generated sitemap/robots, appropriate verified structured data and optimized media. Keep preview/draft/template pages out of production indexing.
+- Apply the [SEO acceptance gates](seo/strategy.md), including migration and Search Console verification. Rankings and indexing are measured outcomes, not guarantees from hosting or installed skills.
+
 ## Required interactive portrait
 
 The face interaction is a required website feature, confirmed by Matthew on 22 October 2026. It must be included in design concepts and implementation acceptance criteria.

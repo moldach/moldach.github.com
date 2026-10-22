@@ -291,3 +291,9 @@ Copy this for each shortlisted example:
 - Follow-up:
 
 Related: [[Reading and experiments from personal email]] · [[Website Email Link Inventory]]
+
+## SEO resources added 22 October 2026
+
+- [Claude SEO source](https://github.com/AgricIDaniel/claude-seo) and [skill catalog](https://claude-seo.md/skills): the same 26-skill suite, installed once. [Installation verification](../seo/tooling.md).
+- [SEOcrawl MCP](https://seocrawl.ai/mcp): endpoint configured; account authentication is incomplete. It is a separate service, not another skill or a ranking guarantee.
+- [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide), [JavaScript/pre-rendered HTML guidance](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics) and [Search Console](https://developers.google.com/search/docs/monitor-debug/search-console-start) anchor the [international-client strategy](../seo/strategy.md).
