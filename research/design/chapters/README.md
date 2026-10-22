@@ -34,11 +34,13 @@ Each project has a separate motion treatment: disc flight, articulated polygon p
 
 ## Writing — editorial print studio
 
-![Writing: letterpress, UMAP plot and real article folios](round-2/04-writing.png)
+![Writing: UMAP, Fitbit gamification and highlighted brain regions](round-2/04-writing-v2.png)
 
-A proofing roller and folding sheets showcase existing topics: **Supervised UMAP**, **Getting Started with Drake in R**, and **.Rprofile**. The UMAP reference was recovered losslessly from the embedded PNG in the existing slides. Animate the paper and printing mechanics; use the faithful original 2D plot unless actual data/code are recovered and validated. Selection leads to readable articles with original titles/dates.
+A proofing roller and folding exhibits showcase **Supervised UMAP**, **The Gamification of Fitbit**, and **Highlighting 3D Brain Regions**. Matthew requested the latter two in place of Drake and .Rprofile. Fitbit uses the existing green pixel-art project image; the brain exhibit uses the existing rendering with a small highlighted red region. Both are grounded in the actual project pages rather than invented demos. The UMAP reference remains the recovered original slide plot.
 
-[Exact prompt](round-2/04-writing-prompt.txt).
+[Exact revised prompt](round-2/04-writing-v2-prompt.txt). The [previous Writing concept](round-2/04-writing.png) is retained as history; its Drake/.Rprofile selection is superseded for this spread.
+
+Animate the printer, paper folds and Fitbit display reveal. For brain-region selection/rotation, recover and verify the original mesh/atlas before offering anatomical interaction. Until then, use the faithful original brain image as a texture with a simple reveal; generated paper anatomy is art direction, not a validated model. Preserve the UMAP plot's 2D meaning. Selection leads to readable source-backed content with original titles and dates; the two legacy project summaries still require full article recovery.
 
 ## About — personal strategy table
 

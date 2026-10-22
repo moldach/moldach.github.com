@@ -18,6 +18,7 @@ Updated from Matthew's feedback on 22 October 2026:
 - Remove the fictional Enquiry workflow from featured work and launch scope. Use existing articles and project evidence: PuttPulse, Shiny-filteRs, Hinuhinu, Supervised UMAP, Drake, .Rprofile and fast style transfer. Service illustrations are metaphors, not completed client projects.
 - Use actual recovered imagery as textures and media sources in implementation. Generated concept reinterpretations are not product screenshots or proof of scientific results. Record asset origins and attribution before reuse.
 - Plan each project's animation separately: real source video/GIF where available, textured articulated objects or bounded Three.js geometry otherwise. Do not represent a camera pan over an entire flat spread as the completed pop-up book.
+- Writing's featured selection is now Supervised UMAP, Fitbit gamification and highlighting 3D brain regions. Replace Drake and .Rprofile in this spread only; those articles remain in the archive and can still inform Services. Use the actual Fitbit and brain project imagery. Preserve original titles/dates and recover full articles before rewriting them.
 - The finished book must use real 3D geometry, folding pop-outs, page turns and selectable objects with camera movement. Static concept images or a flat image with a perspective transform do not fulfill this feature.
 - Keep concept/review evidence separate from verified browser interaction and physical-device performance evidence.
 
