@@ -1,12 +1,11 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import book from '../../../research/design/chapters/round-2/01-start.png';
-import style from '../../../post/faststyletransfer/featured.png';
-import filters from '../../../project/shiny-filters/featured.jpg';
-import umap from '../../../research/design/source-assets/supervised-umap/embedded-03.png';
-import fitbit from '../../../project/fitbit-project/featured.png';
-import brain from '../../../project/3d-brain/featured.png';
-import portrait from '../../../assets/reference/headshot.jpeg';
+import services from '../../../research/design/chapters/round-2/02-services.png';
+import work from '../../../research/design/chapters/round-2/03-work.png';
+import writing from '../../../research/design/chapters/round-2/04-writing-v2.png';
+import about from '../../../research/design/chapters/round-2/05-about.png';
+import contact from '../../../research/design/chapters/round-2/06-contact.png';
 import { chapters, writingEntries, writingHref } from '../lib/registry';
 const exhibits = (await writingEntries())
   .filter((entry) => entry.data.featuredOrder !== undefined)
@@ -20,14 +19,10 @@ const exhibitLinks = exhibits.map((entry) => ({
         : 'Brain regions',
   href: writingHref(entry),
 }));
-const artwork = Object.fromEntries(
-  await Promise.all(
-    Object.entries({ style, filters, umap, fitbit, brain, portrait }).map(
-      async ([name, src]) => [
-        name,
-        (await getImage({ src, width: 512, format: 'webp' })).src,
-      ],
-    ),
+const artwork = await Promise.all(
+  [book, services, work, writing, about, contact].map(
+    async (src) =>
+      (await getImage({ src, width: 1440, format: 'webp', quality: 85 })).src,
   ),
 );
 ---
@@ -35,7 +30,7 @@ const artwork = Object.fromEntries(
 <figure
   class="book-poster"
   data-book
-  data-artwork={JSON.stringify(artwork)}
+  data-chapter-artwork={JSON.stringify(artwork)}
   data-exhibit-links={JSON.stringify(exhibitLinks)}
   data-chapters={JSON.stringify(chapters)}
   data-chapter="Start"
@@ -45,11 +40,11 @@ const artwork = Object.fromEntries(
       src={book}
       class="book-artwork"
       alt="A paper pop-up book with a terminal and film ribbon illustrating Matthew's style-transfer work"
-      width={1100}
-      widths={[480, 800, 1100]}
+      width={1440}
+      widths={[480, 800, 1440]}
       sizes="(max-width: 800px) 100vw, 65vw"
       format="webp"
-      quality={80}
+      quality={85}
       loading="eager"
       fetchpriority="high"
     />
@@ -58,7 +53,7 @@ const artwork = Object.fromEntries(
       class="book-canvas"
       tabindex="0"
       role="img"
-      aria-label="Interactive three-dimensional pop-up book. Drag or use arrow keys to rotate; Escape resets the view."
+      aria-label="Artwork-matched three-dimensional book relief. Drag gently or use arrow keys to inspect depth; Escape restores the reference view."
       aria-describedby="book-instructions"
     ></canvas>
     <div class="book-controls" hidden>
@@ -76,39 +71,42 @@ const artwork = Object.fromEntries(
             aria-controls="book-chapter-panel"
             id={`book-tab-${i}`}
           >
-            {chapter.label}
+            <span class="sr-only">{chapter.label}</span>
           </button>
         ))}
       </div>
-      <div
-        class="book-caption"
-        id="book-chapter-panel"
-        role="tabpanel"
-        aria-label="Selected book chapter"
-      >
-        <span class="eyebrow">A little paper. A lot of possibility.</span>
-        <a href="/" data-open-chapter>
-          Open Start ↗
-        </a>
-      </div>
-      <ul class="book-exhibit-links" data-exhibit-list hidden>
-        {exhibitLinks.map((exhibit) => (
-          <li>
-            <a href={exhibit.href}>{exhibit.label} ↗</a>
-          </li>
-        ))}
-      </ul>
     </div>
     <nav class="paper-tabs" aria-label="Book chapters">
-      {chapters.map((chapter) => (
+      {chapters.map((chapter, i) => (
         <a
           href={chapter.href}
+          style={`left: ${[16, 27, 39, 58, 70, 81][i]}%; top: 79%`}
           aria-current={chapter.href === '/' ? 'page' : undefined}
         >
           {chapter.label}
         </a>
       ))}
     </nav>
+  </div>
+  <div class="book-details">
+    <div
+      class="book-caption"
+      id="book-chapter-panel"
+      role="tabpanel"
+      aria-label="Selected book chapter"
+    >
+      <span class="eyebrow">A little paper. A lot of possibility.</span>
+      <a href="/" data-open-chapter>
+        Open Start ↗
+      </a>
+    </div>
+    <ul class="book-exhibit-links" data-exhibit-list hidden>
+      {exhibitLinks.map((exhibit) => (
+        <li>
+          <a href={exhibit.href}>{exhibit.label} ↗</a>
+        </li>
+      ))}
+    </ul>
   </div>
   <figcaption>
     <span id="book-instructions" data-book-status>
@@ -122,7 +120,7 @@ const artwork = Object.fromEntries(
         Pause motion
       </button>
       <button data-artwork-view type="button">
-        View concept artwork
+        View artwork
       </button>
     </span>
   </figcaption>

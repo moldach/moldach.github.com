@@ -40,3 +40,9 @@ The newer homepage verification supersedes the foundation-only figures above: 14
 The latest browser evidence is in `../../research/verification/interactive-polish/`. It supersedes the click-to-open default above: all seven Writing entries remain initial HTML links; Three.js now starts automatically on Home, while the portrait loads on request. Keyboard, touch emulation, reduced motion, Canvas fallback, book context restoration and mesh article/Back checks pass. The old Lighthouse 99 does not apply to automatic 3D startup; use the new measurement and limitations in that folder. No production indexing, domain ownership, real-device performance or ranking result is claimed.
 
 The default-3D mobile laboratory run measured performance 95, automated accessibility 100, best practices 100, LCP 2409 ms, CLS 0.00215 and TBT 183.5 ms. Preview noindex intentionally yields SEO 66. This covers startup of the opening scene, not every chapter's first assembly or real-device interaction/field INP.
+
+## Reference-fidelity correction
+
+Matthew rejected the simplified scene models. The current default renderer uses the selected illustrations as textures on authored, bounded 3D relief geometry, with controls on their printed chapter tags. It does not reconstruct free-standing objects/unseen surfaces. The pointer trail is much fainter and clears in about 500 ms. See `../visual-media.md` and `../../research/verification/reference-fidelity/`. Earlier Lighthouse 95 and procedural-scene captures above are historical; they do not validate this replacement renderer. Crawlable page content, routes, dates and indexing controls are unchanged.
+
+The reference-relief renderer's current simulated-mobile run measured performance 96, automated accessibility 100, LCP 2581 ms, CLS 0.00201 and TBT 123.5 ms. LCP remains slightly above target. These are local laboratory measurements, not field INP or indexing/ranking evidence; see the current verification folder.

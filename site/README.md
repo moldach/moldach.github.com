@@ -34,8 +34,8 @@ A separate nondeployed test build can be generated with `SITE_BUILD_DIR=.verific
 
 ## Interactive review build
 
-The six-chapter Three.js paper book opens by default after the initial HTML/poster paint. It includes paper-grain/beveled props, continuous film ribbon, chapter tags, page turns, pointer/keyboard rotation, pause, Writing mesh/HTML destinations and Back restoration. Missing graphics retain the artwork and navigation; reduced motion starts with ambient motion paused.
+The book opens in WebGL by default using the six selected paper-book illustrations on authored 3D relief meshes. It preserves their reference composition and baked lighting, with bounded depth inspection, geometric page transitions and actual controls over the printed tags. It is not a full reconstruction of independent objects or their unseen sides. Article/exhibit hotspots have ordinary HTML destinations; Back, reduced motion and graphics fallback remain available.
 
-Writing shows all seven authored entries as large visual cards with pointer tilt/sheen, an idle-fading oil-film background and a bounded hover video excerpt. The footer photograph opens the required draggable portrait dialog with spring return, keyboard region controls, reset, touch and a Canvas 2D fallback. The supplied original photo is preserved; the portrait is a dimensional photograph rather than a full head reconstruction.
+Writing retains all seven authored visual cards. Its oil-film pointer trail now uses about 80% less opacity and clears within roughly half a second. The footer portrait, hover video and other accessibility/media handling remain implemented.
 
-See `../docs/visual-media.md` and `../research/verification/interactive-polish/` for implementation, browser evidence and measured limitations. Final scene review, Formspree/delivery, Pagefind, full case studies, a current résumé, full legacy migration and production gates remain open. Real devices and Safari are not yet verified.
+See `../docs/visual-media.md` and `../research/verification/reference-fidelity/` for current behavior, limitations and evidence. Prior procedural-renderer captures/scores in `interactive-polish/` are historical. Final visual review, any full-model asset pass, Safari/physical phones, contact delivery, search, remaining content/migration and production gates remain open.

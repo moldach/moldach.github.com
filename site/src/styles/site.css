@@ -659,32 +659,36 @@ li + li {
 .is-3d .paper-tabs {
   display: none;
 }
-.book-controls {
-  position: absolute;
-  bottom: 1%;
-  left: 8%;
-  width: 84%;
-}
+.book-controls,
 .chapter-tabs {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.3rem;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: block;
+  pointer-events: none;
 }
 .chapter-tabs button {
-  font: 500 0.75rem var(--sans);
-  padding: 0.8rem 0.25rem;
-  color: var(--ink);
-  background: #eee5d5;
-  border: 1px solid #c6bba8;
-  border-top: 3px solid #d2c3a8;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 5px 8px #30210c10;
+  position: absolute;
+  width: 10%;
+  height: 7%;
+  min-width: 24px;
+  min-height: 44px;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
   cursor: pointer;
+  pointer-events: auto;
 }
-.chapter-tabs [aria-selected='true'] {
-  background: var(--blue);
-  color: white;
-  border-color: var(--blue);
+.chapter-tabs button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.book-details {
+  padding-inline: 1.5rem;
+  min-height: 78px;
 }
 .book-caption {
   display: flex;
@@ -1058,19 +1062,7 @@ li + li {
     max-width: 32ch;
   }
   .book-stage {
-    aspect-ratio: 1.1;
-  }
-  .book-controls {
-    left: 5%;
-    width: 90%;
-    bottom: 0;
-  }
-  .chapter-tabs {
-    gap: 0.2rem;
-  }
-  .chapter-tabs button {
-    padding: 0.65rem 0.1rem;
-    font-size: 0.62rem;
+    aspect-ratio: 1.5;
   }
   .book-caption .eyebrow {
     display: none;
@@ -1175,7 +1167,7 @@ li + li {
     font-size: clamp(3rem, 11vw, 4.8rem);
   }
   .book-stage {
-    aspect-ratio: 1.15;
+    aspect-ratio: 1.5;
   }
 }
 .gallery-maps {
@@ -1258,10 +1250,35 @@ li + li {
 }
 
 .book-stage .paper-tabs {
-  top: calc(50% + 17cqw);
-  height: 5cqw;
-  min-height: 30px;
+  position: absolute;
+  inset: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
 }
+.book-stage .paper-tabs a {
+  position: absolute;
+  width: 10%;
+  height: 7%;
+  min-height: 44px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.book-stage .paper-tabs a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.is-3d .book-stage .paper-tabs {
+  display: none;
+}
+
 @media (max-width: 700px) {
   .hero {
     display: flex;

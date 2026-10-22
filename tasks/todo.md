@@ -91,3 +91,9 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Record `mattoldach.ai` as Matthew's preferred domain; ownership/pricing/registration remain unconfirmed.
 - [x] Make richer 3D the default; implement the required deformable portrait, seven-card Writing archive, hover preview and oil-film pointer effect.
 - [ ] Review final scene art and complete remaining launch gates; verify Safari and actual phones.
+
+## Reference-fidelity correction — 2026-10-22
+
+- [x] Replace the rejected simplified dioramas with artwork-textured WebGL relief based on the six selected chapter illustrations; retain bounded depth inspection, page transitions, printed-tag controls and exhibit destinations.
+- [x] Reduce oil-trail maximum opacity from 0.28 to 0.055 and inactivity lifetime from 2200 ms to 500 ms.
+- [ ] Obtain visual review of the relief approach; complete a dedicated full-model asset pass for independent objects/unseen surfaces if that level of 3D inspection is required. This relief is not that reconstruction.

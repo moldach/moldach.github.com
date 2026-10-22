@@ -1,609 +1,584 @@
 import * as THREE from 'three';
-import {
-  box,
-  material,
-  batchStatic,
-  disposeTree,
-  palette as p,
-} from './primitives';
-import { buildScene, type Artwork } from './scenes';
+import { reliefGeometry, tagCenters } from './reference-depth';
 
-// The shared motion curve: cubic-bezier(0.77, 0, 0.175, 1).
-function turnEase(elapsed: number) {
-  if (elapsed <= 0 || elapsed >= 1) return elapsed;
-  let low = 0,
-    high = 1,
-    t = 0.5;
-  for (let i = 0; i < 14; i++) {
-    t = (low + high) / 2;
-    const x =
-      3 * (1 - t) * (1 - t) * t * 0.77 +
-      3 * (1 - t) * t * t * 0.175 +
-      t * t * t;
-    if (x < elapsed) low = t;
-    else high = t;
-  }
-  return 3 * (1 - t) * t * t + t * t * t;
+type Link = {
+  label: string;
+  href: string;
+  area?: [number, number, number, number];
+};
+type Chapter = { label: string; href: string };
+type Spread = {
+  mesh: THREE.Mesh<THREE.PlaneGeometry, THREE.RawShaderMaterial>;
+  texture: THREE.Texture;
+};
+
+// Baked artwork is sampled in its encoded colour space. No added lighting or
+// tone mapping changes the approved illustration's palette.
+function artworkMaterial(texture: THREE.Texture | null = null) {
+  return new THREE.RawShaderMaterial({
+    uniforms: { artwork: { value: texture } },
+    vertexShader: `precision highp float;
+      uniform mat4 projectionMatrix, modelViewMatrix;
+      attribute vec3 position; attribute vec2 uv; varying vec2 imageUV;
+      void main(){imageUV=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+    fragmentShader: `precision highp float;
+      uniform sampler2D artwork; varying vec2 imageUV;
+      void main(){gl_FragColor=texture2D(artwork,imageUV);}`,
+    side: THREE.DoubleSide,
+  });
 }
 
 export async function mountBook(root: HTMLElement) {
   const canvas = root.querySelector<HTMLCanvasElement>('canvas')!;
+  const poster = root.querySelector<HTMLImageElement>('.book-artwork')!;
+  const controls = root.querySelector<HTMLElement>('.book-controls')!;
+  const status = root.querySelector<HTMLElement>('[data-book-status]')!;
+  const panel = root.querySelector<HTMLElement>('[role=tabpanel]')!;
+  const open = root.querySelector<HTMLAnchorElement>('[data-open-chapter]')!;
+  const pause = root.querySelector<HTMLButtonElement>('[data-pause-book]')!;
+  const view = root.querySelector<HTMLButtonElement>('[data-artwork-view]')!;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const sources = JSON.parse(root.dataset.chapterArtwork!) as string[];
+  const chapters = JSON.parse(root.dataset.chapters!) as Chapter[];
+  const writing = JSON.parse(root.dataset.exhibitLinks!) as Link[];
+  const links: Link[][] = [
+    [
+      {
+        label: 'Fast style transfer',
+        href: '/writing/faststyletransfer/',
+        area: [0.48, 0.03, 0.48, 0.68],
+      },
+    ],
+    [
+      {
+        label: 'Find the opportunity',
+        href: '/services/ai-opportunity-assessment/',
+        area: [0.12, 0.23, 0.25, 0.4],
+      },
+      {
+        label: 'Build a focused solution',
+        href: '/services/ai-workflow-automation/',
+        area: [0.39, 0.26, 0.25, 0.37],
+      },
+      {
+        label: 'Help the team adopt it',
+        href: '/services/ai-training-adoption/',
+        area: [0.67, 0.26, 0.25, 0.37],
+      },
+    ],
+    [
+      {
+        label: 'PuttPulse',
+        href: '/work/#puttpulse',
+        area: [0.05, 0.26, 0.32, 0.4],
+      },
+      {
+        label: 'Shiny-filteRs',
+        href: '/work/#shiny-filters',
+        area: [0.37, 0.08, 0.23, 0.56],
+      },
+      {
+        label: 'Hinuhinu',
+        href: '/work/#hinuhinu',
+        area: [0.6, 0.17, 0.36, 0.5],
+      },
+    ],
+    writing.map((link, i) => ({
+      ...link,
+      area: (
+        [
+          [0.4, 0.08, 0.24, 0.43],
+          [0.63, 0.17, 0.17, 0.41],
+          [0.79, 0.25, 0.18, 0.4],
+        ] as [number, number, number, number][]
+      )[i],
+    })),
+    [
+      {
+        label: 'About Matthew',
+        href: '/about/',
+        area: [0.51, 0.09, 0.24, 0.35],
+      },
+      {
+        label: 'Experience / CV',
+        href: '/experience/',
+        area: [0.76, 0.17, 0.17, 0.31],
+      },
+    ],
+    [
+      {
+        label: 'Start a conversation',
+        href: '/contact/',
+        area: [0.74, 0.31, 0.19, 0.26],
+      },
+    ],
+  ];
   const renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
     antialias: true,
     powerPreference: 'low-power',
   });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFShadowMap;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.NoToneMapping;
   const scene = new THREE.Scene();
-  try {
-    const camera = new THREE.PerspectiveCamera(33, 1, 0.1, 70);
-    camera.position.set(3.6, 7.5, 11.7);
-    camera.lookAt(0, 0.85, 0);
-    scene.add(new THREE.HemisphereLight('#fff4dc', '#c2b7a6', 1.7));
-    const sun = new THREE.DirectionalLight('#fff5e5', 3.2);
-    sun.position.set(-4, 9, 6);
-    sun.castShadow = true;
-    sun.shadow.mapSize.set(1024, 1024);
-    Object.assign(sun.shadow.camera, {
-      left: -8,
-      right: 8,
-      top: 8,
-      bottom: -8,
-      near: 0.5,
-      far: 30,
-    });
-    sun.shadow.bias = -0.001;
-    sun.shadow.normalBias = 0.04;
-    scene.add(sun);
-    const fill = new THREE.DirectionalLight('#aec5ff', 1.4);
-    fill.position.set(5, 3, -4);
-    scene.add(fill);
-    const floor = new THREE.Mesh(
-      new THREE.PlaneGeometry(40, 40),
-      new THREE.ShadowMaterial({ color: '#736450', opacity: 0.17 }),
+  const camera = new THREE.OrthographicCamera(-5, 5, 10 / 3, -10 / 3, 0.1, 40);
+  camera.position.z = 12;
+  const book = new THREE.Group();
+  scene.add(book);
+  const cache = new Map<number, Spread>();
+  const pending = new Map<number, Promise<Spread>>();
+  const loader = new THREE.TextureLoader();
+  const abort = new AbortController(),
+    signal = abort.signal;
+  let selected = 0,
+    version = 0,
+    frame = 0,
+    visible = true,
+    lost = false,
+    artwork = false,
+    ready = false;
+  let playing = !motion.matches,
+    yaw = 0,
+    pitch = 0;
+  let drag: { id: number; x: number; y: number; distance: number } | undefined;
+  let turn: { start: number; from: Spread; to: Spread } | undefined;
+  const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+  const sheetGeometry = new THREE.PlaneGeometry(4.3, 4.15, 48, 32);
+  const sheetUV = sheetGeometry.attributes.uv;
+  for (let i = 0; i < sheetUV.count; i++)
+    sheetUV.setXY(
+      i,
+      0.5 + sheetUV.getX(i) * 0.43,
+      0.24 + sheetUV.getY(i) * 0.62,
     );
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.y = -0.4;
-    floor.receiveShadow = true;
-    scene.add(floor);
-    const book = new THREE.Group();
-    scene.add(book);
-    box(book, [8.5, 0.12, 5.65], [0, -0.28, 0], p.blue);
-    for (let i = 0; i < 7; i++)
-      box(
-        book,
-        [8.25 - i * 0.025, 0.045, 5.4 - i * 0.02],
-        [0, -0.19 + i * 0.052, 0],
-        i % 2 ? p.paper : p.cream,
-      );
-    const page = new THREE.PlaneGeometry(8.15, 5.25, 48, 2);
-    page.rotateX(-Math.PI / 2);
-    const positions = page.attributes.position;
-    for (let i = 0; i < positions.count; i++)
-      positions.setY(
-        i,
-        0.22 + 0.08 * (1 - Math.exp(-Math.abs(positions.getX(i)) * 2)),
-      );
-    page.computeVertexNormals();
-    const spread = new THREE.Mesh(page, material(p.cream).clone());
-    spread.receiveShadow = true;
-    book.add(spread);
-    box(book, [0.05, 0.04, 5.3], [0, 0.3, 0], '#d6c5a5');
-    // Visible deckled layers, stitched binding, gilt cover corners and bookmark.
-    for (let i = 0; i < 20; i++) {
-      const z = -2.45 + i * 0.25;
-      box(book, [0.035, 0.018, 0.09], [0, 0.31, z], '#bca987');
-    }
-    for (const x of [-4.12, 4.12])
-      for (const z of [-2.63, 2.63]) {
-        box(
-          book,
-          [0.5, 0.025, 0.07],
-          [x - Math.sign(x) * 0.2, -0.205, z],
-          '#ba9458',
+  const sheet = new THREE.Mesh(sheetGeometry, artworkMaterial());
+  const hinge = new THREE.Group();
+  hinge.position.set(0, 0.32, 0.1);
+  sheet.position.x = 2.15;
+  hinge.add(sheet);
+  book.add(hinge);
+  hinge.visible = false;
+  async function load(index: number) {
+    if (cache.has(index)) return cache.get(index)!;
+    let task = pending.get(index);
+    if (!task) {
+      task = (async () => {
+        const texture = await loader.loadAsync(sources[index]);
+        texture.colorSpace = THREE.NoColorSpace;
+        texture.minFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+        const mesh = new THREE.Mesh(
+          reliefGeometry(index),
+          artworkMaterial(texture),
         );
-        box(
-          book,
-          [0.07, 0.025, 0.4],
-          [x, -0.205, z - Math.sign(z) * 0.16],
-          '#ba9458',
-        );
-      }
-    const bookmark = box(
-      book,
-      [0.27, 0.025, 1.15],
-      [3.15, -0.12, 2.9],
-      p.coral,
-    );
-    bookmark.rotation.y = -0.15;
-    const printCanvas = document.createElement('canvas');
-    printCanvas.width = 1024;
-    printCanvas.height = 640;
-    const print = printCanvas.getContext('2d')!;
-    print.fillStyle = p.cream;
-    print.fillRect(0, 0, 1024, 640);
-    print.strokeStyle = '#dbcfb7';
-    print.lineWidth = 1;
-    for (let i = 0; i < 24; i++) {
-      print.beginPath();
-      print.moveTo(40 + i * 40, 40);
-      print.lineTo(40 + i * 40, 600);
-      print.stroke();
+        mesh.visible = false;
+        book.add(mesh);
+        const result = { mesh, texture };
+        cache.set(index, result);
+        return result;
+      })();
+      pending.set(index, task);
     }
-    for (let i = 0; i < 15; i++) {
-      print.beginPath();
-      print.moveTo(40, 40 + i * 40);
-      print.lineTo(984, 40 + i * 40);
-      print.stroke();
+    try {
+      return await task;
+    } finally {
+      pending.delete(index);
     }
-    print.fillStyle = '#85775f';
-    print.font = '18px monospace';
-    print.fillText('MATTHEW OLDACH / THE PAPER WORKSHOP', 60, 585);
-    print.fillText('IDEAS → SYSTEMS → PEOPLE', 620, 585);
-    const printTexture = new THREE.CanvasTexture(printCanvas);
-    printTexture.colorSpace = THREE.SRGBColorSpace;
-    (spread.material as THREE.MeshStandardMaterial).map = printTexture;
-    batchStatic(book);
-    await document.fonts.ready;
-    const loader = new THREE.TextureLoader();
-    const artwork = JSON.parse(root.dataset.artwork!) as Record<
-      keyof Artwork,
-      string
-    >;
-    const art = Object.fromEntries(
-      await Promise.all(
-        Object.entries(artwork).map(async ([name, url]) => {
-          const texture = await loader.loadAsync(url);
-          texture.colorSpace = THREE.SRGBColorSpace;
-          return [name, texture];
-        }),
-      ),
-    ) as Artwork;
-    const chapters = JSON.parse(root.dataset.chapters!) as {
-      label: string;
-      href: string;
-    }[];
-    const exhibits = JSON.parse(root.dataset.exhibitLinks!);
-    const scenes = Array.from({ length: 6 }, () => new THREE.Group());
-    const loaded = new Set<number>();
-    const pending = new Map<number, Promise<void>>();
-    async function loadChapter(index: number) {
-      if (loaded.has(index)) return;
-      let task = pending.get(index);
-      if (!task) {
-        task = (async () => {
-          await new Promise((resolve) => setTimeout(resolve, 0));
-          const chapter = await buildScene(art, exhibits, index);
-          chapter.visible = false;
-          scenes[index].removeFromParent();
-          scenes[index] = chapter;
-          book.add(chapter);
-          loaded.add(index);
-        })();
-        pending.set(index, task);
+  }
+  function render(time = performance.now()) {
+    frame = 0;
+    if (!ready || lost || artwork || !visible || document.hidden) return;
+    if (turn) {
+      const t = Math.min(1, (time - turn.start) / 650),
+        ease = t * t * (3 - 2 * t);
+      hinge.rotation.y = -Math.PI * ease;
+      hinge.visible = t > 0 && t < 1;
+      if (t >= 0.5) {
+        turn.from.mesh.visible = false;
+        turn.to.mesh.visible = true;
       }
-      try {
-        await task;
-      } finally {
-        pending.delete(index);
+      if (t === 1) {
+        turn = undefined;
+        hinge.visible = false;
+        panel.setAttribute('aria-busy', 'false');
       }
     }
-    await loadChapter(0);
-    scenes[0].visible = true;
-    const turning = new THREE.Group();
-    turning.position.y = 0.32;
-    book.add(turning);
-    box(turning, [4.05, 0.04, 5.25], [2.025, 0, 0], p.cream);
-    turning.visible = false;
-    let ready = false;
-    let selected = 0,
-      next = 0,
-      turnStart = 0,
-      frame = 0,
-      visible = true,
-      playing = !motion.matches,
-      artworkView = false,
-      lost = false;
-    let yaw = 0,
-      pitch = 0,
-      drag: { x: number; y: number; id: number; distance: number } | undefined;
-    const controls = root.querySelector<HTMLElement>('.book-controls')!;
-    const pause = root.querySelector<HTMLButtonElement>('[data-pause-book]')!;
-    const open = root.querySelector<HTMLAnchorElement>('[data-open-chapter]')!;
-    const status = root.querySelector<HTMLElement>('[data-book-status]')!;
-    const abort = new AbortController();
-    const signal = abort.signal;
-    const tabButtons = [
-      ...root.querySelectorAll<HTMLButtonElement>('[data-chapter]'),
-    ];
-    let lastRender = 0;
-    function render(time = performance.now()) {
-      frame = 0;
-      if (lost || artworkView || !visible || document.hidden) return;
-      if (playing && !turnStart && time - lastRender < 32) {
-        request();
-        return;
+    book.rotation.set(pitch, yaw, 0);
+    renderer.render(scene, camera);
+    if (turn) request();
+  }
+  function request() {
+    if (ready && !frame && !lost && !artwork && visible && !document.hidden)
+      frame = requestAnimationFrame(render);
+  }
+  function finishTurn() {
+    if (!turn) return;
+    turn.from.mesh.visible = false;
+    turn.to.mesh.visible = true;
+    turn = undefined;
+    hinge.visible = false;
+    panel.setAttribute('aria-busy', 'false');
+  }
+  function resize() {
+    const { width, height } = canvas.getBoundingClientRect();
+    if (!width || !height) return;
+    renderer.setSize(width, height, false);
+    const aspect = width / height;
+    const w = aspect >= 1.5 ? (20 / 3) * aspect : 10,
+      h = aspect >= 1.5 ? 20 / 3 : 10 / aspect;
+    camera.left = -w / 2;
+    camera.right = w / 2;
+    camera.top = h / 2;
+    camera.bottom = -h / 2;
+    camera.updateProjectionMatrix();
+    request();
+  }
+  async function select(index: number, instant = false) {
+    const intent = ++version;
+    panel.setAttribute('aria-busy', 'true');
+    status.textContent = `Opening ${chapters[index].label}…`;
+    let next: Spread;
+    try {
+      next = await load(index);
+    } catch {
+      if (intent === version) {
+        panel.setAttribute('aria-busy', 'false');
+        status.textContent =
+          'Artwork could not load. Use the main navigation to continue.';
       }
-      lastRender = time;
-      if (turnStart) {
-        const progress = turnEase(Math.min((time - turnStart) / 800, 1));
-        turning.visible = progress < 1;
-        turning.rotation.z = Math.PI * progress;
-        scenes[selected].scale.y = Math.max(
-          0.04,
-          Math.abs(Math.cos(progress * Math.PI)),
-        );
-        if (progress >= 0.5 && selected !== next) {
-          scenes[selected].visible = false;
-          scenes[selected].scale.y = 1;
-          selected = next;
-          scenes[selected].visible = true;
-        }
-        if (progress === 1) {
-          turnStart = 0;
-          root
-            .querySelector('[role=tabpanel]')!
-            .setAttribute('aria-busy', 'false');
-          scenes[selected].scale.y = 1;
-        }
-      }
-      book.rotation.y =
-        yaw +
-        (playing && !motion.matches ? Math.sin(time * 0.0003) * 0.035 : 0);
-      book.rotation.x = pitch;
-      if (playing && !motion.matches)
-        scenes[selected].traverse((object) => {
-          const motion = object.userData.motion;
-          if (motion === 'float') {
-            object.position.y =
-              object.userData.baseY +
-              Math.sin(time * 0.0014 + object.id) * 0.07;
-            object.rotation.z = Math.sin(time * 0.001 + object.id) * 0.06;
-          }
-        });
-      renderer.render(scene, camera);
-      if ((playing && !motion.matches) || turnStart) request();
+      return;
     }
-    function request() {
-      if (
-        ready &&
-        !frame &&
-        !artworkView &&
-        !lost &&
-        visible &&
-        !document.hidden
-      )
-        frame = requestAnimationFrame(render);
-    }
-    function resize() {
-      const rect = canvas.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
-      renderer.setSize(rect.width, rect.height, false);
-      camera.aspect = rect.width / rect.height;
-      // Keep both covers in frame on upright phone layouts.
-      const distance = camera.aspect < 1.3 ? 1.2 : 1;
-      camera.position.set(3.6 * distance, 7.5 * distance, 11.7 * distance);
-      camera.lookAt(0, 0.85, 0);
-      camera.updateProjectionMatrix();
-      request();
-    }
-    let selectionVersion = 0;
-    async function select(index: number, instant = false) {
-      const version = ++selectionVersion;
-      if (!loaded.has(index)) {
-        status.textContent = `Opening ${chapters[index].label}…`;
-        root
-          .querySelector('[role=tabpanel]')!
-          .setAttribute('aria-busy', 'true');
-        try {
-          await loadChapter(index);
-        } catch {
-          if (version === selectionVersion) {
-            status.textContent =
-              'This scene could not load. Use the page navigation to keep exploring.';
-            root
-              .querySelector('[role=tabpanel]')!
-              .setAttribute('aria-busy', 'false');
-          }
-          return;
-        }
-        if (version !== selectionVersion) return;
-      }
-      if (turnStart) {
-        turnStart = 0;
-        turning.visible = false;
-        scenes.forEach((scene) => {
-          scene.visible = false;
-          scene.scale.y = 1;
-        });
-        selected = next;
-        scenes[selected].visible = true;
-      }
-      next = index;
-      tabButtons.forEach((b, i) => {
-        b.setAttribute('aria-selected', String(i === index));
-        b.tabIndex = i === index ? 0 : -1;
-      });
-      open.href = chapters[index].href;
-      open.textContent = `Open ${chapters[index].label} ↗`;
-      status.textContent = `${chapters[index].label} chapter. Drag to rotate the book.`;
-      root.dataset.chapter = chapters[index].label;
-      root.querySelector<HTMLElement>('[data-exhibit-list]')!.hidden =
-        index !== 3;
-      history.replaceState({ ...history.state, bookChapter: index }, '');
-      root
-        .querySelector('[role=tabpanel]')!
-        .setAttribute('aria-labelledby', `book-tab-${index}`);
-      if (instant || !playing || motion.matches || index === selected) {
-        scenes[selected].visible = false;
-        selected = index;
-        scenes[selected].visible = true;
-      } else turnStart = performance.now();
-      root
-        .querySelector('[role=tabpanel]')!
-        .setAttribute('aria-busy', String(Boolean(turnStart)));
-      request();
-    }
-    tabButtons.forEach((button, i) => {
-      button.addEventListener('click', () => select(i), { signal });
-      button.addEventListener(
-        'keydown',
-        (event) => {
-          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key))
-            return;
-          event.preventDefault();
-          const index =
-            event.key === 'Home'
-              ? 0
-              : event.key === 'End'
-                ? 5
-                : (i + (event.key === 'ArrowRight' ? 1 : 5)) % 6;
-          tabButtons[index].focus();
-          select(index, true);
-        },
-        { signal },
-      );
+    if (intent !== version) return;
+    finishTurn();
+    const previous = cache.get(selected);
+    selected = index;
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.tabIndex = i === index ? 0 : -1;
+      tab.style.left = `${tagCenters[index][i] * 100}%`;
+      tab.style.top = `${index === 4 ? 80 : 79}%`;
     });
-    pause.addEventListener(
+    root.querySelectorAll<HTMLElement>('.paper-tabs a').forEach((link, i) => {
+      link.style.left = `${tagCenters[index][i] * 100}%`;
+      link.style.top = `${index === 4 ? 80 : 79}%`;
+    });
+    open.href = chapters[index].href;
+    open.textContent = `Open ${chapters[index].label} ↗`;
+    panel.setAttribute('aria-labelledby', `book-tab-${index}`);
+    root.dataset.chapter = chapters[index].label;
+    history.replaceState({ ...history.state, bookChapter: index }, '');
+    poster.removeAttribute('srcset');
+    poster.src = sources[index];
+    poster.alt = `${chapters[index].label} chapter — approved paper-book artwork`;
+    const list = root.querySelector<HTMLElement>('[data-exhibit-list]')!;
+    list.replaceChildren();
+    links[index].forEach((link) => {
+      const li = document.createElement('li'),
+        a = document.createElement('a');
+      a.href = link.href;
+      a.textContent = `${link.label} ↗`;
+      li.append(a);
+      list.append(li);
+    });
+    list.hidden = false;
+    status.textContent = `${chapters[index].label}. Drag gently to inspect depth; Escape restores the artwork view.`;
+    if (
+      previous &&
+      previous !== next &&
+      playing &&
+      !motion.matches &&
+      !instant &&
+      !artwork &&
+      !lost
+    ) {
+      sheet.material.uniforms.artwork.value = previous.texture;
+      turn = { start: performance.now(), from: previous, to: next };
+    } else {
+      if (previous) previous.mesh.visible = false;
+      next.mesh.visible = true;
+      panel.setAttribute('aria-busy', 'false');
+    }
+    const z = next.mesh.geometry.attributes.position;
+    root.dataset.bookGeometry = 'textured-relief';
+    root.dataset.vertexCount = String(z.count);
+    root.dataset.reliefDepth = String(next.mesh.geometry.boundingBox!.max.z);
+    request();
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener(
       'click',
-      () => {
-        playing = !playing;
-        if (!playing && turnStart) select(next, true);
-        pause.textContent = playing ? 'Pause motion' : 'Play motion';
-        pause.setAttribute('aria-pressed', String(!playing));
-        if (!playing && frame) {
-          cancelAnimationFrame(frame);
-          frame = 0;
-        }
-        request();
-      },
-      { signal },
-    );
-    root
-      .querySelector<HTMLButtonElement>('[data-artwork-view]')!
-      .addEventListener(
-        'click',
-        (event) => {
-          artworkView = !artworkView;
-          canvas.hidden = artworkView;
-          root.classList.toggle('is-3d', !artworkView);
-          controls.hidden = artworkView;
-          (event.currentTarget as HTMLButtonElement).textContent = artworkView
-            ? 'Explore in 3D'
-            : 'View concept artwork';
-          request();
-        },
-        { signal },
-      );
-    canvas.addEventListener(
-      'pointerdown',
       (event) => {
-        drag = {
-          x: event.clientX,
-          y: event.clientY,
-          id: event.pointerId,
-          distance: 0,
-        };
-        canvas.setPointerCapture(event.pointerId);
+        void select(i, event.detail === 0);
       },
       { signal },
     );
-    canvas.addEventListener(
-      'pointermove',
+    tab.addEventListener(
+      'keydown',
       (event) => {
-        if (!drag) return;
-        drag.distance +=
-          Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y);
-        yaw = THREE.MathUtils.clamp(
-          yaw + (event.clientX - drag.x) * 0.004,
-          -0.45,
-          0.45,
-        );
-        pitch = THREE.MathUtils.clamp(
-          pitch + (event.clientY - drag.y) * 0.002,
-          -0.15,
-          0.2,
-        );
-        drag.x = event.clientX;
-        drag.y = event.clientY;
-        request();
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key))
+          return;
+        event.preventDefault();
+        const index =
+          event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? 5
+              : (i + (event.key === 'ArrowRight' ? 1 : 5)) % 6;
+        tabs[index].focus();
+        void select(index, true);
       },
       { signal },
     );
-    const raycaster = new THREE.Raycaster();
-    const release = (event: PointerEvent) => {
-      if (drag && drag.distance < 6 && selected === 3 && !turnStart) {
-        const rect = canvas.getBoundingClientRect();
-        raycaster.setFromCamera(
+  });
+  function updatePause() {
+    pause.textContent = motion.matches
+      ? 'Reduced motion'
+      : playing
+        ? 'Pause page turns'
+        : 'Animate page turns';
+    pause.disabled = motion.matches;
+    pause.setAttribute('aria-pressed', String(!playing));
+  }
+  pause.addEventListener(
+    'click',
+    () => {
+      playing = !playing;
+      finishTurn();
+      updatePause();
+      request();
+    },
+    { signal },
+  );
+  view.addEventListener(
+    'click',
+    () => {
+      finishTurn();
+      artwork = !artwork;
+      canvas.hidden = artwork;
+      controls.hidden = artwork;
+      root.classList.toggle('is-3d', !artwork);
+      view.textContent = artwork ? 'Inspect in 3D' : 'View artwork';
+      request();
+    },
+    { signal },
+  );
+  canvas.addEventListener(
+    'pointerdown',
+    (event) => {
+      drag = {
+        id: event.pointerId,
+        x: event.clientX,
+        y: event.clientY,
+        distance: 0,
+      };
+      canvas.setPointerCapture(event.pointerId);
+    },
+    { signal },
+  );
+  canvas.addEventListener(
+    'pointermove',
+    (event) => {
+      if (!drag || drag.id !== event.pointerId) return;
+      const dx = event.clientX - drag.x,
+        dy = event.clientY - drag.y;
+      drag.distance += Math.abs(dx) + Math.abs(dy);
+      yaw = THREE.MathUtils.clamp(yaw + dx * 0.0015, -0.11, 0.11);
+      pitch = THREE.MathUtils.clamp(pitch + dy * 0.001, -0.075, 0.075);
+      drag.x = event.clientX;
+      drag.y = event.clientY;
+      request();
+    },
+    { signal },
+  );
+  const ray = new THREE.Raycaster();
+  canvas.addEventListener(
+    'pointerup',
+    (event) => {
+      if (drag && drag.distance < 5 && !turn) {
+        const r = canvas.getBoundingClientRect();
+        ray.setFromCamera(
           new THREE.Vector2(
-            ((event.clientX - rect.left) / rect.width) * 2 - 1,
-            (-(event.clientY - rect.top) / rect.height) * 2 + 1,
+            ((event.clientX - r.left) / r.width) * 2 - 1,
+            (-(event.clientY - r.top) / r.height) * 2 + 1,
           ),
           camera,
         );
-        for (const hit of raycaster.intersectObject(scenes[selected], true)) {
-          let object: THREE.Object3D | null = hit.object;
-          while (object && !object.userData.href) object = object.parent;
-          if (object?.userData.href) {
-            location.assign(object.userData.href);
-            break;
-          }
+        const hit = ray.intersectObject(cache.get(selected)!.mesh)[0];
+        if (hit?.uv) {
+          const x = hit.uv.x,
+            y = 1 - hit.uv.y;
+          const link = links[selected].find((link) => {
+            const a = link.area;
+            return (
+              a &&
+              x >= a[0] &&
+              x <= a[0] + a[2] &&
+              y >= a[1] &&
+              y <= a[1] + a[3]
+            );
+          });
+          if (link) location.assign(link.href);
         }
       }
       drag = undefined;
-    };
-    canvas.addEventListener('pointerup', release, { signal });
-    canvas.addEventListener(
-      'pointercancel',
-      () => {
-        drag = undefined;
-      },
-      { signal },
-    );
-    canvas.addEventListener(
-      'keydown',
-      (event) => {
-        if (
-          ![
-            'ArrowLeft',
-            'ArrowRight',
-            'ArrowUp',
-            'ArrowDown',
-            'Escape',
-          ].includes(event.key)
+    },
+    { signal },
+  );
+  canvas.addEventListener(
+    'pointercancel',
+    () => {
+      drag = undefined;
+    },
+    { signal },
+  );
+  canvas.addEventListener(
+    'keydown',
+    (event) => {
+      if (
+        !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Escape'].includes(
+          event.key,
         )
-          return;
-        event.preventDefault();
-        if (event.key === 'Escape') {
-          yaw = 0;
-          pitch = 0;
-        } else {
-          yaw = THREE.MathUtils.clamp(
-            yaw +
-              (event.key === 'ArrowRight'
-                ? 0.08
-                : event.key === 'ArrowLeft'
-                  ? -0.08
-                  : 0),
-            -0.45,
-            0.45,
-          );
-          pitch = THREE.MathUtils.clamp(
-            pitch +
-              (event.key === 'ArrowDown'
-                ? 0.05
-                : event.key === 'ArrowUp'
-                  ? -0.05
-                  : 0),
-            -0.15,
-            0.2,
-          );
-        }
-        request();
-      },
-      { signal },
-    );
-    canvas.addEventListener(
-      'webglcontextlost',
-      (event) => {
-        event.preventDefault();
-        lost = true;
-        canvas.hidden = true;
-        root.classList.remove('is-3d');
-        controls.hidden = true;
-        root.dataset.webgl = 'lost';
-        root.querySelector<HTMLElement>('.book-view-toggle')!.hidden = true;
-      },
-      { signal },
-    );
-    canvas.addEventListener(
-      'webglcontextrestored',
-      () => {
-        lost = false;
-        canvas.hidden = artworkView;
-        root.classList.toggle('is-3d', !artworkView);
-        controls.hidden = artworkView;
-        root.dataset.webgl = 'ready';
-        root.querySelector<HTMLElement>('.book-view-toggle')!.hidden = false;
-        request();
-      },
-      { signal },
-    );
-    const observer = new IntersectionObserver((entries) => {
-      visible = entries[0].isIntersecting;
-      if (!visible && frame) {
+      )
+        return;
+      event.preventDefault();
+      if (event.key === 'Escape') {
+        yaw = 0;
+        pitch = 0;
+      } else {
+        yaw = THREE.MathUtils.clamp(
+          yaw +
+            (event.key === 'ArrowRight'
+              ? 0.025
+              : event.key === 'ArrowLeft'
+                ? -0.025
+                : 0),
+          -0.11,
+          0.11,
+        );
+        pitch = THREE.MathUtils.clamp(
+          pitch +
+            (event.key === 'ArrowDown'
+              ? 0.02
+              : event.key === 'ArrowUp'
+                ? -0.02
+                : 0),
+          -0.075,
+          0.075,
+        );
+      }
+      request();
+    },
+    { signal },
+  );
+  canvas.addEventListener(
+    'webglcontextlost',
+    (event) => {
+      event.preventDefault();
+      lost = true;
+      finishTurn();
+      canvas.hidden = true;
+      controls.hidden = true;
+      root.classList.remove('is-3d');
+      root.dataset.webgl = 'lost';
+      status.textContent =
+        'Artwork view. Use the printed tags or exhibit links to continue.';
+    },
+    { signal },
+  );
+  canvas.addEventListener(
+    'webglcontextrestored',
+    () => {
+      lost = false;
+      canvas.hidden = artwork;
+      controls.hidden = artwork;
+      root.classList.toggle('is-3d', !artwork);
+      root.dataset.webgl = 'ready';
+      status.textContent = `${chapters[selected].label}. Drag gently to inspect depth; Escape restores the reference view.`;
+      request();
+    },
+    { signal },
+  );
+  motion.addEventListener(
+    'change',
+    () => {
+      playing = !motion.matches;
+      finishTurn();
+      updatePause();
+      request();
+    },
+    { signal },
+  );
+  const intersection = new IntersectionObserver((entries) => {
+    visible = entries[0].isIntersecting;
+    if (!visible) {
+      finishTurn();
+      cancelAnimationFrame(frame);
+      frame = 0;
+    }
+    request();
+  });
+  intersection.observe(root);
+  const observer = new ResizeObserver(resize);
+  observer.observe(canvas);
+  document.addEventListener(
+    'visibilitychange',
+    () => {
+      if (document.hidden) {
+        finishTurn();
         cancelAnimationFrame(frame);
         frame = 0;
       }
       request();
+    },
+    { signal },
+  );
+  window.addEventListener('pageshow', request, { signal });
+  function dispose() {
+    abort.abort();
+    observer.disconnect();
+    intersection.disconnect();
+    cancelAnimationFrame(frame);
+    cache.forEach((spread) => {
+      spread.mesh.geometry.dispose();
+      spread.mesh.material.dispose();
+      spread.texture.dispose();
     });
-    observer.observe(root);
-    const size = new ResizeObserver(resize);
-    size.observe(canvas);
-    document.addEventListener(
-      'visibilitychange',
-      () => {
-        if (document.hidden && frame) {
-          cancelAnimationFrame(frame);
-          frame = 0;
-        }
-        request();
-      },
-      { signal },
-    );
-    motion.addEventListener(
-      'change',
-      () => {
-        playing = !motion.matches;
-        if (motion.matches && turnStart) select(next, true);
-        pause.textContent = playing ? 'Pause motion' : 'Play motion';
-        pause.setAttribute('aria-pressed', String(!playing));
-        request();
-      },
-      { signal },
-    );
-    window.addEventListener(
-      'pagehide',
-      (event) => {
-        if (event.persisted) return;
-        abort.abort();
-        observer.disconnect();
-        size.disconnect();
-        cancelAnimationFrame(frame);
-        disposeTree(scene);
-        renderer.dispose();
-      },
-      { once: true },
-    );
-    pause.textContent = playing ? 'Pause motion' : 'Play motion';
-    pause.setAttribute('aria-pressed', String(!playing));
+    sheetGeometry.dispose();
+    sheet.material.dispose();
+    renderer.dispose();
+  }
+  window.addEventListener(
+    'pagehide',
+    (event) => {
+      if (!event.persisted) dispose();
+    },
+    { once: true },
+  );
+  try {
+    const initial =
+      Number.isInteger(history.state?.bookChapter) &&
+      history.state.bookChapter >= 0 &&
+      history.state.bookChapter < 6
+        ? history.state.bookChapter
+        : 0;
+    await load(initial);
+    selected = initial;
+    cache.get(initial)!.mesh.visible = true;
     canvas.hidden = false;
     resize();
     await renderer.compileAsync(scene, camera);
     ready = true;
-    controls.hidden = false;
-    canvas.hidden = false;
-    await select(
-      Number.isInteger(history.state?.bookChapter) &&
-        history.state.bookChapter >= 0 &&
-        history.state.bookChapter < 6
-        ? history.state.bookChapter
-        : 0,
-      true,
-    );
+    await select(initial, true);
     root.classList.add('is-3d');
     root.dataset.webgl = 'ready';
+    controls.hidden = false;
     root.querySelector<HTMLElement>('.book-view-toggle')!.hidden = false;
+    updatePause();
     resize();
   } catch (error) {
-    disposeTree(scene);
-    renderer.dispose();
+    dispose();
     throw error;
   }
 }

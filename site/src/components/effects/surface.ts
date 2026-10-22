@@ -30,10 +30,10 @@ export function mountSurface(canvas: HTMLCanvasElement) {
         field=max(field,exp(-dot(delta,delta)*1600.)*strength);
       }
       float ripple=sin(p.x*19.+sin(p.y*17.+time*.5)*2.)*.12;
-      float thickness=field*28.+ripple;
-      vec3 color=.6+.4*cos(6.28318*(vec3(.08,.4,.7)+thickness*.19));
+      float thickness=field*12.+ripple;
+      vec3 color=.78+.22*cos(6.28318*(vec3(.08,.4,.7)+thickness*.19));
       float edge=smoothstep(.08,.16,field)*(1.-smoothstep(.32,.58,field));
-      gl_FragColor=vec4(color,edge*.28);
+      gl_FragColor=vec4(color,edge*.055);
     }`;
   const program = gl.createProgram()!;
   const shaders = [vertex, fragment].map((source, i) => {
@@ -91,16 +91,16 @@ export function mountSurface(canvas: HTMLCanvasElement) {
     for (let i = 19; i > 0; i--) {
       trail[i * 3] += (trail[(i - 1) * 3] - trail[i * 3]) * 0.42;
       trail[i * 3 + 1] += (trail[(i - 1) * 3 + 1] - trail[i * 3 + 1]) * 0.42;
-      trail[i * 3 + 2] = trail[(i - 1) * 3 + 2] * 0.94;
+      trail[i * 3 + 2] = trail[(i - 1) * 3 + 2] * 0.65;
     }
     trail[0] = pointer[0];
     trail[1] = pointer[1];
-    trail[2] = Math.max(0, 1 - (time - lastMove) / 850);
+    trail[2] = Math.max(0, 1 - (time - lastMove) / 140);
     gl!.uniform3fv(uTrail, trail);
     gl!.uniform1f(uTime, time / 1000);
     gl!.drawArrays(gl!.TRIANGLES, 0, 6);
     canvas.style.opacity = '1';
-    if (time - lastMove < 2200) frame = requestAnimationFrame(draw);
+    if (time - lastMove < 500) frame = requestAnimationFrame(draw);
     else {
       gl!.clearColor(0, 0, 0, 0);
       gl!.clear(gl!.COLOR_BUFFER_BIT);
@@ -112,7 +112,7 @@ export function mountSurface(canvas: HTMLCanvasElement) {
       if (!allowed.matches || event.pointerType === 'touch') return;
       pointer = [event.clientX / innerWidth, 1 - event.clientY / innerHeight];
       const now = performance.now();
-      if (!lastMove || now - lastMove > 1500)
+      if (!lastMove || now - lastMove > 500)
         for (let i = 0; i < 20; i++) {
           trail[i * 3] = pointer[0];
           trail[i * 3 + 1] = pointer[1];
