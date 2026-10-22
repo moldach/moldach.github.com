@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { reliefGeometry, tagCenters } from './reference-depth';
+import { openingModel } from './opening-model';
 
 type Link = {
   label: string;
@@ -8,7 +9,7 @@ type Link = {
 };
 type Chapter = { label: string; href: string };
 type Spread = {
-  mesh: THREE.Mesh<THREE.PlaneGeometry, THREE.RawShaderMaterial>;
+  mesh: THREE.Object3D;
   texture: THREE.Texture;
 };
 
@@ -121,10 +122,28 @@ export async function mountBook(root: HTMLElement) {
   });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.NoToneMapping;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFShadowMap;
   const scene = new THREE.Scene();
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xa5a1a0, 1.3));
+  const sun = new THREE.DirectionalLight(0xfff7ed, 2.1);
+  sun.position.set(-4, 7, 8);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(512, 512);
+  sun.shadow.radius = 4;
+  sun.shadow.camera.left = -7;
+  sun.shadow.camera.right = 7;
+  sun.shadow.camera.top = 7;
+  sun.shadow.camera.bottom = -7;
+  sun.shadow.normalBias = 0.025;
+  scene.add(sun);
   const camera = new THREE.OrthographicCamera(-5, 5, 10 / 3, -10 / 3, 0.1, 40);
   camera.position.z = 12;
+  const modelCamera = new THREE.PerspectiveCamera(29, 1.5, 0.1, 40);
+  modelCamera.position.z = 14.5;
+  const activeCamera = () => (selected === 0 ? modelCamera : camera);
   const book = new THREE.Group();
   scene.add(book);
   const cache = new Map<number, Spread>();
@@ -169,10 +188,10 @@ export async function mountBook(root: HTMLElement) {
         texture.colorSpace = THREE.NoColorSpace;
         texture.minFilter = THREE.LinearFilter;
         texture.generateMipmaps = false;
-        const mesh = new THREE.Mesh(
-          reliefGeometry(index),
-          artworkMaterial(texture),
-        );
+        const mesh =
+          index === 0
+            ? await openingModel(sources[0])
+            : new THREE.Mesh(reliefGeometry(index), artworkMaterial(texture));
         mesh.visible = false;
         book.add(mesh);
         const result = { mesh, texture };
@@ -206,7 +225,19 @@ export async function mountBook(root: HTMLElement) {
       }
     }
     book.rotation.set(pitch, yaw, 0);
-    renderer.render(scene, camera);
+    renderer.render(scene, activeCamera());
+    if (selected === 0) {
+      const point = new THREE.Vector3();
+      cache.get(0)?.mesh.traverse((object) => {
+        const index = object.userData.chapterIndex;
+        if (Number.isInteger(index)) {
+          object.getWorldPosition(point);
+          point.project(modelCamera);
+          tabs[index].style.left = `${(point.x + 1) * 50}%`;
+          tabs[index].style.top = `${(1 - point.y) * 50}%`;
+        }
+      });
+    }
     if (turn) request();
   }
   function request() {
@@ -233,6 +264,8 @@ export async function mountBook(root: HTMLElement) {
     camera.top = h / 2;
     camera.bottom = -h / 2;
     camera.updateProjectionMatrix();
+    modelCamera.aspect = aspect;
+    modelCamera.updateProjectionMatrix();
     request();
   }
   async function select(index: number, instant = false) {
@@ -254,6 +287,8 @@ export async function mountBook(root: HTMLElement) {
     finishTurn();
     const previous = cache.get(selected);
     selected = index;
+    yaw = 0;
+    pitch = 0;
     tabs.forEach((tab, i) => {
       tab.setAttribute('aria-selected', String(i === index));
       tab.tabIndex = i === index ? 0 : -1;
@@ -283,9 +318,14 @@ export async function mountBook(root: HTMLElement) {
       list.append(li);
     });
     list.hidden = false;
-    status.textContent = `${chapters[index].label}. Drag gently to inspect depth; Escape restores the artwork view.`;
+    status.textContent =
+      index === 0
+        ? 'Opening spread · modeled objects. Drag to explore; Escape resets the view.'
+        : `${chapters[index].label} · concept artwork relief. Escape resets the view.`;
     if (
       previous &&
+      selected !== 0 &&
+      previous.mesh instanceof THREE.Mesh &&
       previous !== next &&
       playing &&
       !motion.matches &&
@@ -300,10 +340,28 @@ export async function mountBook(root: HTMLElement) {
       next.mesh.visible = true;
       panel.setAttribute('aria-busy', 'false');
     }
-    const z = next.mesh.geometry.attributes.position;
-    root.dataset.bookGeometry = 'textured-relief';
-    root.dataset.vertexCount = String(z.count);
-    root.dataset.reliefDepth = String(next.mesh.geometry.boundingBox!.max.z);
+    root.dataset.bookGeometry =
+      index === 0 ? 'modeled-opening' : 'textured-relief';
+    let vertices = 0,
+      objects = 0;
+    next.mesh.traverse((object) => {
+      if (object instanceof THREE.Mesh) {
+        vertices += object.geometry.attributes.position.count;
+        objects++;
+      }
+    });
+    root.dataset.vertexCount = String(vertices);
+    root.dataset.objectCount = String(objects);
+    root.dataset.reliefDepth =
+      index === 0
+        ? ''
+        : String((next.mesh as THREE.Mesh).geometry.boundingBox!.max.z);
+    canvas.setAttribute(
+      'aria-label',
+      index === 0
+        ? 'Modeled paper pop-up book. Drag or use arrow keys to inspect the terminal, photographs and film ribbons. Escape resets the view.'
+        : 'Concept artwork relief. Drag gently to inspect; Escape resets the view.',
+    );
     request();
   }
   tabs.forEach((tab, i) => {
@@ -384,8 +442,16 @@ export async function mountBook(root: HTMLElement) {
       const dx = event.clientX - drag.x,
         dy = event.clientY - drag.y;
       drag.distance += Math.abs(dx) + Math.abs(dy);
-      yaw = THREE.MathUtils.clamp(yaw + dx * 0.0015, -0.11, 0.11);
-      pitch = THREE.MathUtils.clamp(pitch + dy * 0.001, -0.075, 0.075);
+      yaw = THREE.MathUtils.clamp(
+        yaw + dx * 0.003,
+        selected === 0 ? -0.45 : -0.11,
+        selected === 0 ? 0.45 : 0.11,
+      );
+      pitch = THREE.MathUtils.clamp(
+        pitch + dy * 0.002,
+        selected === 0 ? -0.25 : -0.075,
+        selected === 0 ? 0.25 : 0.075,
+      );
       drag.x = event.clientX;
       drag.y = event.clientY;
       request();
@@ -403,10 +469,15 @@ export async function mountBook(root: HTMLElement) {
             ((event.clientX - r.left) / r.width) * 2 - 1,
             (-(event.clientY - r.top) / r.height) * 2 + 1,
           ),
-          camera,
+          activeCamera(),
         );
-        const hit = ray.intersectObject(cache.get(selected)!.mesh)[0];
-        if (hit?.uv) {
+        const hit = ray.intersectObject(cache.get(selected)!.mesh, true)[0];
+        if (selected === 0 && hit) {
+          let object: THREE.Object3D | null = hit.object;
+          while (object && !object.userData.href) object = object.parent;
+          if (object?.userData.href) location.assign(object.userData.href);
+        }
+        if (selected !== 0 && hit?.uv) {
           const x = hit.uv.x,
             y = 1 - hit.uv.y;
           const link = links[selected].find((link) => {
@@ -454,8 +525,8 @@ export async function mountBook(root: HTMLElement) {
               : event.key === 'ArrowLeft'
                 ? -0.025
                 : 0),
-          -0.11,
-          0.11,
+          selected === 0 ? -0.45 : -0.11,
+          selected === 0 ? 0.45 : 0.11,
         );
         pitch = THREE.MathUtils.clamp(
           pitch +
@@ -464,8 +535,8 @@ export async function mountBook(root: HTMLElement) {
               : event.key === 'ArrowUp'
                 ? -0.02
                 : 0),
-          -0.075,
-          0.075,
+          selected === 0 ? -0.25 : -0.075,
+          selected === 0 ? 0.25 : 0.075,
         );
       }
       request();
@@ -495,7 +566,7 @@ export async function mountBook(root: HTMLElement) {
       controls.hidden = artwork;
       root.classList.toggle('is-3d', !artwork);
       root.dataset.webgl = 'ready';
-      status.textContent = `${chapters[selected].label}. Drag gently to inspect depth; Escape restores the reference view.`;
+      status.textContent = `${chapters[selected].label}. Drag gently to inspect depth; Escape resets the view.`;
       request();
     },
     { signal },
@@ -541,8 +612,11 @@ export async function mountBook(root: HTMLElement) {
     intersection.disconnect();
     cancelAnimationFrame(frame);
     cache.forEach((spread) => {
-      spread.mesh.geometry.dispose();
-      spread.mesh.material.dispose();
+      if (spread.mesh.userData.dispose) spread.mesh.userData.dispose();
+      else if (spread.mesh instanceof THREE.Mesh) {
+        spread.mesh.geometry.dispose();
+        spread.mesh.material.dispose();
+      }
       spread.texture.dispose();
     });
     sheetGeometry.dispose();
@@ -568,7 +642,7 @@ export async function mountBook(root: HTMLElement) {
     cache.get(initial)!.mesh.visible = true;
     canvas.hidden = false;
     resize();
-    await renderer.compileAsync(scene, camera);
+    await renderer.compileAsync(scene, activeCamera());
     ready = true;
     await select(initial, true);
     root.classList.add('is-3d');

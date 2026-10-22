@@ -97,3 +97,9 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Replace the rejected simplified dioramas with artwork-textured WebGL relief based on the six selected chapter illustrations; retain bounded depth inspection, page transitions, printed-tag controls and exhibit destinations.
 - [x] Reduce oil-trail maximum opacity from 0.28 to 0.055 and inactivity lifetime from 2200 ms to 500 ms.
 - [ ] Obtain visual review of the relief approach; complete a dedicated full-model asset pass for independent objects/unseen surfaces if that level of 3D inspection is required. This relief is not that reconstruction.
+
+
+### Required visual correction
+- [x] Replace Start relief with a separate-object 3D prototype and capture desktop/mobile/inspection evidence.
+- [ ] Match Start to the approved paper-book reference before treating the visual target as achieved.
+- [ ] After that comparison, model the other five chapters; current reliefs are not finished pop-up scenes.

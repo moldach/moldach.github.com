@@ -39,3 +39,8 @@ The book opens in WebGL by default using the six selected paper-book illustratio
 Writing retains all seven authored visual cards. Its oil-film pointer trail now uses about 80% less opacity and clears within roughly half a second. The footer portrait, hover video and other accessibility/media handling remain implemented.
 
 See `../docs/visual-media.md` and `../research/verification/reference-fidelity/` for current behavior, limitations and evidence. Prior procedural-renderer captures/scores in `interactive-polish/` are historical. Final visual review, any full-model asset pass, Safari/physical phones, contact delivery, search, remaining content/migration and production gates remain open.
+
+
+## Opening-model correction — 22 October 2026
+
+The owner rejected the relief as a substitute for the approved 3D book. Start now uses the independent-object prototype in `site/src/components/book/opening-model.ts` (relative to repository root), with perspective, lit materials and real prop raycasting. Other five spreads remain concept reliefs. This is **not visually matched or owner-approved**; see `research/verification/modeled-opening/README.md` and its fresh captures for the remaining differences and scoped checks. Earlier relief screenshots and Lighthouse measurements do not verify this prototype. Oil and portrait code are unchanged in this pass.

@@ -33,3 +33,8 @@ The homepage project videos retain source hashes/treatments in `site/public/medi
 Current reference-view captures, source comparisons, geometry checks and browser results are in `research/verification/reference-fidelity/`. Earlier `interactive-polish/` captures and Lighthouse scores describe the previous renderer, not the current one. Browser emulation does not establish Safari, physical-device performance, full WCAG 2.2 AA conformance, field INP or rankings.
 
 Outstanding: owner review of this artwork-relief approach, any required full modeled assets, complete accessibility/Safari/physical-phone checks, full case studies/current résumé, remaining migration, Pagefind, Formspree setup and owner-approved delivery, domain ownership, Cloudflare setup and production approval. Preferred domain remains `mattoldach.ai`; no purchase, DNS or production change has occurred.
+
+
+## Opening-model correction — 22 October 2026
+
+The owner rejected the relief as a substitute for the approved 3D book. Start now uses the independent-object prototype in `site/src/components/book/opening-model.ts` (relative to repository root), with perspective, lit materials and real prop raycasting. Other five spreads remain concept reliefs. This is **not visually matched or owner-approved**; see `research/verification/modeled-opening/README.md` and its fresh captures for the remaining differences and scoped checks. Earlier relief screenshots and Lighthouse measurements do not verify this prototype. Oil and portrait code are unchanged in this pass.
