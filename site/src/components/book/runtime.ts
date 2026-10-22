@@ -1,6 +1,12 @@
 import * as THREE from 'three';
-import { box, material, disposeTree, palette as p } from './primitives';
-import { buildScenes, type Artwork } from './scenes';
+import {
+  box,
+  material,
+  batchStatic,
+  disposeTree,
+  palette as p,
+} from './primitives';
+import { buildScene, type Artwork } from './scenes';
 
 // The shared motion curve: cubic-bezier(0.77, 0, 0.175, 1).
 function turnEase(elapsed: number) {
@@ -37,8 +43,8 @@ export async function mountBook(root: HTMLElement) {
   const scene = new THREE.Scene();
   try {
     const camera = new THREE.PerspectiveCamera(33, 1, 0.1, 70);
-    camera.position.set(6.5, 7.8, 11.5);
-    camera.lookAt(0, 0.6, 0);
+    camera.position.set(3.6, 7.5, 11.7);
+    camera.lookAt(0, 0.85, 0);
     scene.add(new THREE.HemisphereLight('#fff4dc', '#c2b7a6', 1.7));
     const sun = new THREE.DirectionalLight('#fff5e5', 3.2);
     sun.position.set(-4, 9, 6);
@@ -85,10 +91,65 @@ export async function mountBook(root: HTMLElement) {
         0.22 + 0.08 * (1 - Math.exp(-Math.abs(positions.getX(i)) * 2)),
       );
     page.computeVertexNormals();
-    const spread = new THREE.Mesh(page, material(p.cream));
+    const spread = new THREE.Mesh(page, material(p.cream).clone());
     spread.receiveShadow = true;
     book.add(spread);
     box(book, [0.05, 0.04, 5.3], [0, 0.3, 0], '#d6c5a5');
+    // Visible deckled layers, stitched binding, gilt cover corners and bookmark.
+    for (let i = 0; i < 20; i++) {
+      const z = -2.45 + i * 0.25;
+      box(book, [0.035, 0.018, 0.09], [0, 0.31, z], '#bca987');
+    }
+    for (const x of [-4.12, 4.12])
+      for (const z of [-2.63, 2.63]) {
+        box(
+          book,
+          [0.5, 0.025, 0.07],
+          [x - Math.sign(x) * 0.2, -0.205, z],
+          '#ba9458',
+        );
+        box(
+          book,
+          [0.07, 0.025, 0.4],
+          [x, -0.205, z - Math.sign(z) * 0.16],
+          '#ba9458',
+        );
+      }
+    const bookmark = box(
+      book,
+      [0.27, 0.025, 1.15],
+      [3.15, -0.12, 2.9],
+      p.coral,
+    );
+    bookmark.rotation.y = -0.15;
+    const printCanvas = document.createElement('canvas');
+    printCanvas.width = 1024;
+    printCanvas.height = 640;
+    const print = printCanvas.getContext('2d')!;
+    print.fillStyle = p.cream;
+    print.fillRect(0, 0, 1024, 640);
+    print.strokeStyle = '#dbcfb7';
+    print.lineWidth = 1;
+    for (let i = 0; i < 24; i++) {
+      print.beginPath();
+      print.moveTo(40 + i * 40, 40);
+      print.lineTo(40 + i * 40, 600);
+      print.stroke();
+    }
+    for (let i = 0; i < 15; i++) {
+      print.beginPath();
+      print.moveTo(40, 40 + i * 40);
+      print.lineTo(984, 40 + i * 40);
+      print.stroke();
+    }
+    print.fillStyle = '#85775f';
+    print.font = '18px monospace';
+    print.fillText('MATTHEW OLDACH / THE PAPER WORKSHOP', 60, 585);
+    print.fillText('IDEAS → SYSTEMS → PEOPLE', 620, 585);
+    const printTexture = new THREE.CanvasTexture(printCanvas);
+    printTexture.colorSpace = THREE.SRGBColorSpace;
+    (spread.material as THREE.MeshStandardMaterial).map = printTexture;
+    batchStatic(book);
     await document.fonts.ready;
     const loader = new THREE.TextureLoader();
     const artwork = JSON.parse(root.dataset.artwork!) as Record<
@@ -109,11 +170,32 @@ export async function mountBook(root: HTMLElement) {
       href: string;
     }[];
     const exhibits = JSON.parse(root.dataset.exhibitLinks!);
-    const scenes = buildScenes(art, exhibits);
-    scenes.forEach((s, i) => {
-      s.visible = i === 0;
-      book.add(s);
-    });
+    const scenes = Array.from({ length: 6 }, () => new THREE.Group());
+    const loaded = new Set<number>();
+    const pending = new Map<number, Promise<void>>();
+    async function loadChapter(index: number) {
+      if (loaded.has(index)) return;
+      let task = pending.get(index);
+      if (!task) {
+        task = (async () => {
+          await new Promise((resolve) => setTimeout(resolve, 0));
+          const chapter = await buildScene(art, exhibits, index);
+          chapter.visible = false;
+          scenes[index].removeFromParent();
+          scenes[index] = chapter;
+          book.add(chapter);
+          loaded.add(index);
+        })();
+        pending.set(index, task);
+      }
+      try {
+        await task;
+      } finally {
+        pending.delete(index);
+      }
+    }
+    await loadChapter(0);
+    scenes[0].visible = true;
     const turning = new THREE.Group();
     turning.position.y = 0.32;
     book.add(turning);
@@ -140,9 +222,15 @@ export async function mountBook(root: HTMLElement) {
     const tabButtons = [
       ...root.querySelectorAll<HTMLButtonElement>('[data-chapter]'),
     ];
+    let lastRender = 0;
     function render(time = performance.now()) {
       frame = 0;
       if (lost || artworkView || !visible || document.hidden) return;
+      if (playing && !turnStart && time - lastRender < 32) {
+        request();
+        return;
+      }
+      lastRender = time;
       if (turnStart) {
         const progress = turnEase(Math.min((time - turnStart) / 800, 1));
         turning.visible = progress < 1;
@@ -169,6 +257,16 @@ export async function mountBook(root: HTMLElement) {
         yaw +
         (playing && !motion.matches ? Math.sin(time * 0.0003) * 0.035 : 0);
       book.rotation.x = pitch;
+      if (playing && !motion.matches)
+        scenes[selected].traverse((object) => {
+          const motion = object.userData.motion;
+          if (motion === 'float') {
+            object.position.y =
+              object.userData.baseY +
+              Math.sin(time * 0.0014 + object.id) * 0.07;
+            object.rotation.z = Math.sin(time * 0.001 + object.id) * 0.06;
+          }
+        });
       renderer.render(scene, camera);
       if ((playing && !motion.matches) || turnStart) request();
     }
@@ -188,10 +286,35 @@ export async function mountBook(root: HTMLElement) {
       if (!rect.width || !rect.height) return;
       renderer.setSize(rect.width, rect.height, false);
       camera.aspect = rect.width / rect.height;
+      // Keep both covers in frame on upright phone layouts.
+      const distance = camera.aspect < 1.3 ? 1.2 : 1;
+      camera.position.set(3.6 * distance, 7.5 * distance, 11.7 * distance);
+      camera.lookAt(0, 0.85, 0);
       camera.updateProjectionMatrix();
       request();
     }
-    function select(index: number, instant = false) {
+    let selectionVersion = 0;
+    async function select(index: number, instant = false) {
+      const version = ++selectionVersion;
+      if (!loaded.has(index)) {
+        status.textContent = `Opening ${chapters[index].label}…`;
+        root
+          .querySelector('[role=tabpanel]')!
+          .setAttribute('aria-busy', 'true');
+        try {
+          await loadChapter(index);
+        } catch {
+          if (version === selectionVersion) {
+            status.textContent =
+              'This scene could not load. Use the page navigation to keep exploring.';
+            root
+              .querySelector('[role=tabpanel]')!
+              .setAttribute('aria-busy', 'false');
+          }
+          return;
+        }
+        if (version !== selectionVersion) return;
+      }
       if (turnStart) {
         turnStart = 0;
         turning.visible = false;
@@ -466,7 +589,7 @@ export async function mountBook(root: HTMLElement) {
     ready = true;
     controls.hidden = false;
     canvas.hidden = false;
-    select(
+    await select(
       Number.isInteger(history.state?.bookChapter) &&
         history.state.bookChapter >= 0 &&
         history.state.bookChapter < 6

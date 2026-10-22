@@ -1255,11 +1255,6 @@ li + li {
   border: 0;
   border-radius: 2px;
   font: 500 0.8rem var(--sans);
-  cursor: pointer;
-}
-.book-launch:disabled {
-  cursor: wait;
-  opacity: 0.7;
 }
 
 .book-stage .paper-tabs {

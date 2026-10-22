@@ -114,9 +114,9 @@ const artwork = Object.fromEntries(
     <span id="book-instructions" data-book-status>
       Explore a chapter. Read the work.
     </span>
-    <button type="button" class="book-launch" data-launch-book hidden>
-      Explore in 3D ↗
-    </button>
+    <span class="book-launch" data-book-loading role="status" hidden>
+      Opening the workshop…
+    </span>
     <span class="book-view-toggle" hidden>
       <button data-pause-book type="button" aria-pressed="false">
         Pause motion
@@ -130,13 +130,11 @@ const artwork = Object.fromEntries(
 <script>
   const book = document.querySelector<HTMLElement>('[data-book]');
   if (book) {
-    const launch = book.querySelector<HTMLButtonElement>('[data-launch-book]')!;
-    launch.hidden = false;
-    launch.addEventListener('click', async () => {
-      launch.disabled = true;
+    const launch = book.querySelector<HTMLElement>('[data-book-loading]')!;
+    const start = async () => {
+      launch.hidden = false;
       launch.textContent = 'Opening the workshop…';
       book.dataset.webgl = 'loading';
-      history.replaceState({ ...history.state, bookActivated: true }, '');
       try {
         const { mountBook } = await import('./book/runtime');
         await mountBook(book);
@@ -146,10 +144,11 @@ const artwork = Object.fromEntries(
         book.querySelector<HTMLCanvasElement>('canvas')!.hidden = true;
         book.querySelector<HTMLElement>('.book-controls')!.hidden = true;
         book.classList.remove('is-3d');
+        launch.hidden = false;
         launch.textContent = 'Artwork view · 3D unavailable';
-        history.replaceState({ ...history.state, bookActivated: false }, '');
       }
-    });
-    if (history.state?.bookActivated) launch.click();
+    };
+    // Let the complete HTML and poster paint, then open 3D without a click.
+    requestAnimationFrame(() => requestAnimationFrame(start));
   }
 </script>

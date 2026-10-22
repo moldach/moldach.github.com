@@ -32,8 +32,10 @@ A separate nondeployed test build can be generated with `SITE_BUILD_DIR=.verific
 - The build mirrors referenced legacy media and seven historical downloads. It never overwrites generated endpoints. Eight known legacy routes receive Cloudflare HTTP redirect rules. Full migration coverage remains pending.
 - The brain-region exhibit links to the original full article because the publisher denied automated retrieval. No local summary is presented as its full article.
 
-## Remaining experience work
+## Interactive review build
 
-The book begins with the concept artwork and offers **Explore in 3D** to load a real procedural six-chapter pop-up-book prototype. Tabs, pointer/keyboard rotation, page turns, Writing mesh destinations, HTML equivalents and Back restoration are implemented. Project videos, illustrated service panels and Writing exhibits now make the homepage more visual. See `../docs/visual-media.md` for source provenance, behavior and limitations.
+The six-chapter Three.js paper book opens by default after the initial HTML/poster paint. It includes paper-grain/beveled props, continuous film ribbon, chapter tags, page turns, pointer/keyboard rotation, pause, Writing mesh/HTML destinations and Back restoration. Missing graphics retain the artwork and navigation; reduced motion starts with ambient motion paused.
 
-Final scene art and chapter review remain pending. The mandatory deformable portrait is still required; the footer photograph currently links to About. Formspree configuration/delivery testing, Pagefind, complete case studies, a current résumé, full legacy migration and launch gates remain open.
+Writing shows all seven authored entries as large visual cards with pointer tilt/sheen, an idle-fading oil-film background and a bounded hover video excerpt. The footer photograph opens the required draggable portrait dialog with spring return, keyboard region controls, reset, touch and a Canvas 2D fallback. The supplied original photo is preserved; the portrait is a dimensional photograph rather than a full head reconstruction.
+
+See `../docs/visual-media.md` and `../research/verification/interactive-polish/` for implementation, browser evidence and measured limitations. Final scene review, Formspree/delivery, Pagefind, full case studies, a current résumé, full legacy migration and production gates remain open. Real devices and Safari are not yet verified.

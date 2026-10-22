@@ -19,7 +19,7 @@ Local verification passed: zero type-check errors/warnings/hints, 13 Node tests,
 ## Outstanding gates and work
 
 - **Domain:** Matthew prefers `mattoldach.ai`. Public RDAP returned no record on 2026-10-22; registrar availability/pricing and ownership remain unconfirmed. See `domain.md`. No purchase or DNS change has occurred. Production configuration remains unset until ownership is established.
-- **Visuals:** an on-demand six-chapter Three.js book prototype, scene tabs, pointer/keyboard controls, page turns, Writing raycast/HTML links and history restoration are now implemented alongside project videos and illustrated panels. Final scene art/chapter review and the mandatory deformable portrait remain pending. See `../visual-media.md`.
+- **Visuals:** the book now opens in 3D by default, with richer paper geometry/materials and distinct chapters. All seven Writing entries have visual cards and ordinary links. The mandatory deformable portrait, Canvas fallback, keyboard/touch controls and pointer-film effects are implemented and browser-checked. Final art/chapter review remains open. See `../visual-media.md`.
 - **Content:** recovered bodies need full editorial/attribution review; all original external links and embedded media need review. Complete case studies, current résumé, Pagefind and remaining migration destinations are pending.
 - **Contact:** direct email works as a normal mail link. Formspree setup, form states and owner-approved real delivery testing remain pending. No fabricated successful submission is shown.
 - **Media:** the homepage clips have posters, controls and visibility/reduced-motion handling; older article animated/external embeds still require posters, playback controls, captions where relevant and reduced-motion/offscreen behavior before launch. Some legacy media relies on original external hosts.
@@ -34,3 +34,9 @@ At approximately 4, 8 and 12 weeks after the approved launch, review indexing is
 ## Visual/media update
 
 The newer homepage verification supersedes the foundation-only figures above: 14 Node tests pass, type checking and preview/production fixture builds pass. The on-demand 3D book, imagery and video version measured local mobile LCP 2259 ms, CLS 0.00169 and TBT 0 ms (Lighthouse performance 99, automated accessibility 100). See `../../research/verification/visual-media/`. Actual graphics activation/frame rate, final art, full accessibility and real-device acceptance remain open.
+
+## Default-3D and portrait update
+
+The latest browser evidence is in `../../research/verification/interactive-polish/`. It supersedes the click-to-open default above: all seven Writing entries remain initial HTML links; Three.js now starts automatically on Home, while the portrait loads on request. Keyboard, touch emulation, reduced motion, Canvas fallback, book context restoration and mesh article/Back checks pass. The old Lighthouse 99 does not apply to automatic 3D startup; use the new measurement and limitations in that folder. No production indexing, domain ownership, real-device performance or ranking result is claimed.
+
+The default-3D mobile laboratory run measured performance 95, automated accessibility 100, best practices 100, LCP 2409 ms, CLS 0.00215 and TBT 183.5 ms. Preview noindex intentionally yields SEO 66. This covers startup of the opening scene, not every chapter's first assembly or real-device interaction/field INP.

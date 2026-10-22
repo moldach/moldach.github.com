@@ -1,0 +1,14 @@
+
+> check
+> astro check
+
+15:59:22 [content] Syncing content
+15:59:22 [content] Astro config changed
+15:59:22 [content] Clearing content store
+15:59:22 [content] Synced content
+15:59:22 [types] Generated 550ms
+15:59:22 [check] Getting diagnostics for Astro files in /Users/oldachm/Documents/ChatGPT/Website-source/site...
+Result (47 files):
+- 0 errors
+- 0 warnings
+- 0 hints

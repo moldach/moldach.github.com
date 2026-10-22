@@ -4,10 +4,37 @@ import { writingEntries, writingHref } from '../lib/registry';
 import umap from '../../../research/design/source-assets/supervised-umap/embedded-03.png';
 import fitbit from '../../../project/fitbit-project/featured.png';
 import brain from '../../../project/3d-brain/featured.png';
-const entries = (await writingEntries())
-  .filter((entry) => entry.data.featuredOrder !== undefined)
-  .sort((a, b) => a.data.featuredOrder! - b.data.featuredOrder!);
+import style from '../../../post/faststyletransfer/featured.png';
+import rprofile from '../../../post/rprofile/featured.png';
+import ninjutsu from '../../../post/ninjutsu/featured.png';
+import drake from '../../../post/drake/featured.png';
+interface Props {
+  archive?: boolean;
+}
+const { archive = false } = Astro.props;
+const published = await writingEntries();
+const entries = archive
+  ? published
+  : published
+      .filter((entry) => entry.data.featuredOrder !== undefined)
+      .sort((a, b) => a.data.featuredOrder! - b.data.featuredOrder!);
 const covers: Record<string, { src: typeof umap; alt: string }> = {
+  faststyletransfer: {
+    src: style,
+    alt: 'Original neural style transfer image experiment',
+  },
+  rprofile: {
+    src: rprofile,
+    alt: 'Original illustration from the R profile article',
+  },
+  ninjutsu: {
+    src: ninjutsu,
+    alt: 'Original artwork from the data wrangling article',
+  },
+  drake: {
+    src: drake,
+    alt: 'Original artwork from the reproducible workflow article',
+  },
   'supervised-umap': {
     src: umap,
     alt: 'Original supervised UMAP embedding plot with coloured clusters',
@@ -23,24 +50,50 @@ const covers: Record<string, { src: typeof umap; alt: string }> = {
 };
 ---
 
-<div class="feature-articles">
+<div class:list={['feature-articles', { 'archive-gallery': archive }]}>
   {entries.map((entry) => (
     <a
       class="article-exhibit"
       href={writingHref(entry)}
       data-article-id={entry.id}
+      data-visual-card
     >
       <div class="exhibit-image">
         <Image
           src={covers[entry.id].src}
           alt={covers[entry.id].alt}
-          width={560}
+          width={900}
+          widths={[400, 650, 900]}
+          sizes={
+            archive
+              ? '(max-width: 700px) 100vw, 48vw'
+              : '(max-width: 700px) 100vw, 33vw'
+          }
           format="webp"
           loading="lazy"
         />
-        <span aria-hidden="true">↗</span>
+        {archive && entry.id === 'faststyletransfer' && (
+          <video
+            class="card-preview"
+            data-card-video
+            src="/media/style-transfer.mp4"
+            muted
+            playsinline
+            preload="none"
+            aria-hidden="true"
+            tabindex="-1"
+          ></video>
+        )}
+        <span class="card-open" aria-hidden="true">
+          Read ↗
+        </span>
       </div>
-      <p class="eyebrow">{entry.data.topics.join(' · ')}</p>
+      <p class="eyebrow">
+        {entry.data.topics.join(' · ')}{' '}
+        <time datetime={entry.data.publishedAt}>
+          {entry.data.publishedAt.slice(0, 4)}
+        </time>
+      </p>
       <h3>{entry.data.title}</h3>
       <p>
         {entry.data.externalUrl

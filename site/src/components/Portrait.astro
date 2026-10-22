@@ -1,0 +1,149 @@
+---
+import { Image, getImage } from 'astro:assets';
+import headshot from '../../../assets/reference/headshot.jpeg';
+const texture = await getImage({ src: headshot, width: 200, format: 'png' });
+---
+
+<div class="portrait-playground" data-portrait data-texture={texture.src}>
+  <button class="portrait-link" data-portrait-open aria-haspopup="dialog">
+    <Image
+      src={headshot}
+      alt="Matthew Oldach — open the interactive portrait"
+      width={64}
+      height={64}
+      loading="lazy"
+    />
+    <span>
+      Matthew Oldach<small>A little less serious. Give me a stretch ↗</small>
+    </span>
+  </button>
+  <dialog
+    class="portrait-dialog"
+    aria-labelledby="portrait-title"
+    aria-describedby="portrait-help"
+  >
+    <div class="portrait-dialog-heading">
+      <p class="eyebrow">The human behind the work</p>
+      <button data-portrait-close aria-label="Close portrait">
+        Close ×
+      </button>
+    </div>
+    <h2 id="portrait-title">Go on. Pull a face.</h2>
+    <p id="portrait-help">
+      Grab a cheek, nose or forehead. Release and watch it spring back.
+    </p>
+    <div class="portrait-stage">
+      <Image
+        class="portrait-loading-image"
+        src={headshot}
+        alt="Matthew Oldach"
+        width={200}
+        height={200}
+        loading="lazy"
+      />
+      <canvas
+        data-face
+        tabindex="0"
+        role="img"
+        aria-label="Stretchable portrait of Matthew. Drag to stretch, or select a region below and use the arrow keys."
+      ></canvas>
+      <span class="portrait-hand" aria-hidden="true">
+        <svg viewBox="0 0 64 72" width="42" height="48">
+          <path
+            d="M20 61C15 51 5 45 5 37c0-5 5-7 9-2l5 5V14c0-8 10-8 10 0v17-23c0-8 10-8 10 0v23-16c0-8 10-8 10 0v20-10c0-7 9-7 9 1v20c0 9-4 15-10 20Z"
+            fill="#fffaf0"
+            stroke="#25324b"
+            stroke-width="2.5"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20 60l28 3-2 7-24-3Z"
+            fill="#c2d5ff"
+            stroke="#25324b"
+            stroke-width="2.5"
+          />
+        </svg>
+      </span>
+      <span class="portrait-stamp" aria-hidden="true">
+        100% human
+        <br />
+        occasionally elastic
+      </span>
+    </div>
+    <div class="portrait-tools">
+      <label>
+        Grab a region{' '}
+        <select data-face-region>
+          <option value="nose">Nose</option>
+          <option value="left">Left cheek</option>
+          <option value="right">Right cheek</option>
+          <option value="forehead">Forehead</option>
+          <option value="chin">Chin</option>
+        </select>
+      </label>
+      <button data-face-reset>Reset face ↺</button>
+    </div>
+    <p class="portrait-keyboard">
+      Keyboard: select a region, then focus the portrait and use arrow keys.
+      Space releases. Escape closes.
+    </p>
+    <p class="sr-only" data-face-status aria-live="polite"></p>
+  </dialog>
+</div>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-portrait]');
+  if (root) {
+    const dialog = root.querySelector('dialog')!;
+    const open = root.querySelector<HTMLButtonElement>('[data-portrait-open]')!;
+    let engine: { reset(): void; stop(): void; start(): void } | undefined;
+    open.addEventListener('click', async () => {
+      dialog.showModal();
+      if (engine) {
+        engine.start();
+        return;
+      }
+      try {
+        root.dataset.faceState = 'loading';
+        const { mountPortrait } = await import('./portrait/runtime');
+        if (!dialog.open) {
+          root.dataset.faceState = 'idle';
+          return;
+        }
+        engine = await mountPortrait(root);
+        root.dataset.faceState = 'ready';
+        if (!dialog.open) engine.stop();
+      } catch {
+        root.dataset.faceState = 'error';
+        root.querySelector('[data-face-status]')!.textContent =
+          'The portrait interaction could not load. Please close and try again.';
+      }
+    });
+    root
+      .querySelector('[data-portrait-close]')!
+      .addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => {
+      engine?.stop();
+      open.focus();
+    });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key !== 'Tab') return;
+      const controls = [
+        ...dialog.querySelectorAll<HTMLElement>(
+          'button, select, [tabindex="0"]',
+        ),
+      ];
+      const first = controls[0],
+        last = controls.at(-1)!;
+      if (
+        (event.shiftKey && document.activeElement === first) ||
+        (!event.shiftKey && document.activeElement === last)
+      ) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      }
+    });
+    root
+      .querySelector('[data-face-reset]')!
+      .addEventListener('click', () => engine?.reset());
+  }
+</script>

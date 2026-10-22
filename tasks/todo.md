@@ -32,8 +32,8 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Establish Astro/TypeScript source in `site/` with pinned compatible dependencies; verify preview output and production configuration using a nondeployed test origin. Owned production domain remains pending.
 - [x] Implement the interaction prototype: six geometric book scenes, chapter controls, direct reading links, saved history and verified click/keyboard/Back behavior. Final art review remains open.
 - [ ] Verify each Writing exhibit (UMAP, Fitbit, brain regions) opens its full article through mesh click/tap and equivalent HTML link; reduced motion skips zoom and browser Back restores Writing. Recover/verify the full article destinations before launch.
-- [ ] Implement required portrait mesh/grab/reset/close with supplied image. Verify bounded deformation and focus restoration.
-- [ ] Verify touch, keyboard-region controls, reduced motion and no-WebGL/context-loss fallback; capture browser evidence.
+- [x] Implement required portrait relief mesh/grab/reset/close with supplied image; verify visible bounded deformation, spring return and focus restoration in Chromium.
+- [x] Verify portrait touch emulation, keyboard regions, reduced motion and Canvas fallback; capture browser evidence. Real devices remain a separate gate.
 
 ## Complete visitor journey
 
@@ -89,4 +89,5 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Add source-backed project MP4 excerpts, posters, controls and reduced-motion/offscreen behavior; retain provenance.
 - [x] Verify browser interactions, JavaScript-disabled content, missing/lost/restored WebGL, touch emulation and responsive widths. This is not physical-device verification.
 - [x] Record `mattoldach.ai` as Matthew's preferred domain; ownership/pricing/registration remain unconfirmed.
-- [ ] Review/refine final scene art, implement the required deformable portrait and complete all remaining launch gates.
+- [x] Make richer 3D the default; implement the required deformable portrait, seven-card Writing archive, hover preview and oil-film pointer effect.
+- [ ] Review final scene art and complete remaining launch gates; verify Safari and actual phones.

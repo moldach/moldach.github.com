@@ -1,10 +1,12 @@
 ---
-import { Image, getImage } from 'astro:assets';
-import headshot from '../../../assets/reference/headshot.jpeg';
+import { getImage } from 'astro:assets';
+import Portrait from '../components/Portrait.astro';
+import PointerSurface from '../components/PointerSurface.astro';
 import socialArtwork from '../../../research/design/chapters/round-2/01-start.png';
 import { chapters } from '../lib/registry';
 import { siteConfig, canonicalUrl } from '../lib/site-config.mjs';
 import '../styles/site.css';
+import '../styles/interaction.css';
 
 interface Props {
   title: string;
@@ -141,6 +143,7 @@ const json = JSON.stringify({
     />
   </head>
   <body>
+    <PointerSurface />
     <a class="skip-link" href="#content">
       Skip to content
     </a>
@@ -197,16 +200,7 @@ const json = JSON.stringify({
         </p>
       </div>
       <div class="footer-bottom">
-        <a class="portrait-link" href="/about/">
-          <Image
-            src={headshot}
-            alt="Matthew Oldach"
-            width={64}
-            height={64}
-            loading="lazy"
-          />
-          <span>Matthew Oldach</span>
-        </a>
+        <Portrait />
         <a href="/privacy/">Privacy</a>
         <a href="https://github.com/moldach">GitHub</a>
         <a href="/writing/">Writing</a>
