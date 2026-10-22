@@ -54,12 +54,13 @@ Official references: [Bend repository](https://github.com/bendlang/bend),
 
 ## Website scope
 
-This repository is currently a planning and research project; the website source
-has not been imported. The initial model routes business enquiries to Contact,
+The published source is preserved at the repository root and the replacement
+Astro application lives under `site/`. The initial model routes business enquiries to Contact,
 experience reviews to Experience, and article readers to Writing. Every modeled
 destination has no payment handling. This captures the current brief, including
 retaining the blog, without choosing a frontend framework.
 
 These laws do not check actual page existence, links, contact submissions, or
-payment scripts. When the site implementation arrives, bind its routing and
-content validation to these contracts and add browser-level verification.
+payment scripts. The application currently validates built routes and has browser
+journey evidence independently. Binding its route registry to this reference model
+remains pending; passing browser or build checks is not a new Bend proof.

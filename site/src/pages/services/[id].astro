@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content';
+import Page from '../../layouts/Page.astro';
+import { serviceEntries } from '../../lib/registry';
+export async function getStaticPaths() {
+  return (await serviceEntries()).map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Page
+  {...entry.data}
+  kind="Service"
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Services', href: '/services/' },
+    { label: entry.data.shortTitle, href: `/services/${entry.id}/` },
+  ]}
+>
+  <header class="page-intro wrap">
+    <p class="eyebrow">Remote AI consulting</p>
+    <h1>{entry.data.title}</h1>
+    <p class="intro">{entry.data.description}</p>
+    <a class="button" href={`/contact/?service=${entry.id}`}>
+      Start a conversation ↗
+    </a>
+  </header>
+  <article class="reading">
+    <Content />
+  </article>
+</Page>

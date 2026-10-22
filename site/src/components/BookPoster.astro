@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import book from '../../../research/design/chapters/round-2/01-start.png';
+import { chapters } from '../lib/registry';
+---
+
+<figure class="book-poster">
+  <Image
+    src={book}
+    alt="A paper pop-up book with a terminal and film ribbon illustrating Matthew's style-transfer work"
+    width={1100}
+    widths={[480, 800, 1100]}
+    sizes="(max-width: 800px) 100vw, 65vw"
+    format="webp"
+    quality={80}
+    loading="eager"
+    fetchpriority="high"
+  />
+  <nav class="paper-tabs" aria-label="Book chapters">
+    {chapters.map((chapter) => (
+      <a
+        href={chapter.href}
+        aria-current={chapter.href === '/' ? 'page' : undefined}
+      >
+        {chapter.label}
+      </a>
+    ))}
+  </nav>
+  <figcaption>Explore a chapter. Read the work.</figcaption>
+</figure>

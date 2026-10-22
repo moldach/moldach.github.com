@@ -1,0 +1,35 @@
+async (page) => {
+  const results = [];
+  const base = 'http://127.0.0.1:4321';
+  await page.setViewportSize({width: 1440, height: 1000});
+  await page.goto(base);
+  await page.getByRole('heading', {name: 'Practical AI. Less busywork.'}).waitFor();
+  await page.screenshot({path: '../research/verification/seo-foundation/home-desktop.png', fullPage: true});
+  await page.getByRole('link', {name: 'Services', exact: true}).first().click();
+  await page.getByRole('link', {name: /Build a focused solution/}).first().click();
+  results.push({journey: 'Home → Services → workflow automation', route: new URL(page.url()).pathname, readable: await page.locator('article').innerText().then(x=>x.includes('human approval'))});
+  await page.getByRole('link', {name: /Start a conversation/}).click();
+  results.push({contact: new URL(page.url()).pathname, email: await page.locator('main a[href^="mailto:"]').first().getAttribute('href')});
+  await page.goto(`${base}/writing/`);
+  results.push({exhibits: await page.locator('[data-article-id]').evaluateAll(nodes=>nodes.map(n=>({id:n.dataset.articleId,href:n.getAttribute('href')}))), firstDate: await page.locator('.writing-list time').first().getAttribute('datetime')});
+  await page.locator('[data-article-id="fitbit-gamification"]').click();
+  results.push({fitbitRoute: new URL(page.url()).pathname, articleCharacters: (await page.locator('article').innerText()).length});
+  await page.goBack();
+  results.push({back: new URL(page.url()).pathname});
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(base);
+  results.push({mobileWidth: await page.evaluate(()=>({viewport:innerWidth, document:document.documentElement.scrollWidth}))});
+  await page.screenshot({path:'../research/verification/seo-foundation/home-mobile.png',fullPage:true});
+  await page.keyboard.press('Tab');
+  results.push({keyboardFirst:await page.locator(':focus').innerText()});
+  const context = await page.context().browser().newContext({javaScriptEnabled:false});
+  const plain = await context.newPage();
+  await plain.goto(`${base}/services/ai-workflow-automation/`);
+  results.push({javascriptDisabled:{h1:await plain.locator('h1').innerText(), bodyCharacters:(await plain.locator('article').innerText()).length, canonical:await plain.locator('link[rel=canonical]').count(),robots:await plain.locator('meta[name=robots]').getAttribute('content')}});
+  await plain.goto(`${base}/writing/supervised-umap/`);
+  results.push({javascriptDisabledUmap:{codeBlocks:await plain.locator('pre').count(),images:await plain.locator('article img').count()}});
+  const response = await plain.goto(`${base}/definitely-not-a-page/`);
+  results.push({missingPageStatus:response.status()});
+  await context.close();
+  return results;
+}

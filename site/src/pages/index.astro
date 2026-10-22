@@ -1,0 +1,102 @@
+---
+import Page from '../layouts/Page.astro';
+import BookPoster from '../components/BookPoster.astro';
+import {
+  pages,
+  serviceEntries,
+  writingEntries,
+  writingHref,
+} from '../lib/registry';
+const services = await serviceEntries();
+const latest = (await writingEntries()).slice(0, 3);
+---
+
+<Page {...pages['/']}>
+  <section class="hero" aria-labelledby="home-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Small-business AI consulting</p>
+      <h1 id="home-title">
+        Practical AI.
+        <br />
+        Less busywork.
+      </h1>
+      <p class="intro">
+        AI consulting, workflow automation and agent implementation for small
+        businesses—with human judgment built in. Delivered remotely.
+      </p>
+      <a class="button" href="/services/ai-opportunity-assessment/">
+        Find your opportunity <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <BookPoster />
+  </section>
+  <section class="section wrap" aria-labelledby="services-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Three ways to work together</p>
+        <h2 id="services-title">Start with the work.</h2>
+      </div>
+      <a href="/services/">Compare engagements →</a>
+    </div>
+    <ol class="service-list">
+      {services.map((service, i) => (
+        <li>
+          <span class="ordinal">0{i + 1}</span>
+          <h3>
+            <a href={`/services/${service.id}/`}>{service.data.shortTitle}</a>
+          </h3>
+          <p>{service.data.description}</p>
+          <a
+            class="arrow-link"
+            href={`/services/${service.id}/`}
+            aria-label={`Explore: ${service.data.shortTitle}`}
+          >
+            ↗
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="section wrap" aria-labelledby="work-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected public work</p>
+        <h2 id="work-title">Evidence, before promises.</h2>
+      </div>
+      <a href="/work/">Explore the projects →</a>
+    </div>
+    <p>
+      Disc-golf practice with PuttPulse. Image filtering with Shiny-filteRs.
+      Hawaiian maps with Hinuhinu. Different problems, each with its own design
+      and delivery decisions.
+    </p>
+    <p>
+      These projects demonstrate software and data work; historical
+      visualisation projects are not presented as client AI-agent deployments.
+    </p>
+  </section>
+  <section class="section wrap" aria-labelledby="latest-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Latest by original publication date</p>
+        <h2 id="latest-title">Writing from the work.</h2>
+      </div>
+      <a href="/writing/">All writing →</a>
+    </div>
+    <ol class="writing-list">
+      {latest.map((entry) => (
+        <li>
+          <time datetime={entry.data.publishedAt}>
+            {entry.data.publishedAt}
+          </time>
+          <div>
+            <h3>
+              <a href={writingHref(entry)}>{entry.data.title}</a>
+            </h3>
+            <p>{entry.data.description}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Page>

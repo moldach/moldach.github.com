@@ -1,0 +1,50 @@
+---
+import { render } from 'astro:content';
+import Page from '../../layouts/Page.astro';
+import { writingEntries } from '../../lib/registry';
+export async function getStaticPaths() {
+  return (await writingEntries())
+    .filter((entry) => !entry.data.externalUrl)
+    .map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Page
+  {...entry.data}
+  kind="Article"
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Writing', href: '/writing/' },
+    { label: entry.data.title, href: `/writing/${entry.id}/` },
+  ]}
+>
+  <header class="page-intro article-intro wrap">
+    <p class="eyebrow">{entry.data.topics.join(' · ')}</p>
+    <h1>{entry.data.title}</h1>
+    <div class="article-meta">
+      <a href="/about/">Matthew Oldach</a>
+      <time datetime={entry.data.publishedAt}>{entry.data.publishedAt}</time>
+      {entry.data.modifiedAt && (
+        <span>
+          Updated{' '}
+          <time datetime={entry.data.modifiedAt}>{entry.data.modifiedAt}</time>
+        </span>
+      )}
+    </div>
+    <p class="intro">{entry.data.description}</p>
+  </header>
+  <article class="reading">
+    <p class="article-source">
+      Recovered from the <a href={entry.data.sourceUrl}>original publication</a>
+      . Historical tools and examples are preserved in context; this is not a
+      claim that their integrations still run unchanged.
+    </p>
+    <Content />
+    <hr />
+    <p>
+      <a href="/writing/">← Back to Writing</a>
+    </p>
+  </article>
+</Page>

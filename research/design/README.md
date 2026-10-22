@@ -2,7 +2,7 @@
 
 The initial three Image Gen concept sheets each included desktop, mobile and portrait states. Matthew's feedback is that the mobile preview strip reads as a redundant right sidebar. The revised set presents each desktop direction full width, with one top navigation and no sidebars. Mobile and portrait-dialog states will be presented separately. These remain design targets, not implemented interactive previews.
 
-Matthew selected the first editorial-workshop direction, then requested individual images for all six chapters to iterate before modeling. The chapter concepts are now the review focus; no application has been scaffolded.
+Matthew selected the first editorial-workshop direction, then requested individual images for all six chapters to iterate before modeling. The chapter concepts are now the review focus; a crawlable Astro content foundation now exists under `site/`, while WebGL modeling remains pending chapter review.
 
 Latest feedback restores the physical lower-edge paper chapter tabs and removes the invented Enquiry workflow. [Round 2 of all six chapters](chapters/README.md) is the current review set: terminal theatre, workflow drafting table, project exhibition, editorial print studio, strategy table and conversation room. Actual article/project imagery grounds the scenes; see the [source-media and motion map](asset-motion-map.md). Earlier images are retained as history and do not define current featured content.
 

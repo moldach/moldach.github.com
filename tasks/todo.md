@@ -29,7 +29,7 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 
 ## Interaction feasibility
 
-- [ ] Establish Astro/TypeScript source in `site/` with pinned compatible dependencies. Verify production build.
+- [x] Establish Astro/TypeScript source in `site/` with pinned compatible dependencies; verify preview output and production configuration using a nondeployed test origin. Owned production domain remains pending.
 - [ ] Implement a two-chapter book with direct navigation, history and readable destination; verify click/keyboard/back behavior.
 - [ ] Verify each Writing exhibit (UMAP, Fitbit, brain regions) opens its full article through mesh click/tap and equivalent HTML link; reduced motion skips zoom and browser Back restores Writing. Recover/verify the full article destinations before launch.
 - [ ] Implement required portrait mesh/grab/reset/close with supplied image. Verify bounded deformation and focus restoration.
@@ -71,3 +71,12 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [ ] Publish approved candidate; verify destinations before changing old-site entry points.
 - [ ] Apply tested old-host forwarding separately, preserving useful query/fragment behavior and visible fallback.
 - [ ] Verify old content/download links and record rollback deployment/tag.
+
+## SEO foundation implementation — 2026-10-22
+
+- [x] Make `docs/seo/rules.md` binding through `AGENTS.md`; reconcile owned-domain and three-service decisions.
+- [x] Build crawlable homepage, service hub and three dedicated service pages with useful copy and internal evidence links.
+- [x] Recover six full article/slideshow bodies and retain original dates; directly link the publisher-hosted brain article. Full editorial/media review remains pending.
+- [x] Implement unique metadata, shared production-origin configuration, sitemap/RSS/robots and factual structured data; default previews to noindex.
+- [x] Test strict date ordering, draft/future exclusion, unsafe domains, broken local links and preview sitemap regression.
+- [ ] Finish domain choice, graphics/article hotspots, contact service, complete legacy migration and all launch gates recorded in `docs/seo/implementation-status.md`.
