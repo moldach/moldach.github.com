@@ -1,0 +1,21 @@
+{
+  "reference": "research/design/chapters/round-2/01-start.png",
+  "referenceSha256": "afa318332a4cf2211c2542106d6df3fddc93a407a1cf18d9563fa54995a87024",
+  "textures": [
+    {
+      "path": "post/faststyletransfer/featured.png",
+      "sha256": "bb6deb4333db0017882c5554de671d442bfccb53a5fda9a7688195aeaa07a435",
+      "use": "Full original skiing style-transfer artwork repeated within film frames and photo mounts; UV mapped, no raster edits. Original preserved."
+    }
+  ],
+  "geometry": "Authored Blender meshes and curves, including independent terminal, keys, accordion cards and curved film strips with physical sprocket openings. No complete concept-image projection.",
+  "materials": "Procedural paper micro-bump and studio lighting are not baked for browser use.",
+  "destination": "/writing/faststyletransfer/",
+  "destinationSource": "site/src/content/writing/faststyletransfer.md",
+  "cameraLocation": [
+    0.12,
+    -14,
+    13.6
+  ],
+  "cameraLensMm": 51
+}

@@ -61,3 +61,8 @@ The Writing spread now has an editable scene, offline render and draft GLB under
 ## Contact asset study — 23 October 2026
 
 `tool/assets/build_contact.py` authors the Contact conversation room under `research/models/contact/`: a thick open cobalt arch, two curved cream chairs, coral table, folded architectural screens, speech bubbles, blue paper plants and an invitation. The invitation preserves the actual Contact/email destinations as metadata; no form, email delivery or browser hotspot is implemented by this offline study. Contact is the active physical tag. Five Blender chapter studies now exist; Start remains. New-study browser integration, material baking and visual acceptance remain pending; website preview/source are unchanged.
+
+
+## Start asset study — 23 October 2026
+
+`tool/assets/build_start.py` authors an independent opening study under `research/models/start/`: coral photo tray, folded proof sequence, detailed cream terminal and keyboard, three curved perforated film loops and a standing output photograph. The original skiing style-transfer image is preserved and used only inside photo/film meshes, with source hashes and article-destination metadata recorded. All six chapters now have offline Blender studies; see the current `research/models/README.md` inventory. This does not establish final visual acceptance, material baking or browser parity. The earlier Three.js prototype, current preview and required interactive portrait are unchanged.

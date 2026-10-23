@@ -127,11 +127,18 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Author and render the three agreed article exhibits, proofing press and Writing tag.
 - [x] Record source provenance and the actual internal/publisher destinations.
 - [ ] Complete visual acceptance, material baking, browser links and history checks after integration.
-- [ ] Finish remaining Blender studies: Start and Contact.
+- [x] Finish remaining Blender studies: Start and Contact.
 
 
 ### Contact asset study
 - [x] Author and render the conversation-room spread with curved chairs, arch, table, invitation and Contact tag.
 - [x] Retain actual Contact/email destination metadata without a fake working form or sent enquiry.
 - [ ] Complete visual acceptance, material baking, browser integration and real form-delivery verification.
-- [ ] Finish the remaining Start Blender study.
+- [x] Finish the remaining Start Blender study.
+
+
+### Start asset study
+- [x] Author and render the opening with independent terminal, keyboard, photo tray, accordion and three perforated film loops.
+- [x] Preserve the original style-transfer artwork and its existing article destination.
+- [x] Complete the offline study inventory for all six chapters.
+- [ ] Obtain visual acceptance, bake materials, optimize and integrate the scenes; verify browser navigation, page turns and performance.
