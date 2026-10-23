@@ -10,8 +10,7 @@ async (page) => {
  }
  await page.goto(base+'/writing/');await ready();
  const brain=page.locator('[data-exhibit-hotspot="Printed Highlighting 3D Brain Regions"]');
- await page.route('https://towardsdatascience.com/**',route=>route.fulfill({contentType:'text/html',body:'<h1>Intercepted external article destination</h1>'}));
- await brain.click();await page.waitForURL('https://towardsdatascience.com/**');result.brain=page.url();
+ await brain.click();await page.waitForURL(base+'/writing/highlighting-3d-brain-regions/');result.brain=page.url();
  for(const [name,hash] of [['PuttPulse','#puttpulse'],['Shiny-filteRs','#shiny-filters'],['Hinuhinu','#hinuhinu']]){
   await page.goto(base+'/work/');await ready();await page.locator(`[data-exhibit-hotspot="Project nameplate ${name}"]`).click();await page.waitForURL(base+'/work/'+hash);assert(await page.locator(hash).isVisible(),'Project missing');result[name]=page.url();
  }

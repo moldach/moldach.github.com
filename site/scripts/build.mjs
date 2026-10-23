@@ -73,7 +73,7 @@ const redirects = [
 redirects.push(
   '/project/fitbit-project/ /writing/fitbit-gamification/ 301',
   '/fitbit-project/ /writing/fitbit-gamification/ 301',
-  '/project/3d-brain/ https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574 301',
+  '/project/3d-brain/ /writing/highlighting-3d-brain-regions/ 301',
 );
 await writeFile(resolve(dist, '_redirects'), `${redirects.join('\n')}\n`);
 await writeFile(

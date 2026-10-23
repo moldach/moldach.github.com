@@ -2366,9 +2366,9 @@
     {
       "sourcePath": "project/3d-brain/index.html",
       "oldRoute": "/project/3d-brain/",
-      "destination": "/work/3d-brain/",
-      "disposition": "migrate-project-review",
-      "migrationState": "not-implemented",
+      "destination": "/writing/highlighting-3d-brain-regions/",
+      "disposition": "migrate-article",
+      "migrationState": "implemented-new-host",
       "title": "How to Highlight 3D Brain Regions | Academic",
       "heading": "SearchHow to Highlight 3D Brain Regions",
       "publishedAt": "2018-10-31T00:00:00+00:00",

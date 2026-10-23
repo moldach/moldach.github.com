@@ -229,6 +229,9 @@ export async function mountChapterBook(root: HTMLElement) {
         return '#interactive-portrait';
       const href = object.userData.href;
       if (typeof href === 'string') {
+        // Older preserved GLBs retain the original publication URL.
+        if (href.includes('how-to-highlight-3d-brain-regions-2e6c15a35574'))
+          return '/writing/highlighting-3d-brain-regions/';
         if (
           chapterIndex === 4 &&
           href === '/about/' &&

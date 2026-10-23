@@ -18,7 +18,7 @@ OUT = B.ROOT / "research/models/writing"
 B.make_book(3)
 UMAP = "/writing/supervised-umap/"
 FITBIT = "/writing/fitbit-gamification/"
-BRAIN = "https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574"
+BRAIN = "/writing/highlighting-3d-brain-regions/"
 
 
 def printed(body, x, y, size, font=B.font, material=B.ink):
