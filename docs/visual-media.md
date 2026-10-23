@@ -76,3 +76,8 @@ The owner approved the ten-image shortlist. The offline Start study now assigns 
 ## Start dynamic-lighting preparation — 23 October 2026
 
 The original Start source/render are preserved. Its new asset preparation pipeline bakes only paper surface normals, consolidates static geometry and preserves the ten approved visuals, six chapter controls and separate film/key/mount groups. Meshopt + KTX2 delivery is 6.20 MB, with a 3.26 MB conventional-texture fallback. An isolated preview-only `/review/start/` provides dynamic studio/neutral/contrast lights, exposure, camera inspection, diagnostics, poster/error fallback and explicit resource disposal. The main scene uses 103 draw calls and 136 including a shadow refresh. Browser evidence and comparison limits are recorded in `research/verification/start-webgl/`. Homepage code/renderer, other chapters and portrait are unchanged. Final visual acceptance, physical-device/Safari verification and homepage integration remain pending.
+
+
+## Fixed Studio and working chapter tabs — 23 October 2026
+
+The Start preview now locks Studio lighting at exposure 1.5 and removes visitor lighting/exposure choices, visible diagnostics, benchmark and Close controls. Its six physical tags have ordinary accessible links projected onto their actual model bounds, plus ancestry-aware raycast navigation. Routes come from the shared chapter registry. Pointer drags do not activate links; touch, keyboard, browser Back/BFCache, no-JavaScript and no-WebGL paths are covered. New evidence is in `research/verification/start-webgl/tabs-results.json`. Page-turn animation and the remaining scene integrations are still separate work.

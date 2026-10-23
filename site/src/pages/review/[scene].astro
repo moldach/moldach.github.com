@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../../lib/site-config.mjs';
+import { chapters } from '../../lib/registry';
 export function getStaticPaths() {
   return siteConfig(process.env).production
     ? []
@@ -15,99 +16,58 @@ export function getStaticPaths() {
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="Private Start asset review: dynamic paper materials, three studio lighting presets and rendering diagnostics."
+      content="Explore Matthew Oldach’s paper-book website, with Studio lighting and working chapter tabs."
     />
-    <title>Start — dynamic lighting review</title>
+    <title>Start — Matthew Oldach</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
-    <main data-start-review>
+    <main data-start-review data-chapters={JSON.stringify(chapters)}>
       <header>
-        <div>
-          <a href="/">← Website preview</a>
-          <h1>Start, in the light.</h1>
-          <p>Ten approved visuals. Real geometry. Dynamic light.</p>
-        </div>
-        <span class="badge">ASSET REVIEW · NOT THE HOMEPAGE</span>
+        <a href="/">Matthew Oldach</a>
+        <h1>Practical AI. Less busywork.</h1>
+        <p>Explore a chapter.</p>
       </header>
-      <div class="toolbar" aria-label="Lighting controls">
-        <fieldset>
-          <legend>Lighting</legend>
-          <label>
-            <input type="radio" name="lighting" value="studio" checked /> Studio
-          </label>
-          <label>
-            <input type="radio" name="lighting" value="neutral" /> Neutral
-          </label>
-          <label>
-            <input type="radio" name="lighting" value="contrast" /> Contrast
-          </label>
-        </fieldset>
-        <label class="exposure">
-          Exposure{' '}
-          <input
-            aria-label="Exposure"
-            type="range"
-            min="0.5"
-            max="2"
-            value="1.5"
-            step="0.05"
-          />
-          <output>1.5</output>
-        </label>
-        <button type="button" data-reset>
-          Reset view
-        </button>
-        <button type="button" data-close>
-          Close 3D review
-        </button>
-      </div>
-      <section class="stage" aria-label="Interactive Start book asset">
+      <section class="stage" aria-label="Interactive paper book">
         <img
           data-poster
           src="/models/start/poster.webp"
           width="1536"
           height="1024"
-          alt="Blender comparison baseline: paper book with terminal, three film loops, ten approved article images and six chapter tabs."
+          alt="A paper book with a miniature computer, film loops and six chapter tabs: Start, Services, Work, Writing, About and Contact."
         />
         <canvas
-          aria-label="Start book model. Drag to inspect or use arrow keys; Escape restores the reference view."
+          aria-label="Paper book. Select a chapter tab to open its page. Drag or use arrow keys to inspect; Escape resets the view."
           tabindex="0"
         ></canvas>
+        <nav class="chapter-tabs" aria-label="Book chapters">
+          {chapters.map((chapter, i) => (
+            <a
+              href={chapter.href}
+              data-chapter={i}
+              aria-current={i === 0 ? 'page' : undefined}
+              style={`left:${13.3 + i * 12.9}%;top:80%;width:11.2%;height:6.5%`}
+            >
+              <span class="sr-only">{chapter.label}</span>
+            </a>
+          ))}
+        </nav>
         <p class="status" role="status" aria-live="polite">
-          Loading the dynamic scene…
+          Opening the book…
         </p>
       </section>
-      <div class="below">
-        <p>
-          Drag to inspect · Arrow keys to rotate · Escape to reset.{' '}
-          <a href="/writing/faststyletransfer/">
-            Read the style-transfer article ↗
-          </a>
-        </p>
-        <button type="button" data-measure>
-          Measure 120 frames
+      <p class="below">
+        <button type="button" data-reset>
+          Reset view
         </button>
-      </div>
-      <details>
-        <summary>Rendering diagnostics</summary>
-        <pre data-metrics>Waiting for model…</pre>
-      </details>
-      <p class="note">
-        Lighting, highlights and shadows are dynamic. Only paper surface normals
-        are baked. The model is prepared for later animation; no page-turn or
-        exhibit interactions are added here. Activation atlas: referenced{' '}
-        <a href="https://distill.pub/2019/activation-atlas/">
-          Distill research
+        <a href="/writing/faststyletransfer/">
+          Read the style-transfer article ↗
         </a>
-        .
       </p>
+      <pre data-metrics hidden></pre>
     </main>
     <noscript>
-      <p>
-        JavaScript is disabled. The Blender baseline and article link remain
-        available.
-      </p>
+      <p>Select a chapter tab above to open its page.</p>
       <style is:inline>
         .status {
           display: none;
@@ -117,7 +77,12 @@ export function getStaticPaths() {
     <script>
       import { mountStartReview } from '../../components/book-review/runtime';
       const root = document.querySelector<HTMLElement>('[data-start-review]');
-      if (root) mountStartReview(root);
+      if (root) {
+        mountStartReview(root);
+        window.addEventListener('pageshow', (event) => {
+          if (event.persisted) mountStartReview(root);
+        });
+      }
     </script>
     <style>
       :global(*) {
@@ -132,84 +97,31 @@ export function getStaticPaths() {
       main {
         max-width: 1584px;
         margin: auto;
-        padding: 32px 24px;
+        padding: 28px 24px;
       }
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
+      header > a {
+        font-size: 14px;
       }
       h1 {
         font:
-          clamp(28px, 4vw, 44px) Georgia,
+          clamp(26px, 4vw, 40px) Georgia,
           serif;
-        margin: 12px 0 8px;
+        margin: 16px 0 10px;
       }
-      header p,
-      .note,
-      .below {
-        color: #53616a;
+      header p {
         font-size: 14px;
-        line-height: 1.6;
+        color: #53616a;
       }
       a {
         color: #18488b;
         text-underline-offset: 3px;
       }
-      .badge {
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        color: #486070;
-      }
-      .toolbar {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        flex-wrap: wrap;
-        margin: 24px 0 16px;
-      }
-      fieldset {
-        border: 0;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 14px;
-      }
-      legend {
-        font-size: 11px;
-        color: #53616a;
-        margin-bottom: 7px;
-      }
-      label {
-        font-size: 14px;
-      }
-      .exposure {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      button {
-        font: inherit;
-        font-size: 13px;
-        background: #fffaf1;
-        border: 1px solid #bfc4c4;
-        border-radius: 6px;
-        padding: 10px 14px;
-        cursor: pointer;
-      }
-      button:focus-visible,
-      input:focus-visible,
-      canvas:focus-visible {
-        outline: 3px solid #245ed0;
-        outline-offset: 3px;
-      }
       .stage {
         position: relative;
         aspect-ratio: 3/2;
-        background: #eee7db;
         overflow: hidden;
         border-radius: 8px;
+        background: #eee7db;
       }
       .stage img,
       .stage canvas {
@@ -230,68 +142,80 @@ export function getStaticPaths() {
       .stage[data-ready] img {
         visibility: hidden;
       }
+      .stage[data-ready] .status {
+        display: none;
+      }
+      .chapter-tabs {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .chapter-tabs a {
+        position: absolute;
+        pointer-events: auto;
+        border-radius: 3px;
+        min-height: 28px;
+      }
+      .chapter-tabs a:focus-visible {
+        outline: 3px solid #245ed0;
+        outline-offset: 2px;
+        background: #1a54bb18;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
       .status {
         position: absolute;
-        bottom: 12px;
-        left: 16px;
-        margin: 0;
-        background: #fffaf1ed;
-        padding: 7px 10px;
-        border-radius: 4px;
+        bottom: 10px;
+        left: 12px;
         font-size: 12px;
-        max-width: 90%;
+        background: #fffaf1ed;
+        padding: 8px;
+        margin: 0;
+        border-radius: 4px;
       }
       .below {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
+        gap: 22px;
+        font-size: 14px;
       }
-      .below p {
-        margin: 14px 0;
+      button {
+        font: inherit;
+        color: #18488b;
+        background: transparent;
+        border: 0;
+        padding: 10px 0;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        cursor: pointer;
       }
-      details {
-        font-size: 13px;
-        border-top: 1px solid #d9d0c1;
-        padding-top: 14px;
-      }
-      pre {
-        white-space: pre-wrap;
-        overflow-wrap: anywhere;
-        line-height: 1.5;
-      }
-      .note {
-        max-width: 1000px;
-      }
-      output {
-        min-width: 30px;
-      }
-      input[type='range'] {
-        max-width: 120px;
+      button:focus-visible,
+      canvas:focus-visible {
+        outline: 3px solid #245ed0;
+        outline-offset: 3px;
       }
       @media (max-width: 650px) {
         main {
           padding: 20px 12px;
         }
-        .badge {
-          display: none;
-        }
-        .toolbar {
-          gap: 12px;
-        }
-        fieldset {
-          width: 100%;
-        }
         .below {
-          align-items: start;
+          gap: 16px;
+          font-size: 12px;
         }
         .stage {
           border-radius: 0;
         }
-        .status {
-          bottom: 5px;
-          left: 5px;
-          font-size: 10px;
+        .chapter-tabs a {
+          min-height: 36px;
         }
       }
     </style>

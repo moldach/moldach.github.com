@@ -36,3 +36,12 @@ Type checking, the existing 14 Node tests, preview content/metadata/media/link v
 The objects, source imagery, text and reference framing are preserved. AgX/PBR light response is not pixel-identical to Cycles: the background is more uniform, indirect bounce/contact shadows are simpler, and fibers/edges respond differently. Keycaps and print/photo overlays retain dynamic PBR shading but skip per-detail shadow passes to meet the budget; structural paper, mounts and terminal retain soft dynamic shadows.
 
 Final owner visual acceptance, Safari, actual iPhone/Android checks and sustained thermal/GPU performance remain unverified. No homepage replacement, idle animation, page turns, exhibit hotspots or portrait changes are claimed. Those are subsequent integration work.
+
+
+## Fixed Studio and chapter navigation — current visitor interface
+
+Lighting/exposure selectors, diagnostics, benchmark and Close controls have been removed from the visible interface. The scene uses the same fixed Studio treatment at exposure 1.5. Measurements and preset screenshots above describe the earlier engineering review and remain historical evidence; the current functional script now checks the visitor interface.
+
+Current captures: [desktop](start-studio-tabs.png), [mobile emulation](start-studio-tabs-mobile.png). Current assertions: [tabs-results.json](tabs-results.json). All six ordinary links reach the shared registry destinations; the Services model raycast, touch Services tap, keyboard inspection/reset, drag suppression, Back, navigation cleanup/context release, texture fallback and no-JavaScript/no-WebGL Services navigation pass. The page has no lighting/exposure inputs, visible diagnostics or benchmark/Close controls. Page errors are empty.
+
+This enables destination navigation, not a modeled page-turn animation or integration of the other five Blender chapters. The homepage renderer remains unchanged.

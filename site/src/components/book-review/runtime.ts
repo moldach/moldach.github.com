@@ -5,35 +5,15 @@ import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-type Preset = 'studio' | 'neutral' | 'contrast';
-const presets = {
-  studio: {
-    key: 3.2,
-    fill: 1.4,
-    rim: 1,
-    environment: 0.38,
-    keyColor: 0xffebd3,
-    fillColor: 0xf5f7ff,
-    position: [-4, 9, 3],
-  },
-  neutral: {
-    key: 2.7,
-    fill: 1.6,
-    rim: 0.6,
-    environment: 0.45,
-    keyColor: 0xffffff,
-    fillColor: 0xffffff,
-    position: [0, 9, 4],
-  },
-  contrast: {
-    key: 4,
-    fill: 0.3,
-    rim: 1.2,
-    environment: 0.18,
-    keyColor: 0xffd0a0,
-    fillColor: 0x8eb8ff,
-    position: [-7, 4, 1],
-  },
+// Fixed Studio treatment: lighting stays dynamic, with no visitor settings.
+const studio = {
+  key: 3.2,
+  fill: 1.4,
+  rim: 1,
+  environment: 0.38,
+  keyColor: 0xffebd3,
+  fillColor: 0xf5f7ff,
+  position: [-4, 9, 3],
 } as const;
 
 export async function mountStartReview(root: HTMLElement) {
@@ -41,16 +21,12 @@ export async function mountStartReview(root: HTMLElement) {
   const canvas = root.querySelector<HTMLCanvasElement>('canvas')!;
   const status = root.querySelector<HTMLElement>('[role=status]')!;
   const metrics = root.querySelector<HTMLElement>('[data-metrics]')!;
-  const close = root.querySelector<HTMLButtonElement>('[data-close]')!;
-  const measure = root.querySelector<HTMLButtonElement>('[data-measure]')!;
-  const exposure = root.querySelector<HTMLInputElement>('input[type=range]')!;
   const abort = new AbortController();
   const signal = abort.signal;
   let closed = false;
   let model: THREE.Group | undefined;
   let asset = 'ktx2';
   let fallbackReason: string | undefined;
-  let frame = 0;
   let resize: ResizeObserver | undefined;
   let controls: OrbitControls | undefined;
   let pmrem: THREE.PMREMGenerator | undefined;
@@ -60,12 +36,14 @@ export async function mountStartReview(root: HTMLElement) {
   let textureBytes = 0;
   let reviewFloor: THREE.Mesh | undefined;
   let shadow: THREE.DirectionalLightShadow | undefined;
-  const samples: number[] = [];
   const report: Record<string, unknown> = { state: 'loading' };
   const update = () => {
     metrics.textContent = JSON.stringify(report, null, 2);
     root.dataset.state = String(report.state);
   };
+  root.querySelector<HTMLButtonElement>('[data-reset]')!.disabled = false;
+  update();
+  status.textContent = 'Opening the book…';
   function disposeModel(object: THREE.Object3D) {
     const geometries = new Set<THREE.BufferGeometry>(),
       materials = new Set<THREE.Material>(),
@@ -93,7 +71,6 @@ export async function mountStartReview(root: HTMLElement) {
   function cleanup() {
     if (closed) return;
     closed = true;
-    cancelAnimationFrame(frame);
     abort.abort();
     resize?.disconnect();
     controls?.dispose();
@@ -113,14 +90,13 @@ export async function mountStartReview(root: HTMLElement) {
       ? { ...renderer.info.memory }
       : null;
     update();
-    status.textContent = '3D review closed. Blender baseline shown.';
+    status.textContent = 'Book preview closed.';
     root
       .querySelectorAll<HTMLInputElement | HTMLButtonElement>('input,button')
       .forEach((control) => {
         control.disabled = true;
       });
   }
-  close.addEventListener('click', cleanup, { signal });
   window.addEventListener('pagehide', cleanup, { signal });
   try {
     renderer = new THREE.WebGLRenderer({
@@ -132,7 +108,7 @@ export async function mountStartReview(root: HTMLElement) {
     renderer.info.autoReset = false;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.AgXToneMapping;
-    renderer.toneMappingExposure = Number(exposure.value);
+    renderer.toneMappingExposure = 1.5;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.VSMShadowMap;
     renderer.shadowMap.autoUpdate = false;
@@ -187,8 +163,8 @@ export async function mountStartReview(root: HTMLElement) {
     floor.receiveShadow = true;
     scene.add(floor);
     reviewFloor = floor;
-    function lighting(name: Preset) {
-      const p = presets[name];
+    function lighting() {
+      const p = studio;
       key.intensity = p.key;
       fill.intensity = p.fill;
       rim.intensity = p.rim;
@@ -197,12 +173,114 @@ export async function mountStartReview(root: HTMLElement) {
       key.position.set(p.position[0], p.position[1], p.position[2]);
       scene.environmentIntensity = p.environment;
       renderer!.shadowMap.needsUpdate = true;
-      report.lighting = name;
+      report.lighting = 'studio';
       render();
     }
+    const chapters = JSON.parse(root.dataset.chapters!) as {
+      label: string;
+      href: string;
+    }[];
+    const anchors = Array.from(
+      root.querySelectorAll<HTMLAnchorElement>('[data-chapter]'),
+    );
+    const chapterBounds = new Map<number, THREE.Box3>();
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2();
+    function projectTabs() {
+      for (const [index, box] of chapterBounds) {
+        const points = [];
+        for (const x of [box.min.x, box.max.x])
+          for (const y of [box.min.y, box.max.y])
+            for (const z of [box.min.z, box.max.z])
+              points.push(new THREE.Vector3(x, y, z).project(camera));
+        const left =
+          Math.min(...points.map((p) => (p.x + 1) * 0.5)) * stage.clientWidth;
+        const right =
+          Math.max(...points.map((p) => (p.x + 1) * 0.5)) * stage.clientWidth;
+        const top =
+          Math.min(...points.map((p) => (1 - p.y) * 0.5)) * stage.clientHeight;
+        const bottom =
+          Math.max(...points.map((p) => (1 - p.y) * 0.5)) * stage.clientHeight;
+        const width = Math.max(right - left, 36),
+          height = Math.max(bottom - top, 36);
+        const anchor = anchors[index];
+        if (!anchor) continue;
+        anchor.style.left = `${(left + right - width) / 2}px`;
+        anchor.style.top = `${(top + bottom - height) / 2}px`;
+        anchor.style.width = `${width}px`;
+        anchor.style.height = `${height}px`;
+      }
+    }
+    const chapterAt = (event: PointerEvent) => {
+      if (!model || report.state !== 'ready') return undefined;
+      const rect = canvas.getBoundingClientRect();
+      pointer.set(
+        ((event.clientX - rect.left) / rect.width) * 2 - 1,
+        1 - ((event.clientY - rect.top) / rect.height) * 2,
+      );
+      raycaster.setFromCamera(pointer, camera);
+      const hit = raycaster.intersectObject(model, true)[0];
+      let object: THREE.Object3D | null = hit?.object || null;
+      while (object) {
+        const index = object.userData.chapterIndex;
+        if (Number.isInteger(index)) return chapters[index]?.href;
+        object = object.parent;
+      }
+      return undefined;
+    };
+    let press: { x: number; y: number; id: number; moved: boolean } | undefined;
+    canvas.addEventListener(
+      'pointerdown',
+      (event) => {
+        press = {
+          x: event.clientX,
+          y: event.clientY,
+          id: event.pointerId,
+          moved: false,
+        };
+      },
+      { signal },
+    );
+    canvas.addEventListener(
+      'pointercancel',
+      () => {
+        press = undefined;
+      },
+      { signal },
+    );
+    canvas.addEventListener(
+      'pointerup',
+      (event) => {
+        const start = press;
+        press = undefined;
+        if (
+          !start ||
+          start.id !== event.pointerId ||
+          start.moved ||
+          Math.hypot(event.clientX - start.x, event.clientY - start.y) > 6
+        )
+          return;
+        const href = chapterAt(event);
+        if (href) window.location.assign(href);
+      },
+      { signal },
+    );
+    canvas.addEventListener(
+      'pointermove',
+      (event) => {
+        if (
+          press &&
+          Math.hypot(event.clientX - press.x, event.clientY - press.y) > 6
+        )
+          press.moved = true;
+        canvas.style.cursor = chapterAt(event) ? 'pointer' : 'grab';
+      },
+      { signal },
+    );
     function render() {
       if (closed || !renderer || !model || report.state === 'context-lost')
         return;
+      projectTabs();
       const updatesShadow = renderer.shadowMap.needsUpdate;
       renderer.info.reset();
       renderer.render(scene, camera);
@@ -219,24 +297,6 @@ export async function mountStartReview(root: HTMLElement) {
       update();
     }
     controls.addEventListener('change', render);
-    root
-      .querySelectorAll<HTMLInputElement>('input[name=lighting]')
-      .forEach((input) =>
-        input.addEventListener(
-          'change',
-          () => lighting(input.value as Preset),
-          { signal },
-        ),
-      );
-    exposure.addEventListener(
-      'input',
-      () => {
-        renderer!.toneMappingExposure = Number(exposure.value);
-        root.querySelector('output')!.textContent = exposure.value;
-        render();
-      },
-      { signal },
-    );
     const reset = () => {
       camera.position.copy(referencePosition);
       controls!.target.copy(referenceTarget);
@@ -294,11 +354,9 @@ export async function mountStartReview(root: HTMLElement) {
         event.preventDefault();
         delete stage.dataset.ready;
         report.state = 'context-lost';
-        measure.disabled = true;
         update();
         status.textContent =
-          'Graphics context lost. Blender baseline shown; reload to retry.';
-        cancelAnimationFrame(frame);
+          'The book preview paused. You can still use the chapter tabs.';
       },
       { signal },
     );
@@ -400,7 +458,16 @@ export async function mountStartReview(root: HTMLElement) {
     if (imageIds.size !== 10 || chapterIds.size !== 6)
       throw new Error('Required image or chapter metadata missing');
     scene.add(model);
-    lighting('studio');
+    model.updateMatrixWorld(true);
+    model.traverse((object) => {
+      const index = object.userData.chapterIndex;
+      if (!Number.isInteger(index)) return;
+      const box = new THREE.Box3().setFromObject(object);
+      if (box.isEmpty()) return;
+      if (chapterBounds.has(index)) chapterBounds.get(index)!.union(box);
+      else chapterBounds.set(index, box);
+    });
+    lighting();
     stage.dataset.ready = '';
     report.state = 'ready';
     report.asset = asset;
@@ -412,7 +479,7 @@ export async function mountStartReview(root: HTMLElement) {
     report.textureMemoryScope =
       'Model textures and mipmaps only; excludes environment, shadow maps and driver overhead';
     report.physicalDeviceVerified = false;
-    status.textContent = `${asset === 'ktx2' ? 'KTX2 + Meshopt' : 'Conventional textures + Meshopt'} · dynamic lighting`;
+    status.textContent = 'Book ready.';
     const assetUrl =
       asset === 'ktx2'
         ? '/models/start/start.glb'
@@ -423,39 +490,6 @@ export async function mountStartReview(root: HTMLElement) {
     report.modelTransferBytes = entry?.transferSize;
     report.modelEncodedBytes = entry?.encodedBodySize;
     render();
-    measure.addEventListener(
-      'click',
-      () => {
-        measure.disabled = true;
-        samples.length = 0;
-        let previous = performance.now();
-        const sample = (now: number) => {
-          if (closed || document.hidden || report.state !== 'ready') {
-            measure.disabled = closed;
-            return;
-          }
-          if (samples.length) samples.push(now - previous);
-          else samples.push(0);
-          previous = now;
-          render();
-          if (samples.length < 121) frame = requestAnimationFrame(sample);
-          else {
-            const sorted = samples.slice(1).sort((a, b) => a - b);
-            report.frameTiming = {
-              frames: 120,
-              medianMs: sorted[60],
-              p95Ms: sorted[114],
-              scope:
-                'Foreground requestAnimationFrame intervals including render submission; not GPU timer or physical-device proof',
-            };
-            update();
-            measure.disabled = false;
-          }
-        };
-        frame = requestAnimationFrame(sample);
-      },
-      { signal },
-    );
   } catch (error) {
     const message = String(error);
     cleanup();
@@ -463,6 +497,6 @@ export async function mountStartReview(root: HTMLElement) {
     report.error = message;
     update();
     status.textContent =
-      '3D unavailable. Blender baseline shown. Reload to retry.';
+      'Interactive view unavailable. You can still use the chapter tabs.';
   }
 }

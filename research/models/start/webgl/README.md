@@ -24,11 +24,13 @@ Only surface detail is baked. Base colors/approved photographs, roughness and ta
 
 ## Dynamic preview contract
 
-The glTF is Y-up. The reference camera is `(0.12, 13.6, 14)`, looking at `(0, 0.7, 0)`, using a 51 mm lens with a 36 mm horizontal sensor at 3:2 aspect. The lighting configuration is in `site/src/components/book-review/runtime.ts`: AgX tone mapping, default exposure 1.5, a generated RoomEnvironment and studio/neutral/contrast directional-light presets. No remote assets or CDNs are required.
+The glTF is Y-up. The reference camera is `(0.12, 13.6, 14)`, looking at `(0, 0.7, 0)`, using a 51 mm lens with a 36 mm horizontal sensor at 3:2 aspect. The lighting configuration is in `site/src/components/book-review/runtime.ts`: AgX tone mapping, default exposure 1.5, a generated RoomEnvironment and a fixed Studio directional-light arrangement. There are no visitor lighting or exposure settings. No remote assets or CDNs are required.
 
-Soft VSM shadows are applied to structural paper, mounts and terminal. Keycaps, print and photo overlays keep dynamic PBR shading while skipping redundant shadow submissions. Shadows update when lighting changes; normal inspection uses cached shadow maps. Rendering is on demand, with a 120-frame measurement mode and no idle animation.
+Soft VSM shadows are applied to structural paper, mounts and terminal. Keycaps, print and photo overlays keep dynamic PBR shading while skipping redundant shadow submissions. Studio shadows are generated on load; inspection uses cached shadow maps. Rendering is on demand, with no visitor benchmarking controls or idle animation.
 
-Loading/transcode failure switches to the conventional-texture GLB. Each load has a 15-second deadline and late results are disposed. If both models fail, WebGL is unavailable or the context is lost, the original Blender poster remains visible. Close/pagehide cancels frames, disconnects observers/controls, aborts listeners, disposes scene materials/geometries/textures, render targets and decoder workers, and explicitly releases the WebGL context. Three.js internal allocation counters can retain bookkeeping entries after context release; these are not a claim of zero driver memory.
+Loading/transcode failure switches to the conventional-texture GLB. Each load has a 15-second deadline and late results are disposed. If both models fail, WebGL is unavailable or the context is lost, the original Blender poster remains visible. Pagehide cancels frames, disconnects observers/controls, aborts listeners, disposes scene materials/geometries/textures, render targets and decoder workers, and explicitly releases the WebGL context. Three.js internal allocation counters can retain bookkeeping entries after context release; these are not a claim of zero driver memory.
+
+The six physical chapter tabs are now ordinary HTML anchors aligned to projected model bounds, plus raycast destinations resolved through model ancestry. They use the shared chapter registry. Keyboard/touch and no-JavaScript/no-WebGL navigation remain available, dragging does not navigate, and browser Back restores the scene (including a BFCache restore).
 
 ## Verification and limits
 

@@ -151,3 +151,9 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Deliver an isolated dynamic-lighting preview with three light presets, exposure, inspection and fallback/disposal.
 - [x] Record desktop/mobile-emulation timings, size, draw calls, texture-memory estimates and browser evidence.
 - [ ] Obtain final visual acceptance and verify Safari/physical-device performance before homepage integration.
+
+
+### Start visitor controls and chapter tabs
+- [x] Fix Studio lighting and remove visitor-facing lighting/debug controls.
+- [x] Wire six model/HTML tabs to actual chapter pages using the shared registry.
+- [x] Verify Services raycasting, touch, keyboard/reset, drag suppression, Back and fallback navigation.

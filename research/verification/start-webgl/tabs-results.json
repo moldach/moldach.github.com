@@ -1,0 +1,99 @@
+{
+  "links": [
+    {
+      "name": "Start",
+      "path": "/",
+      "heading": "Practical AI.Less busywork."
+    },
+    {
+      "name": "Services",
+      "path": "/services/",
+      "heading": "A useful place to start."
+    },
+    {
+      "name": "Work",
+      "path": "/work/",
+      "heading": "Work you can inspect."
+    },
+    {
+      "name": "Writing",
+      "path": "/writing/",
+      "heading": "Notes from the work."
+    },
+    {
+      "name": "About",
+      "path": "/about/",
+      "heading": "Matthew, in person."
+    },
+    {
+      "name": "Contact",
+      "path": "/contact/",
+      "heading": "What could work better?"
+    }
+  ],
+  "servicesPage": {
+    "url": "http://127.0.0.1:4322/services/",
+    "heading": "A useful place to start."
+  },
+  "disposal": {
+    "state": "closed",
+    "lighting": "studio",
+    "shadowUpdateDrawCalls": 136,
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        13.6,
+        14.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ]
+    },
+    "drawCalls": 103,
+    "triangles": 135208,
+    "textureCount": 17,
+    "estimatedTextureBytes": 5988752,
+    "asset": "ktx2",
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "chapters": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "dynamicLighting": true,
+    "textureMemoryScope": "Model textures and mipmaps only; excludes environment, shadow maps and driver overhead",
+    "physicalDeviceVerified": false,
+    "modelTransferBytes": 300,
+    "modelEncodedBytes": 6201924,
+    "resourcesDisposed": true,
+    "contextReleased": true,
+    "gpuMemoryAfterDispose": {
+      "geometries": 1,
+      "textures": 1
+    }
+  },
+  "backRestoresScene": true,
+  "raycastServices": true,
+  "dragDoesNotNavigate": true,
+  "touchServices": true,
+  "conventionalFallback": true,
+  "noJSNavigation": true,
+  "noGLNavigation": true,
+  "pageErrors": []
+}
