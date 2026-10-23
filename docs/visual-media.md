@@ -41,3 +41,8 @@ Outstanding: owner review of this artwork-relief approach, any required full mod
 ## Opening-model correction — 22 October 2026
 
 The owner rejected the relief as a substitute for the approved 3D book. Start now uses the independent-object prototype in `site/src/components/book/opening-model.ts` (relative to repository root), with perspective, lit materials and real prop raycasting. Other five spreads remain concept reliefs. This is **not visually matched or owner-approved**; see `research/verification/modeled-opening/README.md` and its fresh captures for the remaining differences and scoped checks. Earlier relief screenshots and Lighthouse measurements do not verify this prototype. Oil and portrait code are unchanged in this pass.
+
+
+## Work asset study — 23 October 2026
+
+The Work reference now has its own editable Blender scene and offline render in `research/models/work/`, authored by `tool/assets/build_work.py` with shared `paper_scene.py` helpers. PuttPulse includes the putting-only raised mulch bed and marker circle; Shiny-filteRs uses the original screen capture; Hinuhinu uses actual map imagery and source-derived boundary silhouettes with illustrative raised layers. Source hashes and material/export limits are recorded alongside the assets. This study is separate from browser integration, final visual acceptance and material baking. The app preview remains unchanged.

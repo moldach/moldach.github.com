@@ -1,0 +1,17 @@
+{
+  "glbVersion": 2,
+  "bytes": 10371724,
+  "meshes": 773,
+  "positionVertices": 279861,
+  "finitePositions": true,
+  "chapterTags": 6,
+  "projectDestinations": [
+    "/work/#hinuhinu",
+    "/work/#puttpulse",
+    "/work/#shiny-filters"
+  ],
+  "sourceImagesUnchanged": true,
+  "browserIntegrated": false,
+  "materialsBaked": false,
+  "visualMatchAccepted": false
+}

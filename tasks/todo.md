@@ -109,3 +109,9 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Establish Blender asset authoring and offline rendering against the Services reference, rather than revising Start again.
 - [ ] Complete a visually accepted Services model; an offline render/export is not browser parity.
 - [ ] Bake/export final materials, verify Three.js parity, then integrate.
+
+
+### Work asset study
+- [x] Author and render an editable Work spread with the three referenced exhibits and Work chapter tab.
+- [x] Preserve and record original Shiny-filteRs/Hinuhinu texture provenance.
+- [ ] Complete visual acceptance, material baking and browser integration; offline export is not WebGL parity.
