@@ -104,5 +104,3 @@ info: No errors found.
  HINT
  ────────────────────────────────────────────
 info: No hints found.
-
-
