@@ -1,0 +1,108 @@
+[
+  {
+    "number": 1,
+    "title": "Coral / cyan skiing",
+    "previewPath": "post/faststyletransfer/featured.png",
+    "source": "post/faststyletransfer/featured.png",
+    "sourceFrameIndex": null,
+    "proposedPlacement": "Standing output photo",
+    "status": "Proposed; not integrated",
+    "sha256": "bb6deb4333db0017882c5554de671d442bfccb53a5fda9a7688195aeaa07a435"
+  },
+  {
+    "number": 2,
+    "title": "Zebra treatment",
+    "previewPath": "research/models/start/image-shortlist/output-01.png",
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceFrameIndex": 0,
+    "proposedPlacement": "Left film loop",
+    "status": "Proposed; not integrated",
+    "sha256": "886f27ac784ccef2bd3e3b4df5c6e1889cd5d04d2c30d8dd9f44960d0eff1892",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187"
+  },
+  {
+    "number": 3,
+    "title": "Violet / mint skier",
+    "previewPath": "research/models/start/image-shortlist/output-02.png",
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceFrameIndex": 10,
+    "proposedPlacement": "Middle film loop",
+    "status": "Proposed; not integrated",
+    "sha256": "7c73877949e1f960d416f4b1fd0dd478fe3903ef975b82410625bb24c83ad7ea",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187"
+  },
+  {
+    "number": 4,
+    "title": "Green / gold action",
+    "previewPath": "research/models/start/image-shortlist/output-05.png",
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceFrameIndex": 40,
+    "proposedPlacement": "Right film loop",
+    "status": "Proposed; not integrated",
+    "sha256": "6bb5d0a37230f0c1232ebf52ae72c3cd3bdba291ab15c71653c61acaeb2f2404",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187"
+  },
+  {
+    "number": 5,
+    "title": "Geometric goggles",
+    "previewPath": "research/models/start/image-shortlist/output-07.png",
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceFrameIndex": 60,
+    "proposedPlacement": "Right film loop",
+    "status": "Proposed; not integrated",
+    "sha256": "2345262c646484151309ee4a57b2f6568b5c4f74b3c582d6b00416080e3b7569",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187"
+  },
+  {
+    "number": 6,
+    "title": "Icy textured forest",
+    "previewPath": "research/models/start/image-shortlist/output-08.png",
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceFrameIndex": 70,
+    "proposedPlacement": "Middle film loop",
+    "status": "Proposed; not integrated",
+    "sha256": "fbd0f48a0c32ee1565d3d33393b0f21155dd709969523d2e4df558d6d3c8ee45",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187"
+  },
+  {
+    "number": 7,
+    "title": "Orange forest skier",
+    "previewPath": "research/models/start/image-shortlist/output-11.png",
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceFrameIndex": 100,
+    "proposedPlacement": "Left film loop",
+    "status": "Proposed; not integrated",
+    "sha256": "0bdbfafe793b7274c8fbaa28f86dfc8562f5ec39d8c83e2ceb4ec1e1427561b0",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187"
+  },
+  {
+    "number": 8,
+    "title": "Training-style collection",
+    "previewPath": "post/faststyletransfer/collage.png",
+    "source": "post/faststyletransfer/collage.png",
+    "sourceFrameIndex": null,
+    "proposedPlacement": "Photo tray / research card",
+    "status": "Proposed; not integrated",
+    "sha256": "0d1a2b853f398b57b5f3803a1b35f59c5b4726d54a66f94552fd1a8070904d40"
+  },
+  {
+    "number": 9,
+    "title": "Content + style \u2192 output",
+    "previewPath": "post/faststyletransfer/example.png",
+    "source": "post/faststyletransfer/example.png",
+    "sourceFrameIndex": null,
+    "proposedPlacement": "Accordion proof sequence",
+    "status": "Proposed; not integrated",
+    "sha256": "4e54bd7f37650cc2accafcad2ae412b5d3ed6c25d42e7440ee75202b019e3289"
+  },
+  {
+    "number": 10,
+    "title": "Activation atlas",
+    "previewPath": "post/faststyletransfer/atlas.png",
+    "source": "post/faststyletransfer/atlas.png",
+    "sourceFrameIndex": null,
+    "proposedPlacement": "Research card beside terminal",
+    "status": "Proposed; not integrated",
+    "sha256": "403e3e8951f31af2d178db024a1c1af7968c5cf086efe5f0c3dcb6cfe311426f"
+  }
+]
