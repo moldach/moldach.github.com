@@ -46,3 +46,8 @@ The owner rejected the relief as a substitute for the approved 3D book. Start no
 ## Work asset study — 23 October 2026
 
 The Work reference now has its own editable Blender scene and offline render in `research/models/work/`, authored by `tool/assets/build_work.py` with shared `paper_scene.py` helpers. PuttPulse includes the putting-only raised mulch bed and marker circle; Shiny-filteRs uses the original screen capture; Hinuhinu uses actual map imagery and source-derived boundary silhouettes with illustrative raised layers. Source hashes and material/export limits are recorded alongside the assets. This study is separate from browser integration, final visual acceptance and material baking. The app preview remains unchanged.
+
+
+## About asset study — 23 October 2026
+
+`tool/assets/build_about.py` now authors the About reference as its own editable Blender scene under `research/models/about/`: supplied headshot in a separate cobalt frame, CV panel, plant/books, compass, notebook, gridded strategy board and two articulated paper hands. The original headshot is preserved and recorded in provenance; CV rules are decorative rather than fabricated qualifications. This offline asset does not replace or implement the existing interactive face dialog. The preview and website source remain unchanged; final visual acceptance, material baking and browser parity are pending.

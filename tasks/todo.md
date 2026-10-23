@@ -115,3 +115,9 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Author and render an editable Work spread with the three referenced exhibits and Work chapter tab.
 - [x] Preserve and record original Shiny-filteRs/Hinuhinu texture provenance.
 - [ ] Complete visual acceptance, material baking and browser integration; offline export is not WebGL parity.
+
+
+### About asset study
+- [x] Author and render a separate About spread with the supplied headshot, paper hands, strategy board and About tag.
+- [x] Preserve original portrait provenance and avoid invented CV content.
+- [ ] Complete visual acceptance, material baking and browser integration; retain the required face interaction.
