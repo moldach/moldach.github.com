@@ -1,0 +1,217 @@
+{
+  "source": "https://medium.com/feed/@MattOldach_65321",
+  "recoveredAt": "2026-10-23",
+  "publishedAt": "2018-10-31",
+  "rssSha256": "e00eb6669e256df9b892f26b12e59cb036f4d86705f38ee10b14b867b6219e78",
+  "images": [
+    {
+      "number": 1,
+      "url": "https://cdn-images-1.medium.com/max/879/1*X8-IvuHR-HeFQxt7LiW1PA.png",
+      "original": "../research/recovery/brain/images/01.png",
+      "width": 879,
+      "height": 535,
+      "sha256": "946bbca964c9c33625030649b80c85cb0bee6a1a97706b46fe5a90fa4622d245"
+    },
+    {
+      "number": 2,
+      "url": "https://cdn-images-1.medium.com/max/1000/1*XZR76fWm8jRJiD_N9eJGdw.jpeg",
+      "original": "../research/recovery/brain/images/02.jpeg",
+      "width": 1000,
+      "height": 650,
+      "sha256": "85f6a467ed3023ff16f077fa5b69fe75ee8c11c9a3e5058b5c6e4def905e7683"
+    },
+    {
+      "number": 3,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*UvyKo-QodS6iTgv_s19T8g.png",
+      "original": "../research/recovery/brain/images/03.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "f2c5a4195d953e99cb256763309aa5def740b26eae498496d37e708b98ea7c0a"
+    },
+    {
+      "number": 4,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*p1-bNjyTlhZLy9WyKhm5tA.png",
+      "original": "../research/recovery/brain/images/04.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "383822e2e69cc10929e73750fd4324bd381c18816a77e9954e550ed8b8a79b0a"
+    },
+    {
+      "number": 5,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*vg1pIqczG6oxBp0KgU-O_g.png",
+      "original": "../research/recovery/brain/images/05.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "c3dab24fa68eedee281b52aa19e18953b200f85499825035628a2b89efa1ecea"
+    },
+    {
+      "number": 6,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*28T7UZh9LkSBWtt4V_UNOw.png",
+      "original": "../research/recovery/brain/images/06.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "c64fc590abb42c463cc397e160db741f9de345d3306bc8f3e4603ff3f29aa2d0"
+    },
+    {
+      "number": 7,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*uP5BdGzmMBf7t_wgafJqTw.png",
+      "original": "../research/recovery/brain/images/07.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "dedca0d7070fc173932d2a42ef1bee756273241787ca4522610e040d3295b046"
+    },
+    {
+      "number": 8,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*MyEktOl85KFT5bXsa5qDAw.png",
+      "original": "../research/recovery/brain/images/08.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "3b1f1186fe41f4351e94bfb1c1fbff94c30c6792c0433cd34e3e0bf1e8cd8302"
+    },
+    {
+      "number": 9,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*d8lsy9g3dT1ZBqNPBZPMYQ.png",
+      "original": "../research/recovery/brain/images/09.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "a46cffc7a3e884aba55033e9e15c1bb57bfb42256c10766c53fdd2bcb4ad7a8f"
+    },
+    {
+      "number": 10,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*tBhk6wEj693xBN0KKTuMQw.png",
+      "original": "../research/recovery/brain/images/10.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "175fa03c3d9dff03fe61b450d78bc5e545023637f72b284daedf56e16ed91ded"
+    },
+    {
+      "number": 11,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*RRKOGI37hIS3NHrfnbCNEA.png",
+      "original": "../research/recovery/brain/images/11.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "a86e5fab178c2ea2d551e6494803f524c0be26200d9c7a2d067813fb78991a52"
+    },
+    {
+      "number": 12,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*bNXOHHgXGgvcildS8EhOJg.png",
+      "original": "../research/recovery/brain/images/12.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "2832eb052bfd68ffd1e31dc9e12c9841ea6aa1142e63bab1c7ab155690b3edfb"
+    },
+    {
+      "number": 13,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*PF4ycLtE5qxnDGRwe7aD-w.png",
+      "original": "../research/recovery/brain/images/13.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "6d3b93106e7468c93ddfc9f0ba8352b9dd5f6cf2a1386654cf18cbb51634ee4e"
+    },
+    {
+      "number": 14,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*pjGJVJ0iGIqUfKjWWJuiGA.png",
+      "original": "../research/recovery/brain/images/14.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "931a8a73398288070353be5e856d083536325153515c3fee97c96d1635b63567"
+    },
+    {
+      "number": 15,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*Vm2yBb0xkfTewc2LPjcQ6A.png",
+      "original": "../research/recovery/brain/images/15.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "f02fdc04db95c4475947149cc732e46579e3ad5dec634769b870b1f64dd8646a"
+    },
+    {
+      "number": 16,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*WyWDETKfaT4NItcUslkAGg.png",
+      "original": "../research/recovery/brain/images/16.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "ad7a8e2020ec671f3c333a85d68513a79737f01d4822196ff7af491e3961d40e"
+    },
+    {
+      "number": 17,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*19CUugK1Iw6JixB3bCDh6g.png",
+      "original": "../research/recovery/brain/images/17.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "9de1e7340082a2926d1c222fb868c548b26ce255889c402f0d9bd173662282b9"
+    },
+    {
+      "number": 18,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*yXJINXCF1Qx-vC7msWJFoA.png",
+      "original": "../research/recovery/brain/images/18.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "590928d1e61064fb3befaae34536f58d9f84bab15874dbc149e4751798f65451"
+    },
+    {
+      "number": 19,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*8fs23uqjbryzrZBWb9elKA.png",
+      "original": "../research/recovery/brain/images/19.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "5d0d8af4f09d650ff7de4d8621a340b308ca11f23e01a1c97c612fca32c6c5b7"
+    },
+    {
+      "number": 20,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*f0QqB_NamVkm3zEteDurZw.png",
+      "original": "../research/recovery/brain/images/20.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "077f63d0267248a9bca80f338fc538cf29288fbe6ec13023cd7880552e2adddd"
+    },
+    {
+      "number": 21,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*4LmvIqv4B5_5pm-yXH18Ig.png",
+      "original": "../research/recovery/brain/images/21.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "676d39b3454df0e3eec6867cae81e299abbdbe4532dcd3513f8cbe60792c3809"
+    },
+    {
+      "number": 22,
+      "url": "https://cdn-images-1.medium.com/max/1024/1*YVm8LjXd0SdO5g5IrPEQDQ.png",
+      "original": "../research/recovery/brain/images/22.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "db6f690ca82ca77e15d174bb2078aa47aa9303603ab035966e8870e474ce0c37"
+    },
+    {
+      "number": 23,
+      "url": "https://cdn-images-1.medium.com/max/522/1*5LHvZKZVLmiT7sXgl3YGAg.png",
+      "original": "../research/recovery/brain/images/23.png",
+      "width": 522,
+      "height": 522,
+      "sha256": "191fcbc81a459fd153ad0d201a19f9c87a53548e589f04bef0b8836b6d67116f"
+    },
+    {
+      "number": 24,
+      "url": "https://cdn-images-1.medium.com/max/522/1*tkhpUjZuhwbYY7C7l85S9Q.png",
+      "original": "../research/recovery/brain/images/24.png",
+      "width": 522,
+      "height": 522,
+      "sha256": "e602ab48c9f9c7482cbdfba3a08e3465c34499c61eb99324d77dddb64eef1ba6"
+    },
+    {
+      "number": 25,
+      "url": "https://cdn-images-1.medium.com/max/522/1*UzC-ngB8G7NoaOj5Bz8z0A.png",
+      "original": "../research/recovery/brain/images/25.png",
+      "width": 522,
+      "height": 522,
+      "sha256": "4aebb51d9d98fa56994be95b677fa8b765b2a6837865464aa0a847e782319698"
+    },
+    {
+      "number": 26,
+      "url": "https://cdn-images-1.medium.com/max/672/1*O_A5iw2_diaJXXehO6-PWA.png",
+      "original": "../research/recovery/brain/images/26.png",
+      "width": 672,
+      "height": 480,
+      "sha256": "ba49c89fe451e2188d02e4ac77836535a193629e13ed9430597d2448f5d2f287"
+    }
+  ],
+  "codeExecuted": false
+}

@@ -1,0 +1,15 @@
+{
+  "webgl": {
+    "mouseDragFreeze": true,
+    "touchFreezeButton": true,
+    "multiplePoints": true,
+    "reset": true
+  },
+  "canvas": {
+    "mouseDragFreeze": true,
+    "touchFreezeButton": true,
+    "multiplePoints": true,
+    "reset": true
+  },
+  "noJSArticleLink": true
+}

@@ -1,0 +1,102 @@
+{
+  "checkedOn": "2026-10-22",
+  "scope": "Six public URL samples; not a crawl, ranking test, GSC inspection or performance measurement.",
+  "pages": [
+    {
+      "url": "https://moldach.github.io/",
+      "status": 200,
+      "effectiveUrl": "https://moldach.github.io/",
+      "bytes": 57055,
+      "title": "Silicon Valley Chronicles | Academic",
+      "h1": [
+        "Search",
+        "Biography",
+        "Skills",
+        "Recent Posts",
+        "Projects",
+        "Recent & Upcoming Talks",
+        "Popular Topics",
+        "Contact"
+      ],
+      "canonicals": [
+        "https://example.com/"
+      ],
+      "robots": [],
+      "descriptions": [
+        "A highly-customizable Hugo academic resume theme powered by Hugo Blox Builder."
+      ],
+      "anchorCount": 97
+    },
+    {
+      "url": "https://moldach.github.io/post/supervised-umap/",
+      "status": 200,
+      "effectiveUrl": "https://moldach.github.io/post/supervised-umap/",
+      "bytes": 20807,
+      "title": "Supervised UMAP Slideshow | Academic",
+      "h1": [
+        "Search",
+        "Supervised UMAP Slideshow"
+      ],
+      "canonicals": [
+        "https://example.com/post/supervised-umap/"
+      ],
+      "robots": [],
+      "descriptions": [
+        " "
+      ],
+      "anchorCount": 35
+    },
+    {
+      "url": "https://moldach.github.io/project/fitbit-project/",
+      "status": 200,
+      "effectiveUrl": "https://moldach.github.io/project/fitbit-project/",
+      "bytes": 22322,
+      "title": "The Gamification of Fitbit: How An API Provided The Next Level of tRaining | Academic",
+      "h1": [
+        "Search",
+        "The Gamification of Fitbit: How An API Provided The Next Level of tRaining"
+      ],
+      "canonicals": [
+        "https://example.com/project/fitbit-project/"
+      ],
+      "robots": [],
+      "descriptions": [
+        "Accessing biometric data from the Fitbit API"
+      ],
+      "anchorCount": 37
+    },
+    {
+      "url": "https://moldach.github.io/project/3d-brain/",
+      "status": 200,
+      "effectiveUrl": "https://moldach.github.io/project/3d-brain/",
+      "bytes": 21883,
+      "title": "How to Highlight 3D Brain Regions | Academic",
+      "h1": [
+        "Search",
+        "How to Highlight 3D Brain Regions"
+      ],
+      "canonicals": [
+        "https://example.com/project/3d-brain/"
+      ],
+      "robots": [],
+      "descriptions": [
+        "A tutorial for three methods of labelling an ROI in brain images"
+      ],
+      "anchorCount": 39
+    },
+    {
+      "url": "https://moldach.github.io/robots.txt",
+      "status": 200,
+      "effectiveUrl": "https://moldach.github.io/robots.txt",
+      "bytes": 56,
+      "excerpt": "User-agent: *\n\nSitemap: https://example.com/sitemap.xml\n"
+    },
+    {
+      "url": "https://moldach.github.io/sitemap.xml",
+      "status": 200,
+      "effectiveUrl": "https://moldach.github.io/sitemap.xml",
+      "bytes": 9418,
+      "excerpt": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n  xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n  <url>\n    <loc>https://example.com/home/hero_carousel/</loc>\n    <lastmod>2017-10-15T00:00:00+00:00</lastmod>\n    <changefreq>weekly</changefreq>\n  </url><url>\n    <loc>https://example.com/home/hero/</loc>\n    <lastmod>2017-10-15T00:00:00+00:00</lastmod>\n    <changefreq>weekly</changefreq>\n  </url><url>\n    <loc>https://example.com/home/about/</loc>\n    <lastmod>2016-04-20T00:00:00+00:00</lastmod>\n    <changefreq>weekly</changefreq>\n  </url><url>\n    <loc>https://example.com/home/skills/</loc>\n    <lastmod>2017-09-20T00:00:00+00:00</lastmod>\n    <changefreq>weekly</changefreq>\n  </url><url>\n    <loc>https://example.com/home/expe"
+    }
+  ]
+}

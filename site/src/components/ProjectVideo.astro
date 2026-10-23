@@ -1,0 +1,121 @@
+---
+interface Props {
+  src: string;
+  poster: string;
+  label: string;
+}
+const { src, poster, label } = Astro.props;
+const id = `video-${src.split('/').pop()!.replaceAll('.', '-')}`;
+---
+
+<div class="project-video">
+  <video
+    id={id}
+    data-project-video
+    src={src}
+    poster={poster}
+    aria-label={label}
+    preload="none"
+    muted
+    loop
+    playsinline
+    controls
+    width="600"
+    height="338"
+  >
+    <p>
+      Your browser does not support this video.{' '}
+      <a href={src}>Open the original project clip.</a>
+    </p>
+  </video>
+  <div class="video-player-controls" hidden>
+    <button
+      type="button"
+      data-video-toggle
+      aria-controls={id}
+      aria-label={`Play: ${label}`}
+    >
+      Play
+    </button>
+    <a href={src} target="_blank" rel="noopener">
+      Open clip ↗
+    </a>
+  </div>
+</div>
+<script>
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  for (const video of document.querySelectorAll<HTMLVideoElement>(
+    '[data-project-video]',
+  )) {
+    let userPaused = false,
+      visible = false,
+      systemPauses = 0;
+    const controls = video.parentElement!.querySelector<HTMLElement>(
+      '.video-player-controls',
+    )!;
+    const button = controls.querySelector<HTMLButtonElement>(
+      '[data-video-toggle]',
+    )!;
+    const sync = () => {
+      button.textContent = video.paused ? 'Play' : 'Pause';
+      button.setAttribute(
+        'aria-label',
+        `${video.paused ? 'Play' : 'Pause'}: ${video.getAttribute('aria-label')}`,
+      );
+    };
+    const pause = () => {
+      if (!video.paused) {
+        systemPauses++;
+        video.pause();
+      }
+    };
+    const update = () => {
+      if (!visible || document.hidden || reduced.matches) {
+        pause();
+        return;
+      }
+      if (!userPaused)
+        video.play().catch(() => {
+          sync();
+        });
+    };
+    button.addEventListener('click', () => {
+      if (video.paused) {
+        userPaused = false;
+        video.play().catch(sync);
+      } else {
+        video.pause();
+      }
+      sync();
+    });
+    video.addEventListener('pause', () => {
+      if (systemPauses) {
+        systemPauses--;
+      } else userPaused = true;
+      sync();
+    });
+    video.addEventListener('play', () => {
+      userPaused = false;
+      sync();
+    });
+    video.addEventListener('error', sync);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        visible = entries[0].isIntersecting;
+        update();
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(video);
+    document.addEventListener('visibilitychange', update);
+    reduced.addEventListener('change', update);
+    window.addEventListener('pageshow', update);
+    window.addEventListener('pagehide', (event) => {
+      if (!event.persisted) observer.disconnect();
+      pause();
+    });
+    controls.hidden = false;
+    video.controls = false;
+    sync();
+  }
+</script>

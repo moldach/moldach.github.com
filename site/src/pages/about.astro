@@ -1,0 +1,53 @@
+---
+import ChapterBook from '../components/ChapterBook.astro';
+import Page from '../layouts/Page.astro';
+import { pages } from '../lib/registry';
+---
+
+<Page
+  {...pages['/about/']}
+  kind="ProfilePage"
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'About', href: '/about/' },
+  ]}
+>
+  <ChapterBook chapter="About" />
+  <header class="page-intro wrap">
+    <p class="eyebrow">Curiosity · Craft · Follow-through</p>
+    <h1>Matthew, in person.</h1>
+    <p class="intro">
+      I work across software, data and practical automation. I like
+      understanding how something works, making it useful and explaining the
+      decisions along the way.
+    </p>
+  </header>
+  <article class="reading">
+    <h2>Useful systems. Human judgment.</h2>
+    <p>
+      My public work spans data analysis, visualisation, interfaces and
+      reproducible software. I bring that engineering approach to small-business
+      AI consulting: understand the workflow, choose a bounded improvement and
+      make the result inspectable.
+    </p>
+    <p>
+      I work remotely with international clients. Clear scope, documented
+      ownership and a practical handover matter as much as the demonstration.
+    </p>
+    <h2>Outside the work</h2>
+    <p>
+      Disc golf, video games, backcountry ski touring and board games feed the
+      same curiosity in different ways. They also give this paper workshop some
+      of its personality.
+    </p>
+    <h2>Find the evidence</h2>
+    <p>
+      <a href="/experience/">Explore engineering experience</a>,{' '}
+      <a href="/work/">inspect selected projects</a> or{' '}
+      <a href="/writing/">read the technical writing</a>.
+    </p>
+    <a class="button" href="/contact/">
+      Start a conversation ↗
+    </a>
+  </article>
+</Page>

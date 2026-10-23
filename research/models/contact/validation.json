@@ -1,0 +1,21 @@
+{
+  "glbVersion": 2,
+  "bytes": 5680940,
+  "meshes": 228,
+  "positionVertices": 179569,
+  "finitePositions": true,
+  "chapterTags": 6,
+  "activeChapter": "Contact",
+  "curvedChairShells": 2,
+  "destinationMetadata": [
+    "/contact/",
+    "mailto:moldach686@gmail.com"
+  ],
+  "destinationsMatchSiteSource": true,
+  "referenceImageUnchanged": true,
+  "browserIntegrated": false,
+  "materialsBaked": false,
+  "visualMatchAccepted": false,
+  "workingFormImplemented": false,
+  "messageSent": false
+}

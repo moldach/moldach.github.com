@@ -1,0 +1,231 @@
+---
+import { chapters } from '../lib/registry';
+interface Props {
+  chapter?: (typeof chapters)[number]['label'];
+}
+const { chapter = 'Start' } = Astro.props;
+const index = chapters.findIndex((item) => item.label === chapter);
+const slug = chapter.toLowerCase();
+const start = index === 0;
+const model = start
+  ? '/models/start/start.glb'
+  : `/models/chapters/${slug}.glb`;
+const fallback = start ? '/models/start/start-fallback.glb' : model;
+const poster = start
+  ? '/models/start/poster.webp'
+  : `/models/chapters/${slug}.webp`;
+const position = start
+  ? [0.12, 13.6, 14]
+  : chapter === 'Contact'
+    ? [0.12, 11.8, 15]
+    : [0.12, 15, 12];
+const lens = start ? 51 : chapter === 'Contact' ? 59 : 57;
+const exhibits =
+  chapter === 'Writing'
+    ? [
+        ['Supervised UMAP', '/writing/supervised-umap/'],
+        ['The Gamification of Fitbit', '/writing/fitbit-gamification/'],
+        [
+          'Highlighting 3D Brain Regions',
+          '/writing/highlighting-3d-brain-regions/',
+        ],
+      ]
+    : chapter === 'Work'
+      ? [
+          ['PuttPulse', '#puttpulse'],
+          ['Shiny-filteRs', '#shiny-filters'],
+          ['Hinuhinu', '#hinuhinu'],
+        ]
+      : chapter === 'Contact'
+        ? [['Start a conversation', '#enquiry']]
+        : [];
+---
+
+<section
+  class="chapter-book"
+  data-chapter-book
+  data-start-review
+  data-chapter-index={index}
+  data-chapter-label={chapter}
+  data-model={model}
+  data-model-fallback={fallback}
+  data-camera={JSON.stringify(position)}
+  data-lens={lens}
+  data-chapters={JSON.stringify(chapters)}
+  aria-label={`${chapter} chapter book`}
+>
+  <div class="stage">
+    <img
+      data-poster
+      src={poster}
+      width="1536"
+      height="1024"
+      alt={`${chapter} chapter: an open paper pop-up book with six chapter tabs`}
+      loading="eager"
+      fetchpriority="high"
+    />
+    <canvas
+      aria-label={`${chapter} paper book. Choose a chapter tab to open its page. Drag or use arrow keys to inspect; Escape resets the view.`}
+      tabindex="0"
+    ></canvas>
+    <nav class="chapter-tabs" aria-label="Book chapters">
+      {chapters.map((item, i) => (
+        <a
+          href={item.href}
+          data-chapter={i}
+          aria-current={i === index ? 'page' : undefined}
+          style={`left:${13.3 + i * 12.9}%;top:80%;width:11.2%;height:6.5%`}
+        >
+          <span class="sr-only">{item.label}</span>
+        </a>
+      ))}
+    </nav>
+    <p class="status" role="status" aria-live="polite">
+      Opening {chapter}…
+    </p>
+  </div>
+  <button type="button" data-reset>
+    Reset view
+  </button>
+  <nav aria-label={`${chapter} exhibits`} class="exhibit-links">
+    {exhibits.map(([label, href]) => (
+      <a href={href}>{label} ↗</a>
+    ))}
+    {chapter === 'About' && (
+      <button type="button" data-book-portrait>
+        Pull a face ↗
+      </button>
+    )}
+  </nav>
+  <pre data-metrics hidden></pre>
+</section>
+<noscript>
+  <style is:inline>
+    .chapter-book .status {
+      display: none;
+    }
+  </style>
+</noscript>
+<script>
+  import { mountChapterBook } from './book-review/runtime';
+  const mount = () =>
+    document
+      .querySelectorAll<HTMLElement>('[data-chapter-book]')
+      .forEach((root) => mountChapterBook(root));
+  document
+    .querySelectorAll('[data-book-portrait]')
+    .forEach((button) =>
+      button.addEventListener('click', () =>
+        document
+          .querySelector<HTMLButtonElement>('[data-portrait-open]')
+          ?.click(),
+      ),
+    );
+  mount();
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) mount();
+  });
+</script>
+<style>
+  .exhibit-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding: 8px 16px 20px;
+    font-size: 14px;
+  }
+  .chapter-book {
+    width: 100%;
+    max-width: 1536px;
+    margin: 0 auto;
+    min-width: 0;
+  }
+  .stage {
+    position: relative;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    background: #eee7db;
+    border-radius: 8px;
+  }
+  .stage img,
+  .stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .stage canvas {
+    opacity: 0;
+    touch-action: pan-y;
+    cursor: grab;
+  }
+  .stage[data-ready] canvas {
+    opacity: 1;
+  }
+  .stage[data-ready] img {
+    visibility: hidden;
+  }
+  .stage[data-ready] .status {
+    display: none;
+  }
+  .chapter-tabs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .chapter-tabs :global(a) {
+    position: absolute;
+    pointer-events: auto;
+    border-radius: 3px;
+    min-height: 28px;
+  }
+  .chapter-tabs :global(a:focus-visible) {
+    outline: 3px solid #245ed0;
+    outline-offset: 2px;
+    background: #1a54bb18;
+  }
+  :global(.chapter-book .sr-only) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  .status {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-size: 12px;
+    background: #fffaf1ed;
+    padding: 8px;
+    margin: 0;
+    border-radius: 4px;
+  }
+  button {
+    font: inherit;
+    font-size: 12px;
+    color: #18488b;
+    background: transparent;
+    border: 0;
+    padding: 10px 16px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  button:focus-visible,
+  canvas:focus-visible {
+    outline: 3px solid #245ed0;
+    outline-offset: 3px;
+  }
+  @media (max-width: 650px) {
+    .stage {
+      border-radius: 0;
+    }
+    .chapter-tabs :global(a) {
+      min-height: 36px;
+    }
+  }
+</style>

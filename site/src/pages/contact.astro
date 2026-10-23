@@ -1,0 +1,59 @@
+---
+import ChapterBook from '../components/ChapterBook.astro';
+import Page from '../layouts/Page.astro';
+import { pages } from '../lib/registry';
+---
+
+<Page
+  {...pages['/contact/']}
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Contact', href: '/contact/' },
+  ]}
+>
+  <ChapterBook chapter="Contact" />
+  <header class="page-intro wrap">
+    <p class="eyebrow">International remote enquiries welcome</p>
+    <h1>What could work better?</h1>
+    <p class="intro">
+      Tell me about one repetitive task, a focused implementation or a team that
+      needs help adopting a tool. Hiring enquiries are welcome too.
+    </p>
+  </header>
+  <section class="reading" id="enquiry" tabindex="-1">
+    <h2>Start with a short email.</h2>
+    <p>
+      A useful first message describes what your business does, the workflow you
+      want to improve and where it gets stuck. You do not need to send
+      confidential documents or account credentials.
+    </p>
+    <div class="contact-options">
+      <a
+        class="button"
+        href="mailto:moldach686@gmail.com?subject=Consulting%20enquiry"
+      >
+        Email Matthew ↗
+      </a>
+      <a class="button secondary" href="/services/">
+        Compare engagements
+      </a>
+    </div>
+    <p>
+      <a href="mailto:moldach686@gmail.com">moldach686@gmail.com</a>
+    </p>
+    <h2>What happens next?</h2>
+    <p>
+      We establish whether the work is a fit, what access or examples would be
+      needed, and which engagement makes sense. Scope and commercial terms are
+      agreed before paid work begins.
+    </p>
+    <p>
+      Enquiries go directly to the published email address. A website form will
+      be added only after its receiving account and delivery are configured and
+      tested.
+    </p>
+    <p>
+      <a href="/privacy/">Read how contact information is handled.</a>
+    </p>
+  </section>
+</Page>

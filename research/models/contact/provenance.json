@@ -1,0 +1,17 @@
+{
+  "reference": "research/design/chapters/round-2/06-contact.png",
+  "referenceSha256": "987acf1612d05ce1e7fd4012580ebf65fe23c568b473324512ae9709cc6d8eba",
+  "rasterTexturesUsed": false,
+  "geometry": "Authored Blender meshes and curves; no full concept-image projection",
+  "materials": "Procedural paper materials; no baked browser lighting",
+  "destinationSource": "site/src/pages/contact.astro",
+  "contactDestination": "/contact/",
+  "emailDestination": "mailto:moldach686@gmail.com",
+  "messageSent": false,
+  "cameraLocation": [
+    0.12,
+    -15,
+    11.8
+  ],
+  "cameraLensMm": 59
+}

@@ -1,0 +1,14 @@
+{
+  "reference": "research/design/chapters/round-2/05-about.png",
+  "sources": [
+    {
+      "path": "assets/reference/headshot.jpeg",
+      "sha256": "773cbf05721c4af2801d886799d246c2df18cb65948005c7feb99bb1b8a9b936",
+      "role": "Original supplied photograph; full-square UVs in separate blue paper frame",
+      "sourceModified": false
+    }
+  ],
+  "geometry": "Authored Blender meshes, including both paper hands and game pieces",
+  "cvContent": "Heading and decorative rules only; no invented credentials",
+  "portraitInteraction": "Offline model only; existing website face-interaction code unchanged"
+}

@@ -1,0 +1,72 @@
+---
+import { siteConfig } from '../../lib/site-config.mjs';
+import PageTurn from '../../components/PageTurn.astro';
+import ChapterBook from '../../components/ChapterBook.astro';
+export function getStaticPaths() {
+  return siteConfig(process.env).production
+    ? []
+    : [{ params: { scene: 'start' } }, { params: { scene: 'page-turn' } }];
+}
+const pageTurn = Astro.params.scene === 'page-turn';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Matthew Oldach’s interactive paper book with fixed Studio lighting and chapter navigation."
+    />
+    <title>{pageTurn ? 'Start ↔ Services prototype' : 'Start'} — Matthew Oldach</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="/">Matthew Oldach</a>
+        <h1>{pageTurn ? 'A new chapter.' : 'Practical AI. Less busywork.'}</h1>
+        <p>
+          {pageTurn
+            ? 'Start ↔ Services · page-turn study · fixed Studio lighting'
+            : 'Explore a chapter.'}
+        </p>
+      </header>
+      {pageTurn ? <PageTurn /> : <ChapterBook chapter="Start" />}
+    </main>
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+      :global(body) {
+        margin: 0;
+        background: #f6f1e7;
+        color: #182630;
+        font-family: Arial, sans-serif;
+      }
+      main {
+        max-width: 1584px;
+        padding: 28px 24px;
+        margin: auto;
+      }
+      h1 {
+        font:
+          clamp(26px, 4vw, 40px) Georgia,
+          serif;
+      }
+      a {
+        color: #18488b;
+      }
+      header p {
+        color: #53616a;
+      }
+      @media (max-width: 650px) {
+        main {
+          padding: 20px 12px;
+        }
+      }
+    </style>
+  </body>
+</html>

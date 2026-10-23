@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+.venv/
+node_modules/
+site/dist/
+site/.astro/
+site/.verification/
+site/test-results/
+.env
+.env.*
+!.env.example
+.playwright-cli/
+site/output/
+output/playwright/
+
+# Reproducible uncompressed asset staging; final WebGL variants are tracked.
+research/models/start/webgl/start-surface.glb
