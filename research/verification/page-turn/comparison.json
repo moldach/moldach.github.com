@@ -1,0 +1,15 @@
+{
+  "camera": [
+    0.12,
+    17,
+    18
+  ],
+  "target": [
+    0,
+    2,
+    0
+  ],
+  "lens": 48,
+  "stageWidth": 1488,
+  "sourceAssetsUnchanged": true
+}

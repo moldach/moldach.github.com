@@ -165,3 +165,7 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Recover the brain-region tutorial from the author RSS feed with 26 local images, original R code/date and credits; replace external exhibit/card targets and new-host legacy redirect with the local article.
 
 - [x] Remove face-region dropdown, clarify footer invitation, and support ear stretching/enlargement with keyboard and touch alternatives plus reset; verify both renderers.
+
+- [x] Deliver separate Start ↔ Services page-turn prototype with explicit export rigs, one book base, geometric leaf, reverse/queued navigation and dynamic lighting.
+- [x] Verify keyboard/reduced-motion, touch emulation, loading retry, pause/resume, resize, context-loss fallback and disposal; record matching-camera and phase captures plus actual asset/render timings.
+- [ ] Obtain owner visual approval of `/review/page-turn/` before homepage integration or extending turns to other chapters; profile recorded stalls and verify Safari/physical devices.

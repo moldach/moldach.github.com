@@ -1,11 +1,13 @@
 ---
 import { siteConfig } from '../../lib/site-config.mjs';
+import PageTurn from '../../components/PageTurn.astro';
 import ChapterBook from '../../components/ChapterBook.astro';
 export function getStaticPaths() {
   return siteConfig(process.env).production
     ? []
-    : [{ params: { scene: 'start' } }];
+    : [{ params: { scene: 'start' } }, { params: { scene: 'page-turn' } }];
 }
+const pageTurn = Astro.params.scene === 'page-turn';
 ---
 
 <!doctype html>
@@ -18,17 +20,21 @@ export function getStaticPaths() {
       name="description"
       content="Matthew Oldach’s interactive paper book with fixed Studio lighting and chapter navigation."
     />
-    <title>Start — Matthew Oldach</title>
+    <title>{pageTurn ? 'Start ↔ Services prototype' : 'Start'} — Matthew Oldach</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
     <main>
       <header>
         <a href="/">Matthew Oldach</a>
-        <h1>Practical AI. Less busywork.</h1>
-        <p>Explore a chapter.</p>
+        <h1>{pageTurn ? 'A new chapter.' : 'Practical AI. Less busywork.'}</h1>
+        <p>
+          {pageTurn
+            ? 'Start ↔ Services · page-turn study · fixed Studio lighting'
+            : 'Explore a chapter.'}
+        </p>
       </header>
-      <ChapterBook chapter="Start" />
+      {pageTurn ? <PageTurn /> : <ChapterBook chapter="Start" />}
     </main>
     <style>
       :global(*) {

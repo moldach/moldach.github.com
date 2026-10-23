@@ -13,6 +13,7 @@
     "validate": "node scripts/validate-build.mjs",
     "preview": "astro preview --host 127.0.0.1",
     "assets:start": "node scripts/prepare-start.mjs",
+    "assets:page-turn": "node scripts/prepare-page-turn.mjs",
     "assets:chapters": "node scripts/prepare-chapters.mjs"
   },
   "dependencies": {

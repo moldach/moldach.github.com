@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "chapters": [
+    {
+      "chapter": "start",
+      "url": "/models/page-turn/start.glb",
+      "bytes": 3322308,
+      "rigs": [
+        "accordion",
+        "terminal",
+        "keyboard",
+        "high-film",
+        "middle-film",
+        "photo-tray",
+        "small-film",
+        "content-style-output-proof",
+        "referenced-activation-atlas",
+        "resolved-output-photograph",
+        "tray-proof-0",
+        "tray-proof-1",
+        "tray-proof-2",
+        "tray-proof-3",
+        "tray-proof-4"
+      ],
+      "imageIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "meshNodes": 78,
+      "sharedBook": true
+    },
+    {
+      "chapter": "services",
+      "url": "/models/page-turn/services.glb",
+      "bytes": 1074788,
+      "rigs": [
+        "adoption",
+        "assessment",
+        "implementation"
+      ],
+      "imageIds": [],
+      "meshNodes": 40,
+      "sharedBook": false
+    }
+  ]
+}

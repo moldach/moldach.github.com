@@ -85,3 +85,7 @@ The Start preview now locks Studio lighting at exposure 1.5 and removes visitor 
 ## Current chapter navigation — 23 October 2026
 
 The dev site now renders each matching modeled book above its chapter content, including Services detail pages. Home uses the optimized Start scene. Lighting is fixed to Studio. Initial browser navigation/fallback evidence is in `research/verification/start-webgl/README.md`; final material fidelity and animated page turns remain pending.
+
+## Separate page-turn review — 23 October 2026
+
+`/review/page-turn/` adds a two-chapter Start ↔ Services prototype with one stationary book base, explicit exported folding rigs, a geometric turning leaf, dynamic Studio lighting/shadows, preserved tabs and ordinary navigation fallbacks. Current homepage/chapter renderers are unchanged. See `research/verification/page-turn/README.md` for reproducible exports, matching-camera comparisons, phase captures, tests and performance limitations. Visual approval precedes integration or expansion; Safari and physical devices remain unverified.
