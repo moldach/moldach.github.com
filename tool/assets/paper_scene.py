@@ -198,7 +198,7 @@ def make_book(active_chapter):
         )
 
 
-def studio_and_export(out, slug):
+def studio_and_export(out, slug, camera_location=(0.12, -12, 15), camera_lens=57):
     out.mkdir(parents=True, exist_ok=True)
     # Studio. Export keeps this separate from the book model.
     floor = box(
@@ -229,13 +229,13 @@ def studio_and_export(out, slug):
     world.use_nodes = True
     world.node_tree.nodes["Background"].inputs[0].default_value = (1.0, 0.94, 0.85, 1)
     world.node_tree.nodes["Background"].inputs[1].default_value = 0.25
-    bpy.ops.object.camera_add(location=(0.12, -12, 15))
+    bpy.ops.object.camera_add(location=camera_location)
     cam = bpy.context.object
     cam.name = "Reference camera"
     cam.rotation_euler = (
         (Vector((0, 0, 0.7)) - cam.location).to_track_quat("-Z", "Y").to_euler()
     )
-    cam.data.lens = 57
+    cam.data.lens = camera_lens
     scene.camera = cam
     # Persist editable source. System fonts stay external; export converts text to geometry.
     bpy.ops.wm.save_as_mainfile(filepath=str(out / (slug + ".blend")))

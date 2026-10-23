@@ -56,3 +56,8 @@ The Work reference now has its own editable Blender scene and offline render in 
 ## Writing asset study — 23 October 2026
 
 The Writing spread now has an editable scene, offline render and draft GLB under `research/models/writing/`, authored by `tool/assets/build_writing.py`. It combines a proofing press with the original UMAP plot, Fitbit image/wristband and a source-textured shallow brain illustration. The small red brain region and source aspect ratios are preserved; depth is illustrative and no new scientific results are asserted. Article destinations survive as metadata. Browser wiring, material baking and final visual acceptance remain pending. `research/models/README.md` tracks all six chapters: four studies exist; Start and Contact remain in the Blender workflow.
+
+
+## Contact asset study — 23 October 2026
+
+`tool/assets/build_contact.py` authors the Contact conversation room under `research/models/contact/`: a thick open cobalt arch, two curved cream chairs, coral table, folded architectural screens, speech bubbles, blue paper plants and an invitation. The invitation preserves the actual Contact/email destinations as metadata; no form, email delivery or browser hotspot is implemented by this offline study. Contact is the active physical tag. Five Blender chapter studies now exist; Start remains. New-study browser integration, material baking and visual acceptance remain pending; website preview/source are unchanged.
