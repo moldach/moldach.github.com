@@ -143,3 +143,11 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Apply all ten owner-approved article visuals to the offline Start study; verify embedded images and object assignments.
 - [x] Complete the offline study inventory for all six chapters.
 - [ ] Obtain visual acceptance, bake materials, optimize and integrate the scenes; verify browser navigation, page turns and performance.
+
+
+### Start WebGL preparation
+- [x] Preserve the source/render baseline; bake only surface normals and optimize geometry/textures.
+- [x] Produce Meshopt/KTX2 and conventional-texture variants with all ten approved images and chapter metadata.
+- [x] Deliver an isolated dynamic-lighting preview with three light presets, exposure, inspection and fallback/disposal.
+- [x] Record desktop/mobile-emulation timings, size, draw calls, texture-memory estimates and browser evidence.
+- [ ] Obtain final visual acceptance and verify Safari/physical-device performance before homepage integration.

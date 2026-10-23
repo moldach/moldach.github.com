@@ -12,3 +12,6 @@ site/test-results/
 .playwright-cli/
 site/output/
 output/playwright/
+
+# Reproducible uncompressed asset staging; final WebGL variants are tracked.
+research/models/start/webgl/start-surface.glb

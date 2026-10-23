@@ -1,0 +1,225 @@
+{
+  "desktop": {
+    "state": "ready",
+    "lighting": "studio",
+    "shadowUpdateDrawCalls": 136,
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        13.6,
+        14.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ]
+    },
+    "drawCalls": 103,
+    "triangles": 135208,
+    "textureCount": 17,
+    "estimatedTextureBytes": 5988752,
+    "asset": "ktx2",
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "chapters": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "dynamicLighting": true,
+    "textureMemoryScope": "Model textures and mipmaps only; excludes environment, shadow maps and driver overhead",
+    "physicalDeviceVerified": false,
+    "modelTransferBytes": 300,
+    "modelEncodedBytes": 6201924,
+    "frameTiming": {
+      "frames": 120,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.800000000000182,
+      "scope": "Foreground requestAnimationFrame intervals including render submission; not GPU timer or physical-device proof"
+    }
+  },
+  "mobileEmulation": {
+    "state": "ready",
+    "lighting": "studio",
+    "shadowUpdateDrawCalls": 136,
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        13.6,
+        14.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ]
+    },
+    "drawCalls": 103,
+    "triangles": 135208,
+    "textureCount": 17,
+    "estimatedTextureBytes": 5988752,
+    "asset": "ktx2",
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "chapters": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "dynamicLighting": true,
+    "textureMemoryScope": "Model textures and mipmaps only; excludes environment, shadow maps and driver overhead",
+    "physicalDeviceVerified": false,
+    "modelTransferBytes": 6202224,
+    "modelEncodedBytes": 6201924,
+    "frameTiming": {
+      "frames": 120,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 16.700000000000273,
+      "scope": "Foreground requestAnimationFrame intervals including render submission; not GPU timer or physical-device proof"
+    }
+  },
+  "automaticFallback": {
+    "state": "ready",
+    "lighting": "studio",
+    "shadowUpdateDrawCalls": 136,
+    "camera": {
+      "position": [
+        0.11999999999999997,
+        13.6,
+        13.999999999999996
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ]
+    },
+    "drawCalls": 103,
+    "triangles": 135208,
+    "textureCount": 17,
+    "estimatedTextureBytes": 23791845.333333332,
+    "asset": "conventional",
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "chapters": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "fallbackReason": "TypeError: Failed to fetch",
+    "dynamicLighting": true,
+    "textureMemoryScope": "Model textures and mipmaps only; excludes environment, shadow maps and driver overhead",
+    "physicalDeviceVerified": false,
+    "modelTransferBytes": 3258424,
+    "modelEncodedBytes": 3258124
+  },
+  "disposal": {
+    "state": "closed",
+    "lighting": "studio",
+    "shadowUpdateDrawCalls": 136,
+    "camera": {
+      "position": [
+        0.11999999999999997,
+        13.6,
+        13.999999999999996
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ]
+    },
+    "drawCalls": 103,
+    "triangles": 135208,
+    "textureCount": 17,
+    "estimatedTextureBytes": 23791845.333333332,
+    "asset": "conventional",
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "chapters": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "fallbackReason": "TypeError: Failed to fetch",
+    "dynamicLighting": true,
+    "textureMemoryScope": "Model textures and mipmaps only; excludes environment, shadow maps and driver overhead",
+    "physicalDeviceVerified": false,
+    "modelTransferBytes": 3258424,
+    "modelEncodedBytes": 3258124,
+    "resourcesDisposed": true,
+    "contextReleased": true,
+    "gpuMemoryAfterDispose": {
+      "geometries": 1,
+      "textures": 1
+    }
+  },
+  "bothAssetsUnavailable": {
+    "posterVisible": true,
+    "state": "error"
+  },
+  "noWebGL": {
+    "posterVisible": true
+  },
+  "noJavaScript": {
+    "posterVisible": true,
+    "articleHref": "/writing/faststyletransfer/"
+  },
+  "contextLoss": {
+    "posterVisible": true
+  },
+  "desktopPageErrors": []
+}

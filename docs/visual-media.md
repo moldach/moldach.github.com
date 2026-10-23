@@ -71,3 +71,8 @@ The Writing spread now has an editable scene, offline render and draft GLB under
 ## Approved Start imagery — 23 October 2026
 
 The owner approved the ten-image shortlist. The offline Start study now assigns the hero plus six different skiing-animation treatments to the film loops/photo mounts, the original style collection to the tray, and the comparison/activation-atlas figures to wider paper proof cards. The atlas is labeled as referenced Distill research. `image-shortlist/selection.json` records the approved sources and unretouched GIF frame extractions. Image approval does not imply final scene approval or browser integration; website source and preview remain unchanged.
+
+
+## Start dynamic-lighting preparation — 23 October 2026
+
+The original Start source/render are preserved. Its new asset preparation pipeline bakes only paper surface normals, consolidates static geometry and preserves the ten approved visuals, six chapter controls and separate film/key/mount groups. Meshopt + KTX2 delivery is 6.20 MB, with a 3.26 MB conventional-texture fallback. An isolated preview-only `/review/start/` provides dynamic studio/neutral/contrast lights, exposure, camera inspection, diagnostics, poster/error fallback and explicit resource disposal. The main scene uses 103 draw calls and 136 including a shadow refresh. Browser evidence and comparison limits are recorded in `research/verification/start-webgl/`. Homepage code/renderer, other chapters and portrait are unchanged. Final visual acceptance, physical-device/Safari verification and homepage integration remain pending.

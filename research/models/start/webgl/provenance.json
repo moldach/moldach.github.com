@@ -1,0 +1,21 @@
+{
+  "sha256": {
+    "research/models/start/start.blend": "0bbf756a1682519fdb4b974521dab2e564cdd296ac245f4a9153a75fed892a64",
+    "research/models/start/start-render.png": "89f0a62e2359679dd6452076dbb857cadd305bdf9172db8dc33472126667568a",
+    "site/public/models/start/start.glb": "7436143966928c59bf03aa4675f12ec09aa110eebdbe430e9d6e3bcbb9c220bd",
+    "site/public/models/start/start-fallback.glb": "0d9686f3b12fe9106676ee56d726d5c512778b41daf617bcebd861556b84a464",
+    "research/models/start/webgl/paper-normal.png": "adbc5ce18f01f01b5e6754b7df13a8cc4993d19937ecacd5806929ff9b4f2d4c"
+  },
+  "sourceSelection": "research/models/start/image-shortlist/selection.json",
+  "tools": {
+    "blender": "5.2.3 LTS",
+    "ktx": "4.4.2",
+    "gltfTransform": "4.5.1",
+    "meshoptimizer": "1.3.0",
+    "sharp": "0.35.5"
+  },
+  "baked": "Paper surface normals only",
+  "lighting": "Fully dynamic; no lighting or shadow bake",
+  "finalVisualAcceptance": false,
+  "homepageIntegrated": false
+}
