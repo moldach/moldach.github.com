@@ -1,0 +1,18 @@
+{
+  "webgl": {
+    "clearFooter": true,
+    "noSelector": true,
+    "enlarge": true,
+    "bothEarsFrozen": true,
+    "pointerStretch": true,
+    "reset": true
+  },
+  "canvas": {
+    "clearFooter": true,
+    "noSelector": true,
+    "enlarge": true,
+    "bothEarsFrozen": true,
+    "pointerStretch": true,
+    "reset": true
+  }
+}

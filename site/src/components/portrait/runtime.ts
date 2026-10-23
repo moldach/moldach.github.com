@@ -39,8 +39,13 @@ export async function mountPortrait(root: HTMLElement) {
     right: [0.28, -0.08],
     forehead: [0, 0.48],
     chin: [0, -0.6],
+    'left ear': [-0.52, 0.12],
+    'right ear': [0.5, 0.12],
   };
   let anchor = regions.nose;
+  let keyboardRegion = 0;
+  const regionNames = Object.keys(regions);
+  let earSize = 0;
   const pins: { anchor: number[]; pull: number[] }[] = [];
   function freeze() {
     if (Math.hypot(...pull) < 0.001) return;
@@ -67,6 +72,18 @@ export async function mountPortrait(root: HTMLElement) {
   const abort = new AbortController();
   const signal = abort.signal;
   const clamp = (n: number) => Math.max(-0.55, Math.min(0.55, n));
+  root.querySelector('[data-face-ears]')!.addEventListener(
+    'click',
+    () => {
+      earSize = Math.min(earSize + 0.3, 1.8);
+      status.textContent =
+        earSize >= 1.8
+          ? 'Maximum ear size. Reset restores the original.'
+          : 'Ears enlarged. Drag either ear to stretch; Reset restores the original.';
+      request();
+    },
+    { signal },
+  );
   root
     .querySelector('[data-face-freeze]')!
     .addEventListener('click', freeze, { signal });
@@ -136,6 +153,13 @@ export async function mountPortrait(root: HTMLElement) {
       dy += pin.pull[1] * w;
       depth += Math.hypot(...pin.pull) * w * 0.25;
     }
+    for (const center of [regions['left ear'], regions['right ear']]) {
+      const ex = x - center[0],
+        ey = y - center[1];
+      const weight = Math.exp(-(ex * ex + ey * ey) / 0.035) * edge;
+      dx += ex * earSize * weight;
+      dy += ey * earSize * weight;
+    }
     return [x + clamp(dx), y + clamp(dy), relief + Math.min(depth, 0.35)];
   }
   function draw() {
@@ -197,6 +221,7 @@ export async function mountPortrait(root: HTMLElement) {
     }
     root.dataset.facePull = Math.hypot(...pull).toFixed(3);
     root.dataset.facePins = String(pins.length);
+    root.dataset.faceEarSize = String(earSize);
   }
   function tick(time: number) {
     frame = 0;
@@ -269,6 +294,17 @@ export async function mountPortrait(root: HTMLElement) {
     canvas.addEventListener(
       'keydown',
       (event) => {
+        if (event.key.toLowerCase() === 'n') {
+          event.preventDefault();
+          keyboardRegion = (keyboardRegion + 1) % regionNames.length;
+          anchor = regions[regionNames[keyboardRegion]];
+          pull = [0, 0];
+          velocity = [0, 0];
+          dragging = held = false;
+          status.textContent = `Grab point: ${regionNames[keyboardRegion]}. Arrow keys stretch; F freezes.`;
+          request();
+          return;
+        }
         if (event.key === ' ') {
           event.preventDefault();
           release();
@@ -283,10 +319,6 @@ export async function mountPortrait(root: HTMLElement) {
         event.preventDefault();
         held = true;
         dragging = false;
-        anchor =
-          regions[
-            root.querySelector<HTMLSelectElement>('[data-face-region]')!.value
-          ];
         pull = [
           clamp(
             pull[0] +
@@ -359,6 +391,7 @@ export async function mountPortrait(root: HTMLElement) {
   return {
     reset() {
       pins.length = 0;
+      earSize = 0;
       pull = [0, 0];
       velocity = [0, 0];
       held = dragging = false;

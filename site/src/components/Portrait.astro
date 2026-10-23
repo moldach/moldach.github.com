@@ -14,7 +14,8 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
       loading="lazy"
     />
     <span>
-      Matthew Oldach<small>A little less serious. Give me a stretch ↗</small>
+      Stretch my face ↗
+      <small>Open an interactive portrait of Matthew Oldach</small>
     </span>
   </button>
   <dialog
@@ -30,8 +31,9 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
     </div>
     <h2 id="portrait-title">Go on. Pull a face.</h2>
     <p id="portrait-help">
-      Grab a cheek, nose or forehead. Press F while pulling to freeze that
-      point, then grab another. Without freezing, release to spring back.
+      Grab a cheek, nose, forehead or ear. Use Bigger ears to enlarge both ears.
+      Press F while pulling to freeze that point, then grab another. Without
+      freezing, release to spring back.
     </p>
     <div class="portrait-stage">
       <Image
@@ -46,7 +48,7 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
         data-face
         tabindex="0"
         role="img"
-        aria-label="Stretchable portrait of Matthew. Drag to stretch, or select a region below and use the arrow keys."
+        aria-label="Stretchable portrait of Matthew. Drag to stretch, or use arrow keys. Press N to change the keyboard grab point and F to freeze."
       ></canvas>
       <span class="portrait-hand" aria-hidden="true">
         <svg viewBox="0 0 64 72" width="42" height="48">
@@ -72,24 +74,15 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
       </span>
     </div>
     <div class="portrait-tools">
-      <label>
-        Grab a region{' '}
-        <select data-face-region>
-          <option value="nose">Nose</option>
-          <option value="left">Left cheek</option>
-          <option value="right">Right cheek</option>
-          <option value="forehead">Forehead</option>
-          <option value="chin">Chin</option>
-        </select>
-      </label>
+      <button data-face-ears>Bigger ears</button>
       <button data-face-freeze>Freeze point (F)</button>
       <button data-face-reset>Reset face ↺</button>
     </div>
     <p class="portrait-keyboard">
-      Keyboard: select a region, then focus the portrait and use arrow keys. F
-      freezes the current point. Repeat on other regions to build a face. Space
-      releases only the current pull; frozen points stay. Reset clears all
-      points. Escape closes.
+      Keyboard: focus the portrait and use arrow keys to stretch. N moves to the
+      next grab point. F freezes the current point. Repeat on other regions to
+      build a face. Space releases only the current pull; frozen points stay.
+      Reset clears all points. Escape closes.
     </p>
     <p class="sr-only" data-face-status aria-live="polite"></p>
   </dialog>

@@ -122,8 +122,7 @@ body {
   font-size: 0.6rem;
   margin: 0;
 }
-.portrait-dialog button,
-.portrait-tools select {
+.portrait-dialog button {
   color: var(--ink);
   background: #fff9ef;
   border: 1px solid #c6bba8;
@@ -184,14 +183,10 @@ body {
 }
 .portrait-tools {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: end;
   gap: 0.75rem;
-}
-.portrait-tools label {
-  display: grid;
-  gap: 0.3rem;
-  font-size: 0.7rem;
 }
 .portrait-keyboard {
   margin-top: 1rem;

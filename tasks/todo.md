@@ -163,3 +163,5 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Add independent face-point freezing with F/button, instructions and Reset; verify WebGL and Canvas fallback with desktop/touch emulation.
 
 - [x] Recover the brain-region tutorial from the author RSS feed with 26 local images, original R code/date and credits; replace external exhibit/card targets and new-host legacy redirect with the local article.
+
+- [x] Remove face-region dropdown, clarify footer invitation, and support ear stretching/enlargement with keyboard and touch alternatives plus reset; verify both renderers.

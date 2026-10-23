@@ -19,7 +19,7 @@ async (page) => {
  await page.waitForFunction(()=>document.querySelector('[data-portrait]')?.dataset.faceState==='ready');
  const root=page.locator('[data-portrait]'), face=page.locator('[data-face]');assert(await page.locator('dialog').isVisible(),'Portrait not opened');
  await face.focus();await page.keyboard.press('ArrowRight');await page.keyboard.press('f');await page.waitForFunction(()=>document.querySelector('[data-portrait]')?.dataset.facePins==='1');
- await page.locator('[data-face-region]').selectOption('forehead');await face.focus();await page.keyboard.press('ArrowUp');await page.locator('[data-face-freeze]').click();await page.waitForFunction(()=>document.querySelector('[data-portrait]')?.dataset.facePins==='2');
+ await face.focus();await page.keyboard.press('n');await page.keyboard.press('n');await page.keyboard.press('n');await page.keyboard.press('ArrowUp');await page.locator('[data-face-freeze]').click();await page.waitForFunction(()=>document.querySelector('[data-portrait]')?.dataset.facePins==='2');
  await face.focus();await page.keyboard.press('Space');assert(await root.getAttribute('data-face-pins')==='2','Space removed pins');
  await page.screenshot({path:'output/playwright/portrait-frozen-points.png',fullPage:true});
  await page.locator('[data-face-reset]').click();await page.waitForFunction(()=>document.querySelector('[data-portrait]')?.dataset.facePins==='0');
