@@ -158,3 +158,6 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Fix Studio lighting and remove visitor-facing lighting/debug controls.
 - [x] Wire six model/HTML tabs to actual chapter pages using the shared registry.
 - [x] Verify Services raycasting, touch, keyboard/reset, drag suppression, Back and fallback navigation.
+
+- [x] Connect Writing articles, Work project targets, Contact invitation and About portrait in the modeled books; verify native raycast and accessible links.
+- [x] Add independent face-point freezing with F/button, instructions and Reset; verify WebGL and Canvas fallback with desktop/touch emulation.

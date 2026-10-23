@@ -82,6 +82,9 @@ export async function mountChapterBook(root: HTMLElement) {
     if (closed) return;
     closed = true;
     abort.abort();
+    root
+      .querySelectorAll('[data-exhibit-hotspot]')
+      .forEach((node) => node.remove());
     resize?.disconnect();
     controls?.dispose();
     if (model) disposeModel(model);
@@ -102,7 +105,7 @@ export async function mountChapterBook(root: HTMLElement) {
     update();
     status.textContent = 'Book preview closed.';
     root
-      .querySelectorAll<HTMLInputElement | HTMLButtonElement>('input,button')
+      .querySelectorAll<HTMLButtonElement>('[data-reset]')
       .forEach((control) => {
         control.disabled = true;
       });
@@ -221,6 +224,28 @@ export async function mountChapterBook(root: HTMLElement) {
         anchor.style.height = `${height}px`;
       }
     }
+    function objectHref(object: THREE.Object3D) {
+      if (object.userData.futureInteraction === 'portrait-dialog')
+        return '#interactive-portrait';
+      const href = object.userData.href;
+      if (typeof href === 'string') {
+        if (
+          chapterIndex === 4 &&
+          href === '/about/' &&
+          /portrait/i.test(object.name)
+        )
+          return '#interactive-portrait';
+        if (chapterIndex === 5 && href === '/contact/') return '#enquiry';
+        const url = new URL(href, location.href);
+        if (['http:', 'https:', 'mailto:'].includes(url.protocol)) return href;
+      }
+    }
+    function openPortrait(event?: Event) {
+      event?.preventDefault();
+      document
+        .querySelector<HTMLButtonElement>('[data-portrait-open]')
+        ?.click();
+    }
     const chapterAt = (event: PointerEvent) => {
       if (!model || report.state !== 'ready') return undefined;
       const rect = canvas.getBoundingClientRect();
@@ -229,12 +254,15 @@ export async function mountChapterBook(root: HTMLElement) {
         1 - ((event.clientY - rect.top) / rect.height) * 2,
       );
       raycaster.setFromCamera(pointer, camera);
-      const hit = raycaster.intersectObject(model, true)[0];
-      let object: THREE.Object3D | null = hit?.object || null;
-      while (object) {
-        const index = object.userData.chapterIndex;
-        if (Number.isInteger(index)) return chapters[index]?.href;
-        object = object.parent;
+      for (const hit of raycaster.intersectObject(model, true)) {
+        let object: THREE.Object3D | null = hit.object;
+        while (object) {
+          const index = object.userData.chapterIndex;
+          if (Number.isInteger(index)) return chapters[index]?.href;
+          const href = objectHref(object);
+          if (href) return href;
+          object = object.parent;
+        }
       }
       return undefined;
     };
@@ -271,7 +299,11 @@ export async function mountChapterBook(root: HTMLElement) {
         )
           return;
         const href = chapterAt(event);
-        if (href) window.location.assign(href);
+        if (href === '#interactive-portrait') {
+          document
+            .querySelector<HTMLButtonElement>('[data-portrait-open]')
+            ?.click();
+        } else if (href) window.location.assign(href);
       },
       { signal },
     );
@@ -478,6 +510,31 @@ export async function mountChapterBook(root: HTMLElement) {
       if (box.isEmpty()) return;
       if (chapterBounds.has(index)) chapterBounds.get(index)!.union(box);
       else chapterBounds.set(index, box);
+    });
+    model.traverse((object) => {
+      const name = object.name.replaceAll('_', ' ');
+      if (
+        !/^(Printed (Supervised|The Gamification|Highlighting)|Project nameplate|Matthew headshot photograph|Contact invitation|Original supervised embedding|Original Fitbit game scene|Source brain illustration relief)/.test(
+          name,
+        )
+      )
+        return;
+      const href = objectHref(object);
+      if (!href) return;
+      const box = new THREE.Box3().setFromObject(object);
+      if (box.isEmpty()) return;
+      const link = document.createElement('a');
+      link.href = href;
+      link.dataset.exhibitHotspot = name;
+      const label = document.createElement('span');
+      label.className = 'sr-only';
+      label.textContent = name.replace(/^(Printed |Project nameplate )/, '');
+      link.append(label);
+      if (href === '#interactive-portrait')
+        link.addEventListener('click', openPortrait, { signal });
+      chapterBounds.set(anchors.length, box);
+      anchors.push(link);
+      root.querySelector('.chapter-tabs')!.append(link);
     });
     lighting();
     stage.dataset.ready = '';

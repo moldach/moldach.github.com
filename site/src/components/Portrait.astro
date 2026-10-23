@@ -30,7 +30,8 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
     </div>
     <h2 id="portrait-title">Go on. Pull a face.</h2>
     <p id="portrait-help">
-      Grab a cheek, nose or forehead. Release and watch it spring back.
+      Grab a cheek, nose or forehead. Press F while pulling to freeze that
+      point, then grab another. Without freezing, release to spring back.
     </p>
     <div class="portrait-stage">
       <Image
@@ -81,11 +82,14 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
           <option value="chin">Chin</option>
         </select>
       </label>
+      <button data-face-freeze>Freeze point (F)</button>
       <button data-face-reset>Reset face ↺</button>
     </div>
     <p class="portrait-keyboard">
-      Keyboard: select a region, then focus the portrait and use arrow keys.
-      Space releases. Escape closes.
+      Keyboard: select a region, then focus the portrait and use arrow keys. F
+      freezes the current point. Repeat on other regions to build a face. Space
+      releases only the current pull; frozen points stay. Reset clears all
+      points. Escape closes.
     </p>
     <p class="sr-only" data-face-status aria-live="polite"></p>
   </dialog>
@@ -95,8 +99,13 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
   if (root) {
     const dialog = root.querySelector('dialog')!;
     const open = root.querySelector<HTMLButtonElement>('[data-portrait-open]')!;
+    let returnFocus: HTMLElement = open;
     let engine: { reset(): void; stop(): void; start(): void } | undefined;
     open.addEventListener('click', async () => {
+      returnFocus =
+        document.activeElement instanceof HTMLElement
+          ? document.activeElement
+          : open;
       dialog.showModal();
       if (engine) {
         engine.start();
@@ -123,7 +132,7 @@ const texture = await getImage({ src: headshot, width: 200, format: 'png' });
       .addEventListener('click', () => dialog.close());
     dialog.addEventListener('close', () => {
       engine?.stop();
-      open.focus();
+      returnFocus.focus({ preventScroll: true });
     });
     dialog.addEventListener('keydown', (event) => {
       if (event.key !== 'Tab') return;

@@ -41,6 +41,21 @@ export async function mountPortrait(root: HTMLElement) {
     chin: [0, -0.6],
   };
   let anchor = regions.nose;
+  const pins: { anchor: number[]; pull: number[] }[] = [];
+  function freeze() {
+    if (Math.hypot(...pull) < 0.001) return;
+    if (pins.length >= 20) {
+      status.textContent = '20 points frozen. Reset the face to start again.';
+      return;
+    }
+    pins.push({ anchor: [...anchor], pull: [...pull] });
+    pull = [0, 0];
+    velocity = [0, 0];
+    dragging = held = false;
+    stage.classList.remove('is-grabbing');
+    status.textContent = `${pins.length} points frozen. Grab another region; Reset clears all points.`;
+    request();
+  }
   let pull = [0, 0],
     velocity = [0, 0];
   let dragging = false,
@@ -52,6 +67,23 @@ export async function mountPortrait(root: HTMLElement) {
   const abort = new AbortController();
   const signal = abort.signal;
   const clamp = (n: number) => Math.max(-0.55, Math.min(0.55, n));
+  root
+    .querySelector('[data-face-freeze]')!
+    .addEventListener('click', freeze, { signal });
+  root.querySelector('dialog')!.addEventListener(
+    'keydown',
+    (event) => {
+      if (
+        event.key.toLowerCase() === 'f' &&
+        !event.repeat &&
+        !(event.target instanceof HTMLSelectElement)
+      ) {
+        event.preventDefault();
+        freeze();
+      }
+    },
+    { signal },
+  );
   function fallbackMode() {
     renderer?.dispose();
     renderer = undefined;
@@ -92,11 +124,19 @@ export async function mountPortrait(root: HTMLElement) {
     const relief =
       0.1 * Math.exp(-(x * x * 3 + y * y)) +
       0.07 * Math.exp(-(x * x + (y + 0.02) ** 2) / 0.08);
-    return [
-      x + pull[0] * weight,
-      y + pull[1] * weight,
-      relief + Math.hypot(...pull) * weight * 0.25,
-    ];
+    let dx = pull[0] * weight,
+      dy = pull[1] * weight;
+    let depth = Math.hypot(...pull) * weight * 0.25;
+    for (const pin of pins) {
+      const w =
+        Math.exp(
+          -((x - pin.anchor[0]) ** 2 + (y - pin.anchor[1]) ** 2) / 0.15,
+        ) * edge;
+      dx += pin.pull[0] * w;
+      dy += pin.pull[1] * w;
+      depth += Math.hypot(...pin.pull) * w * 0.25;
+    }
+    return [x + clamp(dx), y + clamp(dy), relief + Math.min(depth, 0.35)];
   }
   function draw() {
     if (renderer) {
@@ -156,6 +196,7 @@ export async function mountPortrait(root: HTMLElement) {
       }
     }
     root.dataset.facePull = Math.hypot(...pull).toFixed(3);
+    root.dataset.facePins = String(pins.length);
   }
   function tick(time: number) {
     frame = 0;
@@ -192,6 +233,7 @@ export async function mountPortrait(root: HTMLElement) {
     canvas.addEventListener(
       'pointerdown',
       (event) => {
+        canvas.focus({ preventScroll: true });
         const handRect = stage.getBoundingClientRect();
         hand.style.left = `${event.clientX - handRect.left}px`;
         hand.style.top = `${event.clientY - handRect.top}px`;
@@ -266,7 +308,7 @@ export async function mountPortrait(root: HTMLElement) {
         velocity = [0, 0];
         draw();
         status.textContent =
-          'Face stretched. Space releases; Reset restores the portrait.';
+          'Face stretched. F freezes this point; Space releases the current pull; Reset clears everything.';
       },
       { signal },
     );
@@ -316,6 +358,7 @@ export async function mountPortrait(root: HTMLElement) {
   resize();
   return {
     reset() {
+      pins.length = 0;
       pull = [0, 0];
       velocity = [0, 0];
       held = dragging = false;

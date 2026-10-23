@@ -20,6 +20,25 @@ const position = start
     ? [0.12, 11.8, 15]
     : [0.12, 15, 12];
 const lens = start ? 51 : chapter === 'Contact' ? 59 : 57;
+const exhibits =
+  chapter === 'Writing'
+    ? [
+        ['Supervised UMAP', '/writing/supervised-umap/'],
+        ['The Gamification of Fitbit', '/writing/fitbit-gamification/'],
+        [
+          'Highlighting 3D Brain Regions',
+          'https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574',
+        ],
+      ]
+    : chapter === 'Work'
+      ? [
+          ['PuttPulse', '#puttpulse'],
+          ['Shiny-filteRs', '#shiny-filters'],
+          ['Hinuhinu', '#hinuhinu'],
+        ]
+      : chapter === 'Contact'
+        ? [['Start a conversation', '#enquiry']]
+        : [];
 ---
 
 <section
@@ -68,6 +87,16 @@ const lens = start ? 51 : chapter === 'Contact' ? 59 : 57;
   <button type="button" data-reset>
     Reset view
   </button>
+  <nav aria-label={`${chapter} exhibits`} class="exhibit-links">
+    {exhibits.map(([label, href]) => (
+      <a href={href}>{label} ↗</a>
+    ))}
+    {chapter === 'About' && (
+      <button type="button" data-book-portrait>
+        Pull a face ↗
+      </button>
+    )}
+  </nav>
   <pre data-metrics hidden></pre>
 </section>
 <noscript>
@@ -83,12 +112,28 @@ const lens = start ? 51 : chapter === 'Contact' ? 59 : 57;
     document
       .querySelectorAll<HTMLElement>('[data-chapter-book]')
       .forEach((root) => mountChapterBook(root));
+  document
+    .querySelectorAll('[data-book-portrait]')
+    .forEach((button) =>
+      button.addEventListener('click', () =>
+        document
+          .querySelector<HTMLButtonElement>('[data-portrait-open]')
+          ?.click(),
+      ),
+    );
   mount();
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) mount();
   });
 </script>
 <style>
+  .exhibit-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding: 8px 16px 20px;
+    font-size: 14px;
+  }
   .chapter-book {
     width: 100%;
     max-width: 1536px;
@@ -129,18 +174,18 @@ const lens = start ? 51 : chapter === 'Contact' ? 59 : 57;
     inset: 0;
     pointer-events: none;
   }
-  .chapter-tabs a {
+  .chapter-tabs :global(a) {
     position: absolute;
     pointer-events: auto;
     border-radius: 3px;
     min-height: 28px;
   }
-  .chapter-tabs a:focus-visible {
+  .chapter-tabs :global(a:focus-visible) {
     outline: 3px solid #245ed0;
     outline-offset: 2px;
     background: #1a54bb18;
   }
-  .sr-only {
+  :global(.chapter-book .sr-only) {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -179,7 +224,7 @@ const lens = start ? 51 : chapter === 'Contact' ? 59 : 57;
     .stage {
       border-radius: 0;
     }
-    .chapter-tabs a {
+    .chapter-tabs :global(a) {
       min-height: 36px;
     }
   }
