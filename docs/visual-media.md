@@ -51,3 +51,8 @@ The Work reference now has its own editable Blender scene and offline render in 
 ## About asset study — 23 October 2026
 
 `tool/assets/build_about.py` now authors the About reference as its own editable Blender scene under `research/models/about/`: supplied headshot in a separate cobalt frame, CV panel, plant/books, compass, notebook, gridded strategy board and two articulated paper hands. The original headshot is preserved and recorded in provenance; CV rules are decorative rather than fabricated qualifications. This offline asset does not replace or implement the existing interactive face dialog. The preview and website source remain unchanged; final visual acceptance, material baking and browser parity are pending.
+
+
+## Writing asset study — 23 October 2026
+
+The Writing spread now has an editable scene, offline render and draft GLB under `research/models/writing/`, authored by `tool/assets/build_writing.py`. It combines a proofing press with the original UMAP plot, Fitbit image/wristband and a source-textured shallow brain illustration. The small red brain region and source aspect ratios are preserved; depth is illustrative and no new scientific results are asserted. Article destinations survive as metadata. Browser wiring, material baking and final visual acceptance remain pending. `research/models/README.md` tracks all six chapters: four studies exist; Start and Contact remain in the Blender workflow.

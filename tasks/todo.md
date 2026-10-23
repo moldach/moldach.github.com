@@ -121,3 +121,10 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Author and render a separate About spread with the supplied headshot, paper hands, strategy board and About tag.
 - [x] Preserve original portrait provenance and avoid invented CV content.
 - [ ] Complete visual acceptance, material baking and browser integration; retain the required face interaction.
+
+
+### Writing asset study
+- [x] Author and render the three agreed article exhibits, proofing press and Writing tag.
+- [x] Record source provenance and the actual internal/publisher destinations.
+- [ ] Complete visual acceptance, material baking, browser links and history checks after integration.
+- [ ] Finish remaining Blender studies: Start and Contact.
