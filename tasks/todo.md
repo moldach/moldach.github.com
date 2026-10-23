@@ -140,5 +140,6 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 ### Start asset study
 - [x] Author and render the opening with independent terminal, keyboard, photo tray, accordion and three perforated film loops.
 - [x] Preserve the original style-transfer artwork and its existing article destination.
+- [x] Apply all ten owner-approved article visuals to the offline Start study; verify embedded images and object assignments.
 - [x] Complete the offline study inventory for all six chapters.
 - [ ] Obtain visual acceptance, bake materials, optimize and integrate the scenes; verify browser navigation, page turns and performance.

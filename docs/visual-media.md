@@ -66,3 +66,8 @@ The Writing spread now has an editable scene, offline render and draft GLB under
 ## Start asset study — 23 October 2026
 
 `tool/assets/build_start.py` authors an independent opening study under `research/models/start/`: coral photo tray, folded proof sequence, detailed cream terminal and keyboard, three curved perforated film loops and a standing output photograph. The original skiing style-transfer image is preserved and used only inside photo/film meshes, with source hashes and article-destination metadata recorded. All six chapters now have offline Blender studies; see the current `research/models/README.md` inventory. This does not establish final visual acceptance, material baking or browser parity. The earlier Three.js prototype, current preview and required interactive portrait are unchanged.
+
+
+## Approved Start imagery — 23 October 2026
+
+The owner approved the ten-image shortlist. The offline Start study now assigns the hero plus six different skiing-animation treatments to the film loops/photo mounts, the original style collection to the tray, and the comparison/activation-atlas figures to wider paper proof cards. The atlas is labeled as referenced Distill research. `image-shortlist/selection.json` records the approved sources and unretouched GIF frame extractions. Image approval does not imply final scene approval or browser integration; website source and preview remain unchanged.

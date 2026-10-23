@@ -2,6 +2,8 @@
 Original article artwork is used only within independent photo and film meshes.
 """
 
+import hashlib
+import json
 import math
 import sys
 from pathlib import Path
@@ -14,16 +16,24 @@ import paper_scene as B  # noqa: E402
 OUT = B.ROOT / "research/models/start"
 ARTICLE = "/writing/faststyletransfer/"
 B.make_book(0)
-photo = bpy.data.materials.new("Original skiing style-transfer print")
-photo.use_nodes = True
-nodes = photo.node_tree.nodes
-tex = nodes.new("ShaderNodeTexImage")
-tex.image = bpy.data.images.load(str(B.ROOT / "post/faststyletransfer/featured.png"))
-tex.image.pack()
-photo.node_tree.links.new(
-    tex.outputs["Color"], nodes.get("Principled BSDF").inputs["Base Color"]
-)
-nodes.get("Principled BSDF").inputs["Roughness"].default_value = 0.77
+# The owner-approved selection is the single texture registry for this study.
+selection = json.loads((OUT / "image-shortlist/selection.json").read_text())
+assert {item["number"] for item in selection} == set(range(1, 11))
+photos = {}
+for item in selection:
+    path = B.ROOT / item["previewPath"]
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == item["sha256"], path
+    material = bpy.data.materials.new(f"Approved {item['number']:02} {item['title']}")
+    material.use_nodes = True
+    nodes = material.node_tree.nodes
+    tex = nodes.new("ShaderNodeTexImage")
+    tex.image = bpy.data.images.load(str(path), check_existing=True)
+    tex.image.pack()
+    material.node_tree.links.new(
+        tex.outputs["Color"], nodes.get("Principled BSDF").inputs["Base Color"]
+    )
+    nodes.get("Principled BSDF").inputs["Roughness"].default_value = 0.77
+    photos[item["number"]] = material
 
 
 def printed(name, body, x, y, size, font=B.font):
@@ -45,8 +55,9 @@ printed(
 )
 
 
-def textured(name, verts, uv):
-    o = B.mesh(name, verts, [tuple(range(len(verts)))], photo)
+def textured(name, verts, uv, image_number=1):
+    o = B.mesh(name, verts, [tuple(range(len(verts)))], photos[image_number])
+    o["approvedImageNumber"] = image_number
     layer = o.data.uv_layers.new(name="Original image UV")
     for p in o.data.polygons:
         for i in p.loop_indices:
@@ -55,12 +66,12 @@ def textured(name, verts, uv):
     return o
 
 
-def frame(name, x, y, z, w=0.80, h=1.09, tilt=-0.25):
+def frame(name, x, y, z, w=0.80, h=1.09, tilt=-0.25, image_number=1, caption=None):
     before = set(bpy.data.objects)
     B.box(
         name + " cream mount",
-        (x, y, z + h / 2),
-        (w + 0.13, 0.07, h + 0.16),
+        (x, y, z + h / 2 - (0.06 if caption else 0)),
+        (w + 0.13, 0.07, h + (0.28 if caption else 0.16)),
         B.white,
         0.008,
     )
@@ -73,7 +84,18 @@ def frame(name, x, y, z, w=0.80, h=1.09, tilt=-0.25):
             (x - w / 2, y - 0.04, z + h),
         ],
         [(0, 0), (1, 0), (1, 1), (0, 1)],
+        image_number,
     )
+    if caption:
+        B.text(
+            name + " caption",
+            caption,
+            (x, y - 0.045, z - 0.13),
+            0.09,
+            B.sans,
+            rotation=(math.pi / 2, 0, 0),
+            align="CENTER",
+        )
     root = bpy.data.objects.new(name + " folded hinge", None)
     bpy.context.collection.objects.link(root)
     root.location = (x, y, z)
@@ -92,15 +114,17 @@ for x in [-4.33, -2.31]:
     B.box("Tray folded side", (x, -0.94, 0.88), (0.08, 1.58, 0.48), B.coral)
 B.box("Tray rear", (-3.32, -0.19, 0.92), (2.08, 0.08, 0.54), B.coral)
 B.box("Tray front", (-3.32, -1.70, 0.84), (2.08, 0.08, 0.36), B.coral)
-for i in range(5):
+for i, image_number in enumerate([8, 2, 3, 4, 5]):
+    image = photos[image_number].node_tree.nodes.get("Image Texture").image
     frame(
         "Tray proof " + str(i),
         -3.65 + i * 0.15,
         -1.35 + i * 0.23,
         0.75,
         0.82,
-        0.82 * 795 / 585,
+        0.82 * image.size[1] / image.size[0],
         -0.16 - i * 0.025,
+        image_number,
     )
 # Accordion feed crossing the gutter, alternating photograph mounts and printed rules.
 for i in range(9):
@@ -129,6 +153,7 @@ for i in range(9):
                 (x + 0.04, y - 0.009, z + 0.68),
             ],
             [(0, 0), (1, 0), (1, 1), (0, 1)],
+            [2, 3, 4, 6, 7][i // 2],
         )
     else:
         for j in range(4):
@@ -247,7 +272,7 @@ bpy.context.object.data.materials.append(B.blueprint)
 
 # Each film loop is a real bent strip with open sprocket perforations.
 # The center carries repeated full original photographs; the two edge rails have holes.
-def ribbon(name, cx, cy, cz, rx, rz, width, lean):
+def ribbon(name, cx, cy, cz, rx, rz, width, lean, image_numbers):
     def point(t, v, offset=0):
         return (
             cx + rx * math.cos(t) + v * math.cos(lean),
@@ -303,7 +328,11 @@ def ribbon(name, cx, cy, cz, rx, rz, width, lean):
                 verts.append(point(t0 + (t1 - t0) * i / n, v, 0.012))
                 uv.append((j, i / n))
         faces = [(2 * i, 2 * i + 1, 2 * i + 3, 2 * i + 2) for i in range(n)]
-        o = B.mesh(name + " original film frame " + str(f), verts, faces, photo)
+        image_number = image_numbers[f % len(image_numbers)]
+        o = B.mesh(
+            name + " original film frame " + str(f), verts, faces, photos[image_number]
+        )
+        o["approvedImageNumber"] = image_number
         layer = o.data.uv_layers.new(name="Full original photo")
         for p in o.data.polygons:
             for idx in p.loop_indices:
@@ -311,10 +340,33 @@ def ribbon(name, cx, cy, cz, rx, rz, width, lean):
         o["href"] = ARTICLE
 
 
-ribbon("High film loop", 3.15, 1.32, 3.02, 0.64, 0.88, 1.42, 0.75)
-ribbon("Middle film loop", 1.50, 1.25, 2.90, 0.62, 0.78, 1.28, 0.55)
-ribbon("Small film loop", 0.40, 0.96, 2.36, 0.49, 0.58, 1.02, 0.55)
+ribbon("High film loop", 3.15, 1.32, 3.02, 0.64, 0.88, 1.42, 0.75, [4, 5])
+ribbon("Middle film loop", 1.50, 1.25, 2.90, 0.62, 0.78, 1.28, 0.55, [3, 6])
+ribbon("Small film loop", 0.40, 0.96, 2.36, 0.49, 0.58, 1.02, 0.55, [2, 7])
 frame("Resolved output photograph", 4.12, -0.84, 0.64, 0.85, 0.85 * 795 / 585, -0.20)
+# Wider proof cards preserve the full explanatory figures, with attached credits.
+frame(
+    "Content style output proof",
+    -0.85,
+    -1.36,
+    0.70,
+    1.30,
+    1.30 * 912 / 897,
+    -0.38,
+    9,
+    "Content + style = output",
+)
+frame(
+    "Referenced activation atlas",
+    2.95,
+    -2.12,
+    0.70,
+    1.50,
+    1.50 * 867 / 1228,
+    -0.40,
+    10,
+    "Activation atlas · Distill",
+)
 B.box("Style transfer placard", (2.93, 0.18, 2.68), (1.57, 0.06, 0.32), B.white, 0.014)
 B.text(
     "Style transfer label",
