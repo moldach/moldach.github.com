@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Page from '../layouts/Page.astro';
-import ChapterBook from '../components/ChapterBook.astro';
+import PageTurn from '../components/PageTurn.astro';
 import ProjectVideo from '../components/ProjectVideo.astro';
 import WritingExhibits from '../components/WritingExhibits.astro';
 import {
@@ -26,7 +26,8 @@ const latest = (await writingEntries()).slice(0, 3);
 ---
 
 <Page {...pages['/']}>
-  <section class="hero" aria-labelledby="home-title">
+  <PageTurn initialChapter="start" navigation />
+  <section class="home-intro wrap" aria-labelledby="home-title">
     <div class="hero-copy">
       <p class="eyebrow">Small-business AI consulting · Remote, worldwide</p>
       <h1 id="home-title">
@@ -47,7 +48,6 @@ const latest = (await writingEntries()).slice(0, 3);
         </a>
       </div>
     </div>
-    <ChapterBook chapter="Start" />
   </section>
   <section
     class="visual-work wrap"

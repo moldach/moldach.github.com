@@ -1,12 +1,28 @@
 ---
 import { chapters } from '../lib/registry';
+interface Props {
+  initialChapter?: 'start' | 'services';
+  navigation?: boolean;
+}
+const { initialChapter = 'start', navigation = false } = Astro.props;
+const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
 ---
 
-<section data-page-turn aria-label="Start and Services page-turn prototype">
+<section
+  data-page-turn
+  data-initial={initialChapter}
+  data-navigation={navigation ? 'page' : 'review'}
+  class:list={[{ integrated: navigation }]}
+  aria-label={`${initialLabel} chapter book`}
+>
   <div class="stage" data-stage>
     <img
-      src="/models/start/poster.webp"
-      alt="Start chapter pop-up book"
+      src={
+        initialChapter === 'start'
+          ? '/models/start/poster.webp'
+          : '/models/chapters/services.webp'
+      }
+      alt={`${initialLabel} chapter pop-up book`}
       width="1536"
       height="1024"
       fetchpriority="high"
@@ -20,7 +36,9 @@ import { chapters } from '../lib/registry';
         <a
           href={chapter.href}
           data-chapter={i}
-          aria-current={i === 0 ? 'page' : undefined}
+          aria-current={
+            i === (initialChapter === 'start' ? 0 : 1) ? 'page' : undefined
+          }
           style={`left:${8 + i * 14.3}%;top:87%;width:12%;height:6%`}
         >
           <span>{chapter.label}</span>
@@ -30,20 +48,20 @@ import { chapters } from '../lib/registry';
   </div>
   <div class="review-actions">
     <p role="status" aria-live="polite">
-      Opening Start…
+      Opening {initialLabel}…
     </p>
     <button type="button" data-retry hidden>
       Retry Services
     </button>
-    <a href="/" data-open-chapter>
-      Open Start chapter page ↗
+    <a href={initialChapter === 'start' ? '/' : '/services/'} data-open-chapter>
+      Open {initialLabel} chapter page ↗
     </a>
     <a href="/services/">Open Services page ↗</a>
   </div>
   <p class="help">
     Choose Start or Services on the book to turn a page. Viewing{' '}
-    <strong data-current>Start</strong>. Keyboard and reduced-motion navigation
-    switch directly.
+    <strong data-current>{initialLabel}</strong>. Keyboard and reduced-motion
+    navigation switch directly.
   </p>
   <noscript>
     <p>
@@ -70,6 +88,23 @@ import { chapters } from '../lib/registry';
   });
 </script>
 <style>
+  .integrated {
+    width: 100%;
+    max-width: 1536px;
+    margin: 0 auto 24px;
+    min-width: 0;
+  }
+  .integrated .help,
+  .integrated .review-actions a {
+    display: none;
+  }
+  .integrated [role='status'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
   .stage {
     aspect-ratio: 3/2;
     position: relative;

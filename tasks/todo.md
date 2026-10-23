@@ -168,4 +168,5 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 
 - [x] Deliver separate Start ↔ Services page-turn prototype with explicit export rigs, one book base, geometric leaf, reverse/queued navigation and dynamic lighting.
 - [x] Verify keyboard/reduced-motion, touch emulation, loading retry, pause/resume, resize, context-loss fallback and disposal; record matching-camera and phase captures plus actual asset/render timings.
-- [ ] Obtain owner visual approval of `/review/page-turn/` before homepage integration or extending turns to other chapters; profile recorded stalls and verify Safari/physical devices.
+- [x] Connect Start/Services turns to the main preview following the owner’s explicit integration request; move Home’s book above the text as a full-width banner.
+- [ ] Obtain final visual acceptance before extending turns to other chapters; profile integrated performance and verify Safari/physical devices.

@@ -1317,3 +1317,23 @@ li + li {
     margin-bottom: 1.5rem;
   }
 }
+
+/* Home follows the chapter-page hierarchy: book banner, then readable offer. */
+.home-intro {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.home-intro h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  margin: 1rem 0 1.5rem;
+}
+.home-intro .intro {
+  max-width: 48rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+.home-intro .eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}

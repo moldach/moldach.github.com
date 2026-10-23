@@ -89,3 +89,7 @@ The dev site now renders each matching modeled book above its chapter content, i
 ## Separate page-turn review — 23 October 2026
 
 `/review/page-turn/` adds a two-chapter Start ↔ Services prototype with one stationary book base, explicit exported folding rigs, a geometric turning leaf, dynamic Studio lighting/shadows, preserved tabs and ordinary navigation fallbacks. Current homepage/chapter renderers are unchanged. See `research/verification/page-turn/README.md` for reproducible exports, matching-camera comparisons, phase captures, tests and performance limitations. Visual approval precedes integration or expansion; Safari and physical devices remain unverified.
+
+## Main Start/Services banner correction — 23 October 2026
+
+Following the owner’s explicit request, the page-turn renderer is now connected to Home and Services. Home’s full-width book precedes its headline/copy. Main navigation plays the turn before opening the destination; direct entry and Back retain the correct spread. Close resting framing gently pulls back during motion. The review page retains its fixed camera. See `research/verification/integrated-book/` for fresh checks/captures. No deployment.

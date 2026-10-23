@@ -1,12 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import {
-  readFile,
-  writeFile,
-  mkdir,
-  copyFile,
-  stat,
-  rm,
-} from 'node:fs/promises';
+import { readFile, writeFile, mkdir, copyFile, stat } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { load } from 'cheerio';
 import { siteConfig } from '../src/lib/site-config.mjs';
@@ -35,9 +28,6 @@ const build = spawnSync(process.execPath, [cli, 'build', '--outDir', dist], {
   env: { ...process.env, ASTRO_TELEMETRY_DISABLED: '1' },
 });
 if (build.status !== 0) process.exit(build.status || 1);
-// Experimental animation assets have no production consumer before visual approval.
-if (config.production)
-  await rm(resolve(dist, 'models/page-turn'), { recursive: true, force: true });
 const root = resolve('..');
 const inventory = JSON.parse(
   await readFile(resolve(root, 'docs/migration/inventory.json'), 'utf8'),

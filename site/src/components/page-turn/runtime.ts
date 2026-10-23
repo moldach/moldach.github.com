@@ -3,7 +3,7 @@ import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { duration, pose, clamp } from './motion.mjs';
+import { duration, pose, clamp, ease } from './motion.mjs';
 import assets from '../../../public/models/page-turn/manifest.json';
 const assetFor = (chapter: Chapter) =>
   assets.chapters.find((item) => item.chapter === chapter)!;
@@ -24,6 +24,9 @@ export async function mountPageTurn(root: HTMLElement) {
   const open = root.querySelector<HTMLAnchorElement>('[data-open-chapter]')!,
     retry = root.querySelector<HTMLButtonElement>('[data-retry]')!,
     metrics = root.querySelector<HTMLElement>('[data-metrics]')!;
+  const initial: Chapter =
+    root.dataset.initial === 'services' ? 'services' : 'start';
+  const pageNavigation = root.dataset.navigation === 'page';
   const anchors = [
     ...root.querySelectorAll<HTMLAnchorElement>('[data-chapter]'),
   ];
@@ -34,7 +37,7 @@ export async function mountPageTurn(root: HTMLElement) {
     tabBounds = new Map<number, THREE.Box3>();
   const report: Record<string, unknown> = {
     state: 'loading',
-    selected: 'start',
+    selected: initial,
     lighting: 'studio',
     physicalDeviceVerified: false,
     drawCalls: 0,
@@ -57,8 +60,8 @@ export async function mountPageTurn(root: HTMLElement) {
     surface: boolean;
     material: THREE.MeshStandardMaterial;
   }[] = [];
-  let selected: Chapter = 'start',
-    requested: Chapter = 'start',
+  let selected: Chapter = initial,
+    requested: Chapter = initial,
     closed = false,
     servicesLoading = false,
     pendingInstant = false,
@@ -141,6 +144,53 @@ export async function mountPageTurn(root: HTMLElement) {
     controls.minPolarAngle = 0.35;
     controls.maxPolarAngle = 1.3;
     controls.update();
+    const restingCamera = (chapter: Chapter) =>
+      chapter === 'start'
+        ? {
+            position: new THREE.Vector3(0.12, 13.6, 14),
+            target: new THREE.Vector3(0, 0.7, 0),
+            lens: 51,
+          }
+        : {
+            position: new THREE.Vector3(0.12, 15, 12),
+            target: new THREE.Vector3(0, 0.7, 0),
+            lens: 57,
+          };
+    const wideCamera = {
+      position: new THREE.Vector3(0.12, 17, 18),
+      target: new THREE.Vector3(0, 2, 0),
+      lens: 48,
+    };
+    let focalLength = pageNavigation ? restingCamera(initial).lens : 48;
+    function frameCamera(
+      time?: number,
+      from: Chapter = selected,
+      to: Chapter = selected,
+    ) {
+      if (!pageNavigation) return;
+      const incoming = time !== undefined && time >= 1150;
+      const a =
+        time === undefined
+          ? restingCamera(to)
+          : incoming
+            ? wideCamera
+            : restingCamera(from);
+      const b =
+        time === undefined ? a : incoming ? restingCamera(to) : wideCamera;
+      const amount =
+        time === undefined
+          ? 0
+          : incoming
+            ? ease((time - 1150) / 450)
+            : ease(time / 350);
+      camera.position.copy(a.position).lerp(b.position, amount);
+      controls!.target.copy(a.target).lerp(b.target, amount);
+      focalLength = THREE.MathUtils.lerp(a.lens, b.lens, amount);
+      camera.setFocalLength(focalLength);
+      camera.lookAt(controls!.target);
+      camera.updateProjectionMatrix();
+    }
+    frameCamera(undefined, initial, initial);
     const room = new RoomEnvironment();
     pmrem = new THREE.PMREMGenerator(renderer);
     environment = pmrem.fromScene(room, 0.04);
@@ -317,6 +367,9 @@ export async function mountPageTurn(root: HTMLElement) {
       leaf!.visible = false;
       transition = undefined;
       controls!.enabled = true;
+      frameCamera(undefined, chapter, chapter);
+      controls!.update();
+      controls!.saveState();
       report.state = 'settled';
       report.progress = 1;
       tabs();
@@ -326,6 +379,7 @@ export async function mountPageTurn(root: HTMLElement) {
     function showFrame(time: number) {
       const t = transition!;
       const p = pose(time);
+      frameCamera(time, t.from, t.to);
       const from = models.get(t.from)!,
         to = models.get(t.to)!;
       from.content.visible = p.leaf < 0.5;
@@ -336,6 +390,11 @@ export async function mountPageTurn(root: HTMLElement) {
       turnLeaf(t.to === 'services' ? p.leaf : 1 - p.leaf);
       report.progress = clamp(time / duration);
       render(true);
+    }
+    function navigateSettled() {
+      if (!pageNavigation || selected === initial || requested !== selected)
+        return;
+      location.assign(selected === 'start' ? '/' : '/services/');
     }
     function tick(now: number) {
       frame = 0;
@@ -352,6 +411,7 @@ export async function mountPageTurn(root: HTMLElement) {
       if (t.elapsed >= duration) {
         settle(t.to);
         if (requested !== selected) begin(requested);
+        else navigateSettled();
       } else frame = requestAnimationFrame(tick);
     }
     function begin(chapter: Chapter) {
@@ -368,6 +428,15 @@ export async function mountPageTurn(root: HTMLElement) {
       requested = chapter;
       pendingInstant = instant;
       if (closed) return;
+      if (pageNavigation && report.servicesError) {
+        location.assign(chapter === 'start' ? '/' : '/services/');
+        return;
+      }
+      if (!models.has(selected)) {
+        status.textContent =
+          'Preparing the book. Your chapter selection is queued.';
+        return;
+      }
       if (!models.has(chapter)) {
         status.textContent =
           'Services is loading. The current chapter remains open.';
@@ -378,6 +447,7 @@ export async function mountPageTurn(root: HTMLElement) {
         cancelAnimationFrame(frame);
         frame = 0;
         settle(chapter);
+        navigateSettled();
         return;
       }
       begin(chapter);
@@ -389,8 +459,48 @@ export async function mountPageTurn(root: HTMLElement) {
           if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey)
             return;
           event.preventDefault();
+          event.stopPropagation();
           choose(
             a.dataset.chapter === '0' ? 'start' : 'services',
+            event.detail === 0,
+          );
+        },
+        { signal },
+      );
+    if (pageNavigation)
+      document.addEventListener(
+        'click',
+        (event) => {
+          if (
+            event.defaultPrevented ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey
+          )
+            return;
+          const link = (event.target as Element)?.closest<HTMLAnchorElement>(
+            'a[href]',
+          );
+          if (
+            !link ||
+            root.contains(link) ||
+            link.target ||
+            link.hasAttribute('download')
+          )
+            return;
+          const url = new URL(link.href, location.href);
+          if (
+            url.origin !== location.origin ||
+            url.search ||
+            url.hash ||
+            !['/', '/services/'].includes(url.pathname)
+          )
+            return;
+          event.preventDefault();
+          root.scrollIntoView({ block: 'start', behavior: 'instant' });
+          choose(
+            url.pathname === '/' ? 'start' : 'services',
             event.detail === 0,
           );
         },
@@ -508,11 +618,17 @@ export async function mountPageTurn(root: HTMLElement) {
         );
         model.content.visible = false;
         rigPose(model, 1);
+        if (initial === 'services' && report.state === 'loading') {
+          stage.dataset.ready = '';
+          settle('services');
+        }
         report.servicesReady = true;
         delete report.servicesError;
         if (requested !== selected) choose(requested, pendingInstant);
         else {
-          status.textContent = 'Choose Services to turn the page.';
+          status.textContent = pageNavigation
+            ? 'Book ready.'
+            : 'Choose Services to turn the page.';
           render();
         }
       } catch (error) {
@@ -631,7 +747,7 @@ export async function mountPageTurn(root: HTMLElement) {
     observer = new ResizeObserver(() => {
       renderer!.setSize(stage.clientWidth, stage.clientHeight, false);
       camera.aspect = stage.clientWidth / stage.clientHeight;
-      camera.setFocalLength(48);
+      camera.setFocalLength(focalLength);
       camera.updateProjectionMatrix();
       render();
     });
@@ -658,9 +774,13 @@ export async function mountPageTurn(root: HTMLElement) {
         { signal },
       );
     register(await load(assetFor('start').url), 'start');
-    stage.dataset.ready = '';
     controls.saveState();
-    settle('start');
+    if (initial === 'start') {
+      stage.dataset.ready = '';
+      settle('start');
+    } else {
+      models.get('start')!.content.visible = false;
+    }
     void loadServices();
   } catch (error) {
     if (closed) return;

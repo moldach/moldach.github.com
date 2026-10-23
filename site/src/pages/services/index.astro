@@ -1,5 +1,5 @@
 ---
-import ChapterBook from '../../components/ChapterBook.astro';
+import PageTurn from '../../components/PageTurn.astro';
 import Page from '../../layouts/Page.astro';
 import { pages, serviceEntries } from '../../lib/registry';
 const services = await serviceEntries();
@@ -12,7 +12,7 @@ const services = await serviceEntries();
     { label: 'Services', href: '/services/' },
   ]}
 >
-  <ChapterBook chapter="Services" />
+  <PageTurn initialChapter="services" navigation />
   <header class="page-intro wrap">
     <p class="eyebrow">Practical AI · International remote consulting</p>
     <h1>A useful place to start.</h1>

@@ -1,5 +1,7 @@
 # Start ↔ Services page-turn prototype — 23 October 2026
 
+Historical isolated-prototype record. Subsequent owner-requested Home/Services integration and changed production asset retention are documented in `../integrated-book/README.md`.
+
 Review: http://127.0.0.1:4322/review/page-turn/ (local only).
 
 The review has one renderer, a stationary Start-derived cover/spine/page stack with six tabs, 15 independently folding Start assemblies and three Services assemblies. A segmented closed paper leaf has thickness, a curled turning silhouette and dynamic normals. Its geometry—not an image of a complete book—is rendered with fixed Studio lighting and updated cast shadows during motion. Resting scenes render on demand. The common camera reserves space for the elevated leaf; it is intentionally wider than the normal chapter-page camera.
