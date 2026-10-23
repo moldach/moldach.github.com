@@ -1,4 +1,5 @@
 ---
+import ChapterBook from '../components/ChapterBook.astro';
 import Page from '../layouts/Page.astro';
 import { pages } from '../lib/registry';
 ---
@@ -11,6 +12,7 @@ import { pages } from '../lib/registry';
     { label: 'About', href: '/about/' },
   ]}
 >
+  <ChapterBook chapter="About" />
   <header class="page-intro wrap">
     <p class="eyebrow">Curiosity · Craft · Follow-through</p>
     <h1>Matthew, in person.</h1>

@@ -81,3 +81,7 @@ The original Start source/render are preserved. Its new asset preparation pipeli
 ## Fixed Studio and working chapter tabs — 23 October 2026
 
 The Start preview now locks Studio lighting at exposure 1.5 and removes visitor lighting/exposure choices, visible diagnostics, benchmark and Close controls. Its six physical tags have ordinary accessible links projected onto their actual model bounds, plus ancestry-aware raycast navigation. Routes come from the shared chapter registry. Pointer drags do not activate links; touch, keyboard, browser Back/BFCache, no-JavaScript and no-WebGL paths are covered. New evidence is in `research/verification/start-webgl/tabs-results.json`. Page-turn animation and the remaining scene integrations are still separate work.
+
+## Current chapter navigation — 23 October 2026
+
+The dev site now renders each matching modeled book above its chapter content, including Services detail pages. Home uses the optimized Start scene. Lighting is fixed to Studio. Initial browser navigation/fallback evidence is in `research/verification/start-webgl/README.md`; final material fidelity and animated page turns remain pending.

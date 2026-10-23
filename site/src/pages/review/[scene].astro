@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '../../lib/site-config.mjs';
-import { chapters } from '../../lib/registry';
+import ChapterBook from '../../components/ChapterBook.astro';
 export function getStaticPaths() {
   return siteConfig(process.env).production
     ? []
@@ -12,78 +12,24 @@ export function getStaticPaths() {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
     <meta
       name="description"
-      content="Explore Matthew Oldach’s paper-book website, with Studio lighting and working chapter tabs."
+      content="Matthew Oldach’s interactive paper book with fixed Studio lighting and chapter navigation."
     />
     <title>Start — Matthew Oldach</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
-    <main data-start-review data-chapters={JSON.stringify(chapters)}>
+    <main>
       <header>
         <a href="/">Matthew Oldach</a>
         <h1>Practical AI. Less busywork.</h1>
         <p>Explore a chapter.</p>
       </header>
-      <section class="stage" aria-label="Interactive paper book">
-        <img
-          data-poster
-          src="/models/start/poster.webp"
-          width="1536"
-          height="1024"
-          alt="A paper book with a miniature computer, film loops and six chapter tabs: Start, Services, Work, Writing, About and Contact."
-        />
-        <canvas
-          aria-label="Paper book. Select a chapter tab to open its page. Drag or use arrow keys to inspect; Escape resets the view."
-          tabindex="0"
-        ></canvas>
-        <nav class="chapter-tabs" aria-label="Book chapters">
-          {chapters.map((chapter, i) => (
-            <a
-              href={chapter.href}
-              data-chapter={i}
-              aria-current={i === 0 ? 'page' : undefined}
-              style={`left:${13.3 + i * 12.9}%;top:80%;width:11.2%;height:6.5%`}
-            >
-              <span class="sr-only">{chapter.label}</span>
-            </a>
-          ))}
-        </nav>
-        <p class="status" role="status" aria-live="polite">
-          Opening the book…
-        </p>
-      </section>
-      <p class="below">
-        <button type="button" data-reset>
-          Reset view
-        </button>
-        <a href="/writing/faststyletransfer/">
-          Read the style-transfer article ↗
-        </a>
-      </p>
-      <pre data-metrics hidden></pre>
+      <ChapterBook chapter="Start" />
     </main>
-    <noscript>
-      <p>Select a chapter tab above to open its page.</p>
-      <style is:inline>
-        .status {
-          display: none;
-        }
-      </style>
-    </noscript>
-    <script>
-      import { mountStartReview } from '../../components/book-review/runtime';
-      const root = document.querySelector<HTMLElement>('[data-start-review]');
-      if (root) {
-        mountStartReview(root);
-        window.addEventListener('pageshow', (event) => {
-          if (event.persisted) mountStartReview(root);
-        });
-      }
-    </script>
     <style>
       :global(*) {
         box-sizing: border-box;
@@ -96,126 +42,23 @@ export function getStaticPaths() {
       }
       main {
         max-width: 1584px;
-        margin: auto;
         padding: 28px 24px;
-      }
-      header > a {
-        font-size: 14px;
+        margin: auto;
       }
       h1 {
         font:
           clamp(26px, 4vw, 40px) Georgia,
           serif;
-        margin: 16px 0 10px;
-      }
-      header p {
-        font-size: 14px;
-        color: #53616a;
       }
       a {
         color: #18488b;
-        text-underline-offset: 3px;
       }
-      .stage {
-        position: relative;
-        aspect-ratio: 3/2;
-        overflow: hidden;
-        border-radius: 8px;
-        background: #eee7db;
-      }
-      .stage img,
-      .stage canvas {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-      .stage canvas {
-        opacity: 0;
-        touch-action: pan-y;
-        cursor: grab;
-      }
-      .stage[data-ready] canvas {
-        opacity: 1;
-      }
-      .stage[data-ready] img {
-        visibility: hidden;
-      }
-      .stage[data-ready] .status {
-        display: none;
-      }
-      .chapter-tabs {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
-      .chapter-tabs a {
-        position: absolute;
-        pointer-events: auto;
-        border-radius: 3px;
-        min-height: 28px;
-      }
-      .chapter-tabs a:focus-visible {
-        outline: 3px solid #245ed0;
-        outline-offset: 2px;
-        background: #1a54bb18;
-      }
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-      .status {
-        position: absolute;
-        bottom: 10px;
-        left: 12px;
-        font-size: 12px;
-        background: #fffaf1ed;
-        padding: 8px;
-        margin: 0;
-        border-radius: 4px;
-      }
-      .below {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        font-size: 14px;
-      }
-      button {
-        font: inherit;
-        color: #18488b;
-        background: transparent;
-        border: 0;
-        padding: 10px 0;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        cursor: pointer;
-      }
-      button:focus-visible,
-      canvas:focus-visible {
-        outline: 3px solid #245ed0;
-        outline-offset: 3px;
+      header p {
+        color: #53616a;
       }
       @media (max-width: 650px) {
         main {
           padding: 20px 12px;
-        }
-        .below {
-          gap: 16px;
-          font-size: 12px;
-        }
-        .stage {
-          border-radius: 0;
-        }
-        .chapter-tabs a {
-          min-height: 36px;
         }
       }
     </style>

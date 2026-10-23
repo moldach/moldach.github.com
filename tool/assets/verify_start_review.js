@@ -1,7 +1,7 @@
 // playwright-cli -s=start-tabs run-code --filename tool/assets/verify_start_review.js
 async (page) => {
   const url='http://127.0.0.1:4322/review/start/';
-  const ready=p=>p.waitForFunction(()=>document.querySelector('main')?.dataset.state==='ready',null,{timeout:45000});
+  const ready=p=>p.waitForFunction(()=>document.querySelector('[data-chapter-book]')?.dataset.state==='ready',null,{timeout:45000});
   const data=p=>p.locator('[data-metrics]').textContent().then(JSON.parse);
   const assert=(value,message)=>{if(!value)throw new Error(message);};
   const results={}; const errors=[];
@@ -54,7 +54,7 @@ async (page) => {
   await noJS.getByRole('navigation',{name:'Book chapters'}).getByRole('link',{name:'Services',exact:true}).click();await noJS.waitForURL('**/services/');results.noJSNavigation=true;await noJSContext.close();
   const noGLContext=await browser.newContext();
   await noGLContext.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return String(type).includes('webgl')?null:original.call(this,type,...args);};});
-  const noGL=await noGLContext.newPage();await noGL.goto(url);await noGL.waitForFunction(()=>document.querySelector('main')?.dataset.state==='error');
+  const noGL=await noGLContext.newPage();await noGL.goto(url);await noGL.waitForFunction(()=>document.querySelector('[data-chapter-book]')?.dataset.state==='error');
   await noGL.getByRole('navigation',{name:'Book chapters'}).getByRole('link',{name:'Services',exact:true}).click();await noGL.waitForURL('**/services/');results.noGLNavigation=true;await noGLContext.close();
   assert(errors.length===0,errors.join('\n'));results.pageErrors=errors;return results;
 }

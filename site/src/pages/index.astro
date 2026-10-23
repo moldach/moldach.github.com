@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Page from '../layouts/Page.astro';
-import BookPoster from '../components/BookPoster.astro';
+import ChapterBook from '../components/ChapterBook.astro';
 import ProjectVideo from '../components/ProjectVideo.astro';
 import WritingExhibits from '../components/WritingExhibits.astro';
 import {
@@ -47,7 +47,7 @@ const latest = (await writingEntries()).slice(0, 3);
         </a>
       </div>
     </div>
-    <BookPoster />
+    <ChapterBook chapter="Start" />
   </section>
   <section
     class="visual-work wrap"

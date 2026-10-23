@@ -1,4 +1,5 @@
 ---
+import ChapterBook from '../../components/ChapterBook.astro';
 import Page from '../../layouts/Page.astro';
 import WritingExhibits from '../../components/WritingExhibits.astro';
 import { pages, writingEntries } from '../../lib/registry';
@@ -12,6 +13,7 @@ const entries = await writingEntries();
     { label: 'Writing', href: '/writing/' },
   ]}
 >
+  <ChapterBook chapter="Writing" />
   <header class="page-intro wrap writing-intro">
     <p class="eyebrow">Experiments, explanations, lessons</p>
     <h1>Notes from the work.</h1>

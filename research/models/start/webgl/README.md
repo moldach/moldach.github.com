@@ -1,6 +1,6 @@
 # Start WebGL asset preparation
 
-The baseline `../start.blend` and `../start-render.png` are preserved. The new asset is available only in the isolated local review at `/review/start/`. The homepage renderer, other five chapters, portrait and published legacy root are unchanged.
+The baseline `../start.blend` and `../start-render.png` are preserved. The Start asset now powers the homepage and `/review/start/`. Each chapter destination renders its matching model above its content. Portrait and published legacy root are unchanged.
 
 ## Reproduce
 
@@ -36,6 +36,6 @@ The six physical chapter tabs are now ordinary HTML anchors aligned to projected
 
 `asset-report.json` records file sizes, triangles and image/chapter checks. Browser results, matching-camera captures, comparison HTML and limitations are in `research/verification/start-webgl/`. The review route is emitted only in preview builds, is noindexed and does not enter production HTML or sitemap. A nondeployed production fixture verifies that exclusion without claiming ownership of any domain.
 
-Fine paper response, indirect illumination and contact shadows differ from Cycles. Geometry is retained for inspection and later animation; this is not a screenshot projected onto a single plane. Physical phones, Safari and sustained GPU/thermal performance are not verified. Final visual acceptance and homepage integration remain separate.
+Fine paper response, indirect illumination and contact shadows differ from Cycles. Geometry is retained for inspection and later animation; this is not a screenshot projected onto a single plane. Physical phones, Safari and sustained GPU/thermal performance are not verified. Final visual acceptance remains pending; initial homepage integration is complete.
 
 Sources: [Three.js compressed glTF loading](https://github.com/mrdoob/three.js/blob/r186/examples/webgl_loader_gltf_compressed.html), [glTF Transform CLI](https://gltf-transform.dev/cli), [Khronos KTX tools](https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2). Decoder notices are included in `site/public/decoders/`.

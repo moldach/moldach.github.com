@@ -150,7 +150,8 @@ Updated: 2026-10-22. Check only outcomes supported by evidence. Pending work rem
 - [x] Produce Meshopt/KTX2 and conventional-texture variants with all ten approved images and chapter metadata.
 - [x] Deliver an isolated dynamic-lighting preview with three light presets, exposure, inspection and fallback/disposal.
 - [x] Record desktop/mobile-emulation timings, size, draw calls, texture-memory estimates and browser evidence.
-- [ ] Obtain final visual acceptance and verify Safari/physical-device performance before homepage integration.
+- [x] Integrate matching modeled books on Home and all five chapter destinations, including service detail pages.
+- [ ] Obtain final visual acceptance and verify Safari/physical-device performance; finish per-chapter surface baking and page-turn animation.
 
 
 ### Start visitor controls and chapter tabs

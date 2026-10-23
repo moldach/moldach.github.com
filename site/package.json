@@ -12,7 +12,8 @@
     "build": "node scripts/build.mjs",
     "validate": "node scripts/validate-build.mjs",
     "preview": "astro preview --host 127.0.0.1",
-    "assets:start": "node scripts/prepare-start.mjs"
+    "assets:start": "node scripts/prepare-start.mjs",
+    "assets:chapters": "node scripts/prepare-chapters.mjs"
   },
   "dependencies": {
     "astro": "7.4.2",

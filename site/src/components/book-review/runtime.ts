@@ -16,7 +16,17 @@ const studio = {
   position: [-4, 9, 3],
 } as const;
 
-export async function mountStartReview(root: HTMLElement) {
+export async function mountChapterBook(root: HTMLElement) {
+  const chapterIndex = Number(root.dataset.chapterIndex || 0);
+  const modelUrl = root.dataset.model || '/models/start/start.glb';
+  const fallbackUrl =
+    root.dataset.modelFallback || '/models/start/start-fallback.glb';
+  const position = JSON.parse(root.dataset.camera || '[0.12,13.6,14]') as [
+    number,
+    number,
+    number,
+  ];
+  const lens = Number(root.dataset.lens || 51);
   const stage = root.querySelector<HTMLElement>('.stage')!;
   const canvas = root.querySelector<HTMLCanvasElement>('canvas')!;
   const status = root.querySelector<HTMLElement>('[role=status]')!;
@@ -25,7 +35,7 @@ export async function mountStartReview(root: HTMLElement) {
   const signal = abort.signal;
   let closed = false;
   let model: THREE.Group | undefined;
-  let asset = 'ktx2';
+  let asset = chapterIndex === 0 ? 'ktx2' : 'conventional';
   let fallbackReason: string | undefined;
   let resize: ResizeObserver | undefined;
   let controls: OrbitControls | undefined;
@@ -115,7 +125,7 @@ export async function mountStartReview(root: HTMLElement) {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color('#f2ede3');
     const camera = new THREE.PerspectiveCamera(26.48, 1.5, 0.1, 80);
-    const referencePosition = new THREE.Vector3(0.12, 13.6, 14);
+    const referencePosition = new THREE.Vector3(...position);
     const referenceTarget = new THREE.Vector3(0, 0.7, 0);
     camera.position.copy(referencePosition);
     camera.lookAt(referenceTarget);
@@ -344,7 +354,7 @@ export async function mountStartReview(root: HTMLElement) {
       renderer!.setSize(width, height, false);
       camera.aspect = width / height;
       // Match Blender horizontal sensor fit; preserve full composition on narrow screens.
-      camera.setFocalLength(51);
+      camera.setFocalLength(lens);
       camera.updateProjectionMatrix();
       render();
     });
@@ -397,14 +407,15 @@ export async function mountStartReview(root: HTMLElement) {
     try {
       if (new URLSearchParams(location.search).has('fallback'))
         throw new Error('Conventional-texture review requested');
-      gltf = await loadAsset(loader, '/models/start/start.glb');
+      gltf = await loadAsset(loader, modelUrl);
     } catch (error) {
       if (closed) return;
+      if (modelUrl === fallbackUrl) throw error;
       fallbackReason = String(error);
       asset = 'conventional';
       gltf = await loadAsset(
         new GLTFLoader().setMeshoptDecoder(MeshoptDecoder),
-        '/models/start/start-fallback.glb',
+        fallbackUrl,
       );
     }
     if (closed) {
@@ -456,7 +467,7 @@ export async function mountStartReview(root: HTMLElement) {
         }
       }
     });
-    if (imageIds.size !== 10 || chapterIds.size !== 6)
+    if ((chapterIndex === 0 && imageIds.size !== 10) || chapterIds.size !== 6)
       throw new Error('Required image or chapter metadata missing');
     scene.add(model);
     model.updateMatrixWorld(true);
@@ -472,6 +483,8 @@ export async function mountStartReview(root: HTMLElement) {
     stage.dataset.ready = '';
     report.state = 'ready';
     report.asset = asset;
+    report.selectedChapter = root.dataset.chapterLabel || 'Start';
+    report.chapterIndex = chapterIndex;
     report.approvedImages = [...imageIds].sort((a, b) => a - b);
     report.chapters = [...chapterIds].sort();
     report.fallbackReason = fallbackReason;
@@ -481,10 +494,7 @@ export async function mountStartReview(root: HTMLElement) {
       'Model textures and mipmaps only; excludes environment, shadow maps and driver overhead';
     report.physicalDeviceVerified = false;
     status.textContent = 'Book ready.';
-    const assetUrl =
-      asset === 'ktx2'
-        ? '/models/start/start.glb'
-        : '/models/start/start-fallback.glb';
+    const assetUrl = asset === 'ktx2' ? modelUrl : fallbackUrl;
     const entry = performance
       .getEntriesByName(new URL(assetUrl, location.href).href)
       .at(-1) as PerformanceResourceTiming | undefined;

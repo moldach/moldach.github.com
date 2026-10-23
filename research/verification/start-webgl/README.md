@@ -1,6 +1,6 @@
 # Start dynamic-lighting verification — 23 October 2026
 
-Current review: http://127.0.0.1:4322/review/start/ (local only). The existing homepage preview on port 4321 and its renderer are unchanged.
+Current review: http://127.0.0.1:4322/review/start/ (local only). The current dev site on port 4322 includes matching chapter books; the older port 4321 preview is not the current verification target.
 
 ## Evidence
 
@@ -35,7 +35,7 @@ Type checking, the existing 14 Node tests, preview content/metadata/media/link v
 
 The objects, source imagery, text and reference framing are preserved. AgX/PBR light response is not pixel-identical to Cycles: the background is more uniform, indirect bounce/contact shadows are simpler, and fibers/edges respond differently. Keycaps and print/photo overlays retain dynamic PBR shading but skip per-detail shadow passes to meet the budget; structural paper, mounts and terminal retain soft dynamic shadows.
 
-Final owner visual acceptance, Safari, actual iPhone/Android checks and sustained thermal/GPU performance remain unverified. No homepage replacement, idle animation, page turns, exhibit hotspots or portrait changes are claimed. Those are subsequent integration work.
+Final owner visual acceptance, Safari, actual iPhone/Android checks and sustained thermal/GPU performance remain unverified. Initial homepage and chapter integration is complete as recorded below. Idle animation, page turns, exhibit hotspots and portrait changes are not included.
 
 
 ## Fixed Studio and chapter navigation — current visitor interface
@@ -44,4 +44,12 @@ Lighting/exposure selectors, diagnostics, benchmark and Close controls have been
 
 Current captures: [desktop](start-studio-tabs.png), [mobile emulation](start-studio-tabs-mobile.png). Current assertions: [tabs-results.json](tabs-results.json). All six ordinary links reach the shared registry destinations; the Services model raycast, touch Services tap, keyboard inspection/reset, drag suppression, Back, navigation cleanup/context release, texture fallback and no-JavaScript/no-WebGL Services navigation pass. The page has no lighting/exposure inputs, visible diagnostics or benchmark/Close controls. Page errors are empty.
 
-This enables destination navigation, not a modeled page-turn animation or integration of the other five Blender chapters. The homepage renderer remains unchanged.
+This earlier pass enabled destination navigation only. The subsequent chapter integration below adds the matching modeled spreads, without animated page turns.
+
+## Matching chapter destinations — 23 October 2026
+
+Services, Work, Writing, About and Contact now render their matching geometry-backed book before the content header. Start returns to the modeled Start on the homepage. Studio lighting is fixed; each destination loads only its own model. Navigation remains ordinary routes, not animated page turns.
+
+`chapter-journey.json` records all six matching models, desktop and touch navigation, browser Back, no-JavaScript posters, model-failure posters and no page errors. `chapter-start-regression.json` additionally verifies raycast navigation, drag suppression, conventional fallback and GPU cleanup. Services scene, desktop/mobile page and Writing captures are adjacent. Type checking passed (55 files, zero errors/warnings/hints); all 14 tests and the non-indexable preview build passed.
+
+`npm run assets:chapters` reproducibly publishes five Meshopt/conventional-texture models from preserved Blender studies; sizes and mesh counts are in `chapter-assets.json`. These five retain draft PBR materials; their surface-normal baking and final owner visual acceptance remain pending. Physical devices and Safari are unverified. No production deployment.
