@@ -95,5 +95,6 @@
   "conventionalFallback": true,
   "noJSNavigation": true,
   "noGLNavigation": true,
-  "pageErrors": []
+  "pageErrors": [],
+  "servicesAfterCameraInspection": true
 }

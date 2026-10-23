@@ -280,6 +280,7 @@ export async function mountStartReview(root: HTMLElement) {
     function render() {
       if (closed || !renderer || !model || report.state === 'context-lost')
         return;
+      camera.updateMatrixWorld();
       projectTabs();
       const updatesShadow = renderer.shadowMap.needsUpdate;
       renderer.info.reset();
