@@ -1,10 +1,17 @@
-import { chapterOrder, nextChapter } from '../../lib/book-order.mjs';
+import { chapterOrder } from '../../lib/book-order.mjs';
 import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { duration, pose, clamp, ease } from './motion.mjs';
+import {
+  duration,
+  pose,
+  clamp,
+  ease,
+  turnDuration,
+  skipPose,
+} from './motion.mjs';
 import assets from '../../../public/models/page-turn/manifest.json';
 const assetFor = (chapter: Chapter) =>
   assets.chapters.find((item) => item.chapter === chapter)!;
@@ -391,6 +398,31 @@ export async function mountPageTurn(root: HTMLElement) {
     }
     function showFrame(time: number) {
       const t = transition!;
+      const count = Math.abs(order.indexOf(t.to) - order.indexOf(t.from));
+      if (count > 1) {
+        const p = skipPose(time, count);
+        const direction = Math.sign(
+          order.indexOf(t.to) - order.indexOf(t.from),
+        );
+        for (const model of models.values()) model.content.visible = false;
+        const source = models.get(t.from)!,
+          destination = models.get(t.to)!;
+        source.content.visible = time < 350;
+        destination.content.visible = p.incoming > 0;
+        rigPose(source, p.outgoing);
+        rigPose(destination, 1 - p.incoming);
+        frameCamera(p.cameraTime, t.from, t.to);
+        leaf!.visible = p.turning;
+        turnLeaf(direction > 0 ? p.leaf : 1 - p.leaf);
+        report.leafNumber = p.index + 1;
+        report.turnCount = count;
+        report.progress = clamp(time / turnDuration(count));
+        exhibits.forEach(({ link }) => {
+          link.hidden = true;
+        });
+        render(true);
+        return;
+      }
       const p = pose(time);
       frameCamera(time, t.from, t.to);
       const from = models.get(t.from)!,
@@ -429,9 +461,20 @@ export async function mountPageTurn(root: HTMLElement) {
         if (samples.length < 240) samples.push(dt);
       }
       t.last = now;
-      showFrame(Math.min(duration, t.elapsed));
-      if (t.elapsed >= duration) {
-        (report.completedTurns as unknown[]).push({ from: t.from, to: t.to });
+      const count = Math.abs(order.indexOf(t.to) - order.indexOf(t.from));
+      const total = turnDuration(count);
+      showFrame(Math.min(total, t.elapsed));
+      if (t.elapsed >= total) {
+        const direction = Math.sign(
+          order.indexOf(t.to) - order.indexOf(t.from),
+        );
+        for (let i = 0; i < count; i++) {
+          const index = order.indexOf(t.from) + i * direction;
+          (report.completedTurns as unknown[]).push({
+            from: order[index],
+            to: order[index + direction],
+          });
+        }
         settle(t.to);
         if (requested !== selected) void advance();
         else navigateSettled();
@@ -472,21 +515,16 @@ export async function mountPageTurn(root: HTMLElement) {
         navigateSettled();
         return;
       }
-      const instant = pendingInstant || reduced.matches;
-      const next = instant
-        ? requested
-        : (nextChapter(selected, requested) as Chapter);
+      const next = requested;
       status.textContent = `Preparing ${label(next)}…`;
       report.state = 'loading';
       publish();
       try {
+        // Load the final spread before folding anything; skipped scenes stay folded.
         await ensureChapter(next);
         if (closed || transition) return;
         // The visitor may have changed direction while this model loaded.
-        const desired =
-          pendingInstant || reduced.matches
-            ? requested
-            : (nextChapter(selected, requested) as Chapter);
+        const desired = requested;
         if (next !== desired) {
           void advance();
           return;

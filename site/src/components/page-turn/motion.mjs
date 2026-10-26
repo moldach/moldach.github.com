@@ -25,3 +25,21 @@ export function pose(time, lane = 0) {
     incoming: ease((time - 1000 - delay) / (600 - delay)),
   };
 }
+
+// A bookmarked jump folds once, rifles the leaves, then opens the destination.
+export function turnDuration(count = 1) {
+  return count <= 1 ? duration : 350 + count * 220 + 450;
+}
+export function skipPose(time, count) {
+  const end = 350 + count * 220;
+  const leaves = clamp((time - 350) / (count * 220)) * count;
+  const index = Math.min(count - 1, Math.floor(leaves));
+  return {
+    index,
+    leaf: ease(leaves - index),
+    outgoing: ease(time / 350),
+    incoming: ease((time - end) / 450),
+    turning: time >= 350 && time < end,
+    cameraTime: time < 350 ? time : time < end ? 700 : 1150 + time - end,
+  };
+}

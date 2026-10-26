@@ -1,0 +1,1240 @@
+{
+  "forward": {
+    "elapsed": 2739,
+    "states": [
+      {
+        "state": "loading",
+        "selected": "start"
+      },
+      {
+        "state": "loading",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "turning",
+        "selected": "start"
+      },
+      {
+        "state": "settled",
+        "selected": "contact"
+      },
+      {
+        "state": "closed",
+        "selected": "contact"
+      }
+    ],
+    "metrics": {
+      "state": "closed",
+      "selected": "contact",
+      "lighting": "studio",
+      "physicalDeviceVerified": false,
+      "drawCalls": 94,
+      "triangles": 243210,
+      "peakDrawCalls": 118,
+      "peakTriangles": 294397,
+      "frameIntervals": [
+        16.700000000000045,
+        16.59999999999991,
+        16.59999999999991,
+        16.700000000000045,
+        16.600000000000136,
+        16.799999999999955,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.600000000000136,
+        16.699999999999818,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.600000000000136,
+        16.699999999999818,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.600000000000136,
+        16.799999999999955,
+        16.59999999999991,
+        16.600000000000136,
+        16.699999999999818,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.699999999999818,
+        16.600000000000364,
+        16.59999999999991,
+        16.699999999999818,
+        16.700000000000273,
+        16.699999999999818,
+        16.699999999999818,
+        16.600000000000364,
+        16.59999999999991,
+        16.699999999999818,
+        16.700000000000273,
+        16.699999999999818,
+        16.699999999999818,
+        16.600000000000364,
+        16.59999999999991,
+        16.799999999999727,
+        16.5,
+        16.700000000000273,
+        16.699999999999818,
+        16.59999999999991,
+        16.800000000000182,
+        16.699999999999818,
+        16.600000000000364,
+        16.59999999999991,
+        16.699999999999818,
+        16.700000000000273,
+        16.59999999999991,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.700000000000273,
+        16.59999999999991,
+        16.699999999999818,
+        16.700000000000273,
+        16.59999999999991,
+        16.699999999999818,
+        16.700000000000273,
+        16.59999999999991,
+        16.59999999999991,
+        16.800000000000182,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.59999999999991,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.59999999999991,
+        16.700000000000273,
+        16.699999999999818,
+        16.700000000000273,
+        16.699999999999818,
+        16.5,
+        16.699999999999818
+      ],
+      "completedTurns": [
+        {
+          "from": "start",
+          "to": "services"
+        },
+        {
+          "from": "services",
+          "to": "work"
+        },
+        {
+          "from": "work",
+          "to": "writing"
+        },
+        {
+          "from": "writing",
+          "to": "about"
+        },
+        {
+          "from": "about",
+          "to": "contact"
+        }
+      ],
+      "camera": {
+        "position": [
+          0.12000000000000001,
+          11.8,
+          15.000000000000004
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "focalLength": 59
+      },
+      "approvedImages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "startRigs": [
+        "accordion",
+        "terminal",
+        "keyboard",
+        "high-film",
+        "middle-film",
+        "photo-tray",
+        "small-film",
+        "content-style-output-proof",
+        "referenced-activation-atlas",
+        "resolved-output-photograph",
+        "tray-proof-0",
+        "tray-proof-1",
+        "tray-proof-2",
+        "tray-proof-3",
+        "tray-proof-4"
+      ],
+      "startReady": true,
+      "progress": 1,
+      "contactRigs": [
+        "right-assembly",
+        "center-assembly",
+        "left-assembly"
+      ],
+      "contactReady": true,
+      "leafNumber": 5,
+      "turnCount": 5,
+      "resourcesDisposed": true
+    }
+  },
+  "reverse": {
+    "elapsed": 2544,
+    "states": [
+      {
+        "state": "loading",
+        "selected": "contact"
+      },
+      {
+        "state": "loading",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "turning",
+        "selected": "contact"
+      },
+      {
+        "state": "settled",
+        "selected": "services"
+      },
+      {
+        "state": "closed",
+        "selected": "services"
+      }
+    ],
+    "metrics": {
+      "state": "closed",
+      "selected": "services",
+      "lighting": "studio",
+      "physicalDeviceVerified": false,
+      "drawCalls": 166,
+      "triangles": 465196,
+      "peakDrawCalls": 166,
+      "peakTriangles": 465196,
+      "frameIntervals": [
+        16.800000000000068,
+        16.600000000000023,
+        16.59999999999991,
+        16.800000000000068,
+        16.5,
+        16.699999999999932,
+        16.700000000000045,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.700000000000045,
+        16.699999999999932,
+        16.600000000000023,
+        16.600000000000023,
+        16.699999999999932,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.59999999999991,
+        16.800000000000182,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.600000000000136,
+        16.699999999999818,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.600000000000136,
+        16.699999999999818,
+        16.700000000000045,
+        16.700000000000045,
+        16.700000000000045,
+        183.29999999999995,
+        16.59999999999991,
+        16.700000000000045,
+        16.700000000000045,
+        16.59999999999991,
+        16.700000000000273,
+        16.59999999999991,
+        16.699999999999818,
+        16.700000000000273,
+        16.59999999999991,
+        16.799999999999727,
+        16.600000000000364,
+        16.59999999999991,
+        33.40000000000009,
+        50
+      ],
+      "completedTurns": [
+        {
+          "from": "contact",
+          "to": "about"
+        },
+        {
+          "from": "about",
+          "to": "writing"
+        },
+        {
+          "from": "writing",
+          "to": "work"
+        },
+        {
+          "from": "work",
+          "to": "services"
+        }
+      ],
+      "camera": {
+        "position": [
+          0.12000000000000001,
+          15.000000000000002,
+          12.000000000000002
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "focalLength": 57
+      },
+      "approvedImages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "startRigs": [
+        "accordion",
+        "terminal",
+        "keyboard",
+        "high-film",
+        "middle-film",
+        "photo-tray",
+        "small-film",
+        "content-style-output-proof",
+        "referenced-activation-atlas",
+        "resolved-output-photograph",
+        "tray-proof-0",
+        "tray-proof-1",
+        "tray-proof-2",
+        "tray-proof-3",
+        "tray-proof-4"
+      ],
+      "startReady": true,
+      "contactRigs": [
+        "right-assembly",
+        "center-assembly",
+        "left-assembly"
+      ],
+      "contactReady": true,
+      "progress": 1,
+      "servicesRigs": [
+        "adoption",
+        "assessment",
+        "implementation"
+      ],
+      "servicesReady": true,
+      "leafNumber": 4,
+      "turnCount": 4,
+      "resourcesDisposed": true
+    }
+  }
+}

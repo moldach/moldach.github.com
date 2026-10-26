@@ -107,3 +107,13 @@ and portrait hotspots remain active in the selected resting spread.
 
 See `research/verification/ordered-book/` and the two `verify_ordered_*` browser
 scripts for current evidence. Earlier two-chapter captures remain historical.
+
+### Bookmark-style multi-page skipping
+
+Long jumps now fold the source once, rifle through each skipped leaf at 220ms,
+and unfold only the destination. There are no intermediate settled chapters
+or repeated camera close-ups. Total animation is 350ms + 220ms per leaf +
+450ms for destination unfolding (1.9s for five leaves); adjacent turns retain
+1.6s. Only the destination model needs loading. Current evidence is under
+`research/verification/bookmark-skip/`, superseding intermediate settling and
+intermediate-asset-loading descriptions above.
