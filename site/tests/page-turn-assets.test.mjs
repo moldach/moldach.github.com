@@ -13,6 +13,10 @@ test('animation exports retain finite geometry, explicit rigs, ten images and on
   const manifest = JSON.parse(
     await readFile('public/models/page-turn/manifest.json', 'utf8'),
   );
+  assert.deepEqual(
+    manifest.chapters.map((item) => item.chapter),
+    ['start', 'services', 'work', 'writing', 'about', 'contact'],
+  );
   let books = 0;
   for (const item of manifest.chapters) {
     const doc = await io.read('public' + item.url);

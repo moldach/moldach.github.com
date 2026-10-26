@@ -93,3 +93,17 @@ The dev site now renders each matching modeled book above its chapter content, i
 ## Main Start/Services banner correction — 23 October 2026
 
 Following the owner’s explicit request, the page-turn renderer is now connected to Home and Services. Home’s full-width book precedes its headline/copy. Main navigation plays the turn before opening the destination; direct entry and Back retain the correct spread. Close resting framing gently pulls back during motion. The review page retains its fixed camera. See `research/verification/integrated-book/` for fresh checks/captures. No deployment.
+
+## Ordered six-chapter navigation (2026-10-26)
+
+All six main chapter banners now use the shared page-turn renderer. Selecting
+About from Start turns through Services, Work and Writing before About; Contact
+to Services reverses through About, Writing and Work. Each adjacent leaf uses
+the existing 1.6-second fold/turn/unfold choreography. Tabs remain stationary;
+only the final website destination enters history. Keyboard/reduced motion
+remain direct. Models load lazily, latest requests queue, and failed intermediate
+loads expose retry and ordinary destination links. Article, project, contact
+and portrait hotspots remain active in the selected resting spread.
+
+See `research/verification/ordered-book/` and the two `verify_ordered_*` browser
+scripts for current evidence. Earlier two-chapter captures remain historical.

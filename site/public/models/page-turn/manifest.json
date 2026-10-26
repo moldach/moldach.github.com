@@ -49,6 +49,58 @@
       "imageIds": [],
       "meshNodes": 40,
       "sharedBook": false
+    },
+    {
+      "chapter": "work",
+      "url": "/models/page-turn/work.glb",
+      "bytes": 1849664,
+      "rigs": [
+        "right-assembly",
+        "left-assembly",
+        "center-assembly"
+      ],
+      "imageIds": [],
+      "meshNodes": 53,
+      "sharedBook": false
+    },
+    {
+      "chapter": "writing",
+      "url": "/models/page-turn/writing.glb",
+      "bytes": 1568816,
+      "rigs": [
+        "right-assembly",
+        "center-assembly",
+        "left-assembly"
+      ],
+      "imageIds": [],
+      "meshNodes": 27,
+      "sharedBook": false
+    },
+    {
+      "chapter": "about",
+      "url": "/models/page-turn/about.glb",
+      "bytes": 1037312,
+      "rigs": [
+        "center-assembly",
+        "right-assembly",
+        "left-assembly"
+      ],
+      "imageIds": [],
+      "meshNodes": 35,
+      "sharedBook": false
+    },
+    {
+      "chapter": "contact",
+      "url": "/models/page-turn/contact.glb",
+      "bytes": 1044012,
+      "rigs": [
+        "right-assembly",
+        "center-assembly",
+        "left-assembly"
+      ],
+      "imageIds": [],
+      "meshNodes": 31,
+      "sharedBook": false
     }
   ]
 }

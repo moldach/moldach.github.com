@@ -1,14 +1,7 @@
 import { getCollection } from 'astro:content';
 import { latestFirst } from './content-policy.mjs';
 
-export const chapters = [
-  { label: 'Start', href: '/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Work', href: '/work/' },
-  { label: 'Writing', href: '/writing/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
-] as const;
+export { chapters } from './book-order.mjs';
 
 export const pages = {
   '/': {

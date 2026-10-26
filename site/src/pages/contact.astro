@@ -1,5 +1,5 @@
 ---
-import ChapterBook from '../components/ChapterBook.astro';
+import PageTurn from '../components/PageTurn.astro';
 import Page from '../layouts/Page.astro';
 import { pages } from '../lib/registry';
 ---
@@ -11,7 +11,7 @@ import { pages } from '../lib/registry';
     { label: 'Contact', href: '/contact/' },
   ]}
 >
-  <ChapterBook chapter="Contact" />
+  <PageTurn initialChapter="contact" navigation />
   <header class="page-intro wrap">
     <p class="eyebrow">International remote enquiries welcome</p>
     <h1>What could work better?</h1>

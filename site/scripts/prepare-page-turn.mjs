@@ -33,7 +33,7 @@ const out = 'public/models/page-turn';
 await mkdir(out, { recursive: true });
 const names = ['Start', 'Services', 'Work', 'Writing', 'About', 'Contact'];
 const reports = [];
-for (const chapter of ['start', 'services']) {
+for (const chapter of names.map((name) => name.toLowerCase())) {
   const doc = await io.read(
       `../research/models/${chapter}/${chapter}-geometry.glb`,
     ),
@@ -58,7 +58,7 @@ for (const chapter of ['start', 'services']) {
       );
     scene.removeChild(n);
     if (base) {
-      if (chapter === 'services') {
+      if (chapter !== 'start') {
         n.dispose();
         continue;
       }
@@ -100,7 +100,7 @@ for (const chapter of ['start', 'services']) {
       else if (/^(Photo tray|Tray (folded|front|rear))/.test(name))
         id = 'photo-tray';
       else id = 'terminal';
-    } else {
+    } else if (chapter === 'services') {
       if (
         /^(Services heading|Small footer|Fold-out blueprint|Folded blueprint side wall|Fine .* drafting rule|Side fold drafting rule|Printed ivory|Printed arrowhead|Printed connection)/.test(
           name,
@@ -112,6 +112,24 @@ for (const chapter of ['start', 'services']) {
       const bounds = getBounds(n),
         x = (bounds.min[0] + bounds.max[0]) / 2;
       id = x < -1.6 ? 'assessment' : x > 1.6 ? 'adoption' : 'implementation';
+    } else {
+      if (
+        /^(Work heading|Printed title underline|Printed Notes from|Printed the work|Printed Experiments|About subtitle|About title|Contact heading|Contact subtitle)/.test(
+          name,
+        )
+      ) {
+        content.addChild(n);
+        continue;
+      }
+      // Stable export-time hinges; runtime never infers animation groups from names.
+      const bounds = getBounds(n),
+        x = (bounds.min[0] + bounds.max[0]) / 2;
+      id =
+        x < -1.6
+          ? 'left-assembly'
+          : x > 1.6
+            ? 'right-assembly'
+            : 'center-assembly';
     }
     if (!groups.has(id)) groups.set(id, doc.createNode(`Hinge ${id}`));
     groups.get(id).addChild(n);

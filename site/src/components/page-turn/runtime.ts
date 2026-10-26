@@ -1,3 +1,4 @@
+import { chapterOrder, nextChapter } from '../../lib/book-order.mjs';
 import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
@@ -7,7 +8,11 @@ import { duration, pose, clamp, ease } from './motion.mjs';
 import assets from '../../../public/models/page-turn/manifest.json';
 const assetFor = (chapter: Chapter) =>
   assets.chapters.find((item) => item.chapter === chapter)!;
-type Chapter = 'start' | 'services';
+type Chapter = 'start' | 'services' | 'work' | 'writing' | 'about' | 'contact';
+const order = chapterOrder as Chapter[];
+const chapterHref = (chapter: Chapter) =>
+  chapter === 'start' ? '/' : `/${chapter}/`;
+const label = (chapter: Chapter) => chapter[0].toUpperCase() + chapter.slice(1);
 type Rig = {
   node: THREE.Object3D;
   order: number;
@@ -24,8 +29,9 @@ export async function mountPageTurn(root: HTMLElement) {
   const open = root.querySelector<HTMLAnchorElement>('[data-open-chapter]')!,
     retry = root.querySelector<HTMLButtonElement>('[data-retry]')!,
     metrics = root.querySelector<HTMLElement>('[data-metrics]')!;
-  const initial: Chapter =
-    root.dataset.initial === 'services' ? 'services' : 'start';
+  const initial: Chapter = order.includes(root.dataset.initial as Chapter)
+    ? (root.dataset.initial as Chapter)
+    : 'start';
   const pageNavigation = root.dataset.navigation === 'page';
   const anchors = [
     ...root.querySelectorAll<HTMLAnchorElement>('[data-chapter]'),
@@ -35,6 +41,7 @@ export async function mountPageTurn(root: HTMLElement) {
     reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const models = new Map<Chapter, Model>(),
     tabBounds = new Map<number, THREE.Box3>();
+  const exhibits: { chapter: Chapter; link: HTMLAnchorElement }[] = [];
   const report: Record<string, unknown> = {
     state: 'loading',
     selected: initial,
@@ -45,6 +52,7 @@ export async function mountPageTurn(root: HTMLElement) {
     peakDrawCalls: 0,
     peakTriangles: 0,
     frameIntervals: [],
+    completedTurns: [],
   };
   let renderer: THREE.WebGLRenderer | undefined,
     controls: OrbitControls | undefined,
@@ -63,7 +71,6 @@ export async function mountPageTurn(root: HTMLElement) {
   let selected: Chapter = initial,
     requested: Chapter = initial,
     closed = false,
-    servicesLoading = false,
     pendingInstant = false,
     frame = 0,
     hidden = document.hidden;
@@ -100,6 +107,7 @@ export async function mountPageTurn(root: HTMLElement) {
     if (closed) return;
     closed = true;
     abort.abort();
+    exhibits.forEach(({ link }) => link.remove());
     cancelAnimationFrame(frame);
     observer?.disconnect();
     controls?.dispose();
@@ -152,9 +160,12 @@ export async function mountPageTurn(root: HTMLElement) {
             lens: 51,
           }
         : {
-            position: new THREE.Vector3(0.12, 15, 12),
+            position:
+              chapter === 'contact'
+                ? new THREE.Vector3(0.12, 11.8, 15)
+                : new THREE.Vector3(0.12, 15, 12),
             target: new THREE.Vector3(0, 0.7, 0),
-            lens: 57,
+            lens: chapter === 'contact' ? 59 : 57,
           };
     const wideCamera = {
       position: new THREE.Vector3(0.12, 17, 18),
@@ -336,7 +347,7 @@ export async function mountPageTurn(root: HTMLElement) {
     }
     function tabs() {
       for (const item of tabMaterials) {
-        const active = item.index === (selected === 'start' ? 0 : 1);
+        const active = item.index === order.indexOf(selected);
         item.material.color.setRGB(
           ...((item.surface
             ? active
@@ -347,16 +358,18 @@ export async function mountPageTurn(root: HTMLElement) {
               : [0.008, 0.024, 0.049]) as [number, number, number]),
         );
       }
-      anchors.forEach((a, i) => {
-        if (i === (selected === 'start' ? 0 : 1))
+      exhibits.forEach(({ chapter, link }) => {
+        link.hidden = chapter !== selected;
+      });
+      anchors.slice(0, 6).forEach((a, i) => {
+        if (i === order.indexOf(selected))
           a.setAttribute('aria-current', 'page');
         else a.removeAttribute('aria-current');
       });
-      const href = selected === 'start' ? '/' : '/services/';
+      const href = chapterHref(selected);
       open.href = href;
-      open.textContent = `Open ${selected === 'start' ? 'Start' : 'Services'} chapter page ↗`;
-      root.querySelector('[data-current]')!.textContent =
-        selected === 'start' ? 'Start' : 'Services';
+      open.textContent = `Open ${label(selected)} chapter page ↗`;
+      root.querySelector('[data-current]')!.textContent = label(selected);
     }
     function settle(chapter: Chapter) {
       for (const [id, m] of models) {
@@ -373,7 +386,7 @@ export async function mountPageTurn(root: HTMLElement) {
       report.state = 'settled';
       report.progress = 1;
       tabs();
-      status.textContent = `${chapter === 'start' ? 'Start' : 'Services'} chapter open.`;
+      status.textContent = `${label(chapter)} chapter open.`;
       render(true);
     }
     function showFrame(time: number) {
@@ -387,14 +400,23 @@ export async function mountPageTurn(root: HTMLElement) {
       rigPose(from, 0, time);
       rigPose(to, 0, time, true);
       leaf!.visible = time >= 350 && time < 1150;
-      turnLeaf(t.to === 'services' ? p.leaf : 1 - p.leaf);
+      turnLeaf(
+        order.indexOf(t.to) > order.indexOf(t.from) ? p.leaf : 1 - p.leaf,
+      );
+      exhibits.forEach(({ link }) => {
+        link.hidden = true;
+      });
       report.progress = clamp(time / duration);
       render(true);
     }
     function navigateSettled() {
-      if (!pageNavigation || selected === initial || requested !== selected)
+      if (
+        !pageNavigation ||
+        location.pathname === chapterHref(selected) ||
+        requested !== selected
+      )
         return;
-      location.assign(selected === 'start' ? '/' : '/services/');
+      location.assign(chapterHref(selected));
     }
     function tick(now: number) {
       frame = 0;
@@ -409,8 +431,9 @@ export async function mountPageTurn(root: HTMLElement) {
       t.last = now;
       showFrame(Math.min(duration, t.elapsed));
       if (t.elapsed >= duration) {
+        (report.completedTurns as unknown[]).push({ from: t.from, to: t.to });
         settle(t.to);
-        if (requested !== selected) begin(requested);
+        if (requested !== selected) void advance();
         else navigateSettled();
       } else frame = requestAnimationFrame(tick);
     }
@@ -424,35 +447,87 @@ export async function mountPageTurn(root: HTMLElement) {
       report.frameIntervals = [];
       frame = requestAnimationFrame(tick);
     }
+    const loading = new Map<Chapter, Promise<void>>();
+    let failed: Chapter | undefined;
+    async function ensureChapter(chapter: Chapter) {
+      if (models.has(chapter)) return;
+      if (loading.has(chapter)) return loading.get(chapter)!;
+      const promise = (async () => {
+        const model = register(await load(assetFor(chapter).url), chapter);
+        model.content.visible = false;
+        rigPose(model, 1);
+        report[chapter + 'Ready'] = true;
+      })();
+      loading.set(chapter, promise);
+      try {
+        await promise;
+      } finally {
+        loading.delete(chapter);
+      }
+    }
+    async function advance() {
+      if (closed || transition || !models.has(selected)) return;
+      if (requested === selected) {
+        settle(selected);
+        navigateSettled();
+        return;
+      }
+      const instant = pendingInstant || reduced.matches;
+      const next = instant
+        ? requested
+        : (nextChapter(selected, requested) as Chapter);
+      status.textContent = `Preparing ${label(next)}…`;
+      report.state = 'loading';
+      publish();
+      try {
+        await ensureChapter(next);
+        if (closed || transition) return;
+        // The visitor may have changed direction while this model loaded.
+        const desired =
+          pendingInstant || reduced.matches
+            ? requested
+            : (nextChapter(selected, requested) as Chapter);
+        if (next !== desired) {
+          void advance();
+          return;
+        }
+        failed = undefined;
+        delete report.loadError;
+        retry.hidden = true;
+        if (pendingInstant || reduced.matches) {
+          settle(next);
+          navigateSettled();
+        } else begin(next);
+      } catch (error) {
+        if (closed) return;
+        failed = next;
+        report.state = 'error';
+        report.loadError = String(error);
+        retry.hidden = false;
+        open.href = chapterHref(requested);
+        open.textContent = `Open ${label(requested)} without animation ↗`;
+        status.textContent = `${label(next)} could not load. Retry or use the ordinary chapter link.`;
+        publish();
+      }
+    }
     function choose(chapter: Chapter, instant = false) {
       requested = chapter;
       pendingInstant = instant;
       if (closed) return;
-      if (pageNavigation && report.servicesError) {
-        location.assign(chapter === 'start' ? '/' : '/services/');
-        return;
-      }
-      if (!models.has(selected)) {
-        status.textContent =
-          'Preparing the book. Your chapter selection is queued.';
-        return;
-      }
-      if (!models.has(chapter)) {
-        status.textContent =
-          'Services is loading. The current chapter remains open.';
-        if (!servicesLoading) void loadServices();
+      if (failed && pageNavigation) {
+        location.assign(chapterHref(chapter));
         return;
       }
       if (instant || reduced.matches) {
         cancelAnimationFrame(frame);
         frame = 0;
-        settle(chapter);
-        navigateSettled();
-        return;
+        if (transition) {
+          settle(transition.from);
+        }
       }
-      begin(chapter);
+      void advance();
     }
-    for (const a of anchors.slice(0, 2))
+    for (const a of anchors.slice(0, 6))
       a.addEventListener(
         'click',
         (event) => {
@@ -460,10 +535,7 @@ export async function mountPageTurn(root: HTMLElement) {
             return;
           event.preventDefault();
           event.stopPropagation();
-          choose(
-            a.dataset.chapter === '0' ? 'start' : 'services',
-            event.detail === 0,
-          );
+          choose(order[Number(a.dataset.chapter)], event.detail === 0);
         },
         { signal },
       );
@@ -494,13 +566,13 @@ export async function mountPageTurn(root: HTMLElement) {
             url.origin !== location.origin ||
             url.search ||
             url.hash ||
-            !['/', '/services/'].includes(url.pathname)
+            !order.some((chapter) => chapterHref(chapter) === url.pathname)
           )
             return;
           event.preventDefault();
           root.scrollIntoView({ block: 'start', behavior: 'instant' });
           choose(
-            url.pathname === '/' ? 'start' : 'services',
+            order.find((chapter) => chapterHref(chapter) === url.pathname)!,
             event.detail === 0,
           );
         },
@@ -602,47 +674,65 @@ export async function mountPageTurn(root: HTMLElement) {
         });
         report.approvedImages = [...ids].sort((a, b) => a - b);
       }
+      gltf.scene.traverse((object) => {
+        const name = object.name.replaceAll('_', ' ');
+        if (
+          !/^(Printed (Supervised|The Gamification|Highlighting)|Project nameplate|Matthew headshot photograph|Contact invitation|Original supervised embedding|Original Fitbit game scene|Source brain illustration relief)/.test(
+            name,
+          )
+        )
+          return;
+        let href = object.userData.href;
+        const portrait =
+          object.userData.futureInteraction === 'portrait-dialog' ||
+          (chapter === 'about' && /headshot/i.test(name));
+        if (portrait) href = '#interactive-portrait';
+        if (typeof href !== 'string') return;
+        if (href.includes('how-to-highlight-3d-brain-regions-2e6c15a35574'))
+          href = '/writing/highlighting-3d-brain-regions/';
+        if (chapter === 'contact' && href === '/contact/') href = '#enquiry';
+        if (
+          !['http:', 'https:', 'mailto:'].includes(
+            new URL(href, location.href).protocol,
+          )
+        )
+          return;
+        const box = new THREE.Box3().setFromObject(object);
+        if (box.isEmpty()) return;
+        const link = document.createElement('a');
+        link.href = href;
+        link.dataset.exhibitHotspot = name;
+        link.hidden = true;
+        const text = document.createElement('span');
+        text.textContent = name.replace(/^(Printed |Project nameplate )/, '');
+        link.append(text);
+        if (portrait)
+          link.addEventListener(
+            'click',
+            (event) => {
+              event.preventDefault();
+              document
+                .querySelector<HTMLButtonElement>('[data-portrait-open]')
+                ?.click();
+            },
+            { signal },
+          );
+        tabBounds.set(anchors.length, box);
+        anchors.push(link);
+        exhibits.push({ chapter, link });
+        root.querySelector('.tabs')!.append(link);
+      });
       report[chapter + 'Rigs'] = rigs.map((r) => r.node.userData.rigId);
       return model;
     }
-    async function loadServices() {
-      if (servicesLoading || closed) return;
-      servicesLoading = true;
-      status.textContent =
-        'Loading Services; the current chapter remains available.';
-      retry.hidden = true;
-      try {
-        const model = register(
-          await load(assetFor('services').url),
-          'services',
-        );
-        model.content.visible = false;
-        rigPose(model, 1);
-        if (initial === 'services' && report.state === 'loading') {
-          stage.dataset.ready = '';
-          settle('services');
-        }
-        report.servicesReady = true;
-        delete report.servicesError;
-        if (requested !== selected) choose(requested, pendingInstant);
-        else {
-          status.textContent = pageNavigation
-            ? 'Book ready.'
-            : 'Choose Services to turn the page.';
-          render();
-        }
-      } catch (error) {
-        if (closed) return;
-        status.textContent =
-          'Services could not load. Retry or open its ordinary chapter page.';
-        retry.hidden = false;
-        report.servicesError = String(error);
-        publish();
-      } finally {
-        servicesLoading = false;
-      }
-    }
-    retry.addEventListener('click', () => void loadServices(), { signal });
+    retry.addEventListener(
+      'click',
+      () => {
+        failed = undefined;
+        void advance();
+      },
+      { signal },
+    );
     // Mouse/touch mesh navigation stays distinct from camera dragging.
     let press: { x: number; y: number; moved: boolean } | undefined;
     canvas.addEventListener(
@@ -696,13 +786,28 @@ export async function mountPageTurn(root: HTMLElement) {
             if (!o.visible) break;
             const i = o.userData.chapterIndex;
             if (Number.isInteger(i)) {
-              if (i < 2) choose(i === 0 ? 'start' : 'services');
-              else location.assign(anchors[i].href);
+              choose(order[i]);
+              return;
+            }
+            if (
+              !transition &&
+              o.userData.futureInteraction === 'portrait-dialog'
+            ) {
+              document
+                .querySelector<HTMLButtonElement>('[data-portrait-open]')
+                ?.click();
               return;
             }
             if (!transition && typeof o.userData.href === 'string') {
-              const url = new URL(o.userData.href, location.href);
-              if (['http:', 'https:'].includes(url.protocol))
+              let href = o.userData.href;
+              if (
+                href.includes('how-to-highlight-3d-brain-regions-2e6c15a35574')
+              )
+                href = '/writing/highlighting-3d-brain-regions/';
+              if (selected === 'contact' && href === '/contact/')
+                href = '#enquiry';
+              const url = new URL(href, location.href);
+              if (['http:', 'https:', 'mailto:'].includes(url.protocol))
                 location.assign(url.href);
               return;
             }
@@ -773,15 +878,12 @@ export async function mountPageTurn(root: HTMLElement) {
         },
         { signal },
       );
-    register(await load(assetFor('start').url), 'start');
+    await ensureChapter('start');
+    if (initial !== 'start') await ensureChapter(initial);
     controls.saveState();
-    if (initial === 'start') {
-      stage.dataset.ready = '';
-      settle('start');
-    } else {
-      models.get('start')!.content.visible = false;
-    }
-    void loadServices();
+    stage.dataset.ready = '';
+    settle(initial);
+    if (requested !== selected) void advance();
   } catch (error) {
     if (closed) return;
     cleanup();

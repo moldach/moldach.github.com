@@ -1,5 +1,5 @@
 ---
-import ChapterBook from '../../components/ChapterBook.astro';
+import PageTurn from '../../components/PageTurn.astro';
 import { render } from 'astro:content';
 import Page from '../../layouts/Page.astro';
 import { serviceEntries } from '../../lib/registry';
@@ -22,7 +22,7 @@ const { Content } = await render(entry);
     { label: entry.data.shortTitle, href: `/services/${entry.id}/` },
   ]}
 >
-  <ChapterBook chapter="Services" />
+  <PageTurn initialChapter="services" navigation />
   <header class="page-intro wrap">
     <p class="eyebrow">Remote AI consulting</p>
     <h1>{entry.data.title}</h1>

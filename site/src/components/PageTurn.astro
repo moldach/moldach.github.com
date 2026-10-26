@@ -1,11 +1,14 @@
 ---
 import { chapters } from '../lib/registry';
 interface Props {
-  initialChapter?: 'start' | 'services';
+  initialChapter?:
+    'start' | 'services' | 'work' | 'writing' | 'about' | 'contact';
   navigation?: boolean;
 }
 const { initialChapter = 'start', navigation = false } = Astro.props;
-const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
+const initialLabel = chapters.find(
+  (c) => c.label.toLowerCase() === initialChapter,
+)!.label;
 ---
 
 <section
@@ -20,7 +23,7 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
       src={
         initialChapter === 'start'
           ? '/models/start/poster.webp'
-          : '/models/chapters/services.webp'
+          : `/models/chapters/${initialChapter}.webp`
       }
       alt={`${initialLabel} chapter pop-up book`}
       width="1536"
@@ -29,7 +32,7 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
     />
     <canvas
       tabindex="0"
-      aria-label="Paper book prototype. Use the Start and Services chapter links to change pages. Drag to inspect the settled scene."
+      aria-label="Paper book prototype. Use the six chapter links to change pages. Drag to inspect the settled scene."
     ></canvas>
     <nav class="tabs" aria-label="Book chapters">
       {chapters.map((chapter, i) => (
@@ -37,7 +40,7 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
           href={chapter.href}
           data-chapter={i}
           aria-current={
-            i === (initialChapter === 'start' ? 0 : 1) ? 'page' : undefined
+            chapter.label.toLowerCase() === initialChapter ? 'page' : undefined
           }
           style={`left:${8 + i * 14.3}%;top:87%;width:12%;height:6%`}
         >
@@ -51,15 +54,18 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
       Opening {initialLabel}…
     </p>
     <button type="button" data-retry hidden>
-      Retry Services
+      Retry chapter
     </button>
-    <a href={initialChapter === 'start' ? '/' : '/services/'} data-open-chapter>
+    <a
+      href={chapters.find((c) => c.label === initialLabel)!.href}
+      data-open-chapter
+    >
       Open {initialLabel} chapter page ↗
     </a>
     <a href="/services/">Open Services page ↗</a>
   </div>
   <p class="help">
-    Choose Start or Services on the book to turn a page. Viewing{' '}
+    Choose a chapter to turn through the book in order. Viewing{' '}
     <strong data-current>{initialLabel}</strong>. Keyboard and reduced-motion
     navigation switch directly.
   </p>
@@ -97,6 +103,9 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
   .integrated .help,
   .integrated .review-actions a {
     display: none;
+  }
+  .integrated[data-state='error'] .review-actions a[data-open-chapter] {
+    display: inline;
   }
   .integrated [role='status'] {
     position: absolute;
@@ -136,12 +145,12 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
     inset: 0;
     pointer-events: none;
   }
-  .tabs a {
+  .tabs :global(a) {
     position: absolute;
     pointer-events: auto;
     border-radius: 3px;
   }
-  .tabs span {
+  .tabs :global(span) {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -149,11 +158,14 @@ const initialLabel = initialChapter === 'start' ? 'Start' : 'Services';
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
   }
-  .tabs a:focus-visible,
+  .tabs :global(a):focus-visible,
   canvas:focus-visible {
     outline: 3px solid #245ed0;
     outline-offset: -3px;
     background: #245ed015;
+  }
+  .tabs :global(a[hidden]) {
+    display: none;
   }
   .review-actions {
     display: flex;

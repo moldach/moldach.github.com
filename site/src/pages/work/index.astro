@@ -1,5 +1,5 @@
 ---
-import ChapterBook from '../../components/ChapterBook.astro';
+import PageTurn from '../../components/PageTurn.astro';
 import { Image } from 'astro:assets';
 import Page from '../../layouts/Page.astro';
 import { pages } from '../../lib/registry';
@@ -15,7 +15,7 @@ import maps from '../../../../project/hinuhinu/featured.png';
     { label: 'Work', href: '/work/' },
   ]}
 >
-  <ChapterBook chapter="Work" />
+  <PageTurn initialChapter="work" navigation />
   <header class="page-intro wrap">
     <p class="eyebrow">Public work · Actual scope</p>
     <h1>Work you can inspect.</h1>
