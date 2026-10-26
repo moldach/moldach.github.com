@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "path": "research/models/work/work.blend",
+      "sha256": "07b708d05d38af3c0887ad0cb7822bcb31c0b3373196dd3e40ca36857847694c"
+    },
+    {
+      "path": "project/shiny-filters/featured.jpg",
+      "sha256": "fed607792b415de0960c50e35719d0cdc24ca1e73cf0628b0d9f1c4cc8b646fd"
+    },
+    {
+      "path": "project/hinuhinu/featured.png",
+      "sha256": "8c6f02e78ee287b903618620bcea160474d9d36f7a584c476f8db6025ba73970"
+    }
+  ],
+  "surfaceMaps": "Original deterministic surface-only normal and roughness maps; no baked illumination.",
+  "mapHeights": "Illustrative paper contours; original geographic prints preserved, not DEM elevations.",
+  "rigs": [
+    "puttpulse-basket",
+    "shiny-device",
+    "hinuhinu-chart"
+  ],
+  "authoring": "build_work_finish.py plus refine_work_hinges.py; export_work_finish.py supports re-export and --render",
+  "imageryAttribution": "Existing Matthew Oldach project images, preserved from the legacy repository; no external stock or paid assets."
+}

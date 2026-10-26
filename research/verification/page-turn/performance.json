@@ -1,0 +1,27 @@
+{
+  "forward": {
+    "samples": 86,
+    "medianMs": 16.7,
+    "p95Ms": 16.8,
+    "maximumMs": 166.6,
+    "peakDrawCalls": 169,
+    "peakSubmittedTriangles": 481564
+  },
+  "reverse": {
+    "samples": 90,
+    "medianMs": 16.7,
+    "p95Ms": 16.8,
+    "maximumMs": 66.7,
+    "peakDrawCalls": 169,
+    "peakSubmittedTriangles": 481564
+  },
+  "mobile": {
+    "samples": 89,
+    "medianMs": 16.7,
+    "p95Ms": 16.8,
+    "maximumMs": 150,
+    "peakDrawCalls": 169,
+    "peakSubmittedTriangles": 481564
+  },
+  "measurement": "Foreground requestAnimationFrame intervals; includes compilation/scheduling stalls. Not GPU timing, real-user INP or physical-device evidence."
+}

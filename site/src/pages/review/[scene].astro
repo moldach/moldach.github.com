@@ -1,0 +1,110 @@
+---
+import { siteConfig } from '../../lib/site-config.mjs';
+import PageTurn from '../../components/PageTurn.astro';
+import ChapterBook from '../../components/ChapterBook.astro';
+export function getStaticPaths() {
+  return siteConfig(process.env).production
+    ? []
+    : [
+        { params: { scene: 'start' } },
+        { params: { scene: 'page-turn' } },
+        { params: { scene: 'work-finish' } },
+      ];
+}
+const workFinish = Astro.params.scene === 'work-finish';
+const pageTurn = Astro.params.scene === 'page-turn';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Matthew Oldach’s interactive paper book with fixed Studio lighting and chapter navigation."
+    />
+    <title>{workFinish ? 'Work miniature finish' : pageTurn ? 'Start ↔ Services prototype' : 'Start'} — Matthew Oldach</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="/">Matthew Oldach</a>
+        <h1>
+          {workFinish
+            ? 'Selected work, in miniature.'
+            : pageTurn
+              ? 'A new chapter.'
+              : 'Practical AI. Less busywork.'}
+        </h1>
+        <p>
+          {workFinish
+            ? 'Material and construction study · fixed dynamic Studio lighting'
+            : pageTurn
+              ? 'Start ↔ Services · page-turn study · fixed Studio lighting'
+              : 'Explore a chapter.'}
+        </p>
+      </header>
+      {workFinish ? (
+        <PageTurn initialChapter="work" finish />
+      ) : pageTurn ? (
+        <PageTurn />
+      ) : (
+        <ChapterBook chapter="Start" />
+      )}
+      {workFinish && (
+        <section class="evidence">
+          <h2>Three projects. Three materials.</h2>
+          <p>
+            A miniature putting basket, original Shiny-filteRs application
+            imagery, and layered Hinuhinu paper maps. Drag the settled book to
+            inspect it; select a chapter tag to inspect the folding.
+          </p>
+          <p>
+            <a href="/work/#puttpulse">PuttPulse</a> ·{' '}
+            <a href="/work/#shiny-filters">Shiny-filteRs</a> ·{' '}
+            <a href="/work/#hinuhinu">Hinuhinu</a>
+          </p>
+          <p>
+            The terrain layers illustrate the original maps; they are not
+            measured elevation models. This finish is a review candidate.
+          </p>
+        </section>
+      )}
+    </main>
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+      :global(body) {
+        margin: 0;
+        background: #f6f1e7;
+        color: #182630;
+        font-family: Arial, sans-serif;
+      }
+      main {
+        max-width: 1584px;
+        padding: 28px 24px;
+        margin: auto;
+      }
+      h1 {
+        font:
+          clamp(26px, 4vw, 40px) Georgia,
+          serif;
+      }
+      a {
+        color: #18488b;
+      }
+      header p {
+        color: #53616a;
+      }
+      @media (max-width: 650px) {
+        main {
+          padding: 20px 12px;
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "reference": {
+    "geometry": "textured-relief",
+    "vertices": 24897,
+    "depth": 1.649999976158142,
+    "depthInspection": true,
+    "identicalPoseReset": true,
+    "pointerInspection": true,
+    "articleAndBack": true,
+    "contextRecovery": true,
+    "trailCapture": true,
+    "errors": []
+  },
+  "reference-modes": {
+    "touchTags": true,
+    "reducedMotion": true,
+    "webglFallback": true,
+    "noJS": true,
+    "oilIdleAfter650ms": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "baselinePreserved": true,
+  "baselineSource": "research/models/start/start.blend",
+  "baselineRender": "research/models/start/start-render.png",
+  "sizes": {
+    "start.glb": 6201924,
+    "start-fallback.glb": 3258124,
+    "poster.webp": 95042
+  },
+  "triangles": 135206,
+  "meshPrimitives": 102,
+  "approvedImages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "chapterIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "geometryCompression": "EXT_meshopt_compression",
+  "textureCompression": "KHR_texture_basisu UASTC",
+  "normalBake": "surface-only tangent normals",
+  "lightingBaked": false,
+  "sizeTargetMet": true,
+  "drawCallTargetEstimateMet": true
+}

@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse",
+  "version": "13.5.0",
+  "fetchTime": "2026-10-22T20:54:59.037Z",
+  "requestedUrl": "http://127.0.0.1:4321/",
+  "formFactor": "mobile",
+  "throttlingMethod": "simulate",
+  "scores": {
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.66
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 2258.7581,
+      "unit": "millisecond"
+    },
+    "cumulative-layout-shift": {
+      "value": 0.001692781064599158,
+      "unit": "unitless"
+    },
+    "total-blocking-time": {
+      "value": 0,
+      "unit": "millisecond"
+    }
+  },
+  "warnings": [],
+  "limitations": [
+    "Local laboratory preview; no field INP, production or real-device result.",
+    "3D is loaded on request; score does not measure first-activation cost or sustained GPU frame rate.",
+    "SEO score reflects intentional preview noindex; not a search-ranking score.",
+    "Automated accessibility is not full WCAG conformance."
+  ]
+}

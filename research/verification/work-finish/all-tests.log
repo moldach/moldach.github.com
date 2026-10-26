@@ -1,0 +1,41 @@
+
+> test
+> node --test tests/*.test.mjs
+
+✔ agent copies preserve published text, code and destinations without scripts or review pages (305.608417ms)
+✔ preview machine copies avoid invented production origins (14.078292ms)
+✔ all 36 chapter pairs traverse exactly the intervening leaves in order (4.905709ms)
+✔ preview has crawlable HTML but no indexed pages or advertised sitemap (164.46175ms)
+✔ legacy robots file cannot silently advertise a preview sitemap (142.471709ms)
+✔ production canonical and sitemap must match the published route (21.02225ms)
+✔ missing local article destinations fail validation (16.713666ms)
+✔ project video posters must exist in the static output (18.807125ms)
+✔ 48 unique cards, balanced combinations, six-card deals (7.893917ms)
+✔ rows reject repeats and mismatches (0.64375ms)
+✔ fourth card captures exactly four, clears stack, draws, changes turn without mutating input (0.970792ms)
+✔ forced passes and empty hands terminate without inventing points (0.347834ms)
+✔ AI captures available fourth card and hidden-hand swaps do not affect its decision (867.438209ms)
+✔ 100 complete random games conserve every card and score (513.227292ms)
+✔ animation exports retain finite geometry, explicit rigs, ten images and one shared book (2893.8455ms)
+✔ page-turn stages preserve fold, turn, unfold order across four stagger lanes (4.055666ms)
+✔ page-turn progress stays finite, bounded and monotonic (7.658208ms)
+✔ bookmark jumps rifle leaves without unfolding intermediate chapters (1.878625ms)
+✔ default builds are non-indexable; NODE_ENV is not deployment approval (11.593875ms)
+✔ production requires the owned origin (2.5105ms)
+✔ production refuses placeholders, preview hosts and unsafe URL variants (22.404166ms)
+✔ production normalizes a supplied owned origin without approving its ownership (2.216042ms)
+✔ Cloudflare branch previews cannot inherit production indexing (0.706333ms)
+✔ invalid deployment spellings fail rather than accidentally publishing (36.175083ms)
+✔ canonical routes cannot change the origin or include tracking fragments (1.006875ms)
+✔ December 2023 precedes 2019 and drafts/future dates cannot enter latest writing (44.519125ms)
+✔ calendar dates are real, including leap years, and invalid dates fail (2.5365ms)
+✔ finish tier remains conservative for touch, small viewports and constrained memory (65.260625ms)
+✔ finished Work assets retain materials, rigid hinges, project links and one book per tier (2180.441583ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5636.380167

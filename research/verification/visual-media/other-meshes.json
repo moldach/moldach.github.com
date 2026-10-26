@@ -1,0 +1,10 @@
+[
+  {
+    "mesh": "UMAP",
+    "destination": "/writing/supervised-umap/"
+  },
+  {
+    "mesh": "Brain regions",
+    "destination": "https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574"
+  }
+]

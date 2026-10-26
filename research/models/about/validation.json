@@ -1,0 +1,22 @@
+{
+  "glbVersion": 2,
+  "bytes": 5880220,
+  "meshes": 270,
+  "positionVertices": 184384,
+  "finitePositions": true,
+  "chapterTags": 6,
+  "activeChapter": "About",
+  "destinationMetadata": [
+    "/about/",
+    "/experience/"
+  ],
+  "paperHandNodes": {
+    "Left": 22,
+    "Right": 22
+  },
+  "originalPhotoSourceUnchanged": true,
+  "browserIntegrated": false,
+  "materialsBaked": false,
+  "visualMatchAccepted": false,
+  "faceInteractionImplementedByThisAsset": false
+}

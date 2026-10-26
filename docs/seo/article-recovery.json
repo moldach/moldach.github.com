@@ -1,0 +1,62 @@
+[
+  {
+    "id": "supervised-umap",
+    "original": "slides/supervised-umap/index.html",
+    "metadataSource": "post/supervised-umap/index.html",
+    "sourceSha256": "c44ea4b9953cd336a0761e4c48e5c3efc58869a0e02fae0faa848f862200a352",
+    "embeddedImages": 8,
+    "redactions": 0,
+    "output": "src/content/writing/supervised-umap.md",
+    "limitations": "Source scripts/styles removed; no historical R code executed or integrations revalidated. Original media/source credits preserved."
+  },
+  {
+    "id": "fitbit-gamification",
+    "original": "https://raw.githubusercontent.com/moldach/fitbit-project/gh-pages/index.html",
+    "metadataSource": "project/fitbit-project/index.html",
+    "sourceSha256": "cc41516109bc253514f006eba0151b5c09a5c5bf21a8cffe6ed24b72c1a4b2fd",
+    "embeddedImages": 38,
+    "redactions": 0,
+    "output": "src/content/writing/fitbit-gamification.md",
+    "limitations": "Source scripts/styles removed; no historical R code executed or integrations revalidated. Original media/source credits preserved."
+  },
+  {
+    "id": "drake",
+    "original": "post/drake/index.html",
+    "metadataSource": "post/drake/index.html",
+    "sourceSha256": "50b25fe9d46c4b52e4ca9cc2f9b394200149c35d1598b34eb8fb8d69a9a55d4a",
+    "embeddedImages": 0,
+    "redactions": 0,
+    "output": "src/content/writing/drake.md",
+    "limitations": "Source scripts/styles removed; no historical R code executed or integrations revalidated. Original media/source credits preserved."
+  },
+  {
+    "id": "faststyletransfer",
+    "original": "post/faststyletransfer/index.html",
+    "metadataSource": "post/faststyletransfer/index.html",
+    "sourceSha256": "4fb36b5b27efc91316e34f6a8487ecd60c4bcd007ad960dd6006db016de906ae",
+    "embeddedImages": 0,
+    "redactions": 0,
+    "output": "src/content/writing/faststyletransfer.md",
+    "limitations": "Source scripts/styles removed; no historical R code executed or integrations revalidated. Original media/source credits preserved."
+  },
+  {
+    "id": "ninjutsu",
+    "original": "post/ninjutsu/index.html",
+    "metadataSource": "post/ninjutsu/index.html",
+    "sourceSha256": "78dad85b13c5f3ade0f9415d87c6ba477df18458d1150c579f3fb9db04c6fce8",
+    "embeddedImages": 0,
+    "redactions": 0,
+    "output": "src/content/writing/ninjutsu.md",
+    "limitations": "Source scripts/styles removed; no historical R code executed or integrations revalidated. Original media/source credits preserved."
+  },
+  {
+    "id": "rprofile",
+    "original": "post/rprofile/index.html",
+    "metadataSource": "post/rprofile/index.html",
+    "sourceSha256": "5cdc7371130308ec4d2ae7d9ec21f48c9645d6f994be85cb04ff4d15166950fd",
+    "embeddedImages": 0,
+    "redactions": 0,
+    "output": "src/content/writing/rprofile.md",
+    "limitations": "Source scripts/styles removed; no historical R code executed or integrations revalidated. Original media/source credits preserved."
+  }
+]

@@ -1,0 +1,113 @@
+---
+import PageTurn from '../../components/PageTurn.astro';
+import { Image } from 'astro:assets';
+import Page from '../../layouts/Page.astro';
+import { pages } from '../../lib/registry';
+import putt from '../../../../research/design/chapters/putting-area-reference-v1.png';
+import filters from '../../../../project/shiny-filters/featured.jpg';
+import maps from '../../../../project/hinuhinu/featured.png';
+---
+
+<Page
+  {...pages['/work/']}
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Work', href: '/work/' },
+  ]}
+>
+  <PageTurn initialChapter="work" navigation />
+  <header class="page-intro wrap">
+    <p class="eyebrow">Public work · Actual scope</p>
+    <h1>Work you can inspect.</h1>
+    <p class="intro">
+      A selection of product, interface and visualisation work. Each project has
+      its own purpose; older technical projects are not recast as client AI
+      deployments.
+    </p>
+  </header>
+  <section class="project-feature wrap" id="puttpulse">
+    <Image
+      src={putt}
+      alt="Concept illustration of a disc-golf putting basket on raised mulch with plastic marking whiskers"
+      width={700}
+      format="webp"
+      loading="lazy"
+    />
+    <div>
+      <p class="eyebrow">Product development</p>
+      <h2>PuttPulse</h2>
+      <p>
+        A disc-golf practice product. The website's putting illustration is
+        concept artwork, not a screenshot of the application or evidence of an
+        AI capability.
+      </p>
+      <p>
+        A detailed contribution and delivery case study will use reviewed public
+        evidence. No launch status or measured business result is asserted here.
+      </p>
+      <a href="/contact/">Ask about the product work →</a>
+    </div>
+  </section>
+  <section class="project-feature wrap" id="shiny-filters">
+    <Image
+      src={filters}
+      alt="Original Shiny-filteRs mobile screenshot showing a Voronoi-filtered portrait"
+      width={380}
+      format="webp"
+      loading="lazy"
+    />
+    <div>
+      <p class="eyebrow">Historical public project · 2019</p>
+      <h2>Shiny-filteRs</h2>
+      <p>
+        A mobile-oriented Shiny application combining image filters,
+        visualisation and interfaces across languages. The featured image is the
+        original Voronoi-filter output.
+      </p>
+      <p>
+        The source presentation describes the experiment and its dependencies.
+        Its historical integrations have not been revalidated as a currently
+        supported service.
+      </p>
+      <a href="https://moldach.github.io/project/shiny-filters/">
+        Read the original project and slides ↗
+      </a>
+    </div>
+  </section>
+  <section class="project-feature wrap" id="hinuhinu">
+    <Image
+      src={maps}
+      alt="Original Hawaiian maps showing moisture zones, solar radiation and ocean depth"
+      width={700}
+      format="webp"
+      loading="lazy"
+    />
+    <div>
+      <p class="eyebrow">Historical public project · 2019</p>
+      <h2>Hinuhinu</h2>
+      <p>
+        A Shiny and rayshader exploration of Hawaiian cartography, including
+        moisture zones, solar radiation and ocean-depth layers.
+      </p>
+      <p>
+        The original write-up discusses iteration, rendering and application
+        constraints. Third-party inspiration is attributed there and is not
+        presented as Matthew's own output.
+      </p>
+      <a href="https://moldach.github.io/project/hinuhinu/">
+        Read the original project and demonstrations ↗
+      </a>
+    </div>
+  </section>
+  <section class="reading">
+    <h2>From technical practice to a useful engagement.</h2>
+    <p>
+      Public projects let you inspect how I approach software and data. For your
+      business, we begin with the actual workflow and agree the boundary and
+      evidence needed to judge a useful result.
+    </p>
+    <a class="button" href="/services/">
+      Explore the consulting engagements ↗
+    </a>
+  </section>
+</Page>
