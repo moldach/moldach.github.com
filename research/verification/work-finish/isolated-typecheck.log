@@ -1,0 +1,14 @@
+
+> check
+> astro check
+
+14:10:59 [vite] Re-optimizing dependencies because vite config has changed
+14:11:01 [content] Syncing content
+14:11:01 [content] Synced content
+14:11:01 [types] Generated 1.52s
+14:11:01 [check] Getting diagnostics for Astro files in /private/tmp/work-finish-typecheck.PAl2EW/site...
+Result (40 files):
+- 0 errors
+- 0 warnings
+- 0 hints
+

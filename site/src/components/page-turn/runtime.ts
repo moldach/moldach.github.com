@@ -1,3 +1,5 @@
+import { finishTier, finishStudio } from './finish-policy.mjs';
+import type { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
 import { chapterOrder } from '../../lib/book-order.mjs';
 import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
@@ -39,6 +41,20 @@ export async function mountPageTurn(root: HTMLElement) {
   const initial: Chapter = order.includes(root.dataset.initial as Chapter)
     ? (root.dataset.initial as Chapter)
     : 'start';
+  const finish = root.dataset.finish === 'work-v1';
+  const tier = finishTier({
+    width: innerWidth,
+    coarse: matchMedia('(pointer: coarse)').matches,
+    memory: (navigator as Navigator & { deviceMemory?: number }).deviceMemory,
+  });
+  type FinishAsset = {
+    url: string;
+    fallback: string;
+    bytes: number;
+    estimatedTextureBytes: number;
+    rigs: string[];
+  };
+  let finishAssets: { shared: FinishAsset; work: FinishAsset } | undefined;
   const pageNavigation = root.dataset.navigation === 'page';
   const anchors = [
     ...root.querySelectorAll<HTMLAnchorElement>('[data-chapter]'),
@@ -53,6 +69,8 @@ export async function mountPageTurn(root: HTMLElement) {
     state: 'loading',
     selected: initial,
     lighting: 'studio',
+    finish,
+    tier: finish ? tier : 'original',
     physicalDeviceVerified: false,
     drawCalls: 0,
     triangles: 0,
@@ -69,7 +87,9 @@ export async function mountPageTurn(root: HTMLElement) {
   let scene: THREE.Scene | undefined,
     leaf: THREE.Mesh | undefined,
     original: Float32Array | undefined;
+  let ktx: KTX2Loader | undefined;
   let shadow: THREE.DirectionalLightShadow | undefined;
+  const retiredBooks: THREE.Object3D[] = [];
   const tabMaterials: {
     index: number;
     surface: boolean;
@@ -118,11 +138,15 @@ export async function mountPageTurn(root: HTMLElement) {
     cancelAnimationFrame(frame);
     observer?.disconnect();
     controls?.dispose();
+    // Legacy book materials may also be used by their chapter content.
+    // Keep those resources alive until the entire canvas is closed.
+    retiredBooks.forEach((book) => scene?.add(book));
     if (scene) dispose(scene);
     for (const m of models.values()) if (!m.root.parent) dispose(m.root);
     shadow?.dispose();
     environment?.dispose();
     pmrem?.dispose();
+    ktx?.dispose();
     renderer?.dispose();
     renderer?.forceContextLoss();
     delete stage.dataset.ready;
@@ -138,10 +162,12 @@ export async function mountPageTurn(root: HTMLElement) {
       antialias: true,
       powerPreference: 'low-power',
     });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+    renderer.setPixelRatio(
+      Math.min(devicePixelRatio, finish && tier === 'compact' ? 1.25 : 1.5),
+    );
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.AgXToneMapping;
-    renderer.toneMappingExposure = 1.5;
+    renderer.toneMappingExposure = finish ? finishStudio.exposure : 1.5;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.VSMShadowMap;
     renderer.shadowMap.autoUpdate = false;
@@ -179,13 +205,14 @@ export async function mountPageTurn(root: HTMLElement) {
       target: new THREE.Vector3(0, 2, 0),
       lens: 48,
     };
-    let focalLength = pageNavigation ? restingCamera(initial).lens : 48;
+    let focalLength =
+      pageNavigation || finish ? restingCamera(initial).lens : 48;
     function frameCamera(
       time?: number,
       from: Chapter = selected,
       to: Chapter = selected,
     ) {
-      if (!pageNavigation) return;
+      if (!pageNavigation && !finish) return;
       const incoming = time !== undefined && time >= 1150;
       const a =
         time === undefined
@@ -214,12 +241,20 @@ export async function mountPageTurn(root: HTMLElement) {
     environment = pmrem.fromScene(room, 0.04);
     room.dispose();
     scene.environment = environment.texture;
-    scene.environmentIntensity = 0.38;
-    const key = new THREE.DirectionalLight(0xffebd3, 3.2);
+    scene.environmentIntensity = finish
+      ? finishStudio.environmentIntensity
+      : 0.38;
+    const key = new THREE.DirectionalLight(
+      0xffebd3,
+      finish ? finishStudio.key : 3.2,
+    );
     key.position.set(-4, 9, 3);
     key.castShadow = true;
     shadow = key.shadow;
-    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.mapSize.set(
+      finish && tier === 'enhanced' ? 2048 : 1024,
+      finish && tier === 'enhanced' ? 2048 : 1024,
+    );
     key.shadow.radius = 10;
     key.shadow.blurSamples = 16;
     Object.assign(key.shadow.camera, {
@@ -231,9 +266,15 @@ export async function mountPageTurn(root: HTMLElement) {
     });
     key.shadow.bias = -0.0002;
     key.shadow.normalBias = 0.012;
-    const fill = new THREE.DirectionalLight(0xf5f7ff, 1.4);
+    const fill = new THREE.DirectionalLight(
+      0xf5f7ff,
+      finish ? finishStudio.fill : 1.4,
+    );
     fill.position.set(5, 7, -1);
-    const rim = new THREE.DirectionalLight(0xffefdb, 1);
+    const rim = new THREE.DirectionalLight(
+      0xffefdb,
+      finish ? finishStudio.rim : 1,
+    );
     rim.position.set(-1, 5, -6);
     scene.add(key, fill, rim);
     const floor = new THREE.Mesh(
@@ -496,7 +537,12 @@ export async function mountPageTurn(root: HTMLElement) {
       if (models.has(chapter)) return;
       if (loading.has(chapter)) return loading.get(chapter)!;
       const promise = (async () => {
-        const model = register(await load(assetFor(chapter).url), chapter);
+        const model = register(
+          await (finishAssets && chapter === 'work'
+            ? loadFinish(finishAssets.work)
+            : load(assetFor(chapter).url)),
+          chapter,
+        );
         model.content.visible = false;
         rigPose(model, 1);
         report[chapter + 'Ready'] = true;
@@ -617,14 +663,40 @@ export async function mountPageTurn(root: HTMLElement) {
         { signal },
       );
     const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+    if (finish) {
+      const { KTX2Loader: Decoder } =
+        await import('three/addons/loaders/KTX2Loader.js');
+      ktx = new Decoder()
+        .setTranscoderPath('/decoders/basis/')
+        .detectSupport(renderer);
+      loader.setKTX2Loader(ktx);
+    }
+    async function loadFinish(asset: FinishAsset) {
+      try {
+        if (new URLSearchParams(location.search).has('fallback'))
+          throw Error('Conventional texture inspection');
+        const model = await load(asset.url);
+        report.textureFormat = 'ktx2';
+        return model;
+      } catch (error) {
+        if (closed) throw error;
+        const model = await load(asset.fallback);
+        report.textureFormat = 'conventional';
+        report.textureFallbackReason = String(error);
+        return model;
+      }
+    }
     async function load(url: string) {
       let timer: ReturnType<typeof setTimeout>;
       let expired = false;
       return await new Promise<GLTF>((resolve, reject) => {
-        timer = setTimeout(() => {
-          expired = true;
-          reject(Error('Model loading timed out'));
-        }, 15000);
+        timer = setTimeout(
+          () => {
+            expired = true;
+            reject(Error('Model loading timed out'));
+          },
+          finish ? 90000 : 15000,
+        );
         loader.load(
           url,
           (g) => {
@@ -634,6 +706,16 @@ export async function mountPageTurn(root: HTMLElement) {
               if (closed) reject(Error('Review closed'));
               return;
             }
+            const entry = performance
+              .getEntriesByName(new URL(url, location.href).href)
+              .at(-1) as PerformanceResourceTiming | undefined;
+            const resources = (report.resources ||= []) as unknown[];
+            resources.push({
+              url,
+              encodedBytes: entry?.encodedBodySize ?? null,
+              transferBytes: entry?.transferSize ?? null,
+              durationMs: entry?.duration ?? null,
+            });
             resolve(g);
           },
           undefined,
@@ -644,7 +726,46 @@ export async function mountPageTurn(root: HTMLElement) {
         );
       });
     }
+    function registerTabs(book: THREE.Object3D) {
+      book.traverse((o) => {
+        if (typeof o.userData.tabSurface !== 'boolean') return;
+        o.traverse((child) => {
+          const mesh = child as THREE.Mesh;
+          if (!mesh.isMesh) return;
+          const material = (
+            mesh.material as THREE.MeshStandardMaterial
+          ).clone();
+          mesh.material = material;
+          tabMaterials.push({
+            index: o.userData.chapterIndex,
+            surface: o.userData.tabSurface,
+            material,
+          });
+        });
+      });
+      book.traverse((o) => {
+        const i = o.userData.chapterIndex;
+        if (Number.isInteger(i)) {
+          const box = new THREE.Box3().setFromObject(o);
+          if (!box.isEmpty()) {
+            if (tabBounds.has(i)) tabBounds.get(i)!.union(box);
+            else tabBounds.set(i, box);
+          }
+        }
+      });
+    }
     function register(gltf: GLTF, chapter: Chapter) {
+      // The review has its own shared book; discard legacy duplicates before adding chapters.
+      if (finishAssets) {
+        const duplicates: THREE.Object3D[] = [];
+        gltf.scene.traverse((o) => {
+          if (o.userData.role === 'shared-book') duplicates.push(o);
+        });
+        duplicates.forEach((o) => {
+          o.removeFromParent();
+          retiredBooks.push(o);
+        });
+      }
       const rigs: Rig[] = [];
       let content: THREE.Object3D | undefined;
       const ids = new Set<number>();
@@ -667,13 +788,28 @@ export async function mountPageTurn(root: HTMLElement) {
         const mesh = o as THREE.Mesh;
         if (mesh.isMesh) {
           const mat = mesh.material as THREE.MeshStandardMaterial;
-          const detail = /Printed|Approved|legend/i.test(mat.name);
+          if (finish && mat.userData.materialId === 'glass') {
+            // A thin cover lens needs specular reflections, not a second blurred
+            // scene render through a volume. Keep the original print legible.
+            const lens = mat as THREE.MeshPhysicalMaterial;
+            lens.transmission = 0;
+            lens.transparent = true;
+            lens.opacity = 0.08;
+            lens.depthWrite = false;
+            lens.side = THREE.FrontSide;
+            lens.clearcoat = 1;
+            lens.clearcoatRoughness = 0.025;
+          }
+          const detail = /Printed|Approved|legend/i.test(mat.name) || (finish && mat.userData.materialId === 'glass');
           mesh.castShadow = mesh.receiveShadow = !detail;
         }
       });
       if (
         !content ||
-        rigs.length !== assetFor(chapter).rigs.length ||
+        rigs.length !==
+          (finishAssets && chapter === 'work'
+            ? finishAssets.work.rigs.length
+            : assetFor(chapter).rigs.length) ||
         (chapter === 'start' && ids.size !== 10)
       ) {
         dispose(gltf.scene);
@@ -684,32 +820,7 @@ export async function mountPageTurn(root: HTMLElement) {
       scene!.add(gltf.scene);
       gltf.scene.updateMatrixWorld(true);
       if (chapter === 'start') {
-        gltf.scene.traverse((o) => {
-          if (typeof o.userData.tabSurface !== 'boolean') return;
-          o.traverse((child) => {
-            const mesh = child as THREE.Mesh;
-            if (!mesh.isMesh) return;
-            const material = (
-              mesh.material as THREE.MeshStandardMaterial
-            ).clone();
-            mesh.material = material;
-            tabMaterials.push({
-              index: o.userData.chapterIndex,
-              surface: o.userData.tabSurface,
-              material,
-            });
-          });
-        });
-        gltf.scene.traverse((o) => {
-          const i = o.userData.chapterIndex;
-          if (Number.isInteger(i)) {
-            const box = new THREE.Box3().setFromObject(o);
-            if (!box.isEmpty()) {
-              if (tabBounds.has(i)) tabBounds.get(i)!.union(box);
-              else tabBounds.set(i, box);
-            }
-          }
-        });
+        if (!finishAssets) registerTabs(gltf.scene);
         report.approvedImages = [...ids].sort((a, b) => a - b);
       }
       gltf.scene.traverse((object) => {
@@ -900,11 +1011,18 @@ export async function mountPageTurn(root: HTMLElement) {
       root.addEventListener(
         'review-seek',
         (event) => {
-          const e = event as CustomEvent<{ progress: number; to: Chapter }>;
+          const e = event as CustomEvent<{
+            progress: number;
+            to: Chapter;
+            from?: Chapter;
+          }>;
           cancelAnimationFrame(frame);
           frame = 0;
           if (!models.has(e.detail.to)) return;
-          const from = e.detail.to === 'start' ? 'services' : 'start';
+          const from =
+            e.detail.from || (e.detail.to === 'start' ? 'services' : 'start');
+          if (!models.has(from)) return;
+          for (const model of models.values()) model.content.visible = false;
           transition = {
             from,
             to: e.detail.to,
@@ -916,8 +1034,40 @@ export async function mountPageTurn(root: HTMLElement) {
         },
         { signal },
       );
-    await ensureChapter('start');
-    if (initial !== 'start') await ensureChapter(initial);
+    if (finish && new URLSearchParams(location.search).has('capture')) {
+      root.addEventListener('review-camera', (event) => {
+        const detail = (event as CustomEvent<{position: number[]; target: number[]; lens: number}>).detail;
+        camera.position.fromArray(detail.position);
+        controls!.target.fromArray(detail.target);
+        focalLength = detail.lens;
+        camera.setFocalLength(focalLength);
+        camera.lookAt(controls!.target);
+        camera.updateProjectionMatrix();
+        render();
+      }, {signal});
+    }
+    if (finish) {
+      const response = await fetch('/models/work-finish/v1/manifest.json', {
+        signal,
+      });
+      if (!response.ok) throw Error('Work finish manifest unavailable');
+      const manifest = await response.json();
+      finishAssets = manifest.tiers[tier];
+      const shared = await loadFinish(finishAssets!.shared);
+      scene.add(shared.scene);
+      shared.scene.traverse((o) => {
+        const mesh = o as THREE.Mesh;
+        if (mesh.isMesh) mesh.castShadow = mesh.receiveShadow = true;
+      });
+      shared.scene.updateMatrixWorld(true);
+      registerTabs(shared.scene);
+      report.downloadBytes =
+        finishAssets!.shared.bytes + finishAssets!.work.bytes;
+      report.estimatedTextureBytes =
+        finishAssets!.shared.estimatedTextureBytes +
+        finishAssets!.work.estimatedTextureBytes;
+    } else await ensureChapter('start');
+    if (initial !== 'start' || finish) await ensureChapter(initial);
     controls.saveState();
     stage.dataset.ready = '';
     settle(initial);
@@ -929,6 +1079,14 @@ export async function mountPageTurn(root: HTMLElement) {
     publish();
     status.textContent =
       'The 3D preview could not load. Use the ordinary chapter links.';
+    if (finish) {
+      retry.hidden = false;
+      retry.addEventListener('click', () => {
+        retry.hidden = true;
+        canvas.replaceWith(canvas.cloneNode(false));
+        void mountPageTurn(root);
+      }, { once: true });
+    }
     console.warn('Page-turn preview unavailable', error);
   }
 }

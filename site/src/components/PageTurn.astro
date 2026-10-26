@@ -4,14 +4,20 @@ interface Props {
   initialChapter?:
     'start' | 'services' | 'work' | 'writing' | 'about' | 'contact';
   navigation?: boolean;
+  finish?: boolean;
 }
-const { initialChapter = 'start', navigation = false } = Astro.props;
+const {
+  initialChapter = 'start',
+  navigation = false,
+  finish = false,
+} = Astro.props;
 const initialLabel = chapters.find(
   (c) => c.label.toLowerCase() === initialChapter,
 )!.label;
 ---
 
 <section
+  data-finish={finish ? 'work-v1' : undefined}
   data-page-turn
   data-initial={initialChapter}
   data-navigation={navigation ? 'page' : 'review'}
@@ -21,9 +27,11 @@ const initialLabel = chapters.find(
   <div class="stage" data-stage>
     <img
       src={
-        initialChapter === 'start'
-          ? '/models/start/poster.webp'
-          : `/models/chapters/${initialChapter}.webp`
+        finish
+          ? '/models/work-finish/v1/poster.webp'
+          : initialChapter === 'start'
+            ? '/models/start/poster.webp'
+            : `/models/chapters/${initialChapter}.webp`
       }
       alt={`${initialLabel} chapter pop-up book`}
       width="1536"

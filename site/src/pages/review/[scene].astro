@@ -5,8 +5,13 @@ import ChapterBook from '../../components/ChapterBook.astro';
 export function getStaticPaths() {
   return siteConfig(process.env).production
     ? []
-    : [{ params: { scene: 'start' } }, { params: { scene: 'page-turn' } }];
+    : [
+        { params: { scene: 'start' } },
+        { params: { scene: 'page-turn' } },
+        { params: { scene: 'work-finish' } },
+      ];
 }
+const workFinish = Astro.params.scene === 'work-finish';
 const pageTurn = Astro.params.scene === 'page-turn';
 ---
 
@@ -20,21 +25,54 @@ const pageTurn = Astro.params.scene === 'page-turn';
       name="description"
       content="Matthew Oldach’s interactive paper book with fixed Studio lighting and chapter navigation."
     />
-    <title>{pageTurn ? 'Start ↔ Services prototype' : 'Start'} — Matthew Oldach</title>
+    <title>{workFinish ? 'Work miniature finish' : pageTurn ? 'Start ↔ Services prototype' : 'Start'} — Matthew Oldach</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
     <main>
       <header>
         <a href="/">Matthew Oldach</a>
-        <h1>{pageTurn ? 'A new chapter.' : 'Practical AI. Less busywork.'}</h1>
+        <h1>
+          {workFinish
+            ? 'Selected work, in miniature.'
+            : pageTurn
+              ? 'A new chapter.'
+              : 'Practical AI. Less busywork.'}
+        </h1>
         <p>
-          {pageTurn
-            ? 'Start ↔ Services · page-turn study · fixed Studio lighting'
-            : 'Explore a chapter.'}
+          {workFinish
+            ? 'Material and construction study · fixed dynamic Studio lighting'
+            : pageTurn
+              ? 'Start ↔ Services · page-turn study · fixed Studio lighting'
+              : 'Explore a chapter.'}
         </p>
       </header>
-      {pageTurn ? <PageTurn /> : <ChapterBook chapter="Start" />}
+      {workFinish ? (
+        <PageTurn initialChapter="work" finish />
+      ) : pageTurn ? (
+        <PageTurn />
+      ) : (
+        <ChapterBook chapter="Start" />
+      )}
+      {workFinish && (
+        <section class="evidence">
+          <h2>Three projects. Three materials.</h2>
+          <p>
+            A miniature putting basket, original Shiny-filteRs application
+            imagery, and layered Hinuhinu paper maps. Drag the settled book to
+            inspect it; select a chapter tag to inspect the folding.
+          </p>
+          <p>
+            <a href="/work/#puttpulse">PuttPulse</a> ·{' '}
+            <a href="/work/#shiny-filters">Shiny-filteRs</a> ·{' '}
+            <a href="/work/#hinuhinu">Hinuhinu</a>
+          </p>
+          <p>
+            The terrain layers illustrate the original maps; they are not
+            measured elevation models. This finish is a review candidate.
+          </p>
+        </section>
+      )}
     </main>
     <style>
       :global(*) {
