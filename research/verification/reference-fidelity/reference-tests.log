@@ -1,0 +1,26 @@
+
+> test
+> node --test tests/*.test.mjs
+
+✔ preview has crawlable HTML but no indexed pages or advertised sitemap (20.192667ms)
+✔ legacy robots file cannot silently advertise a preview sitemap (4.291458ms)
+✔ production canonical and sitemap must match the published route (4.688791ms)
+✔ missing local article destinations fail validation (3.315625ms)
+✔ project video posters must exist in the static output (3.435916ms)
+✔ default builds are non-indexable; NODE_ENV is not deployment approval (3.051792ms)
+✔ production requires the owned origin (0.482834ms)
+✔ production refuses placeholders, preview hosts and unsafe URL variants (0.741959ms)
+✔ production normalizes a supplied owned origin without approving its ownership (0.174833ms)
+✔ Cloudflare branch previews cannot inherit production indexing (0.120292ms)
+✔ invalid deployment spellings fail rather than accidentally publishing (0.0945ms)
+✔ canonical routes cannot change the origin or include tracking fragments (0.745958ms)
+✔ December 2023 precedes 2019 and drafts/future dates cannot enter latest writing (12.436042ms)
+✔ calendar dates are real, including leap years, and invalid dates fail (0.248084ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 340.851541

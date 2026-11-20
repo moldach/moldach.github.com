@@ -1,0 +1,23 @@
+{
+  "url": "http://127.0.0.1:4322/writing/highlighting-3d-brain-regions/",
+  "title": "How to Highlight 3D Brain Regions",
+  "date": "2018-10-31",
+  "images": 26,
+  "allImagesLocal": true,
+  "allImagesDecoded": true,
+  "sections": [
+    "BrainNet Viewer",
+    "Mango",
+    "R Implementation"
+  ],
+  "codeBlocks": 6,
+  "attribution": true,
+  "trackingPixels": false,
+  "backToWriting": true,
+  "noJS": {
+    "status": 200,
+    "images": 26,
+    "code": 6
+  },
+  "pageErrors": []
+}

@@ -1,0 +1,8 @@
+{
+  "removedHiddenLeaves": 29,
+  "meshObjects": 102,
+  "surfaceBake": "512px tangent-space paper normals only; no lighting, AO or shadows",
+  "independentKeys": 41,
+  "movableFilmGroups": 3,
+  "chapterGroups": 6
+}

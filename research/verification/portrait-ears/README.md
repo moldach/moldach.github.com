@@ -1,0 +1,5 @@
+# Portrait simplification and ears — 23 October 2026
+
+Removed the region dropdown. The shared footer now explicitly says “Stretch my face” and “Open an interactive portrait of Matthew Oldach.” Pointer users grab the photograph directly; keyboard users use N to cycle grab points, including both ears, then arrow keys to pull and F to freeze. The Bigger ears button enlarges both ear regions with a bounded local displacement field shared by WebGL and Canvas fallback. Reset clears ear enlargement and frozen pulls. Controls wrap on narrow screens.
+
+Chromium desktop input in mobile emulation verified the footer trigger, absence of selector, ear enlargement via touch button, both ear keyboard grab points, pointer stretching, multiple frozen points and Reset in both renderers. The adjacent 390×844 capture was visually reviewed. Zero type-check errors/warnings/hints; 14 tests and the 20-page preview build pass. These are photo deformations, not reconstructed unseen head geometry. Physical devices and Safari remain unverified. No production deployment.

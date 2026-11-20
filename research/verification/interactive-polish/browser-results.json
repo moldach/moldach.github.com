@@ -1,0 +1,72 @@
+{
+  "polish": {
+    "default3D": true,
+    "cards": 7,
+    "destinations": [
+      {
+        "id": "supervised-umap",
+        "href": "/writing/supervised-umap/"
+      },
+      {
+        "id": "faststyletransfer",
+        "href": "/writing/faststyletransfer/"
+      },
+      {
+        "id": "rprofile",
+        "href": "/writing/rprofile/"
+      },
+      {
+        "id": "ninjutsu",
+        "href": "/writing/ninjutsu/"
+      },
+      {
+        "id": "drake",
+        "href": "/writing/drake/"
+      },
+      {
+        "id": "fitbit-gamification",
+        "href": "/writing/fitbit-gamification/"
+      },
+      {
+        "id": "highlighting-3d-brain-regions",
+        "href": "https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574"
+      }
+    ],
+    "faceRenderer": "webgl",
+    "dragPull": 0.572,
+    "springReturn": true,
+    "keyboard": true,
+    "reset": true,
+    "escapeFocus": true,
+    "reopenClose": true
+  },
+  "fallback": {
+    "bookFallback": true,
+    "canvasDeformation": true,
+    "canvasSpring": true,
+    "reducedMotion": true,
+    "touchEmulation": true,
+    "noJSArchive": true
+  },
+  "refinement": {
+    "hoverTransform": "matrix3d(0.999656, 0.000661532, -0.0262067, 2.62067e-05, 0, 0.999682, 0.0252348, -2.52348e-05, 0.0262151, -0.0252261, 0.999338, -0.000999338, 0, 0, 0, 1)",
+    "oilTrail": true,
+    "hoverVideo": true,
+    "previewStops": true,
+    "meshArticle": true,
+    "back": true,
+    "contextRestore": true,
+    "errors": []
+  },
+  "edge": {
+    "rapidChapterSelection": true,
+    "focusContained": true,
+    "faceContextLossFallback": true,
+    "widths": [
+      320,
+      390,
+      768,
+      1024
+    ]
+  }
+}

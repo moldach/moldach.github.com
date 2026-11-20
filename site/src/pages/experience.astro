@@ -1,0 +1,54 @@
+---
+import Page from '../layouts/Page.astro';
+import { pages } from '../lib/registry';
+---
+
+<Page
+  {...pages['/experience/']}
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Experience', href: '/experience/' },
+  ]}
+>
+  <header class="page-intro wrap">
+    <p class="eyebrow">For collaborators and hiring teams</p>
+    <h1>Engineering judgment, made visible.</h1>
+    <p class="intro">
+      Public work offers a concrete way to discuss software, data, visualisation
+      and technical communication.
+    </p>
+  </header>
+  <article class="reading">
+    <h2>Software and interfaces</h2>
+    <p>
+      <a href="/work/#shiny-filters">Shiny-filteRs</a> and{' '}
+      <a href="/work/#hinuhinu">Hinuhinu</a> connect computation and visual
+      interfaces. <a href="/work/#puttpulse">PuttPulse</a> brings a product
+      perspective to disc-golf practice.
+    </p>
+    <h2>Data and reproducibility</h2>
+    <p>
+      The <a href="/writing/fitbit-gamification/">Fitbit API article</a>,{' '}
+      <a href="/writing/supervised-umap/">UMAP slideshow</a> and writing on{' '}
+      <a href="/writing/drake/">Drake</a> and{' '}
+      <a href="/writing/rprofile/">.Rprofile automation</a> show implementation
+      steps rather than only finished images.
+    </p>
+    <h2>Communication</h2>
+    <p>
+      Articles and presentations explain methods, examples and technical
+      choices. Original dates and source material remain attached so historical
+      work can be read in context.
+    </p>
+    <h2>Discuss a role</h2>
+    <p>
+      For full-time opportunities, contact me for a current CV and a discussion
+      of relevant responsibilities. The old site's résumé is retained as
+      historical material, not presented as a verified current employment
+      record.
+    </p>
+    <a class="button" href="/contact/">
+      Discuss an opportunity ↗
+    </a>
+  </article>
+</Page>

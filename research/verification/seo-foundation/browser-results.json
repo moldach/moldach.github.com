@@ -1,0 +1,61 @@
+[
+  {
+    "journey": "Home \u2192 Services \u2192 workflow automation",
+    "route": "/services/ai-workflow-automation/",
+    "readable": true
+  },
+  {
+    "contact": "/contact/",
+    "email": "mailto:moldach686@gmail.com?subject=Consulting%20enquiry"
+  },
+  {
+    "exhibits": [
+      {
+        "id": "supervised-umap",
+        "href": "/writing/supervised-umap/"
+      },
+      {
+        "id": "fitbit-gamification",
+        "href": "/writing/fitbit-gamification/"
+      },
+      {
+        "id": "highlighting-3d-brain-regions",
+        "href": "https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574"
+      }
+    ],
+    "firstDate": "2023-12-06"
+  },
+  {
+    "fitbitRoute": "/writing/fitbit-gamification/",
+    "articleCharacters": 49021
+  },
+  {
+    "back": "/writing/"
+  },
+  {
+    "mobileWidth": {
+      "viewport": 390,
+      "document": 390
+    }
+  },
+  {
+    "keyboardFirst": "Skip to content"
+  },
+  {
+    "javascriptDisabled": {
+      "h1": "Build one useful workflow, properly.",
+      "bodyCharacters": 3285,
+      "canonical": 0,
+      "robots": "noindex, follow"
+    }
+  },
+  {
+    "javascriptDisabledUmap": {
+      "codeBlocks": 121,
+      "images": 8
+    }
+  },
+  {
+    "missingPageStatus": 404
+  }
+]

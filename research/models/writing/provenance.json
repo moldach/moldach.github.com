@@ -1,0 +1,25 @@
+{
+  "reference": "research/design/chapters/round-2/04-writing-v2.png",
+  "sources": [
+    {
+      "path": "research/design/source-assets/supervised-umap/embedded-03.png",
+      "sha256": "860d24bc810ef6586b014888b02cffe6cda4f9b03aec194e71d62142ed850177",
+      "role": "Original full UMAP plot on proof folio; aspect ratio preserved",
+      "sourceModified": false
+    },
+    {
+      "path": "project/fitbit-project/featured.png",
+      "sha256": "8952127a855ceda182f67eb0f88a805874bffeb908a1df25448df4c4e882f3c9",
+      "role": "Original full Fitbit pixel-art illustration; aspect ratio preserved",
+      "sourceModified": false
+    },
+    {
+      "path": "project/3d-brain/featured.png",
+      "sha256": "211d783a8724c4d4ff0a865fdf16eba706cd49512d389fee4cb8225c26574fee",
+      "role": "Original brain illustration supplies visible silhouette, texture and small red patch; depth is illustrative only",
+      "sourceModified": false
+    }
+  ],
+  "anatomyValidated": false,
+  "newScientificResults": false
+}

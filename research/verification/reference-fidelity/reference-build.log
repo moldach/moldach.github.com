@@ -1,0 +1,132 @@
+
+> build
+> node scripts/build.mjs
+
+16:31:43 [content] Syncing content
+16:31:43 [content] Synced content
+16:31:43 [types] Generated 859ms
+16:31:43 [build] output: "static"
+16:31:43 [build] mode: "static"
+16:31:43 [build] directory: /Users/oldachm/Documents/ChatGPT/Website-source/site/dist/
+16:31:43 [build] Collecting build info...
+16:31:43 [build] ✓ Completed in 890ms.
+16:31:43 [build] Building static entrypoints...
+16:31:44 [vite] ✓ built in 656ms
+16:31:44 [WARN] [vite] [plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+16:31:44 [vite] ✓ built in 347ms
+16:31:44 [build] Rearranging server assets...
+
+ generating static routes
+16:31:44   ├─ /404.html (+25ms)
+16:31:44   ├─ /about/index.html (+5ms)
+16:31:44   ├─ /contact/index.html (+5ms)
+16:31:44   ├─ /experience/index.html (+4ms)
+16:31:44   ├─ /privacy/index.html (+5ms)
+16:31:44   ├─ /robots.txt (+2ms)
+16:31:44   ├─ /rss.xml (+4ms)
+16:31:44   ├─ /services/ai-opportunity-assessment/index.html (+5ms)
+16:31:44   ├─ /services/ai-workflow-automation/index.html (+3ms)
+16:31:44   ├─ /services/ai-training-adoption/index.html (+3ms)
+16:31:44   ├─ /services/index.html (+4ms)
+16:31:44   ├─ /sitemap.xml (+3ms)
+16:31:44   ├─ /work/index.html (+4ms)
+16:31:44   ├─ /writing/supervised-umap/index.html (+6ms)
+16:31:44   ├─ /writing/faststyletransfer/index.html (+2ms)
+16:31:44   ├─ /writing/rprofile/index.html (+1ms)
+16:31:44   ├─ /writing/ninjutsu/index.html (+1ms)
+16:31:44   ├─ /writing/drake/index.html (+1ms)
+16:31:44   ├─ /writing/fitbit-gamification/index.html (+15ms)
+16:31:44   ├─ /writing/index.html (+8ms)
+16:31:44   ├─ /index.html (+7ms)
+16:31:44 ✓ Completed in 222ms.
+
+ generating optimized images
+16:31:44   ▶ /_astro/featured.D91Ew82j_Z1T8NBl.webp (reused cache entry) (+4ms) (1/79)
+16:31:44   ▶ /_astro/featured.B0pZE5pd_Z2eH9VY.webp (reused cache entry) (+4ms) (2/79)
+16:31:44   ▶ /_astro/supervised-umap-0cb5f75c023aad05.CRuCRClc_Z1s0bSy.webp (reused cache entry) (+4ms) (3/79)
+16:31:44   ▶ /_astro/putting-area-reference-v1.iUpgWaMs_8SUEn.webp (reused cache entry) (+4ms) (4/79)
+16:31:44   ▶ /_astro/supervised-umap-eda9cf2bfcd0e591.DrdLl7fA_18K0Jt.webp (reused cache entry) (+4ms) (5/79)
+16:31:44   ▶ /_astro/embedded-03.on8ItOPk_Z1S5az2.webp (reused cache entry) (+4ms) (6/79)
+16:31:44   ▶ /_astro/headshot.DXh6Aa1R_1PaKb1.png (reused cache entry) (+5ms) (7/79)
+16:31:44   ▶ /_astro/supervised-umap-5306eb609860d20c.BIpP32tM_2saRep.webp (reused cache entry) (+5ms) (8/79)
+16:31:44   ▶ /_astro/embedded-03.on8ItOPk_28sNj.webp (reused cache entry) (+3ms) (9/79)
+16:31:44   ▶ /_astro/featured.B0pZE5pd_ZRAN3D.webp (reused cache entry) (+3ms) (10/79)
+16:31:44   ▶ /_astro/fitbit-gamification-338395aea9011e0c.CYNNUQSw_JnxeW.webp (reused cache entry) (+3ms) (11/79)
+16:31:44   ▶ /_astro/putting-area-reference-v1.iUpgWaMs_Z2b7pXG.webp (reused cache entry) (+3ms) (12/79)
+16:31:44   ▶ /_astro/featured.qIbulrdU_Z1YICFL.webp (reused cache entry) (+3ms) (13/79)
+16:31:44   ▶ /_astro/headshot.DXh6Aa1R_Z1x2vRL.webp (reused cache entry) (+3ms) (14/79)
+16:31:44   ▶ /_astro/fitbit-gamification-417b2da70fd0c24d.CyPfTOsi_7Hpwx.webp (reused cache entry) (+3ms) (15/79)
+16:31:44   ▶ /_astro/embedded-03.on8ItOPk_1ju3rg.webp (reused cache entry) (+2ms) (16/79)
+16:31:44   ▶ /_astro/featured.qIbulrdU_gugi2.webp (reused cache entry) (+2ms) (17/79)
+16:31:44   ▶ /_astro/fitbit-gamification-d884f5b162a16a7f.DpBjwi9__Z1bfQAn.webp (reused cache entry) (+2ms) (18/79)
+16:31:44   ▶ /_astro/fitbit-gamification-788b952eb1844578.lx2bSM2w_Z2kRBiY.webp (reused cache entry) (+5ms) (19/79)
+16:31:44   ▶ /_astro/headshot.DXh6Aa1R_Z1aX2M7.webp (reused cache entry) (+3ms) (20/79)
+16:31:44   ▶ /_astro/fitbit-gamification-dd94ec657f2f678b.BiYdcJh9_29awDa.webp (reused cache entry) (+3ms) (21/79)
+16:31:44   ▶ /_astro/fitbit-gamification-90644b753db0988a.0o7OrMzp_Z1NTknO.webp (reused cache entry) (+3ms) (22/79)
+16:31:44   ▶ /_astro/fitbit-gamification-50284234ff62acf1.8fH1L2VM_Z2wCjHb.webp (reused cache entry) (+3ms) (23/79)
+16:31:44   ▶ /_astro/embedded-03.on8ItOPk_TIKgQ.webp (reused cache entry) (+2ms) (24/79)
+16:31:44   ▶ /_astro/fitbit-gamification-3c753de8e35f7819.CddwPiKF_1cBkoO.webp (reused cache entry) (+2ms) (25/79)
+16:31:44   ▶ /_astro/fitbit-gamification-e6838ce5b1a83e09.DoDLrAef_2vIINB.webp (reused cache entry) (+2ms) (26/79)
+16:31:44   ▶ /_astro/fitbit-gamification-aaf78690d3a6a33b.BJzwZ1k-_fCbFC.webp (reused cache entry) (+3ms) (27/79)
+16:31:44   ▶ /_astro/fitbit-gamification-3f4a8e9cc0010dd8.CJ4ZZXob_QJiic.webp (reused cache entry) (+3ms) (28/79)
+16:31:44   ▶ /_astro/fitbit-gamification-127afe44811a410f.Bx0POTGi_o4k6p.webp (reused cache entry) (+2ms) (29/79)
+16:31:44   ▶ /_astro/fitbit-gamification-f6537726779a094f.Dlssb_a-_1mIJxN.webp (reused cache entry) (+3ms) (30/79)
+16:31:44   ▶ /_astro/fitbit-gamification-9224340ab1b31925.D_5EAyjw_OTbyA.webp (reused cache entry) (+3ms) (31/79)
+16:31:44   ▶ /_astro/fitbit-gamification-8d77b40863176bf8.7UEelIq__eJHdh.webp (reused cache entry) (+3ms) (32/79)
+16:31:44   ▶ /_astro/fitbit-gamification-b41f053968325a4b.Ch-IMwAb_ZNdyFE.webp (reused cache entry) (+2ms) (33/79)
+16:31:44   ▶ /_astro/fitbit-gamification-2e099aeb90e21227.BNefzYZI_Z19ERrU.webp (reused cache entry) (+3ms) (34/79)
+16:31:44   ▶ /_astro/fitbit-gamification-2f937fc1d5e7080a.CvMEnmW9_lGiy6.webp (reused cache entry) (+3ms) (35/79)
+16:31:44   ▶ /_astro/fitbit-gamification-9b5f4e5c759e4bed.Bz4VoGvW_1AGbiH.webp (reused cache entry) (+2ms) (36/79)
+16:31:44   ▶ /_astro/fitbit-gamification-72fa6af18deb83d9.CcGJ3WMC_1iF1Bk.webp (reused cache entry) (+3ms) (37/79)
+16:31:44   ▶ /_astro/fitbit-gamification-4a97eeef22085e2c.ByM76xOb_Z1ORwX.webp (reused cache entry) (+2ms) (38/79)
+16:31:44   ▶ /_astro/fitbit-gamification-1cd49711a66cf425.DZ-2j8pq_ZFf5cI.webp (reused cache entry) (+2ms) (39/79)
+16:31:44   ▶ /_astro/fitbit-gamification-63e3a6c217d4e117.CCPbxr8h_Z1itCsR.webp (reused cache entry) (+2ms) (40/79)
+16:31:44   ▶ /_astro/fitbit-gamification-975cd779d135b218.CrJOOWCJ_ZnIJ2I.webp (reused cache entry) (+2ms) (41/79)
+16:31:44   ▶ /_astro/fitbit-gamification-761a1186a412c60e.B6y4T_P2_ZEsUhY.webp (reused cache entry) (+2ms) (42/79)
+16:31:44   ▶ /_astro/fitbit-gamification-4cabc851a145c814.D4XRLiyb_1fWSWi.webp (reused cache entry) (+2ms) (43/79)
+16:31:44   ▶ /_astro/fitbit-gamification-b70c71547b26c6db.Bjf7nA1d_xvWyM.webp (reused cache entry) (+3ms) (44/79)
+16:31:44   ▶ /_astro/fitbit-gamification-c8275f7eba7dc74a.Blg9n5xa_2w1Eh4.webp (reused cache entry) (+3ms) (45/79)
+16:31:44   ▶ /_astro/fitbit-gamification-94293b5520dca7e6.DppKAfmh_Z2jkrrh.webp (reused cache entry) (+3ms) (46/79)
+16:31:44   ▶ /_astro/fitbit-gamification-96bbdb72c5bf15e0.CT2X1uDT_ZFbT2V.webp (reused cache entry) (+2ms) (47/79)
+16:31:44   ▶ /_astro/fitbit-gamification-09c2a60e2909bc7f.CHylzKOW_pVr0S.webp (reused cache entry) (+2ms) (48/79)
+16:31:44   ▶ /_astro/fitbit-gamification-f229071afc082244.D3RzQELx_ZqY0XR.webp (reused cache entry) (+3ms) (49/79)
+16:31:44   ▶ /_astro/fitbit-gamification-5c6d9f4a8060ab99.B9ZwuRIh_1cOqga.webp (reused cache entry) (+3ms) (50/79)
+16:31:44   ▶ /_astro/fitbit-gamification-ff475e30ee4ce5dd.CSd3iSze_Z2g9OjD.webp (reused cache entry) (+3ms) (51/79)
+16:31:44   ▶ /_astro/fitbit-gamification-821a51e35ab66764.BG8tXh00_Z1cfwbt.webp (reused cache entry) (+3ms) (52/79)
+16:31:44   ▶ /_astro/featured.4heqLl3i_Z18TuPV.webp (reused cache entry) (+2ms) (53/79)
+16:31:44   ▶ /_astro/featured.qRi4S6-U_ZlhPnU.webp (reused cache entry) (+3ms) (54/79)
+16:31:44   ▶ /_astro/featured.CNVmdmG2_23S8H5.webp (reused cache entry) (+2ms) (55/79)
+16:31:44   ▶ /_astro/fitbit-gamification-148e7a85f2dd0fd6.FfFSxejg_2lsGDE.webp (reused cache entry) (+4ms) (56/79)
+16:31:44   ▶ /_astro/featured.CvN3Dyo9_LN7Mx.webp (reused cache entry) (+3ms) (57/79)
+16:31:44   ▶ /_astro/fitbit-gamification-332a923c84c0ae6f.DgHV3qgI_ZtjQrf.webp (reused cache entry) (+4ms) (58/79)
+16:31:44   ▶ /_astro/featured.dcGZhJVU_1E4BsI.webp (reused cache entry) (+3ms) (59/79)
+16:31:44   ▶ /_astro/featured.4heqLl3i_1TuyJo.webp (reused cache entry) (+3ms) (60/79)
+16:31:44   ▶ /_astro/featured.CNVmdmG2_Z55oV3.webp (reused cache entry) (+2ms) (61/79)
+16:31:44   ▶ /_astro/02-services.CdGisCXH_27502r.webp (reused cache entry) (+3ms) (62/79)
+16:31:44   ▶ /_astro/featured.qRi4S6-U_Z1hXEML.webp (reused cache entry) (+2ms) (63/79)
+16:31:44   ▶ /_astro/03-work.CrdEG1w0_14FXMY.webp (reused cache entry) (+2ms) (64/79)
+16:31:44   ▶ /_astro/featured.dcGZhJVU_rALMy.webp (reused cache entry) (+2ms) (65/79)
+16:31:44   ▶ /_astro/featured.CvN3Dyo9_rnyGz.webp (reused cache entry) (+3ms) (66/79)
+16:31:44   ▶ /_astro/05-about.CgpMMVOp_Z96oCa.webp (reused cache entry) (+2ms) (67/79)
+16:31:44   ▶ /_astro/featured.CNVmdmG2_bpDJl.webp (reused cache entry) (+2ms) (68/79)
+16:31:44   ▶ /_astro/featured.4heqLl3i_1czwok.webp (reused cache entry) (+3ms) (69/79)
+16:31:44   ▶ /_astro/featured.qRi4S6-U_6IppO.webp (reused cache entry) (+3ms) (70/79)
+16:31:44   ▶ /_astro/02-services.CdGisCXH_Z1yDPD0.webp (reused cache entry) (+4ms) (71/79)
+16:31:44   ▶ /_astro/featured.CNVmdmG2_rosPz.webp (reused cache entry) (+3ms) (72/79)
+16:31:44   ▶ /_astro/03-work.CrdEG1w0_NNMIo.webp (reused cache entry) (+4ms) (73/79)
+16:31:44   ▶ /_astro/05-about.CgpMMVOp_Z43sR6.webp (reused cache entry) (+4ms) (74/79)
+16:31:44   ▶ /_astro/04-writing-v2.BqnpCWHv_Z1Nzhpw.webp (reused cache entry) (+3ms) (75/79)
+16:31:44   ▶ /_astro/01-start.CWBB3yfj_F5AbP.webp (reused cache entry) (+4ms) (76/79)
+16:31:44   ▶ /_astro/06-contact.dhUHZrpT_Z1EfGae.webp (reused cache entry) (+4ms) (77/79)
+16:31:44   ▶ /_astro/01-start.CWBB3yfj_Zy0CBQ.webp (reused cache entry) (+2ms) (78/79)
+16:31:44   ▶ /_astro/01-start.CWBB3yfj_1Sv9MI.webp (reused cache entry) (+1ms) (79/79)
+16:31:44 ✓ Completed in 36ms.
+
+16:31:44 [build] ✓ Completed in 1.36s.
+16:31:44 [build] 18 page(s) built in 2.30s
+16:31:44 [build] Complete!
+Validated non-indexable preview output; mirrored 18 original media/download files.

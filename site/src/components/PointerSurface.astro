@@ -1,0 +1,16 @@
+<canvas
+  class="pointer-surface"
+  aria-hidden="true"
+  data-pointer-surface
+></canvas>
+<script>
+  import { mountSurface } from './effects/surface';
+  const canvas = document.querySelector<HTMLCanvasElement>(
+    '[data-pointer-surface]',
+  );
+  if (canvas)
+    window.addEventListener('pointermove', () => mountSurface(canvas), {
+      once: true,
+      passive: true,
+    });
+</script>

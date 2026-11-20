@@ -1,0 +1,51 @@
+---
+import Page from '../layouts/Page.astro';
+import { pages } from '../lib/registry';
+---
+
+<Page
+  {...pages['/privacy/']}
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Privacy', href: '/privacy/' },
+  ]}
+>
+  <header class="page-intro wrap">
+    <p class="eyebrow">Website and enquiries</p>
+    <h1>Your information.</h1>
+    <p class="intro">
+      This site is designed to let you read the work and make contact without
+      creating an account.
+    </p>
+  </header>
+  <article class="reading">
+    <h2>Browsing</h2>
+    <p>
+      The site does not include advertising, paid visitor analytics or a live AI
+      chatbot. The hosting provider may process standard connection information
+      when serving pages. Production hosting details will be confirmed before
+      launch.
+    </p>
+    <h2>Email enquiries</h2>
+    <p>
+      An email link opens your own email application. Information you choose to
+      send is used to understand and respond to your enquiry. Email is handled
+      through the receiving email provider; avoid sending sensitive business
+      data or credentials in an initial message.
+    </p>
+    <h2>External articles and demonstrations</h2>
+    <p>
+      Some links open original articles, repositories or media hosted elsewhere.
+      Those services have their own information-handling practices. Recovered
+      articles preserve source links and may include original externally hosted
+      demonstrations.
+    </p>
+    <h2>Changes and questions</h2>
+    <p>
+      Any future form, analytics or other third-party integration needs a
+      corresponding update here. Contact{' '}
+      <a href="mailto:moldach686@gmail.com">moldach686@gmail.com</a> with
+      website privacy questions.
+    </p>
+  </article>
+</Page>

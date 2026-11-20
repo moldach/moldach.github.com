@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "path": "project/shiny-filters/featured.jpg",
+      "sha256": "fed607792b415de0960c50e35719d0cdc24ca1e73cf0628b0d9f1c4cc8b646fd",
+      "role": "Original application screen; UV crop in phone inset",
+      "sourceModified": false
+    },
+    {
+      "path": "project/hinuhinu/featured.png",
+      "sha256": "8c6f02e78ee287b903618620bcea160474d9d36f7a584c476f8db6025ba73970",
+      "role": "Original map image, silhouette source, island surfaces and standing chart",
+      "sourceModified": false
+    }
+  ],
+  "geometry": "Authored Blender meshes; island boundary silhouettes extracted from colored map regions",
+  "terrainHeights": "Illustrative contour stacking; not DEM elevations",
+  "reference": "research/design/chapters/round-2/03-work.png"
+}

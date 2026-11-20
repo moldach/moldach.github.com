@@ -1,0 +1,20 @@
+{
+  "glbVersion": 2,
+  "bytes": 9727404,
+  "meshes": 195,
+  "positionVertices": 283812,
+  "finitePositions": true,
+  "chapterTags": 6,
+  "activeChapter": "Writing",
+  "articleDestinationMetadata": [
+    "/writing/fitbit-gamification/",
+    "/writing/supervised-umap/",
+    "https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574"
+  ],
+  "sourceImagesUnchanged": true,
+  "anatomyValidated": false,
+  "brainIllustrativeRelief": true,
+  "browserIntegrated": false,
+  "materialsBaked": false,
+  "visualMatchAccepted": false
+}

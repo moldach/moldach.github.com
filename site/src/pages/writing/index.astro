@@ -1,0 +1,35 @@
+---
+import PageTurn from '../../components/PageTurn.astro';
+import Page from '../../layouts/Page.astro';
+import WritingExhibits from '../../components/WritingExhibits.astro';
+import { pages, writingEntries } from '../../lib/registry';
+const entries = await writingEntries();
+---
+
+<Page
+  {...pages['/writing/']}
+  breadcrumbs={[
+    { label: 'Start', href: '/' },
+    { label: 'Writing', href: '/writing/' },
+  ]}
+>
+  <PageTurn initialChapter="writing" navigation />
+  <header class="page-intro wrap writing-intro">
+    <p class="eyebrow">Experiments, explanations, lessons</p>
+    <h1>Notes from the work.</h1>
+    <p class="intro">
+      Software, data and visualisation, explained through things I have worked
+      on. Original dates stay attached to the work.
+    </p>
+  </header>
+  <section class="section wrap archive-section" aria-labelledby="all-writing">
+    <div class="archive-heading">
+      <p class="eyebrow">The complete writing archive</p>
+      <span>{entries.length} articles · Newest first</span>
+    </div>
+    <h2 class="sr-only" id="all-writing">
+      The writing archive.
+    </h2>
+    <WritingExhibits archive />
+  </section>
+</Page>

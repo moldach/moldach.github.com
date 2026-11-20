@@ -1,0 +1,210 @@
+---
+import { getImage } from 'astro:assets';
+import Portrait from '../components/Portrait.astro';
+import PointerSurface from '../components/PointerSurface.astro';
+import socialArtwork from '../../../research/design/chapters/round-2/01-start.png';
+import { chapters } from '../lib/registry';
+import { siteConfig, canonicalUrl } from '../lib/site-config.mjs';
+import '../styles/site.css';
+import '../styles/interaction.css';
+
+interface Props {
+  title: string;
+  seoTitle: string;
+  description: string;
+  primaryIntent: string;
+  breadcrumbs?: { label: string; href: string }[];
+  kind?: 'Article' | 'Service' | 'ProfilePage';
+  publishedAt?: string;
+  modifiedAt?: string;
+  noindex?: boolean;
+}
+const {
+  title,
+  seoTitle,
+  description,
+  primaryIntent,
+  breadcrumbs = [],
+  kind,
+  publishedAt,
+  modifiedAt,
+  noindex = false,
+} = Astro.props;
+const config = siteConfig(process.env);
+const indexable = config.production && !noindex;
+const canonical = noindex
+  ? undefined
+  : canonicalUrl(config.origin, Astro.url.pathname);
+const socialImage = config.origin
+  ? await getImage({ src: socialArtwork, width: 1200, format: 'webp' })
+  : undefined;
+const personId = config.origin ? `${config.origin}/#matthew-oldach` : undefined;
+const person = {
+  '@type': 'Person',
+  '@id': personId,
+  name: 'Matthew Oldach',
+  url: canonicalUrl(config.origin, '/about/'),
+  sameAs: ['https://github.com/moldach'],
+};
+const graph: Record<string, unknown>[] = [person];
+if (kind && canonical) {
+  graph.push(
+    kind === 'Article'
+      ? {
+          '@type': 'Article',
+          headline: title,
+          description,
+          url: canonical,
+          mainEntityOfPage: canonical,
+          author: { '@id': personId },
+          datePublished: publishedAt,
+          ...(modifiedAt ? { dateModified: modifiedAt } : {}),
+        }
+      : kind === 'Service'
+        ? {
+            '@type': 'Service',
+            name: title,
+            description,
+            url: canonical,
+            provider: { '@id': personId },
+            areaServed: 'International',
+          }
+        : {
+            '@type': 'ProfilePage',
+            url: canonical,
+            mainEntity: { '@id': personId },
+          },
+  );
+}
+if (breadcrumbs.length && config.origin)
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.label,
+      item: canonicalUrl(config.origin, crumb.href),
+    })),
+  });
+const json = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': graph,
+}).replace(/</g, '\\u003c');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="/fonts/newsreader-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <title>{seoTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={indexable ? 'index, follow' : 'noindex, follow'}
+    />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:type"
+      content={kind === 'Article' ? 'article' : 'website'}
+    />
+    <meta property="og:site_name" content="Matthew Oldach" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {socialImage && (
+      <meta
+        property="og:image"
+        content={canonicalUrl(config.origin, socialImage.src)}
+      />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    {config.origin && <script type="application/ld+json" set:html={json} />}
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Matthew Oldach — writing"
+      href="/rss.xml"
+    />
+  </head>
+  <body>
+    <PointerSurface />
+    <a class="skip-link" href="#content">
+      Skip to content
+    </a>
+    {!config.production && (
+      <div class="preview-note">Review build · Search indexing disabled</div>
+    )}
+    <header class="site-header">
+      <a class="brand" href="/">
+        Matthew Oldach<span>AI & automation</span>
+      </a>
+      <nav aria-label="Main navigation">
+        {chapters.map((chapter) => (
+          <a
+            href={chapter.href}
+            aria-current={
+              Astro.url.pathname === chapter.href ? 'page' : undefined
+            }
+          >
+            {chapter.label}
+          </a>
+        ))}
+        <a href="/experience/">Experience / CV</a>
+      </nav>
+      <a class="button header-cta" href="/contact/">
+        Let's talk <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+    <main id="content" data-primary-intent={primaryIntent}>
+      {breadcrumbs.length > 0 && (
+        <nav class="breadcrumbs wrap" aria-label="Breadcrumb">
+          <ol>
+            {breadcrumbs.map((crumb, i) => (
+              <li>
+                {i === breadcrumbs.length - 1 ? (
+                  <span aria-current="page">{crumb.label}</span>
+                ) : (
+                  <a href={crumb.href}>{crumb.label}</a>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+      <slot />
+    </main>
+    <footer class="site-footer wrap">
+      <div>
+        <p class="eyebrow">A useful next conversation</p>
+        <a class="footer-invitation" href="/contact/">
+          What could work better? <span aria-hidden="true">↗</span>
+        </a>
+        <p>
+          International remote consulting · Software, data and practical AI.
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <Portrait />
+        <a href="/privacy/">Privacy</a>
+        <a href="https://github.com/moldach">GitHub</a>
+        <a href="/writing/">Writing</a>
+      </div>
+    </footer>
+  </body>
+</html>

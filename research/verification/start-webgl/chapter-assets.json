@@ -1,0 +1,77 @@
+[
+  {
+    "chapter": "services",
+    "bytes": 4513048,
+    "meshNodes": 32,
+    "chapterIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "lightingBaked": false,
+    "normalBaking": "Original draft materials; per-chapter surface baking remains pending"
+  },
+  {
+    "chapter": "work",
+    "bytes": 7050288,
+    "meshNodes": 54,
+    "chapterIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "lightingBaked": false,
+    "normalBaking": "Original draft materials; per-chapter surface baking remains pending"
+  },
+  {
+    "chapter": "writing",
+    "bytes": 5011376,
+    "meshNodes": 27,
+    "chapterIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "lightingBaked": false,
+    "normalBaking": "Original draft materials; per-chapter surface baking remains pending"
+  },
+  {
+    "chapter": "about",
+    "bytes": 4187700,
+    "meshNodes": 26,
+    "chapterIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "lightingBaked": false,
+    "normalBaking": "Original draft materials; per-chapter surface baking remains pending"
+  },
+  {
+    "chapter": "contact",
+    "bytes": 3721892,
+    "meshNodes": 25,
+    "chapterIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "lightingBaked": false,
+    "normalBaking": "Original draft materials; per-chapter surface baking remains pending"
+  }
+]

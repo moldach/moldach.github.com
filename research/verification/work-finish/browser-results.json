@@ -1,0 +1,846 @@
+{
+  "enhanced": {
+    "state": "settled",
+    "selected": "work",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 125,
+    "triangles": 511433,
+    "peakDrawCalls": 125,
+    "peakTriangles": 511433,
+    "frameIntervals": [],
+    "completedTurns": [],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced.glb",
+        "encodedBytes": 1811308,
+        "transferBytes": 1811608,
+        "durationMs": 19
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced.glb",
+        "encodedBytes": 6023292,
+        "transferBytes": 6023592,
+        "durationMs": 33.900000005960464
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1
+  },
+  "links": [
+    {
+      "label": "Project nameplate Hinuhinu",
+      "href": "/work/#hinuhinu",
+      "hidden": false
+    },
+    {
+      "label": "Project nameplate PuttPulse",
+      "href": "/work/#puttpulse",
+      "hidden": false
+    },
+    {
+      "label": "Project nameplate Shiny-filteRs",
+      "href": "/work/#shiny-filters",
+      "hidden": false
+    }
+  ],
+  "forward": {
+    "state": "settled",
+    "selected": "services",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 165,
+    "triangles": 488697,
+    "peakDrawCalls": 168,
+    "peakTriangles": 522345,
+    "frameIntervals": [
+      16.579999999999927,
+      16.800000000000182,
+      16.599999999999454,
+      16.700000000000728,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.599999999999454,
+      16.699999999999818,
+      16.600000000000364,
+      16.800000000000182,
+      33.30000000000018,
+      16.699999999999818,
+      16.599999999999454,
+      16.700000000000728,
+      16.599999999999454,
+      16.699999999999818,
+      33.400000000000546,
+      33.19999999999982,
+      150.10000000000036,
+      16.599999999999454,
+      16.699999999999818,
+      16.600000000000364,
+      16.800000000000182,
+      16.599999999999454,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.700000000000728,
+      16.599999999999454,
+      16.699999999999818,
+      300,
+      33.30000000000018,
+      16.699999999999818,
+      16.700000000000728,
+      16.599999999999454,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.699999999999818,
+      66.60000000000036,
+      33.399999999999636,
+      16.600000000000364,
+      16.699999999999818,
+      33.400000000000546,
+      16.599999999999454,
+      33.30000000000018,
+      33.399999999999636,
+      16.600000000000364,
+      33.30000000000018,
+      33.399999999999636,
+      33.30000000000018
+    ],
+    "completedTurns": [
+      {
+        "from": "work",
+        "to": "services"
+      }
+    ],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced.glb",
+        "encodedBytes": 1811308,
+        "transferBytes": 1811608,
+        "durationMs": 19
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced.glb",
+        "encodedBytes": 6023292,
+        "transferBytes": 6023592,
+        "durationMs": 33.900000005960464
+      },
+      {
+        "url": "/models/page-turn/services.glb",
+        "encodedBytes": 1074788,
+        "transferBytes": 1075088,
+        "durationMs": 30.700000017881393
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1,
+    "servicesRigs": [
+      "adoption",
+      "assessment",
+      "implementation"
+    ],
+    "servicesReady": true
+  },
+  "return": {
+    "state": "settled",
+    "selected": "work",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 125,
+    "triangles": 511433,
+    "peakDrawCalls": 168,
+    "peakTriangles": 522345,
+    "frameIntervals": [
+      16.634000000000015,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      50,
+      16.600000000000364,
+      33.399999999999636,
+      33.30000000000018,
+      33.30000000000018,
+      16.699999999999818,
+      33.30000000000018,
+      16.599999999999454,
+      33.400000000000546,
+      33.399999999999636,
+      16.600000000000364,
+      16.699999999999818,
+      33.30000000000018,
+      33.399999999999636,
+      16.600000000000364,
+      16.699999999999818,
+      33.30000000000018,
+      16.599999999999454,
+      16.800000000000182,
+      33.30000000000018,
+      16.699999999999818,
+      33.30000000000018,
+      16.600000000000364,
+      33.29999999999927,
+      16.800000000000182,
+      33.30000000000018,
+      16.600000000000364,
+      33.29999999999927,
+      16.700000000000728,
+      16.699999999999818,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.599999999999454,
+      16.700000000000728,
+      16.699999999999818,
+      16.599999999999454,
+      16.700000000000728,
+      33.29999999999927,
+      16.80000000000109,
+      16.599999999998545,
+      16.700000000000728,
+      16.600000000000364,
+      16.69999999999891,
+      16.600000000000364,
+      16.700000000000728,
+      16.69999999999891,
+      16.700000000000728,
+      16.600000000000364,
+      16.69999999999891,
+      16.600000000000364,
+      16.700000000000728,
+      16.69999999999891,
+      16.700000000000728,
+      16.700000000000728,
+      16.599999999998545,
+      16.700000000000728,
+      33.20000000000073,
+      16.69999999999891,
+      16.700000000000728,
+      16.69999999999891,
+      16.700000000000728,
+      16.600000000000364,
+      16.600000000000364,
+      16.799999999999272,
+      16.600000000000364,
+      16.69999999999891,
+      16.600000000000364,
+      16.700000000000728,
+      16.69999999999891,
+      16.600000000000364
+    ],
+    "completedTurns": [
+      {
+        "from": "work",
+        "to": "services"
+      },
+      {
+        "from": "services",
+        "to": "work"
+      }
+    ],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced.glb",
+        "encodedBytes": 1811308,
+        "transferBytes": 1811608,
+        "durationMs": 19
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced.glb",
+        "encodedBytes": 6023292,
+        "transferBytes": 6023592,
+        "durationMs": 33.900000005960464
+      },
+      {
+        "url": "/models/page-turn/services.glb",
+        "encodedBytes": 1074788,
+        "transferBytes": 1075088,
+        "durationMs": 30.700000017881393
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1,
+    "servicesRigs": [
+      "adoption",
+      "assessment",
+      "implementation"
+    ],
+    "servicesReady": true
+  },
+  "fallback": {
+    "state": "settled",
+    "selected": "work",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 125,
+    "triangles": 511433,
+    "peakDrawCalls": 125,
+    "peakTriangles": 511433,
+    "frameIntervals": [],
+    "completedTurns": [],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced-fallback.glb",
+        "encodedBytes": 2469596,
+        "transferBytes": 2469896,
+        "durationMs": 55.30000001192093
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced-fallback.glb",
+        "encodedBytes": 7283276,
+        "transferBytes": 7283576,
+        "durationMs": 25.80000001192093
+      }
+    ],
+    "textureFormat": "conventional",
+    "textureFallbackReason": "Error: Conventional texture inspection",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1
+  },
+  "reduced": {
+    "state": "settled",
+    "selected": "writing",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 84,
+    "triangles": 328284,
+    "peakDrawCalls": 125,
+    "peakTriangles": 511433,
+    "frameIntervals": [],
+    "completedTurns": [],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced-fallback.glb",
+        "encodedBytes": 2469596,
+        "transferBytes": 2469896,
+        "durationMs": 55.30000001192093
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced-fallback.glb",
+        "encodedBytes": 7283276,
+        "transferBytes": 7283576,
+        "durationMs": 25.80000001192093
+      },
+      {
+        "url": "/models/page-turn/writing.glb",
+        "encodedBytes": 1568816,
+        "transferBytes": 1569116,
+        "durationMs": 9.900000005960464
+      }
+    ],
+    "textureFormat": "conventional",
+    "textureFallbackReason": "Error: Conventional texture inspection",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1,
+    "writingRigs": [
+      "right-assembly",
+      "center-assembly",
+      "left-assembly"
+    ],
+    "writingReady": true
+  },
+  "compact": {
+    "state": "settled",
+    "selected": "work",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "compact",
+    "physicalDeviceVerified": false,
+    "drawCalls": 125,
+    "triangles": 446217,
+    "peakDrawCalls": 125,
+    "peakTriangles": 446217,
+    "frameIntervals": [],
+    "completedTurns": [],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-compact.glb",
+        "encodedBytes": 1002004,
+        "transferBytes": 1002304,
+        "durationMs": 20.30000001192093
+      },
+      {
+        "url": "/models/work-finish/v1/work-compact.glb",
+        "encodedBytes": 4208584,
+        "transferBytes": 4208884,
+        "durationMs": 37.80000001192093
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 5210588,
+    "estimatedTextureBytes": 9227317,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1
+  },
+  "mobileTurn": {
+    "state": "settled",
+    "selected": "services",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "compact",
+    "physicalDeviceVerified": false,
+    "drawCalls": 165,
+    "triangles": 394413,
+    "peakDrawCalls": 168,
+    "peakTriangles": 457129,
+    "frameIntervals": [
+      16.699999999999818,
+      16.699999999999818,
+      16.700000000000273,
+      16.59999999999991,
+      16.59999999999991,
+      16.700000000000273,
+      33.399999999999636,
+      33.30000000000018,
+      33.30000000000018,
+      16.59999999999991,
+      16.799999999999727,
+      33.30000000000018,
+      66.69999999999982,
+      16.600000000000364,
+      33.29999999999973,
+      16.800000000000182,
+      16.59999999999991,
+      16.59999999999991,
+      16.700000000000273,
+      16.59999999999991,
+      16.799999999999727,
+      16.600000000000364,
+      16.699999999999818,
+      16.59999999999991,
+      16.700000000000273,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      50,
+      116.69999999999982,
+      166.69999999999982,
+      16.600000000000364,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.599999999999454,
+      16.700000000000728,
+      16.599999999999454,
+      16.699999999999818,
+      16.700000000000728,
+      16.599999999999454,
+      16.699999999999818,
+      16.700000000000728,
+      16.699999999999818,
+      16.599999999999454,
+      16.700000000000728,
+      16.699999999999818,
+      16.599999999999454,
+      16.700000000000728,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.599999999999454,
+      16.800000000000182,
+      16.600000000000364,
+      16.599999999999454,
+      16.800000000000182,
+      16.600000000000364,
+      16.699999999999818,
+      16.699999999999818,
+      16.600000000000364,
+      16.699999999999818,
+      16.599999999999454,
+      16.700000000000728,
+      16.699999999999818
+    ],
+    "completedTurns": [
+      {
+        "from": "work",
+        "to": "services"
+      }
+    ],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        15.000000000000002,
+        12.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 57
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-compact.glb",
+        "encodedBytes": 1002004,
+        "transferBytes": 1002304,
+        "durationMs": 20.30000001192093
+      },
+      {
+        "url": "/models/work-finish/v1/work-compact.glb",
+        "encodedBytes": 4208584,
+        "transferBytes": 4208884,
+        "durationMs": 37.80000001192093
+      },
+      {
+        "url": "/models/page-turn/services.glb",
+        "encodedBytes": 1074788,
+        "transferBytes": 1075088,
+        "durationMs": 33.400000005960464
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 5210588,
+    "estimatedTextureBytes": 9227317,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1,
+    "servicesRigs": [
+      "adoption",
+      "assessment",
+      "implementation"
+    ],
+    "servicesReady": true
+  },
+  "noJS": {
+    "poster": true,
+    "links": 6
+  },
+  "noGL": {
+    "poster": true,
+    "links": 6
+  },
+  "failedLoad": {
+    "poster": true,
+    "retry": true
+  },
+  "retried": "settled",
+  "resizeTier": "enhanced",
+  "keyboard": {
+    "state": "settled",
+    "selected": "start",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 119,
+    "triangles": 311622,
+    "peakDrawCalls": 125,
+    "peakTriangles": 511433,
+    "frameIntervals": [],
+    "completedTurns": [],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        13.6,
+        14.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 50.99999999999999
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced.glb",
+        "encodedBytes": 1811308,
+        "transferBytes": 300,
+        "durationMs": 13.799999982118607
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced.glb",
+        "encodedBytes": 6023292,
+        "transferBytes": 300,
+        "durationMs": 14.199999988079071
+      },
+      {
+        "url": "/models/page-turn/start.glb",
+        "encodedBytes": 3322308,
+        "transferBytes": 3322608,
+        "durationMs": 72.09999999403954
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1,
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "startRigs": [
+      "accordion",
+      "terminal",
+      "keyboard",
+      "high-film",
+      "middle-film",
+      "photo-tray",
+      "small-film",
+      "content-style-output-proof",
+      "referenced-activation-atlas",
+      "resolved-output-photograph",
+      "tray-proof-0",
+      "tray-proof-1",
+      "tray-proof-2",
+      "tray-proof-3",
+      "tray-proof-4"
+    ],
+    "startReady": true
+  },
+  "disposal": {
+    "state": "closed",
+    "selected": "start",
+    "lighting": "studio",
+    "finish": true,
+    "tier": "enhanced",
+    "physicalDeviceVerified": false,
+    "drawCalls": 119,
+    "triangles": 311622,
+    "peakDrawCalls": 125,
+    "peakTriangles": 511433,
+    "frameIntervals": [],
+    "completedTurns": [],
+    "camera": {
+      "position": [
+        0.12000000000000001,
+        13.6,
+        14.000000000000002
+      ],
+      "target": [
+        0,
+        0.7,
+        0
+      ],
+      "focalLength": 50.99999999999999
+    },
+    "resources": [
+      {
+        "url": "/models/work-finish/v1/shared-enhanced.glb",
+        "encodedBytes": 1811308,
+        "transferBytes": 300,
+        "durationMs": 13.799999982118607
+      },
+      {
+        "url": "/models/work-finish/v1/work-enhanced.glb",
+        "encodedBytes": 6023292,
+        "transferBytes": 300,
+        "durationMs": 14.199999988079071
+      },
+      {
+        "url": "/models/page-turn/start.glb",
+        "encodedBytes": 3322308,
+        "transferBytes": 3322608,
+        "durationMs": 72.09999999403954
+      }
+    ],
+    "textureFormat": "ktx2",
+    "downloadBytes": 7834600,
+    "estimatedTextureBytes": 31542325,
+    "workRigs": [
+      "hinuhinu-chart",
+      "puttpulse-basket",
+      "shiny-device"
+    ],
+    "workReady": true,
+    "progress": 1,
+    "approvedImages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "startRigs": [
+      "accordion",
+      "terminal",
+      "keyboard",
+      "high-film",
+      "middle-film",
+      "photo-tray",
+      "small-film",
+      "content-style-output-proof",
+      "referenced-activation-atlas",
+      "resolved-output-photograph",
+      "tray-proof-0",
+      "tray-proof-1",
+      "tray-proof-2",
+      "tray-proof-3",
+      "tray-proof-4"
+    ],
+    "startReady": true,
+    "resourcesDisposed": true
+  },
+  "errors": []
+}

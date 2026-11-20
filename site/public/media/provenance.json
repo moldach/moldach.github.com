@@ -1,0 +1,24 @@
+[
+  {
+    "source": "img/new-feature.gif",
+    "sourceSha256": "b6b20ef1606a824f036468449efac5af195978baf5d6af5e45fd36e3b443e95f",
+    "output": "hinuhinu-walkthrough.mp4",
+    "outputSha256": "f6883ac187927b1bdaf8cc943259f62704f6885b0abe5197a087915745598b8e",
+    "poster": "hinuhinu-poster.webp",
+    "posterSha256": "f1ee4d120c5c2eb907799c86519285f221d4e1a92b2bcde7dd17c83c8d0e91b4",
+    "treatment": "6-second Oahu flyby excerpt starting at 18 seconds; crop 400x190 at x=95,y=400 isolates the original renderer; scaled to 800px wide, 12 fps, no frame interpolation",
+    "encoding": "FFmpeg H.264, yuv420p, faststart, no audio",
+    "provenance": "Existing published project media, reframed/transcoded locally; no AI-generated project footage or inferred terrain. Original article links retain source context and credits."
+  },
+  {
+    "source": "post/faststyletransfer/mountains.gif",
+    "sourceSha256": "2e11dbde6dd655f95c267694d317f21e57c9334c966fef3d006988efbad1f187",
+    "output": "style-transfer.mp4",
+    "outputSha256": "c93e18adf83fc84ce3e9423febb911659f37b47d315b057a3198b7e6d5757010",
+    "poster": "style-transfer-poster.webp",
+    "posterSha256": "c68e04ae90fffc668027c0ffb3069ccfada3b6df551b251cbbc86199e34a6b59",
+    "treatment": "12-second excerpt starting at 0 seconds; original 474px width, 24 fps",
+    "encoding": "FFmpeg H.264, yuv420p, faststart, no audio",
+    "provenance": "Existing published project media, reframed/transcoded locally; no AI-generated project footage or inferred terrain. Original article links retain source context and credits."
+  }
+]

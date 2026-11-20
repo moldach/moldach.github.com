@@ -1,0 +1,11 @@
+# Main Start ↔ Services integration — 23 October 2026
+
+The owner reported that main-page tabs were still ordinary navigation and requested Start’s book above the text. The earlier review-only boundary is superseded for these two main pages by that explicit integration request. No live deployment is included.
+
+Home now places a full-width book banner before its positioning copy. Home and Services use the same animated renderer with distinct initial chapters and matching posters. Book tabs and ordinary Start/Services links play the 1.6-second turn before native navigation to the destination page. The arriving page initializes directly to the correct spread; Back restores the correct chapter. Other chapters remain ordinary destinations.
+
+Integrated banners use close chapter framing at rest and a gentle camera pullback while folding/turning so the elevated leaf fits. The separate review retains its fixed wide camera and in-place state changes. Integrated helper/debug text is hidden; keyboard and reduced-motion navigation stays immediate. Early clicks are queued until source/target models load. Resource failure preserves ordinary destination navigation; no-JavaScript links remain usable. No lighting controls are exposed.
+
+`browser.json` records actual pointer-driven main navigation, visible turning state before URL change, approximately 2-second complete forward journey including navigation/loading, correct arrival, reverse, Back, top navigation, touch emulation, JavaScript-disabled navigation and zero page errors. `loading.json` verifies an early click waits for the model then animates, reduced-motion navigation does not enter the turning state, and a failed Services model still allows navigation to readable destination content. Captures were visually reviewed.
+
+Type checking, 17 tests, preview build and synthetic nondeployed production fixture pass. The review route remains absent from production; the models now remain in production output because Home/Services consume them. Existing live GitHub Pages output, portrait and other chapter implementations are unchanged. Safari/physical phones and final visual acceptance remain outstanding; earlier isolated-prototype performance figures are not new integrated-page measurements.

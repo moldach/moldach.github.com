@@ -1,0 +1,35 @@
+{
+  "tool": "Lighthouse",
+  "version": "13.5.0",
+  "fetchTime": "2026-10-22T20:19:38.332Z",
+  "testedUrl": "http://127.0.0.1:4321/",
+  "formFactor": "mobile",
+  "throttlingMethod": "simulate",
+  "scores": {
+    "performance": 0.98,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.66
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 2451.2884,
+      "unit": "millisecond"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "unit": "unitless"
+    },
+    "total-blocking-time": {
+      "value": 0,
+      "unit": "millisecond"
+    }
+  },
+  "warnings": [],
+  "limitations": [
+    "Local non-indexable preview; SEO score reduced by intentional noindex.",
+    "Automated accessibility checks are not complete WCAG conformance.",
+    "No field INP, deployed-host, Safari or physical-device evidence.",
+    "Results precede WebGL, interactive portrait and video implementation."
+  ]
+}

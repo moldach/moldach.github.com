@@ -1,0 +1,7 @@
+{
+  "mouseDragChangesRendering": true,
+  "keyboardRotationChangesRendering": true,
+  "contextLossShowsPoster": true,
+  "contextRestoreShowsCanvas": true,
+  "touchEmulationChapter": "Work"
+}

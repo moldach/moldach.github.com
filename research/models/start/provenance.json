@@ -1,0 +1,101 @@
+{
+  "reference": "research/design/chapters/round-2/01-start.png",
+  "referenceSha256": "afa318332a4cf2211c2542106d6df3fddc93a407a1cf18d9563fa54995a87024",
+  "textures": [
+    {
+      "number": 1,
+      "path": "post/faststyletransfer/featured.png",
+      "sha256": "bb6deb4333db0017882c5554de671d442bfccb53a5fda9a7688195aeaa07a435",
+      "originalSource": "post/faststyletransfer/featured.png",
+      "sourceFrameIndex": null,
+      "use": "Standing output photo"
+    },
+    {
+      "number": 2,
+      "path": "research/models/start/image-shortlist/output-01.png",
+      "sha256": "886f27ac784ccef2bd3e3b4df5c6e1889cd5d04d2c30d8dd9f44960d0eff1892",
+      "originalSource": "post/faststyletransfer/mountains.gif",
+      "sourceFrameIndex": 0,
+      "use": "Left film loop"
+    },
+    {
+      "number": 3,
+      "path": "research/models/start/image-shortlist/output-02.png",
+      "sha256": "7c73877949e1f960d416f4b1fd0dd478fe3903ef975b82410625bb24c83ad7ea",
+      "originalSource": "post/faststyletransfer/mountains.gif",
+      "sourceFrameIndex": 10,
+      "use": "Middle film loop"
+    },
+    {
+      "number": 4,
+      "path": "research/models/start/image-shortlist/output-05.png",
+      "sha256": "6bb5d0a37230f0c1232ebf52ae72c3cd3bdba291ab15c71653c61acaeb2f2404",
+      "originalSource": "post/faststyletransfer/mountains.gif",
+      "sourceFrameIndex": 40,
+      "use": "Right film loop"
+    },
+    {
+      "number": 5,
+      "path": "research/models/start/image-shortlist/output-07.png",
+      "sha256": "2345262c646484151309ee4a57b2f6568b5c4f74b3c582d6b00416080e3b7569",
+      "originalSource": "post/faststyletransfer/mountains.gif",
+      "sourceFrameIndex": 60,
+      "use": "Right film loop"
+    },
+    {
+      "number": 6,
+      "path": "research/models/start/image-shortlist/output-08.png",
+      "sha256": "fbd0f48a0c32ee1565d3d33393b0f21155dd709969523d2e4df558d6d3c8ee45",
+      "originalSource": "post/faststyletransfer/mountains.gif",
+      "sourceFrameIndex": 70,
+      "use": "Middle film loop"
+    },
+    {
+      "number": 7,
+      "path": "research/models/start/image-shortlist/output-11.png",
+      "sha256": "0bdbfafe793b7274c8fbaa28f86dfc8562f5ec39d8c83e2ceb4ec1e1427561b0",
+      "originalSource": "post/faststyletransfer/mountains.gif",
+      "sourceFrameIndex": 100,
+      "use": "Left film loop"
+    },
+    {
+      "number": 8,
+      "path": "post/faststyletransfer/collage.png",
+      "sha256": "0d1a2b853f398b57b5f3803a1b35f59c5b4726d54a66f94552fd1a8070904d40",
+      "originalSource": "post/faststyletransfer/collage.png",
+      "sourceFrameIndex": null,
+      "use": "Photo tray / research card"
+    },
+    {
+      "number": 9,
+      "path": "post/faststyletransfer/example.png",
+      "sha256": "4e54bd7f37650cc2accafcad2ae412b5d3ed6c25d42e7440ee75202b019e3289",
+      "originalSource": "post/faststyletransfer/example.png",
+      "sourceFrameIndex": null,
+      "use": "Accordion proof sequence"
+    },
+    {
+      "number": 10,
+      "path": "post/faststyletransfer/atlas.png",
+      "sha256": "403e3e8951f31af2d178db024a1c1af7968c5cf086efe5f0c3dcb6cfe311426f",
+      "originalSource": "post/faststyletransfer/atlas.png",
+      "sourceFrameIndex": null,
+      "use": "Research card beside terminal"
+    }
+  ],
+  "geometry": "Authored Blender meshes and curves, including independent terminal, keys, accordion cards and curved film strips with physical sprocket openings. No complete concept-image projection.",
+  "materials": "Procedural paper micro-bump and studio lighting are not baked for browser use.",
+  "destination": "/writing/faststyletransfer/",
+  "destinationSource": "site/src/content/writing/faststyletransfer.md",
+  "cameraLocation": [
+    0.12,
+    -14,
+    13.6
+  ],
+  "cameraLensMm": 51,
+  "selectionApprovedByOwner": true,
+  "selectionApprovalDate": "2026-10-23",
+  "attribution": {
+    "image10": "Activation atlas, Distill, https://distill.pub/2019/activation-atlas/; referenced research, not an output of this project."
+  }
+}

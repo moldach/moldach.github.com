@@ -1,0 +1,18 @@
+{
+  "Printed Supervised UMAP": "http://127.0.0.1:4322/writing/supervised-umap/",
+  "Printed The Gamification of Fitbit": "http://127.0.0.1:4322/writing/fitbit-gamification/",
+  "brain": "https://towardsdatascience.com/how-to-highlight-3d-brain-regions-2e6c15a35574",
+  "PuttPulse": "http://127.0.0.1:4322/work/#puttpulse",
+  "Shiny-filteRs": "http://127.0.0.1:4322/work/#shiny-filters",
+  "Hinuhinu": "http://127.0.0.1:4322/work/#hinuhinu",
+  "contact": "http://127.0.0.1:4322/contact/#enquiry",
+  "portrait": {
+    "openedFromBook": true,
+    "twoFrozenPoints": true,
+    "spacePreservesPins": true,
+    "reset": true,
+    "escape": true
+  },
+  "nativeRaycast": true,
+  "errors": []
+}

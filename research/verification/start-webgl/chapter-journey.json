@@ -1,0 +1,51 @@
+{
+  "chapters": [
+    {
+      "label": "Services",
+      "path": "/services/",
+      "bookY": 171.875,
+      "drawCalls": 66,
+      "model": "/models/chapters/services.glb"
+    },
+    {
+      "label": "Work",
+      "path": "/work/",
+      "bookY": 171.875,
+      "drawCalls": 55,
+      "model": "/models/chapters/work.glb"
+    },
+    {
+      "label": "Writing",
+      "path": "/writing/",
+      "bookY": 171.875,
+      "drawCalls": 28,
+      "model": "/models/chapters/writing.glb"
+    },
+    {
+      "label": "About",
+      "path": "/about/",
+      "bookY": 171.875,
+      "drawCalls": 27,
+      "model": "/models/chapters/about.glb"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact/",
+      "bookY": 171.875,
+      "drawCalls": 26,
+      "model": "/models/chapters/contact.glb"
+    },
+    {
+      "label": "Start",
+      "path": "/",
+      "bookY": 132.71875,
+      "drawCalls": 103,
+      "model": "/models/start/start.glb"
+    }
+  ],
+  "backRestoresServices": true,
+  "touchServices": true,
+  "noJSChapterPosters": true,
+  "modelFailurePoster": true,
+  "pageErrors": []
+}

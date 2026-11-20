@@ -1,0 +1,17 @@
+[
+  {
+    "font": "Inter",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+    "license": "SIL Open Font License 1.1",
+    "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4",
+    "file": "inter-latin.woff2"
+  },
+  {
+    "font": "Newsreader",
+    "source": "https://fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438wSo_wC-ZFHDWwgUii.woff2",
+    "license": "SIL Open Font License 1.1",
+    "sha256": "cd987c00ac5cfb6d4cdace34ff17c359eaec35aa264ce665d5571dcc5c4d02cd",
+    "file": "newsreader-latin.woff2",
+    "weight": 500
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "approvedImageCount": 10,
+  "embeddedImages": 10,
+  "imageSelectionOwnerApproved": true,
+  "imageAssignmentsVerified": true,
+  "glbVersion": 2,
+  "bytes": 22168968,
+  "meshes": 660,
+  "positionVertices": 228159,
+  "finitePositions": true,
+  "chapterTags": 6,
+  "activeChapter": "Start",
+  "filmLoops": 3,
+  "destinationMetadata": [
+    "/writing/faststyletransfer/"
+  ],
+  "destinationMatchesSiteSource": true,
+  "referenceAndSourceImagesUnchanged": true,
+  "browserIntegrated": false,
+  "materialsBaked": false,
+  "visualMatchAccepted": false
+}

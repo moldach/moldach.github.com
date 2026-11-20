@@ -1,0 +1,555 @@
+{
+  "version": 1,
+  "reviewOnly": true,
+  "tiers": {
+    "enhanced": {
+      "shared": {
+        "url": "/models/work-finish/v1/shared-enhanced.glb",
+        "fallback": "/models/work-finish/v1/shared-enhanced-fallback.glb",
+        "bytes": 1811308,
+        "fallbackBytes": 2469596,
+        "estimatedTextureBytes": 5242880,
+        "triangles": 102441,
+        "rigs": [],
+        "materials": [
+          {
+            "name": "Folded cream card",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Cobalt cloth",
+            "id": "cloth",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ivory paper with fibers",
+            "id": "paper",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Leaf edges",
+            "id": "paper",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Printed navy",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          }
+        ]
+      },
+      "work": {
+        "url": "/models/work-finish/v1/work-enhanced.glb",
+        "fallback": "/models/work-finish/v1/work-enhanced-fallback.glb",
+        "bytes": 6023292,
+        "fallbackBytes": 7283276,
+        "estimatedTextureBytes": 26299445,
+        "triangles": 159956,
+        "rigs": [
+          "hinuhinu-chart",
+          "puttpulse-basket",
+          "shiny-device"
+        ],
+        "materials": [
+          {
+            "name": "Hawaii altitude 0",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii altitude 1",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii altitude 2",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii original map",
+            "id": "photo",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded cream card",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Basket chains",
+            "id": "metal",
+            "normal": true,
+            "roughness": false
+          },
+          {
+            "name": "Ocean paper 0",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ocean paper 1",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ocean paper 2",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ocean paper 3",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 0",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 1",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 2",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 0",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 1",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 2",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 3",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Basket chains",
+            "id": "metal",
+            "normal": true,
+            "roughness": false
+          },
+          {
+            "name": "Basket cobalt",
+            "id": "paint",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Original Shiny-filteRs screenshot",
+            "id": "photo",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Optical glass",
+            "id": "glass",
+            "normal": false,
+            "roughness": false
+          },
+          {
+            "name": "Folded magenta",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded orange",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded teal",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded violet",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ivory paper with fibers",
+            "id": "paper",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Printed navy",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii altitude 3",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 3",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 0",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 1",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 2",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 3",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Plastic ground marker",
+            "id": "plastic",
+            "normal": true,
+            "roughness": true
+          }
+        ]
+      }
+    },
+    "compact": {
+      "shared": {
+        "url": "/models/work-finish/v1/shared-compact.glb",
+        "fallback": "/models/work-finish/v1/shared-compact-fallback.glb",
+        "bytes": 1002004,
+        "fallbackBytes": 1084816,
+        "estimatedTextureBytes": 1310720,
+        "triangles": 71013,
+        "rigs": [],
+        "materials": [
+          {
+            "name": "Folded cream card",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Cobalt cloth",
+            "id": "cloth",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ivory paper with fibers",
+            "id": "paper",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Leaf edges",
+            "id": "paper",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Printed navy",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          }
+        ]
+      },
+      "work": {
+        "url": "/models/work-finish/v1/work-compact.glb",
+        "fallback": "/models/work-finish/v1/work-compact-fallback.glb",
+        "bytes": 4208584,
+        "fallbackBytes": 4427876,
+        "estimatedTextureBytes": 7916597,
+        "triangles": 158772,
+        "rigs": [
+          "hinuhinu-chart",
+          "puttpulse-basket",
+          "shiny-device"
+        ],
+        "materials": [
+          {
+            "name": "Hawaii altitude 0",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii altitude 1",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii altitude 2",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii original map",
+            "id": "photo",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded cream card",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Basket chains",
+            "id": "metal",
+            "normal": true,
+            "roughness": false
+          },
+          {
+            "name": "Ocean paper 0",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ocean paper 1",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ocean paper 2",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ocean paper 3",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 0",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 1",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 2",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 0",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 1",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 2",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Grass paper 3",
+            "id": "leaf",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Basket chains",
+            "id": "metal",
+            "normal": true,
+            "roughness": false
+          },
+          {
+            "name": "Basket cobalt",
+            "id": "paint",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Original Shiny-filteRs screenshot",
+            "id": "photo",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Optical glass",
+            "id": "glass",
+            "normal": false,
+            "roughness": false
+          },
+          {
+            "name": "Folded magenta",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded orange",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded teal",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Folded violet",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Ivory paper with fibers",
+            "id": "paper",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Printed navy",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Hawaii altitude 3",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Maui terrain 3",
+            "id": "card",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 0",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 1",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 2",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Mulch chip 3",
+            "id": "wood",
+            "normal": true,
+            "roughness": true
+          },
+          {
+            "name": "Plastic ground marker",
+            "id": "plastic",
+            "normal": true,
+            "roughness": true
+          }
+        ]
+      }
+    }
+  },
+  "lighting": {
+    "exposure": 1.05,
+    "environmentIntensity": 0.32,
+    "key": 3.5,
+    "fill": 0.9,
+    "rim": 1.1
+  },
+  "budgets": {
+    "enhanced": {
+      "bytes": 8000000,
+      "textureBytes": 100663296
+    },
+    "compact": {
+      "bytes": 4000000,
+      "textureBytes": 50331648
+    },
+    "drawCalls": 150
+  },
+  "exceptions": {
+    "compact": {
+      "bytes": 5300000,
+      "status": "pending-visual-review",
+      "reason": "Retain individual chain links, sharp labels, map borders and rigid hinge assemblies; initial 4 MB target remains unmet."
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "forward": {
+    "turns": [
+      {
+        "from": "start",
+        "to": "services"
+      },
+      {
+        "from": "services",
+        "to": "work"
+      },
+      {
+        "from": "work",
+        "to": "writing"
+      },
+      {
+        "from": "writing",
+        "to": "about"
+      }
+    ],
+    "peakDrawCalls": 169,
+    "peakTriangles": 481564
+  },
+  "portraitHotspots": 1,
+  "portraitOpened": 1,
+  "reverse": {
+    "turns": [
+      {
+        "from": "contact",
+        "to": "about"
+      },
+      {
+        "from": "about",
+        "to": "writing"
+      },
+      {
+        "from": "writing",
+        "to": "work"
+      },
+      {
+        "from": "work",
+        "to": "services"
+      }
+    ],
+    "peakDrawCalls": 169,
+    "peakTriangles": 481564
+  },
+  "articleLinks": [
+    {
+      "name": "Original Fitbit game scene",
+      "href": "/writing/fitbit-gamification/",
+      "hidden": false
+    },
+    {
+      "name": "Source brain illustration relief",
+      "href": "/writing/highlighting-3d-brain-regions/",
+      "hidden": false
+    },
+    {
+      "name": "Original supervised embedding",
+      "href": "/writing/supervised-umap/",
+      "hidden": false
+    },
+    {
+      "name": "Printed Highlighting 3D Brain Regions",
+      "href": "/writing/highlighting-3d-brain-regions/",
+      "hidden": false
+    },
+    {
+      "name": "Printed Supervised UMAP",
+      "href": "/writing/supervised-umap/",
+      "hidden": false
+    },
+    {
+      "name": "Printed The Gamification of Fitbit",
+      "href": "/writing/fitbit-gamification/",
+      "hidden": false
+    }
+  ],
+  "keyboard": true,
+  "reducedMotion": true,
+  "errors": []
+}

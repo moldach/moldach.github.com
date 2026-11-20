@@ -1,0 +1,18 @@
+{
+  "retarget": [
+    {
+      "from": "start",
+      "to": "services"
+    },
+    {
+      "from": "services",
+      "to": "work"
+    }
+  ],
+  "back": "start",
+  "failedAt": "work",
+  "fallback": true,
+  "retry": true,
+  "mobileFourTurns": true,
+  "noJS": true
+}

@@ -1,0 +1,152 @@
+---
+import { Image, getImage } from 'astro:assets';
+import book from '../../../research/design/chapters/round-2/01-start.png';
+import services from '../../../research/design/chapters/round-2/02-services.png';
+import work from '../../../research/design/chapters/round-2/03-work.png';
+import writing from '../../../research/design/chapters/round-2/04-writing-v2.png';
+import about from '../../../research/design/chapters/round-2/05-about.png';
+import contact from '../../../research/design/chapters/round-2/06-contact.png';
+import { chapters, writingEntries, writingHref } from '../lib/registry';
+const exhibits = (await writingEntries())
+  .filter((entry) => entry.data.featuredOrder !== undefined)
+  .sort((a, b) => a.data.featuredOrder! - b.data.featuredOrder!);
+const exhibitLinks = exhibits.map((entry) => ({
+  label:
+    entry.id === 'supervised-umap'
+      ? 'UMAP'
+      : entry.id === 'fitbit-gamification'
+        ? 'Fitbit'
+        : 'Brain regions',
+  href: writingHref(entry),
+}));
+const artwork = await Promise.all(
+  [book, services, work, writing, about, contact].map(
+    async (src) =>
+      (await getImage({ src, width: 1440, format: 'webp', quality: 85 })).src,
+  ),
+);
+---
+
+<figure
+  class="book-poster"
+  data-book
+  data-chapter-artwork={JSON.stringify(artwork)}
+  data-exhibit-links={JSON.stringify(exhibitLinks)}
+  data-chapters={JSON.stringify(chapters)}
+  data-chapter="Start"
+>
+  <div class="book-stage">
+    <Image
+      src={book}
+      class="book-artwork"
+      alt="A paper pop-up book with a terminal and film ribbon illustrating Matthew's style-transfer work"
+      width={1440}
+      widths={[480, 800, 1440]}
+      sizes="(max-width: 800px) 100vw, 65vw"
+      format="webp"
+      quality={85}
+      loading="eager"
+      fetchpriority="high"
+    />
+    <canvas
+      hidden
+      class="book-canvas"
+      tabindex="0"
+      role="img"
+      aria-label="Paper pop-up book. Drag or use arrow keys to inspect; Escape resets the view."
+      aria-describedby="book-instructions"
+    ></canvas>
+    <div class="book-controls" hidden>
+      <div
+        class="chapter-tabs"
+        role="tablist"
+        aria-label="Turn the book to a chapter"
+      >
+        {chapters.map((chapter, i) => (
+          <button
+            role="tab"
+            data-chapter={i}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            aria-controls="book-chapter-panel"
+            id={`book-tab-${i}`}
+          >
+            <span class="sr-only">{chapter.label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+    <nav class="paper-tabs" aria-label="Book chapters">
+      {chapters.map((chapter, i) => (
+        <a
+          href={chapter.href}
+          style={`left: ${[16, 27, 39, 58, 70, 81][i]}%; top: 79%`}
+          aria-current={chapter.href === '/' ? 'page' : undefined}
+        >
+          {chapter.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+  <div class="book-details">
+    <div
+      class="book-caption"
+      id="book-chapter-panel"
+      role="tabpanel"
+      aria-label="Selected book chapter"
+    >
+      <span class="eyebrow">A little paper. A lot of possibility.</span>
+      <a href="/" data-open-chapter>
+        Open Start ↗
+      </a>
+    </div>
+    <ul class="book-exhibit-links" data-exhibit-list hidden>
+      {exhibitLinks.map((exhibit) => (
+        <li>
+          <a href={exhibit.href}>{exhibit.label} ↗</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <figcaption>
+    <span id="book-instructions" data-book-status>
+      Explore a chapter. Read the work.
+    </span>
+    <span class="book-launch" data-book-loading role="status" hidden>
+      Opening the workshop…
+    </span>
+    <span class="book-view-toggle" hidden>
+      <button data-pause-book type="button" aria-pressed="false">
+        Pause motion
+      </button>
+      <button data-artwork-view type="button">
+        View artwork
+      </button>
+    </span>
+  </figcaption>
+</figure>
+<script>
+  const book = document.querySelector<HTMLElement>('[data-book]');
+  if (book) {
+    const launch = book.querySelector<HTMLElement>('[data-book-loading]')!;
+    const start = async () => {
+      launch.hidden = false;
+      launch.textContent = 'Opening the workshop…';
+      book.dataset.webgl = 'loading';
+      try {
+        const { mountBook } = await import('./book/runtime');
+        await mountBook(book);
+        launch.hidden = true;
+      } catch {
+        book.dataset.webgl = 'unavailable';
+        book.querySelector<HTMLCanvasElement>('canvas')!.hidden = true;
+        book.querySelector<HTMLElement>('.book-controls')!.hidden = true;
+        book.classList.remove('is-3d');
+        launch.hidden = false;
+        launch.textContent = 'Artwork view · 3D unavailable';
+      }
+    };
+    // Let the complete HTML and poster paint, then open 3D without a click.
+    requestAnimationFrame(() => requestAnimationFrame(start));
+  }
+</script>
