@@ -18,7 +18,7 @@
     "assets:work-finish": "node scripts/prepare-work-finish.mjs"
   },
   "dependencies": {
-    "astro": "7.4.2",
+    "astro": "7.4.7",
     "three": "0.186.1"
   },
   "devDependencies": {
